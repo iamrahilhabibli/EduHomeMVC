@@ -83,7 +83,7 @@ namespace EduHome.DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("CourseCategory");
+                    b.ToTable("courseCategories");
                 });
 
             modelBuilder.Entity("EduHome.Core.Entities.CourseDetails", b =>

@@ -1,0 +1,50 @@
+﻿@using EduHome.Core.Entities;
+@model IEnumerable<CourseCategory>
+<partial name="_Notification" />
+@{
+	ViewData["Title"] = "Index";
+	int count = 1;
+}
+<div class="container-fluid">
+
+	<!-- start page title -->
+	<div class="row">
+		<div class="card">
+			<div class="card-body">
+				<h4 class="card-title">Sliders</h4>
+				<a class="btn btn-primary mb-4">Create New Category</a>
+				<div class="table-responsive">
+					<table class="table table-dark mb-0">
+
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>Image</th>
+								<th>Name</th>
+								<th>Description</th>
+								<th>Actions</th>
+							</tr>
+						</thead>
+						<tbody>
+							@foreach (var category in Model)
+							{
+								<tr>
+									<th scope="row">@count</th>
+						
+									<td>@category.Category</td>
+@*									<td>
+										<a asp-action="Update" asp-route-id="@course.Id" class="btn btn-warning mb-4">	<i class="bi bi-pencil-square"></i></a>
+										<a asp-action="Delete" asp-route-id="@course.Id" class="btn btn-danger mb-4"><i class="bi bi-trash-fill"></i></a>
+									</td>*@
+								</tr>
+								count++;
+							}
+
+						</tbody>
+					</table>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>

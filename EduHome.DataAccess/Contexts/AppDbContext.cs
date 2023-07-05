@@ -8,5 +8,6 @@ namespace EduHome.DataAccess.Contexts
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
         public DbSet<Course> courses { get; set; }
         public DbSet<CourseDetails> courseDetails { get; set; }
+        public DbSet<CourseCategory> courseCategories { get; set; }
     }
 }
