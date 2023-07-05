@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
+using EduHome.Core.Entities;
 using EduHome.DataAccess.Contexts;
+using EduHomeUI.Areas.EHMasterPanel.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -22,6 +24,22 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
 		public IActionResult Create()
 		{
 			return View();
+		}
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public async Task<IActionResult> Create(CourseCategoryViewModel viewCategory)
+		{
+			if (!ModelState.IsValid) { return View(); }
+
+			CourseCategory newCategory = new()
+			{
+				Category = viewCategory.Category
+			};
+
+			await _context.courseCategories.AddAsync(newCategory);
+			await _context.SaveChangesAsync();
+			TempData["Success"] = "Category Created Successfully!";
+			return RedirectToAction(nameof(Index));
 		}
 	}
 }

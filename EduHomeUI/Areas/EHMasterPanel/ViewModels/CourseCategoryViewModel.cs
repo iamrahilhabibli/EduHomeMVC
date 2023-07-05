@@ -2,6 +2,6 @@
 {
 	public class CourseCategoryViewModel
 	{
-		public string? Category { get; set; }
+		public string Category { get; set; }
 	}
 }
