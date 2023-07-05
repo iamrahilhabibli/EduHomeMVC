@@ -33,7 +33,9 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
 
 			CourseCategory newCategory = new()
 			{
-				Category = viewCategory.Category
+				Category = viewCategory.Category,
+				DateCreated = DateTime.Now,
+				DateModified = DateTime.Now
 			};
 
 			await _context.courseCategories.AddAsync(newCategory);

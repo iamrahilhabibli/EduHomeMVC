@@ -21,22 +21,32 @@
 							<tr>
 								<th>#</th>
 								<th>Name</th>
+								<th>DateCreated</th>
+								<th>DateModified</th>
 								<th>Actions</th>
 							</tr>
 						</thead>
 						<tbody>
 							@foreach (var category in Model)
 							{
-								<tr>
-									<th scope="row">@count</th>
-						
-									<td>@category.Category</td>
-@*									<td>
-										<a asp-action="Update" asp-route-id="@course.Id" class="btn btn-warning mb-4">	<i class="bi bi-pencil-square"></i></a>
-										<a asp-action="Delete" asp-route-id="@course.Id" class="btn btn-danger mb-4"><i class="bi bi-trash-fill"></i></a>
-									</td>*@
-								</tr>
-								count++;
+								@if (!category.IsDeleted)
+								{
+									<tr>
+										<th scope="row">@count</th>
+
+										<td>@category.Category</td>
+										<td>@category.DateCreated</td>
+										<td>@category.DateModified</td>
+
+										@*									<td>
+								<a asp-action="Update" asp-route-id="@course.Id" class="btn btn-warning mb-4">	<i class="bi bi-pencil-square"></i></a>
+								<a asp-action="Delete" asp-route-id="@course.Id" class="btn btn-danger mb-4"><i class="bi bi-trash-fill"></i></a>
+								</td>*@
+									</tr>
+									count++;
+								}
+
+
 							}
 
 						</tbody>
