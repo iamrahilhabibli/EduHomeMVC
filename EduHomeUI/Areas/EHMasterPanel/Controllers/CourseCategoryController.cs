@@ -43,5 +43,12 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
 			TempData["Success"] = "Category Created Successfully!";
 			return RedirectToAction(nameof(Index));
 		}
+
+		public IActionResult Delete(int id)
+		{
+			CourseCategory category = _context.courseCategories.Find(id);
+			if (category == null) { return NotFound(); }
+			return View(category);
+		}
 	}
 }

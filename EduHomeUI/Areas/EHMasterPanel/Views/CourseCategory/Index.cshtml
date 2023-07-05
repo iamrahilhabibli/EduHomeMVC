@@ -38,10 +38,11 @@
 										<td>@category.DateCreated</td>
 										<td>@category.DateModified</td>
 
-										@*									<td>
-								<a asp-action="Update" asp-route-id="@course.Id" class="btn btn-warning mb-4">	<i class="bi bi-pencil-square"></i></a>
-								<a asp-action="Delete" asp-route-id="@course.Id" class="btn btn-danger mb-4"><i class="bi bi-trash-fill"></i></a>
-								</td>*@
+																			<td>
+								<a  class="btn btn-warning mb-4">	<i class="bi bi-pencil-square"></i></a>
+								<a asp-action="Delete" asp-route-id="@category.Id"  class="btn btn-danger mb-4"><i class="bi bi-trash-fill"></i></a>
+								
+								</td>
 									</tr>
 									count++;
 								}
