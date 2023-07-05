@@ -50,5 +50,22 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
 			if (category == null) { return NotFound(); }
 			return View(category);
 		}
+		[HttpPost]
+		[ActionName("Delete")]
+		[AutoValidateAntiforgeryToken]
+		public async Task<IActionResult> DeleteCategory(int Id)
+		{
+			CourseCategory category = await _context.courseCategories.FindAsync(Id);
+			if (category == null)
+			{
+				return NotFound();
+			}
+			category.IsDeleted = true;
+			await _context.SaveChangesAsync();
+			TempData["Success"] = "Category Deleted Successfully";
+
+			return RedirectToAction(nameof(Index));
+		}
+
 	}
 }
