@@ -1,0 +1,29 @@
+﻿@using EduHomeUI.Areas.EHMasterPanel.ViewModels
+@model CourseCategoryViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<div class="col-xl-6">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title mb-4">Course Create Form</h4>
+            <form asp-action="Create" method="post">
+                <div class="row mb-4">
+                    <label asp-for="Category" class="col-sm-3 col-form-label"></label>
+                    <div class="col-sm-9">
+                        <input asp-for="Category" class="form-control" />
+                        <span asp-validation-for="Category" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row justify-content-end">
+                    <div class="col-sm-9">
+                        <div>
+                            <button type="submit" class="btn btn-primary w-md">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!-- end card body -->
+    </div>
+    <!-- end card -->
+</div>

@@ -22,7 +22,6 @@
   <ItemGroup>
     <Folder Include="Areas\EHMasterPanel\Data\" />
     <Folder Include="Areas\EHMasterPanel\Models\" />
-    <Folder Include="Areas\EHMasterPanel\ViewModels\" />
     <Folder Include="Mappers\" />
     <Folder Include="ViewModels\" />
   </ItemGroup>
