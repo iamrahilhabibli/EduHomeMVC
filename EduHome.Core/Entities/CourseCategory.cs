@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using EduHome.Core.Abstraction;
 
 namespace EduHome.Core.Entities;
 

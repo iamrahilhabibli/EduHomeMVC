@@ -3,5 +3,6 @@
 	public class CourseCategoryViewModel
 	{
 		public string Category { get; set; }
+		public DateTime DateModified { get; set; }
 	}
 }
