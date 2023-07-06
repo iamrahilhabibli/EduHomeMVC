@@ -31,7 +31,6 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
 			{
 				return NotFound(); 
 			}
-
 			return View(courseDetails);
 		}
 

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVCProject\\EduHome.Core\\EduHome.Core.csproj": {}
+    "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHome.Core\\EduHome.Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVCProject\\EduHome.Core\\EduHome.Core.csproj": {
+    "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHome.Core\\EduHome.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVCProject\\EduHome.Core\\EduHome.Core.csproj",
+        "projectUniqueName": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHome.Core\\EduHome.Core.csproj",
         "projectName": "EduHome.Core",
-        "projectPath": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVCProject\\EduHome.Core\\EduHome.Core.csproj",
+        "projectPath": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHome.Core\\EduHome.Core.csproj",
         "packagesPath": "C:\\Users\\Rhabi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVCProject\\EduHome.Core\\obj\\",
+        "outputPath": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHome.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

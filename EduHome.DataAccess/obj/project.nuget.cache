@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5cxa5FMs3hBagxElpkcyGjSd5lOh7/FvLUBxDWzOxrL/1bCyRLYXccwODGvfZ+mYQ++J5JYOvG9uBIiFxHCE2g==",
+  "dgSpecHash": "d2HVhDW+Pkw28+C7zUrRvZ9WUet2uJ6Re2PsVDo2IR3gfAxbfEJ9wEIPPccFNSfDUF8x569AdnA113uBo3EL6w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVCProject\\EduHome.DataAccess\\EduHome.DataAccess.csproj",
+  "projectFilePath": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHome.DataAccess\\EduHome.DataAccess.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Rhabi\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Rhabi\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

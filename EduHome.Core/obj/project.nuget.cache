@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GPmOh05AQe3sQ3qcyFpHxUsmh0YR0bBWaEFUbB+tBRHqvXXWJ346wVVBuige36tvEBj9ZmOF87NMx0p/+y2xzg==",
+  "dgSpecHash": "tiL5eh1UIvMovJ7CGKzgA3KTgVRpE3gR3/cvG8+NP59Ts8ioVPc9rW32UZw61mgXKX4NIvtFj5M50IJxdRTkcA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVCProject\\EduHome.Core\\EduHome.Core.csproj",
+  "projectFilePath": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHome.Core\\EduHome.Core.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
