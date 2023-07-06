@@ -3,6 +3,7 @@ using EduHome.Core.Entities;
 using EduHome.DataAccess.Contexts;
 using EduHomeUI.Areas.EHMasterPanel.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
 namespace EduHomeUI.Areas.EHMasterPanel.Controllers
@@ -23,17 +24,24 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
         }
         public IActionResult Create()
         {
-            var categories = _context.courseCategories.ToList();
+            var categories = _context.courseCategories
+                .Select(c => new SelectListItem { Value = c.Id.ToString(), Text = c.Category })
+                .ToList();
+
             ViewBag.Categories = categories;
+
             return View();
         }
+
         [HttpPost]
         [AutoValidateAntiforgeryToken]
         public async Task<IActionResult> Create(CourseViewModel courses)
         {
             if (!ModelState.IsValid)
             {
-                return View();
+                var categories = _context.courseCategories.ToList();
+                ViewBag.Categories = categories;
+                return View(courses);
             }
 
             Course newCourse = _mapper.Map<Course>(courses);
@@ -48,14 +56,10 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
                 Assesment = courses.Assesment,
                 Fee = courses.Fee
             };
-            CourseCategory category = new CourseCategory
-            {
-                Category = courses.Category
-            };
-
-
+            newCourse.CourseCatagory = _context.courseCategories.FirstOrDefault(c => c.Id == courses.CategoryId);
+            newCourse.DateCreated = DateTime.Now;
+            newCourse.DateModified = DateTime.Now;
             newCourse.Details = details;
-            newCourse.CourseCatagory = category;
 
             await _context.courses.AddAsync(newCourse);
             await _context.SaveChangesAsync();

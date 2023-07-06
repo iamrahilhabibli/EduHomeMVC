@@ -84,18 +84,15 @@
                     </div>
                 </div>
                 <div class="row mb-4">
-                    <label asp-for="Category" class="col-sm-3 col-form-label"></label>
+                    <label asp-for="CategoryId" class="col-sm-3 col-form-label">Category Name</label>
                     <div class="col-sm-9">
-                        <select asp-for="Category" class="form-control">
+                        <select asp-for="CategoryId" asp-items="@ViewBag.Categories" class="form-control">
                             <option value="">Select a category</option>
-                            @foreach (var category in ViewBag.Categories)
-                            {
-                                <option value="@category.Id">@category.Category</option>
-                            }
                         </select>
-                        <span asp-validation-for="Category" class="text-danger"></span>
+                        <span asp-validation-for="CategoryId" class="text-danger"></span>
                     </div>
                 </div>
+
                 <div class="row justify-content-end">
                     <div class="col-sm-9">
                         <div>
