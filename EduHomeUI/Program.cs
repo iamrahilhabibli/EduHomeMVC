@@ -1,4 +1,7 @@
 using EduHome.DataAccess.Contexts;
+using EduHomeUI.Services.Concretes;
+using EduHomeUI.Services.Interfaces;
+using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using System;
 
@@ -9,6 +12,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
 });
+builder.Services.AddScoped<ICourseCategoryService, CourseCategoryService>();
 
 
 var app = builder.Build();
