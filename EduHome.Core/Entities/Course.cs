@@ -8,6 +8,7 @@ namespace EduHome.Core.Entities
         public string? Description { get; set; }
         public string? ImagePath { get; set; }
         public string? ImageName { get; set; }
+        public Guid CourseDetailsId { get; set; }
         public CourseDetails? Details { get; set; }
         public int CourseCategoryId { get; set; }
         public CourseCategory? CourseCategory { get; set; }

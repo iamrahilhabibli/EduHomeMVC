@@ -2,6 +2,7 @@
 using EduHome.Core.Entities;
 using EduHome.DataAccess.Contexts;
 using EduHomeUI.Areas.EHMasterPanel.ViewModels;
+using EduHomeUI.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -13,10 +14,12 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
     {
         private readonly AppDbContext _context;
         private readonly IMapper _mapper;
-        public CourseController(AppDbContext context, IMapper mapper)
+        private readonly ICourseService _courseService;
+        public CourseController(AppDbContext context, IMapper mapper, ICourseService courseService)
         {
             _context = context;
             _mapper = mapper;
+            _courseService = courseService;
         }
         public async Task<IActionResult> Index()
         {
