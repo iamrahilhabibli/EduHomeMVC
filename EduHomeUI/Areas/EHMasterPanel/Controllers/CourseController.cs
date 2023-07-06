@@ -22,11 +22,20 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
         {
             return View(await _context.courses.ToListAsync());
         }
-        public async Task<IActionResult> Details()
-        {
-            return View(await _context.courseDetails.ToListAsync());
-        }
-        public IActionResult Create()
+		public async Task<IActionResult> Details(Guid courseId)
+		{
+			var courseDetails = await _context.courseDetails
+				.FirstOrDefaultAsync(cd => cd.CourseId == courseId);
+
+			if (courseDetails == null)
+			{
+				return NotFound(); 
+			}
+
+			return View(courseDetails);
+		}
+
+		public IActionResult Create()
         {
             var categories = _context.courseCategories
                 .Select(c => new SelectListItem { Value = c.Id.ToString(), Text = c.Category })
