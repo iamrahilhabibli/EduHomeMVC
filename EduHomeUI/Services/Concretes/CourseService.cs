@@ -1,4 +1,5 @@
-﻿using EduHome.Core.Entities;
+﻿using AutoMapper;
+using EduHome.Core.Entities;
 using EduHome.DataAccess.Contexts;
 using EduHomeUI.Areas.EHMasterPanel.ViewModels;
 using EduHomeUI.Services.Interfaces;
@@ -9,60 +10,42 @@ namespace EduHomeUI.Services.Concretes
     public class CourseService : ICourseService
     {
         private readonly AppDbContext _context;
+        private readonly IMapper _mapper;
 
-        public CourseService(AppDbContext context)
+        public CourseService(AppDbContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
+
         }
         public async Task<bool> CreateCourseAsync(CourseViewModel courses)
         {
             if (courses is null) return false;
 
             var languageOption = await _context.Languages.FindAsync(courses.LanguageOptionId);
-            if (languageOption is null) return false;
-
             var assesment = await _context.Assesments.FindAsync(courses.AssesmentId);
-            if (assesment is null) return false;
-
             var skillLevel = await _context.SkillLevels.FindAsync(courses.SkillLevelId);
-            if (skillLevel is null) return false;
+            var courseCategory = await _context.courseCategories.FindAsync(courses.CourseCategoryId);
 
-            var courseCatagory = await _context.courseCategories.FindAsync(courses.CourseCategoryId);
-            if (courseCatagory is null) return false;
+            if (languageOption is null || assesment is null || skillLevel is null || courseCategory is null)
+                return false;
 
-            CourseDetails courseDetail = new()
-            {
-                AboutCourse = courses.AboutCourse,
-                Certification = courses.Certification,
-                Start = courses.Start,
-                Duration = courses.Duration,
-                CourseFee = courses.CourseFee,
-                HowToApply = courses.HowToApply,
-                ClassDuration = courses.ClassDuration,
-                LanguageOption = languageOption,
-                Skill = skillLevel,
-                Assesment = assesment
-            };
+            var courseDetail = _mapper.Map<CourseViewModel, CourseDetails>(courses);
+            courseDetail.LanguageOption = languageOption;
+            courseDetail.Skill = skillLevel;
+            courseDetail.Assesment = assesment;
 
-            await _context.courseDetails.AddAsync(courseDetail);
-            await _context.SaveChangesAsync();
+            var course = _mapper.Map<CourseViewModel, Course>(courses);
+            course.CourseCategory = courseCategory;
+            course.Details = courseDetail;
 
-
-
-            Course course = new Course()
-            {
-                Name = courses.Name,
-                Description = courses.Description,
-                ImagePath = courses.ImagePath,
-                ImageName = courses.ImageName,
-                CourseCategoryId = courseCatagory.Id,
-                CourseDetailsId = courseDetail.Id
-            };
-
-            await _context.courses.AddAsync(course);
+            _context.courseDetails.Add(courseDetail);
+            _context.courses.Add(course);
             await _context.SaveChangesAsync();
 
             return true;
         }
+
+
     }
 }
