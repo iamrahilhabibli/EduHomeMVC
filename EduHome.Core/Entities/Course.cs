@@ -8,6 +8,7 @@ namespace EduHome.Core.Entities
         public string Name { get; set; }
         public string Description { get; set; }
         public string ImagePath { get; set; }
+        public string ImageName { get; set; }
         public CourseDetails Details { get; set; }
         [ForeignKey("CourseCategory")]
         public int CourseCategoryId { get; set; }
