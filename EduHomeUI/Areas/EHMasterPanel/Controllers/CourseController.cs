@@ -37,53 +37,27 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
 		//	return View(courseDetails);
 		//}
 
-		public IActionResult Create()
+		public async Task<IActionResult> Create()
         {
-            var categories = _context.courseCategories
-                .Select(c => new SelectListItem { Value = c.Id.ToString(), Text = c.Category })
-                .ToList();
-
-            ViewBag.Categories = categories;
-
+            ViewBag.Catagories = await _context.courseCategories.ToListAsync();
+            ViewBag.Assesments = await _context.Assesments.ToListAsync();
+            ViewBag.Languages = await _context.Languages.ToListAsync();
+            ViewBag.SkillLevels = await _context.SkillLevels.ToListAsync();
             return View();
+
         }
 
-        //[HttpPost]
-        //[AutoValidateAntiforgeryToken]
-        //public async Task<IActionResult> Create(CourseViewModel courses)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        var categories = _context.courseCategories.ToList();
-        //        ViewBag.Categories = categories;
-        //        return View(courses);
-        //    }
-
-        //    Course newCourse = _mapper.Map<Course>(courses);
-
-        //    CourseDetails details = new CourseDetails
-        //    {
-        //        StartDate = courses.StartDate,
-        //        Duration = courses.Duration,
-        //        SkillLevel = courses.SkillLevel,
-        //        Language = courses.Language,
-        //        StudentCount = courses.StudentCount,
-        //        Assesment = courses.Assesment,
-        //        Fee = courses.Fee,
-        //        DateCreated = DateTime.Now,
-        //        DateModified = DateTime.Now
-        //    };
-        //    newCourse.CourseCatagory = _context.courseCategories.FirstOrDefault(c => c.Id == courses.CategoryId);
-        //    newCourse.DateCreated = DateTime.Now;
-        //    newCourse.DateModified = DateTime.Now;
-        //    newCourse.Details = details;
-
-        //    await _context.courses.AddAsync(newCourse);
-        //    await _context.SaveChangesAsync();
-
-        //    TempData["Success"] = "Course Created Successfully";
-        //    return RedirectToAction(nameof(Index));
-        //}
+        [HttpPost]
+        [AutoValidateAntiforgeryToken]
+        public async Task<IActionResult> Create(CourseViewModel courses)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            if (!await _courseService.CreateCourseAsync(courses)) return BadRequest();
+            return RedirectToAction(nameof(Index));
+        }
 
 
 
