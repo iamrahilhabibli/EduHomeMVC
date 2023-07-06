@@ -2,6 +2,7 @@
 using EduHome.Core.Entities;
 using EduHome.DataAccess.Contexts;
 using EduHomeUI.Areas.EHMasterPanel.ViewModels;
+using EduHomeUI.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,10 +13,12 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
 	{
 		private readonly AppDbContext _context;
 		private readonly IMapper _mapper;
-		public CourseCategoryController(AppDbContext context, IMapper mapper)
+		private readonly ICourseCategoryService _categoryService;
+		public CourseCategoryController(AppDbContext context, IMapper mapper, ICourseCategoryService categoryService)
 		{
 			_context = context;
 			_mapper = mapper;
+			_categoryService = categoryService;
 		}
 		public async Task<IActionResult> Index()
 		{
@@ -29,17 +32,8 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
 		[ValidateAntiForgeryToken]
 		public async Task<IActionResult> Create(CourseCategoryViewModel viewCategory)
 		{
-			if (!ModelState.IsValid) { return View(); }
-
-			CourseCategory newCategory = new()
-			{
-				Category = viewCategory.Category,
-				DateCreated = DateTime.Now,
-				DateModified = DateTime.Now
-			};
-
-			await _context.courseCategories.AddAsync(newCategory);
-			await _context.SaveChangesAsync();
+			if (!ModelState.IsValid) return BadRequest();
+			if (!await _categoryService.CreateCategoryAsync(viewCategory)) return BadRequest();
 			TempData["Success"] = "Category Created Successfully!";
 			return RedirectToAction(nameof(Index));
 		}

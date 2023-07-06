@@ -1,4 +1,5 @@
-﻿using EduHome.DataAccess.Contexts;
+﻿using EduHome.Core.Entities;
+using EduHome.DataAccess.Contexts;
 using EduHomeUI.Areas.EHMasterPanel.ViewModels;
 using EduHomeUI.Services.Interfaces;
 
@@ -12,9 +13,19 @@ namespace EduHomeUI.Services.Concretes
             _context = context;
         }
 
-        public Task<bool> CreateCategoryAsync(CourseCategoryViewModel newCategory)
+        public async Task<bool> CreateCategoryAsync(CourseCategoryViewModel newCategory)
         {
-            throw new NotImplementedException();
+            if (newCategory == null) return false;
+
+            CourseCategory newCourseCategory = new()
+            {
+                Category = newCategory.Category,
+                DateCreated = DateTime.Now,
+                DateModified = DateTime.Now
+            };
+            await _context.courseCategories.AddAsync(newCourseCategory);
+            await _context.SaveChangesAsync();
+            return true;
         }
     }
 }
