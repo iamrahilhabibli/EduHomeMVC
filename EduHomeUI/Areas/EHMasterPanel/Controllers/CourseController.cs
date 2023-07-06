@@ -54,7 +54,9 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
                 Language = courses.Language,
                 StudentCount = courses.StudentCount,
                 Assesment = courses.Assesment,
-                Fee = courses.Fee
+                Fee = courses.Fee,
+                DateCreated = DateTime.Now,
+                DateModified = DateTime.Now
             };
             newCourse.CourseCatagory = _context.courseCategories.FirstOrDefault(c => c.Id == courses.CategoryId);
             newCourse.DateCreated = DateTime.Now;
