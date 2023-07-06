@@ -75,6 +75,9 @@ namespace EduHome.DataAccess.Migrations
 
                     b.HasIndex("CourseCategoryId");
 
+                    b.HasIndex("CourseDetailsId")
+                        .IsUnique();
+
                     b.ToTable("courses");
                 });
 
@@ -126,9 +129,6 @@ namespace EduHome.DataAccess.Migrations
                     b.Property<decimal>("CourseFee")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<Guid>("CourseId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<DateTime>("DateCreated")
                         .HasColumnType("datetime2");
 
@@ -159,9 +159,6 @@ namespace EduHome.DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("AssesmentId");
-
-                    b.HasIndex("CourseId")
-                        .IsUnique();
 
                     b.HasIndex("LanguageOptionId");
 
@@ -210,7 +207,15 @@ namespace EduHome.DataAccess.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("EduHome.Core.Entities.CourseDetails", "Details")
+                        .WithOne("Course")
+                        .HasForeignKey("EduHome.Core.Entities.Course", "CourseDetailsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("CourseCategory");
+
+                    b.Navigation("Details");
                 });
 
             modelBuilder.Entity("EduHome.Core.Entities.CourseDetails", b =>
@@ -218,12 +223,6 @@ namespace EduHome.DataAccess.Migrations
                     b.HasOne("EduHome.Core.Entities.Assesment", "Assesment")
                         .WithMany()
                         .HasForeignKey("AssesmentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("EduHome.Core.Entities.Course", "Course")
-                        .WithOne("Details")
-                        .HasForeignKey("EduHome.Core.Entities.CourseDetails", "CourseId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -241,21 +240,19 @@ namespace EduHome.DataAccess.Migrations
 
                     b.Navigation("Assesment");
 
-                    b.Navigation("Course");
-
                     b.Navigation("LanguageOption");
 
                     b.Navigation("Skill");
                 });
 
-            modelBuilder.Entity("EduHome.Core.Entities.Course", b =>
-                {
-                    b.Navigation("Details");
-                });
-
             modelBuilder.Entity("EduHome.Core.Entities.CourseCategory", b =>
                 {
                     b.Navigation("Courses");
+                });
+
+            modelBuilder.Entity("EduHome.Core.Entities.CourseDetails", b =>
+                {
+                    b.Navigation("Course");
                 });
 #pragma warning restore 612, 618
         }

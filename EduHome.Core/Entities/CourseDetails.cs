@@ -13,8 +13,8 @@ namespace EduHome.Core.Entities
         public string? ClassDuration { get; set; }
         public decimal CourseFee { get; set; }
 
-        [ForeignKey("Course")]
-        public Guid CourseId { get; set; } 
+        //[ForeignKey("Course")]
+        //public Guid CourseId { get; set; } 
 
         public Course? Course { get; set; } 
 
