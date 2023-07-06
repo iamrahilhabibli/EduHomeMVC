@@ -23,6 +23,8 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
         }
         public IActionResult Create()
         {
+            var categories = _context.courseCategories.ToList();
+            ViewBag.Categories = categories;
             return View();
         }
         [HttpPost]
