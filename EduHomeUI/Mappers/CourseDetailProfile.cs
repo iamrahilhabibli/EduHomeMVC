@@ -8,7 +8,7 @@ namespace EduHomeUI.Mappers
     {
         public CourseDetailProfile()
         {
-            CreateMap<CourseViewModel, CourseDetailProfile>().ReverseMap();
+            CreateMap<CourseViewModel, CourseDetails>().ReverseMap();
         }
     }
 }
