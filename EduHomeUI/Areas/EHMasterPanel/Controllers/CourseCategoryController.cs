@@ -69,7 +69,7 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
 				return NotFound();
 			}
 
-			CourseCategoryViewModel viewModel = new CourseCategoryViewModel
+			CourseCategoryViewModel viewModel = new()
 			{
 				Category = category.Category,
 				DateModified = category.DateModified

@@ -22,6 +22,22 @@ namespace EduHome.DataAccess.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
+            modelBuilder.Entity("EduHome.Core.Entities.Assesment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("AssesmentType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Assesments");
+                });
+
             modelBuilder.Entity("EduHome.Core.Entities.Course", b =>
                 {
                     b.Property<Guid>("Id")
@@ -38,22 +54,18 @@ namespace EduHome.DataAccess.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ImageName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ImagePath")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -96,9 +108,20 @@ namespace EduHome.DataAccess.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Assesment")
-                        .IsRequired()
+                    b.Property<string>("AboutCourse")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("AssesmentId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Certification")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClassDuration")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("CourseFee")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<Guid>("CourseId")
                         .HasColumnType("uniqueidentifier");
@@ -110,24 +133,21 @@ namespace EduHome.DataAccess.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Duration")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal>("Fee")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<string>("HowToApply")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<string>("Language")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("LanguageOptionId")
+                        .HasColumnType("int");
 
-                    b.Property<string>("SkillLevel")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("SkillId")
+                        .HasColumnType("int");
 
-                    b.Property<DateTime>("StartDate")
+                    b.Property<DateTime>("Start")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("StudentCount")
@@ -135,38 +155,99 @@ namespace EduHome.DataAccess.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("AssesmentId");
+
                     b.HasIndex("CourseId")
                         .IsUnique();
+
+                    b.HasIndex("LanguageOptionId");
+
+                    b.HasIndex("SkillId");
 
                     b.ToTable("courseDetails");
                 });
 
+            modelBuilder.Entity("EduHome.Core.Entities.Language", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("LanguageOption")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Languages");
+                });
+
+            modelBuilder.Entity("EduHome.Core.Entities.SkillLevel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Skill")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("SkillLevels");
+                });
+
             modelBuilder.Entity("EduHome.Core.Entities.Course", b =>
                 {
-                    b.HasOne("EduHome.Core.Entities.CourseCategory", "CourseCatagory")
+                    b.HasOne("EduHome.Core.Entities.CourseCategory", "CourseCategory")
                         .WithMany("Courses")
                         .HasForeignKey("CourseCategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("CourseCatagory");
+                    b.Navigation("CourseCategory");
                 });
 
             modelBuilder.Entity("EduHome.Core.Entities.CourseDetails", b =>
                 {
+                    b.HasOne("EduHome.Core.Entities.Assesment", "Assesment")
+                        .WithMany()
+                        .HasForeignKey("AssesmentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("EduHome.Core.Entities.Course", "Course")
                         .WithOne("Details")
                         .HasForeignKey("EduHome.Core.Entities.CourseDetails", "CourseId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("EduHome.Core.Entities.Language", "LanguageOption")
+                        .WithMany()
+                        .HasForeignKey("LanguageOptionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("EduHome.Core.Entities.SkillLevel", "Skill")
+                        .WithMany()
+                        .HasForeignKey("SkillId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Assesment");
+
                     b.Navigation("Course");
+
+                    b.Navigation("LanguageOption");
+
+                    b.Navigation("Skill");
                 });
 
             modelBuilder.Entity("EduHome.Core.Entities.Course", b =>
                 {
-                    b.Navigation("Details")
-                        .IsRequired();
+                    b.Navigation("Details");
                 });
 
             modelBuilder.Entity("EduHome.Core.Entities.CourseCategory", b =>

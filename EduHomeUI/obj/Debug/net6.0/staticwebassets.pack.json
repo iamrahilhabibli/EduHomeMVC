@@ -1,0 +1,1657 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\css\\app.min.css",
+      "PackagePath": "staticwebassets\\adminAssets\\css\\app.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\adminAssets\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\css\\icons.min.css",
+      "PackagePath": "staticwebassets\\adminAssets\\css\\icons.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\fonts\\boxicons.eot",
+      "PackagePath": "staticwebassets\\adminAssets\\fonts\\boxicons.eot"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\fonts\\boxicons.html",
+      "PackagePath": "staticwebassets\\adminAssets\\fonts\\boxicons.html"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\fonts\\boxicons.ttf",
+      "PackagePath": "staticwebassets\\adminAssets\\fonts\\boxicons.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\fonts\\boxicons.woff",
+      "PackagePath": "staticwebassets\\adminAssets\\fonts\\boxicons.woff"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\fonts\\boxiconsd41d.svg",
+      "PackagePath": "staticwebassets\\adminAssets\\fonts\\boxiconsd41d.svg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\fonts\\dripicons-v2.eot",
+      "PackagePath": "staticwebassets\\adminAssets\\fonts\\dripicons-v2.eot"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\fonts\\dripicons-v2.svg",
+      "PackagePath": "staticwebassets\\adminAssets\\fonts\\dripicons-v2.svg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\fonts\\dripicons-v2.ttf",
+      "PackagePath": "staticwebassets\\adminAssets\\fonts\\dripicons-v2.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\fonts\\dripicons-v2.woff",
+      "PackagePath": "staticwebassets\\adminAssets\\fonts\\dripicons-v2.woff"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\fonts\\dripicons-v2d41d.eot",
+      "PackagePath": "staticwebassets\\adminAssets\\fonts\\dripicons-v2d41d.eot"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\fonts\\fa-brands-400.eot",
+      "PackagePath": "staticwebassets\\adminAssets\\fonts\\fa-brands-400.eot"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\fonts\\fa-brands-400.html",
+      "PackagePath": "staticwebassets\\adminAssets\\fonts\\fa-brands-400.html"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\fonts\\fa-brands-400.svg",
+      "PackagePath": "staticwebassets\\adminAssets\\fonts\\fa-brands-400.svg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\fonts\\fa-brands-400.ttf",
+      "PackagePath": "staticwebassets\\adminAssets\\fonts\\fa-brands-400.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\fonts\\fa-brands-400.woff",
+      "PackagePath": "staticwebassets\\adminAssets\\fonts\\fa-brands-400.woff"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\fonts\\fa-brands-400d41d.eot",
+      "PackagePath": "staticwebassets\\adminAssets\\fonts\\fa-brands-400d41d.eot"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\fonts\\fa-regular-400.eot",
+      "PackagePath": "staticwebassets\\adminAssets\\fonts\\fa-regular-400.eot"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\fonts\\fa-regular-400.html",
+      "PackagePath": "staticwebassets\\adminAssets\\fonts\\fa-regular-400.html"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\fonts\\fa-regular-400.svg",
+      "PackagePath": "staticwebassets\\adminAssets\\fonts\\fa-regular-400.svg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\fonts\\fa-regular-400.ttf",
+      "PackagePath": "staticwebassets\\adminAssets\\fonts\\fa-regular-400.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\fonts\\fa-regular-400.woff",
+      "PackagePath": "staticwebassets\\adminAssets\\fonts\\fa-regular-400.woff"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\fonts\\fa-regular-400d41d.eot",
+      "PackagePath": "staticwebassets\\adminAssets\\fonts\\fa-regular-400d41d.eot"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\fonts\\fa-solid-900.eot",
+      "PackagePath": "staticwebassets\\adminAssets\\fonts\\fa-solid-900.eot"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\fonts\\fa-solid-900.html",
+      "PackagePath": "staticwebassets\\adminAssets\\fonts\\fa-solid-900.html"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\fonts\\fa-solid-900.svg",
+      "PackagePath": "staticwebassets\\adminAssets\\fonts\\fa-solid-900.svg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\fonts\\fa-solid-900.ttf",
+      "PackagePath": "staticwebassets\\adminAssets\\fonts\\fa-solid-900.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\fonts\\fa-solid-900.woff",
+      "PackagePath": "staticwebassets\\adminAssets\\fonts\\fa-solid-900.woff"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\fonts\\fa-solid-900d41d.eot",
+      "PackagePath": "staticwebassets\\adminAssets\\fonts\\fa-solid-900d41d.eot"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\fonts\\materialdesignicons-webfontd41d.eot",
+      "PackagePath": "staticwebassets\\adminAssets\\fonts\\materialdesignicons-webfontd41d.eot"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\fonts\\materialdesignicons-webfonte910.eot",
+      "PackagePath": "staticwebassets\\adminAssets\\fonts\\materialdesignicons-webfonte910.eot"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\fonts\\materialdesignicons-webfonte910.html",
+      "PackagePath": "staticwebassets\\adminAssets\\fonts\\materialdesignicons-webfonte910.html"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\fonts\\materialdesignicons-webfonte910.ttf",
+      "PackagePath": "staticwebassets\\adminAssets\\fonts\\materialdesignicons-webfonte910.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\fonts\\materialdesignicons-webfonte910.woff",
+      "PackagePath": "staticwebassets\\adminAssets\\fonts\\materialdesignicons-webfonte910.woff"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\brands\\bitbucket.png",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\brands\\bitbucket.png"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\brands\\dribbble.png",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\brands\\dribbble.png"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\brands\\dropbox.png",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\brands\\dropbox.png"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\brands\\github.png",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\brands\\github.png"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\brands\\mail_chimp.png",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\brands\\mail_chimp.png"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\brands\\slack.png",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\brands\\slack.png"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\clients\\1.png",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\clients\\1.png"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\clients\\2.png",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\clients\\2.png"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\clients\\3.png",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\clients\\3.png"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\clients\\4.png",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\clients\\4.png"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\clients\\5.png",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\clients\\5.png"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\clients\\6.png",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\clients\\6.png"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\coming-soon.svg",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\coming-soon.svg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\companies\\img-1.png",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\companies\\img-1.png"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\companies\\img-2.png",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\companies\\img-2.png"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\companies\\img-3.png",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\companies\\img-3.png"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\companies\\img-4.png",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\companies\\img-4.png"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\companies\\img-5.png",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\companies\\img-5.png"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\companies\\img-6.png",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\companies\\img-6.png"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\crypto\\blog\\img-1.jpg",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\crypto\\blog\\img-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\crypto\\blog\\img-2.jpg",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\crypto\\blog\\img-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\crypto\\blog\\img-3.jpg",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\crypto\\blog\\img-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\crypto\\features-img\\img-1.png",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\crypto\\features-img\\img-1.png"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\crypto\\features-img\\img-2.png",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\crypto\\features-img\\img-2.png"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\error-img.png",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\error-img.png"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\favicon.ico",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\flags\\germany.jpg",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\flags\\germany.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\flags\\italy.jpg",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\flags\\italy.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\flags\\russia.jpg",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\flags\\russia.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\flags\\spain.jpg",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\flags\\spain.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\flags\\us.jpg",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\flags\\us.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\layouts\\layout-1.jpg",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\layouts\\layout-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\layouts\\layout-2.jpg",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\layouts\\layout-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\layouts\\layout-3.jpg",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\layouts\\layout-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\layouts\\layout-4.jpg",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\layouts\\layout-4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\logo-dark.png",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\logo-dark.png"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\logo-light.png",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\logo-light.png"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\logo-light.svg",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\logo-light.svg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\logo.svg",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\logo.svg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\maintenance.svg",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\maintenance.svg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\megamenu-img.png",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\megamenu-img.png"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\product\\img-1.png",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\product\\img-1.png"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\product\\img-2.png",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\product\\img-2.png"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\product\\img-3.png",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\product\\img-3.png"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\product\\img-4.png",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\product\\img-4.png"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\product\\img-5.png",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\product\\img-5.png"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\product\\img-6.png",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\product\\img-6.png"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\product\\img-7.png",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\product\\img-7.png"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\product\\img-8.png",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\product\\img-8.png"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\profile-img.png",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\profile-img.png"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\small\\img-1.jpg",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\small\\img-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\small\\img-2.jpg",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\small\\img-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\small\\img-3.jpg",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\small\\img-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\small\\img-4.jpg",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\small\\img-4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\small\\img-5.jpg",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\small\\img-5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\small\\img-6.jpg",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\small\\img-6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\small\\img-7.jpg",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\small\\img-7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\users\\avatar-1.jpg",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\users\\avatar-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\users\\avatar-2.jpg",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\users\\avatar-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\users\\avatar-3.jpg",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\users\\avatar-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\users\\avatar-4.jpg",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\users\\avatar-4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\users\\avatar-5.jpg",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\users\\avatar-5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\users\\avatar-6.jpg",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\users\\avatar-6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\users\\avatar-7.jpg",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\users\\avatar-7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\users\\avatar-8.jpg",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\users\\avatar-8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\images\\verification-img.png",
+      "PackagePath": "staticwebassets\\adminAssets\\images\\verification-img.png"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\app.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\app.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\alerts.init.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\alerts.init.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\apexcharts.init.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\apexcharts.init.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\auth-2-carousel.init.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\auth-2-carousel.init.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\bootstrap-toastr.init.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\bootstrap-toastr.init.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\calendar.init.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\calendar.init.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\calendars-full.init.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\calendars-full.init.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\calendars.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\calendars.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\chartjs.init.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\chartjs.init.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\coming-soon.init.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\coming-soon.init.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\crypto-dashboard.init.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\crypto-dashboard.init.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\crypto-exchange.init.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\crypto-exchange.init.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\crypto-kyc-app.init.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\crypto-kyc-app.init.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\crypto-orders.init.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\crypto-orders.init.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\crypto-wallet.init.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\crypto-wallet.init.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\dashboard-blog.init.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\dashboard-blog.init.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\dashboard.init.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\dashboard.init.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\datatables.init.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\datatables.init.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\echarts.init.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\echarts.init.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\ecommerce-cart.init.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\ecommerce-cart.init.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\ecommerce-select2.init.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\ecommerce-select2.init.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\email-editor.init.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\email-editor.init.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\file-manager.init.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\file-manager.init.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\flot.init.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\flot.init.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\fontawesome.init.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\fontawesome.init.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\form-advanced.init.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\form-advanced.init.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\form-editor.init.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\form-editor.init.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\form-mask.init.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\form-mask.init.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\form-repeater.int.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\form-repeater.int.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\form-validation.init.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\form-validation.init.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\form-wizard.init.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\form-wizard.init.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\form-xeditable.init.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\form-xeditable.init.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\gmaps.init.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\gmaps.init.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\ico-landing.init.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\ico-landing.init.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\jquery-knob.init.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\jquery-knob.init.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\leaflet-map.init.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\leaflet-map.init.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\leaflet-us-states.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\leaflet-us-states.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\lightbox.init.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\lightbox.init.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\materialdesign.init.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\materialdesign.init.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\modal.init.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\modal.init.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\product-filter-range.init.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\product-filter-range.init.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\profile.init.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\profile.init.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\project-overview.init.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\project-overview.init.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\range-sliders.init.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\range-sliders.init.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\rating-init.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\rating-init.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\saas-dashboard.init.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\saas-dashboard.init.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\schedules.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\schedules.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\session-timeout.init.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\session-timeout.init.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\sparklines.init.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\sparklines.init.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\sweet-alerts.init.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\sweet-alerts.init.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\table-editable.int.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\table-editable.int.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\table-responsive.init.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\table-responsive.init.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\task-create.init.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\task-create.init.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\task-form.init.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\task-form.init.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\task-kanban.init.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\task-kanban.init.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\tasklist.init.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\tasklist.init.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\timeline.init.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\timeline.init.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\toastr.init.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\toastr.init.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\tui-charts.init.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\tui-charts.init.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\two-step-verification.init.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\two-step-verification.init.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\validation.init.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\validation.init.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\js\\pages\\vector-maps.init.js",
+      "PackagePath": "staticwebassets\\adminAssets\\js\\pages\\vector-maps.init.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\@chenfengyuan\\datepicker\\datepicker.min.css",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\@chenfengyuan\\datepicker\\datepicker.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\@chenfengyuan\\datepicker\\datepicker.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\@chenfengyuan\\datepicker\\datepicker.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\@curiosityx\\bootstrap-session-timeout\\index.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\@curiosityx\\bootstrap-session-timeout\\index.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\@fullcalendar\\bootstrap\\main.min.css",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\@fullcalendar\\bootstrap\\main.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\@fullcalendar\\bootstrap\\main.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\@fullcalendar\\bootstrap\\main.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\@fullcalendar\\core\\main.min.css",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\@fullcalendar\\core\\main.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\@fullcalendar\\core\\main.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\@fullcalendar\\core\\main.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\@fullcalendar\\daygrid\\main.min.css",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\@fullcalendar\\daygrid\\main.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\@fullcalendar\\daygrid\\main.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\@fullcalendar\\daygrid\\main.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\@fullcalendar\\interaction\\main.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\@fullcalendar\\interaction\\main.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\@fullcalendar\\timegrid\\main.min.css",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\@fullcalendar\\timegrid\\main.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\@fullcalendar\\timegrid\\main.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\@fullcalendar\\timegrid\\main.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\admin-resources\\jquery.vectormap\\jquery-jvectormap-1.2.2.css",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\admin-resources\\jquery.vectormap\\jquery-jvectormap-1.2.2.css"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\admin-resources\\jquery.vectormap\\jquery-jvectormap-1.2.2.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\admin-resources\\jquery.vectormap\\jquery-jvectormap-1.2.2.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\admin-resources\\jquery.vectormap\\maps\\jquery-jvectormap-au-mill-en.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\admin-resources\\jquery.vectormap\\maps\\jquery-jvectormap-au-mill-en.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\admin-resources\\jquery.vectormap\\maps\\jquery-jvectormap-ca-lcc-en.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\admin-resources\\jquery.vectormap\\maps\\jquery-jvectormap-ca-lcc-en.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\admin-resources\\jquery.vectormap\\maps\\jquery-jvectormap-in-mill-en.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\admin-resources\\jquery.vectormap\\maps\\jquery-jvectormap-in-mill-en.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\admin-resources\\jquery.vectormap\\maps\\jquery-jvectormap-uk-mill-en.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\admin-resources\\jquery.vectormap\\maps\\jquery-jvectormap-uk-mill-en.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\admin-resources\\jquery.vectormap\\maps\\jquery-jvectormap-us-il-chicago-mill-en.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\admin-resources\\jquery.vectormap\\maps\\jquery-jvectormap-us-il-chicago-mill-en.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\admin-resources\\jquery.vectormap\\maps\\jquery-jvectormap-us-merc-en.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\admin-resources\\jquery.vectormap\\maps\\jquery-jvectormap-us-merc-en.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\admin-resources\\jquery.vectormap\\maps\\jquery-jvectormap-world-mill-en.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\admin-resources\\jquery.vectormap\\maps\\jquery-jvectormap-world-mill-en.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\admin-resources\\rwd-table\\rwd-table.min.css",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\admin-resources\\rwd-table\\rwd-table.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\admin-resources\\rwd-table\\rwd-table.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\admin-resources\\rwd-table\\rwd-table.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\apexcharts\\apexcharts.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\apexcharts\\apexcharts.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\bootstrap-datepicker\\css\\bootstrap-datepicker.min.css",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\bootstrap-datepicker\\css\\bootstrap-datepicker.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\bootstrap-datepicker\\js\\bootstrap-datepicker.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\bootstrap-datepicker\\js\\bootstrap-datepicker.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\bootstrap-editable\\css\\bootstrap-editable.css",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\bootstrap-editable\\css\\bootstrap-editable.css"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\bootstrap-editable\\img\\clear.png",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\bootstrap-editable\\img\\clear.png"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\bootstrap-editable\\img\\loading.gif",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\bootstrap-editable\\img\\loading.gif"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\bootstrap-editable\\js\\index.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\bootstrap-editable\\js\\index.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\bootstrap-maxlength\\bootstrap-maxlength.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\bootstrap-maxlength\\bootstrap-maxlength.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\bootstrap-rating\\bootstrap-rating.css",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\bootstrap-rating\\bootstrap-rating.css"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\bootstrap-rating\\bootstrap-rating.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\bootstrap-rating\\bootstrap-rating.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\bootstrap-timepicker\\css\\bootstrap-timepicker.min.css",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\bootstrap-timepicker\\css\\bootstrap-timepicker.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\bootstrap-timepicker\\js\\bootstrap-timepicker.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\bootstrap-timepicker\\js\\bootstrap-timepicker.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\bootstrap-touchspin\\jquery.bootstrap-touchspin.min.css",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\bootstrap-touchspin\\jquery.bootstrap-touchspin.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\bootstrap-touchspin\\jquery.bootstrap-touchspin.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\bootstrap-touchspin\\jquery.bootstrap-touchspin.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\bootstrap\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\bootstrap\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\chance\\chance.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\chance\\chance.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\chart.js\\Chart.bundle.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\chart.js\\Chart.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\datatables.net-bs4\\css\\dataTables.bootstrap4.min.css",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\datatables.net-bs4\\css\\dataTables.bootstrap4.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\datatables.net-bs4\\js\\dataTables.bootstrap4.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\datatables.net-bs4\\js\\dataTables.bootstrap4.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\datatables.net-buttons-bs4\\css\\buttons.bootstrap4.min.css",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\datatables.net-buttons-bs4\\css\\buttons.bootstrap4.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\datatables.net-buttons-bs4\\js\\buttons.bootstrap4.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\datatables.net-buttons-bs4\\js\\buttons.bootstrap4.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\datatables.net-buttons\\js\\buttons.colVis.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\datatables.net-buttons\\js\\buttons.colVis.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\datatables.net-buttons\\js\\buttons.html5.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\datatables.net-buttons\\js\\buttons.html5.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\datatables.net-buttons\\js\\buttons.print.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\datatables.net-buttons\\js\\buttons.print.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\datatables.net-buttons\\js\\dataTables.buttons.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\datatables.net-buttons\\js\\dataTables.buttons.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\datatables.net-responsive-bs4\\css\\responsive.bootstrap4.min.css",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\datatables.net-responsive-bs4\\css\\responsive.bootstrap4.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\datatables.net-responsive-bs4\\js\\responsive.bootstrap4.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\datatables.net-responsive-bs4\\js\\responsive.bootstrap4.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\datatables.net-responsive\\js\\dataTables.responsive.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\datatables.net-responsive\\js\\dataTables.responsive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\datatables.net\\js\\jquery.dataTables.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\datatables.net\\js\\jquery.dataTables.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\dragula\\dragula.min.css",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\dragula\\dragula.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\dragula\\dragula.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\dragula\\dragula.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\dropzone\\min\\dropzone.min.css",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\dropzone\\min\\dropzone.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\dropzone\\min\\dropzone.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\dropzone\\min\\dropzone.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\echarts\\echarts.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\echarts\\echarts.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\flot-charts\\jquery.flot.crosshair.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\flot-charts\\jquery.flot.crosshair.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\flot-charts\\jquery.flot.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\flot-charts\\jquery.flot.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\flot-charts\\jquery.flot.pie.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\flot-charts\\jquery.flot.pie.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\flot-charts\\jquery.flot.resize.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\flot-charts\\jquery.flot.resize.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\flot-charts\\jquery.flot.selection.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\flot-charts\\jquery.flot.selection.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\flot-charts\\jquery.flot.stack.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\flot-charts\\jquery.flot.stack.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\flot-charts\\jquery.flot.time.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\flot-charts\\jquery.flot.time.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\flot.curvedLines\\curvedLines.html",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\flot.curvedLines\\curvedLines.html"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\gmaps\\gmaps.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\gmaps\\gmaps.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\inputmask\\min\\jquery.inputmask.bundle.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\inputmask\\min\\jquery.inputmask.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\ion-rangeslider\\css\\ion.rangeSlider.min.css",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\ion-rangeslider\\css\\ion.rangeSlider.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\ion-rangeslider\\js\\ion.rangeSlider.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\ion-rangeslider\\js\\ion.rangeSlider.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\jquery-countdown\\jquery.countdown.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\jquery-countdown\\jquery.countdown.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\jquery-knob\\jquery.knob.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\jquery-knob\\jquery.knob.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\jquery-sparkline\\jquery.sparkline.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\jquery-sparkline\\jquery.sparkline.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\jquery-steps\\build\\jquery.steps.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\jquery-steps\\build\\jquery.steps.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\jquery-ui-dist\\jquery-ui.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\jquery-ui-dist\\jquery-ui.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\jquery-validation\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\jquery-validation\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\jquery.easing\\jquery.easing.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\jquery.easing\\jquery.easing.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\jquery.flot.tooltip\\js\\jquery.flot.tooltip.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\jquery.flot.tooltip\\js\\jquery.flot.tooltip.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\jquery.repeater\\jquery.repeater.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\jquery.repeater\\jquery.repeater.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\jquery\\jquery.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\jquery\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\jszip\\jszip.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\jszip\\jszip.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\leaflet\\images\\layers-2x.png",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\leaflet\\images\\layers-2x.png"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\leaflet\\images\\layers.png",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\leaflet\\images\\layers.png"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\leaflet\\images\\marker-icon.png",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\leaflet\\images\\marker-icon.png"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\leaflet\\leaflet.css",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\leaflet\\leaflet.css"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\leaflet\\leaflet.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\leaflet\\leaflet.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\magnific-popup\\jquery.magnific-popup.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\magnific-popup\\jquery.magnific-popup.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\magnific-popup\\magnific-popup.css",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\magnific-popup\\magnific-popup.css"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\masonry-layout\\masonry.pkgd.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\masonry-layout\\masonry.pkgd.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\metismenu\\metisMenu.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\metismenu\\metisMenu.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\moment\\min\\moment.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\moment\\min\\moment.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\node-waves\\waves.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\node-waves\\waves.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\owl.carousel\\assets\\owl.carousel.min.css",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\owl.carousel\\assets\\owl.carousel.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\owl.carousel\\assets\\owl.theme.default.min.css",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\owl.carousel\\assets\\owl.theme.default.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\owl.carousel\\assets\\owl.video.play.png",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\owl.carousel\\assets\\owl.video.play.png"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\owl.carousel\\owl.carousel.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\owl.carousel\\owl.carousel.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\parsleyjs\\parsley.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\parsleyjs\\parsley.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\pdfmake\\build\\pdfmake.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\pdfmake\\build\\pdfmake.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\pdfmake\\build\\vfs_fonts.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\pdfmake\\build\\vfs_fonts.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\select2\\css\\select2.min.css",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\select2\\css\\select2.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\select2\\js\\select2.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\select2\\js\\select2.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\simplebar\\simplebar.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\simplebar\\simplebar.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\spectrum-colorpicker2\\spectrum.min.css",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\spectrum-colorpicker2\\spectrum.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\spectrum-colorpicker2\\spectrum.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\spectrum-colorpicker2\\spectrum.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\summernote\\font\\summernote.eot",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\summernote\\font\\summernote.eot"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\summernote\\font\\summernote.html",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\summernote\\font\\summernote.html"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\summernote\\font\\summernote.ttf",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\summernote\\font\\summernote.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\summernote\\font\\summernote.woff",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\summernote\\font\\summernote.woff"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\summernote\\font\\summernoted41d.eot",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\summernote\\font\\summernoted41d.eot"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\summernote\\summernote-bs4.min.css",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\summernote\\summernote-bs4.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\sweetalert2\\sweetalert2.min.css",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\sweetalert2\\sweetalert2.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\sweetalert2\\sweetalert2.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\sweetalert2\\sweetalert2.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\table-edits\\build\\table-edits.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\table-edits\\build\\table-edits.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\tinymce\\tinymce.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\tinymce\\tinymce.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\toastr\\build\\toastr.min.css",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\toastr\\build\\toastr.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\toastr\\build\\toastr.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\toastr\\build\\toastr.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\tui-calendar\\tui-calendar.min.css",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\tui-calendar\\tui-calendar.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\tui-calendar\\tui-calendar.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\tui-calendar\\tui-calendar.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\tui-chart\\maps\\usa.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\tui-chart\\maps\\usa.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\tui-chart\\tui-chart-all.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\tui-chart\\tui-chart-all.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\tui-chart\\tui-chart.min.css",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\tui-chart\\tui-chart.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\tui-date-picker\\tui-date-picker.min.css",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\tui-date-picker\\tui-date-picker.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\tui-date-picker\\tui-date-picker.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\tui-date-picker\\tui-date-picker.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\tui-dom\\tui-dom.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\tui-dom\\tui-dom.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\tui-time-picker\\tui-time-picker.min.css",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\tui-time-picker\\tui-time-picker.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\libs\\tui-time-picker\\tui-time-picker.min.js",
+      "PackagePath": "staticwebassets\\adminAssets\\libs\\tui-time-picker\\tui-time-picker.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\css\\animate.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\animate.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\css\\et-line-icon.css",
+      "PackagePath": "staticwebassets\\assets\\css\\et-line-icon.css"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\css\\font-awesome.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\font-awesome.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\css\\ionicons.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\ionicons.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\css\\magnific-popup.css",
+      "PackagePath": "staticwebassets\\assets\\css\\magnific-popup.css"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\css\\material-design-iconic-font.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\material-design-iconic-font.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\css\\meanmenu.css",
+      "PackagePath": "staticwebassets\\assets\\css\\meanmenu.css"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\css\\owl.carousel.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\owl.carousel.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\css\\owl.video.play.html",
+      "PackagePath": "staticwebassets\\assets\\css\\owl.video.play.html"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\css\\reset.css",
+      "PackagePath": "staticwebassets\\assets\\css\\reset.css"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\css\\responsive.css",
+      "PackagePath": "staticwebassets\\assets\\css\\responsive.css"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\css\\style.css",
+      "PackagePath": "staticwebassets\\assets\\css\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\fonts\\Material-Design-Iconic-Fontd1f1.ttf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\Material-Design-Iconic-Fontd1f1.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\fonts\\Material-Design-Iconic-Fontd1f1.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\Material-Design-Iconic-Fontd1f1.woff"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\fonts\\Material-Design-Iconic-Fontd1f1.woff2",
+      "PackagePath": "staticwebassets\\assets\\fonts\\Material-Design-Iconic-Fontd1f1.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\fonts\\et-line.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\et-line.eot"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\fonts\\et-line.svg",
+      "PackagePath": "staticwebassets\\assets\\fonts\\et-line.svg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\fonts\\et-line.ttf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\et-line.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\fonts\\et-line.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\et-line.woff"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\fonts\\et-lined41d.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\et-lined41d.eot"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\fonts\\fontawesome-webfont3e6e.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\fontawesome-webfont3e6e.eot"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\fonts\\fontawesome-webfont3e6e.svg",
+      "PackagePath": "staticwebassets\\assets\\fonts\\fontawesome-webfont3e6e.svg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\fonts\\fontawesome-webfont3e6e.ttf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\fontawesome-webfont3e6e.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\fonts\\fontawesome-webfont3e6e.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\fontawesome-webfont3e6e.woff"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\fonts\\fontawesome-webfont3e6e.woff2",
+      "PackagePath": "staticwebassets\\assets\\fonts\\fontawesome-webfont3e6e.woff2"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\fonts\\fontawesome-webfontd41d.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\fontawesome-webfontd41d.eot"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\fonts\\ionicons28b5.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\ionicons28b5.eot"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\fonts\\ionicons28b5.svg",
+      "PackagePath": "staticwebassets\\assets\\fonts\\ionicons28b5.svg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\fonts\\ionicons28b5.ttf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\ionicons28b5.ttf"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\fonts\\ionicons28b5.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\ionicons28b5.woff"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\about\\about.png",
+      "PackagePath": "staticwebassets\\assets\\img\\about\\about.png"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\banner\\banner.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\banner\\banner.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\blog\\blog-detail.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\blog\\blog-detail.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\blog\\blog-img.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\blog\\blog-img.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\blog\\blog1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\blog\\blog1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\blog\\blog2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\blog\\blog2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\blog\\blog3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\blog\\blog3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\blog\\blog4.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\blog\\blog4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\blog\\blog5.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\blog\\blog5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\blog\\blog6.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\blog\\blog6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\blog\\blog7.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\blog\\blog7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\blog\\blog8.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\blog\\blog8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\blog\\blog9.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\blog\\blog9.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\choose\\choose-bd.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\choose\\choose-bd.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\choose\\choose.png",
+      "PackagePath": "staticwebassets\\assets\\img\\choose\\choose.png"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\contact\\contact1.png",
+      "PackagePath": "staticwebassets\\assets\\img\\contact\\contact1.png"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\contact\\contact2.png",
+      "PackagePath": "staticwebassets\\assets\\img\\contact\\contact2.png"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\contact\\contact3.png",
+      "PackagePath": "staticwebassets\\assets\\img\\contact\\contact3.png"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\course\\course-bg.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\course\\course-bg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\course\\course1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\course\\course1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\course\\course2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\course\\course2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\course\\course3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\course\\course3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\course\\course4.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\course\\course4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\course\\course5.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\course\\course5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\course\\course6.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\course\\course6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\course\\course7.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\course\\course7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\course\\course8.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\course\\course8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\course\\course9.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\course\\course9.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\course\\courses-details.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\course\\courses-details.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\event\\event-details.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\event\\event-details.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\event\\event1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\event\\event1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\event\\event10.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\event\\event10.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\event\\event11.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\event\\event11.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\event\\event12.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\event\\event12.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\event\\event13.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\event\\event13.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\event\\event2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\event\\event2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\event\\event3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\event\\event3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\event\\event5.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\event\\event5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\event\\event6.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\event\\event6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\event\\event7.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\event\\event7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\event\\event8.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\event\\event8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\event\\event9.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\event\\event9.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\event\\speaker1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\event\\speaker1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\event\\speaker2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\event\\speaker2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\favicon.png",
+      "PackagePath": "staticwebassets\\assets\\img\\favicon.png"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\footer\\footer1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\footer\\footer1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\footer\\footer2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\footer\\footer2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\footer\\footer3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\footer\\footer3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\footer\\footer4.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\footer\\footer4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\icon\\section.png",
+      "PackagePath": "staticwebassets\\assets\\img\\icon\\section.png"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\icon\\section1.png",
+      "PackagePath": "staticwebassets\\assets\\img\\icon\\section1.png"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\logo\\footer-logo.png",
+      "PackagePath": "staticwebassets\\assets\\img\\logo\\footer-logo.png"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\logo\\logo.png",
+      "PackagePath": "staticwebassets\\assets\\img\\logo\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\logo\\logo2.png",
+      "PackagePath": "staticwebassets\\assets\\img\\logo\\logo2.png"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\notice\\video.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\notice\\video.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\post\\post1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\post\\post1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\post\\post2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\post\\post2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\post\\post3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\post\\post3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\slider\\home.png",
+      "PackagePath": "staticwebassets\\assets\\img\\slider\\home.png"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\slider\\slider1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\slider\\slider1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\slider\\slider2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\slider\\slider2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\slider\\slider3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\slider\\slider3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\teacher\\teacher-details.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\teacher\\teacher-details.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\teacher\\teacher1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\teacher\\teacher1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\teacher\\teacher10.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\teacher\\teacher10.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\teacher\\teacher11.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\teacher\\teacher11.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\teacher\\teacher12.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\teacher\\teacher12.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\teacher\\teacher2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\teacher\\teacher2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\teacher\\teacher3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\teacher\\teacher3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\teacher\\teacher4.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\teacher\\teacher4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\teacher\\teacher5.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\teacher\\teacher5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\teacher\\teacher6.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\teacher\\teacher6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\teacher\\teacher7.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\teacher\\teacher7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\teacher\\teacher8.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\teacher\\teacher8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\teacher\\teacher9.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\teacher\\teacher9.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\testimonial\\testimonial-bg.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\testimonial\\testimonial-bg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\img\\testimonial\\testimonial.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\testimonial\\testimonial.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\js\\ajax-mail.js",
+      "PackagePath": "staticwebassets\\assets\\js\\ajax-mail.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\js\\jquery.magnific-popup.js",
+      "PackagePath": "staticwebassets\\assets\\js\\jquery.magnific-popup.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\js\\jquery.mb.YTPlayer.js",
+      "PackagePath": "staticwebassets\\assets\\js\\jquery.mb.YTPlayer.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\js\\jquery.meanmenu.js",
+      "PackagePath": "staticwebassets\\assets\\js\\jquery.meanmenu.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\js\\jquery.nicescroll.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\jquery.nicescroll.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\js\\main.js",
+      "PackagePath": "staticwebassets\\assets\\js\\main.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\js\\owl.carousel.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\owl.carousel.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\js\\plugins.js",
+      "PackagePath": "staticwebassets\\assets\\js\\plugins.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\js\\vendor\\jquery-3.6.0.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\vendor\\jquery-3.6.0.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\js\\vendor\\jquery-migrate-3.3.2.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\vendor\\jquery-migrate-3.3.2.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\js\\vendor\\modernizr-3.11.2.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\vendor\\modernizr-3.11.2.min.js"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.EduHomeUI.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.EduHomeUI.props",
+      "PackagePath": "build\\EduHomeUI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.EduHomeUI.props",
+      "PackagePath": "buildMultiTargeting\\EduHomeUI.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.EduHomeUI.props",
+      "PackagePath": "buildTransitive\\EduHomeUI.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

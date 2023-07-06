@@ -1,3 +1,4 @@
+using EduHome.Core.Entities;
 using EduHome.DataAccess.Contexts;
 using EduHomeUI.Services.Concretes;
 using EduHomeUI.Services.Interfaces;
@@ -7,7 +8,7 @@ using System;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
-builder.Services.AddAutoMapper(typeof(Program).Assembly);
+builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
