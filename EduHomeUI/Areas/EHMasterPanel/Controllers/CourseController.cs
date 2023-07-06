@@ -22,6 +22,10 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
         {
             return View(await _context.courses.ToListAsync());
         }
+        public async Task<IActionResult> Details()
+        {
+            return View(await _context.courseDetails.ToListAsync());
+        }
         public IActionResult Create()
         {
             var categories = _context.courseCategories
