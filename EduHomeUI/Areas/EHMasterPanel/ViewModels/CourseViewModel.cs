@@ -5,7 +5,8 @@
 		public string Name { get; set; }
 		public string Description { get; set; }
 		public string ImagePath { get; set; }
-		public DateTime StartDate { get; set; }
+        public string ImageName { get; set; }
+        public DateTime StartDate { get; set; }
 		public string Duration { get; set; }
 		public string SkillLevel { get; set; }
 		public string Language { get; set; }
