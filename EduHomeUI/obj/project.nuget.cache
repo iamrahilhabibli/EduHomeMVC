@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "eA9izRRMS6sIt6v2p+Fs6jRHDV+DxZxlPxbDyz0aJzhIC6GtZzQRHlrRFCmPVvKgAg9XdR8RxasRW1uLd9HMgw==",
+  "dgSpecHash": "v2U8McyzBZrfj9WA8AAZZ42o1sVjlA3aS3GvGoxzHVhghqAghSZvsWpSx3x7RnlBT9zY2xoXXYqnUEevmTKDcQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Rhabi\\OneDrive\\Documents\\FinalProject\\EduHomeMVCProject\\EduHomeUI\\EduHomeUI.csproj",
+  "projectFilePath": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVCProject\\EduHomeUI\\EduHomeUI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Rhabi\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Rhabi\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

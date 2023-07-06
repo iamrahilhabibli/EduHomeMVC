@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
-using EduHome.Core.Abstraction;
+using EduHome.Core.Entities.Common;
 
 namespace EduHome.Core.Entities
 {
