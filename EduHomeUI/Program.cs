@@ -7,7 +7,7 @@ using System;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
-builder.Services.AddAutoMapper(typeof(Program));
+builder.Services.AddAutoMapper(typeof(Program).Assembly);
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
@@ -25,7 +25,5 @@ app.MapControllerRoute(
     name: "Default",
     pattern: "{controller=Home}/{action=Index}/{Id?}"
 );
-
-
 app.Run();
 

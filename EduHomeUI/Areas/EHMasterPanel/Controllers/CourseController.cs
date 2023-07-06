@@ -22,17 +22,17 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
         {
             return View(await _context.courses.ToListAsync());
         }
-		public async Task<IActionResult> Details(Guid courseId)
-		{
-			var courseDetails = await _context.courseDetails
-				.FirstOrDefaultAsync(cd => cd.CourseId == courseId);
+		//public async Task<IActionResult> Details(Guid courseId)
+		//{
+		//	var courseDetails = await _context.courseDetails
+		//		.FirstOrDefaultAsync(cd => cd.CourseId == courseId);
 
-			if (courseDetails == null)
-			{
-				return NotFound(); 
-			}
-			return View(courseDetails);
-		}
+		//	if (courseDetails == null)
+		//	{
+		//		return NotFound(); 
+		//	}
+		//	return View(courseDetails);
+		//}
 
 		public IActionResult Create()
         {
@@ -45,42 +45,42 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
             return View();
         }
 
-        [HttpPost]
-        [AutoValidateAntiforgeryToken]
-        public async Task<IActionResult> Create(CourseViewModel courses)
-        {
-            if (!ModelState.IsValid)
-            {
-                var categories = _context.courseCategories.ToList();
-                ViewBag.Categories = categories;
-                return View(courses);
-            }
+        //[HttpPost]
+        //[AutoValidateAntiforgeryToken]
+        //public async Task<IActionResult> Create(CourseViewModel courses)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        var categories = _context.courseCategories.ToList();
+        //        ViewBag.Categories = categories;
+        //        return View(courses);
+        //    }
 
-            Course newCourse = _mapper.Map<Course>(courses);
+        //    Course newCourse = _mapper.Map<Course>(courses);
 
-            CourseDetails details = new CourseDetails
-            {
-                StartDate = courses.StartDate,
-                Duration = courses.Duration,
-                SkillLevel = courses.SkillLevel,
-                Language = courses.Language,
-                StudentCount = courses.StudentCount,
-                Assesment = courses.Assesment,
-                Fee = courses.Fee,
-                DateCreated = DateTime.Now,
-                DateModified = DateTime.Now
-            };
-            newCourse.CourseCatagory = _context.courseCategories.FirstOrDefault(c => c.Id == courses.CategoryId);
-            newCourse.DateCreated = DateTime.Now;
-            newCourse.DateModified = DateTime.Now;
-            newCourse.Details = details;
+        //    CourseDetails details = new CourseDetails
+        //    {
+        //        StartDate = courses.StartDate,
+        //        Duration = courses.Duration,
+        //        SkillLevel = courses.SkillLevel,
+        //        Language = courses.Language,
+        //        StudentCount = courses.StudentCount,
+        //        Assesment = courses.Assesment,
+        //        Fee = courses.Fee,
+        //        DateCreated = DateTime.Now,
+        //        DateModified = DateTime.Now
+        //    };
+        //    newCourse.CourseCatagory = _context.courseCategories.FirstOrDefault(c => c.Id == courses.CategoryId);
+        //    newCourse.DateCreated = DateTime.Now;
+        //    newCourse.DateModified = DateTime.Now;
+        //    newCourse.Details = details;
 
-            await _context.courses.AddAsync(newCourse);
-            await _context.SaveChangesAsync();
+        //    await _context.courses.AddAsync(newCourse);
+        //    await _context.SaveChangesAsync();
 
-            TempData["Success"] = "Course Created Successfully";
-            return RedirectToAction(nameof(Index));
-        }
+        //    TempData["Success"] = "Course Created Successfully";
+        //    return RedirectToAction(nameof(Index));
+        //}
 
 
 

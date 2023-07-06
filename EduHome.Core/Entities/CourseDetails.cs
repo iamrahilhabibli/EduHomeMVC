@@ -1,19 +1,23 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using EduHome.Core.Entities.Common;
+﻿using EduHome.Core.Entities.Common;
 
 namespace EduHome.Core.Entities
 {
     public class CourseDetails:BaseEntity
     {
-        public Course Course { get; set; }
-        [ForeignKey("Course")]
-        public Guid CourseId { get; set; }
-        public DateTime StartDate { get; set; }
-        public string Duration { get; set; }
-        public string SkillLevel { get; set; }
-        public string Language { get; set; }
+        public string? HowToApply { get; set; }
+        public string? AboutCourse { get; set; }
+        public string? Certification { get; set; }
+        public DateTime Start { get; set; }
+        public string? Duration { get; set; }
+        public string? ClassDuration { get; set; }
+        public decimal CourseFee { get; set; }
+        public Course? Course { get; set; }
+        public Language? LanguageOption { get; set; }
+        public Assesment? Assesment { get; set; }
+        public SkillLevel? Skill { get; set; }
+        public int LanguageOptionId { get; set; }
+        public int AssesmentId { get; set; }
+        public int SkillId { get; set; }
         public int StudentCount { get; set; }
-        public string Assesment { get; set; }
-        public decimal Fee { get; set; }
     }
 }
