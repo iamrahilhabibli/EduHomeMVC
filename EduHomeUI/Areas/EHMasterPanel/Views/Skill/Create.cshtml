@@ -1,0 +1,31 @@
+﻿
+@using EduHomeUI.Areas.EHMasterPanel.ViewModels.SkillViewModels;
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model SkillViewModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="row">
+
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Create course</h4>
+                <form method="post" class="app-search d-none d-lg-block">
+                    <div class="mb-3 row">
+                        <label asp-for="Skill" for="example-text-input" class="col-md-2 col-form-label">Skill</label>
+                        <div class="col-md-10">
+                            <input asp-for="Skill" class="form-control" type="text">
+                        </div>
+                    </div>
+
+                    <div>
+                        <button type="submit" class="btn btn-primary waves-effect waves-light">Create</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div> <!-- end col -->
+</div>
