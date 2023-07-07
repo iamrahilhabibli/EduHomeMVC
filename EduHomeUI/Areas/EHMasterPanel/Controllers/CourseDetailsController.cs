@@ -14,10 +14,10 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
             _context = context;
             _courseDetailsService = courseDetailsService;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var courseDetails = 
-            return View();
+            var courseDetails = await _courseDetailsService.GetAllCourseDetailsAsync();
+            return View(courseDetails);
         }
     }
 }
