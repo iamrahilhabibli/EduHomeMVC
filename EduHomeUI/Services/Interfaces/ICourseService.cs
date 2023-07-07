@@ -13,6 +13,7 @@ namespace EduHomeUI.Services.Interfaces
         Task<bool> UpdateCourseIsDeleted(Guid courseId, bool isDeleted);
         Task<bool> UpdateCourseDetailIsDeleted(Guid courseDetailId, bool isDeleted);
         Task<bool> DeleteCourseById(Guid courseId);
+        Task<Course> GetCourseByIdCourse(Guid courseId);
 
     }
 }

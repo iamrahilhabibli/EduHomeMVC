@@ -29,19 +29,23 @@
 						<tbody>
 							@foreach (var course in Model)
 							{
-								<tr>
-									<th scope="row">@count</th>
-									<td> <img src="/@course.ImagePath" style="width:100px" /> </td>
-									<td>@course.Name</td>
-									<td>@course.Description</td>
-									<td>
-										<a asp-action="Update" asp-route-id="@course.Id" class="btn btn-warning mb-4">	<i class="bi bi-pencil-square"></i></a>
-										<a asp-action="Delete" asp-route-id="@course.Id" class="btn btn-danger mb-4"><i class="bi bi-trash-fill"></i></a>
-										<a asp-action="Details" asp-route-id="@course.Id" class="btn btn-success mb-4"><i class="bi bi-chat-left-dots"></i></a>
-									</td>
-								</tr>
-								count++;
+								@if (!course.IsDeleted)
+								{
+									<tr>
+										<th scope="row">@count</th>
+										<td> <img src="/@course.ImagePath" style="width:100px" /> </td>
+										<td>@course.Name</td>
+										<td>@course.Description</td>
+										<td>
+											<a asp-action="Update" asp-route-id="@course.Id" class="btn btn-warning mb-4"><i class="bi bi-pencil-square"></i></a>
+											<a asp-action="Delete" asp-route-id="@course.Id" class="btn btn-danger mb-4"><i class="bi bi-trash-fill"></i></a>
+											<a asp-action="Details" asp-route-id="@course.Id" class="btn btn-success mb-4"><i class="bi bi-chat-left-dots"></i></a>
+										</td>
+									</tr>
+									count++;
+								}
 							}
+
 
 						</tbody>
 					</table>

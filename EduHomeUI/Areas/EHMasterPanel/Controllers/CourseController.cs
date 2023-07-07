@@ -59,18 +59,20 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
 
         public async Task<IActionResult> Delete(Guid id)
         {
-            if (!await _courseService.GetCourseById(id))
+            var course = await _courseService.GetCourseByIdCourse(id);
+
+            if (course == null)
             {
                 return NotFound();
             }
 
-            return View();
+            return View(course);
         }
 
         [HttpPost]
         [ActionName("Delete")]
         [AutoValidateAntiforgeryToken]
-        public async Task<IActionResult> DeletePost(Guid id)
+        public async Task<IActionResult> DeleteCourse(Guid id)
         {
             if (!await _courseService.GetCourseById(id))
             {

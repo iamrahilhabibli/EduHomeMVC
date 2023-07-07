@@ -62,6 +62,11 @@ namespace EduHomeUI.Services.Concretes
             if (course is null) return false;
             return true;
         }
+        public async Task<Course> GetCourseByIdCourse(Guid courseId)
+        {
+            return await _context.courses.FindAsync(courseId);
+        }
+
         public async Task<bool> UpdateCourseIsDeleted(Guid courseId, bool isDeleted)
         {
             var course = await _context.courses.FindAsync(courseId);
@@ -83,6 +88,22 @@ namespace EduHomeUI.Services.Concretes
             return true;
         }
 
+        public async Task<bool> DeleteCourseById(Guid courseId)
+        {
+            var course = await _context.courses.FindAsync(courseId);
+
+            if (course is null)
+            {
+                return false;
+            }
+
+            course.IsDeleted = true;
+            _context.courses.Update(course);
+            await _context.SaveChangesAsync();
+
+            return true;
+        }
+
 
         public async Task<bool> GetCourseDetailById(Guid courseId)
         {
@@ -95,11 +116,6 @@ namespace EduHomeUI.Services.Concretes
             var courseDetails = await _context.courseDetails
             .FirstOrDefaultAsync(cd => cd.Course.Id == courseId);
             return courseDetails;
-        }
-
-        public Task<bool> DeleteCourseById(Guid courseId)
-        {
-            throw new NotImplementedException();
         }
     }
 }
