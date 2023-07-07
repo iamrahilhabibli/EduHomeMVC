@@ -51,10 +51,7 @@ namespace EduHome.DataAccess.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("CourseCategoryId")
-                        .HasColumnType("int");
-
-                    b.Property<Guid?>("CourseCategoryId1")
+                    b.Property<Guid>("CourseCategoryId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid>("CourseDetailsId")
@@ -83,7 +80,7 @@ namespace EduHome.DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CourseCategoryId1");
+                    b.HasIndex("CourseCategoryId");
 
                     b.HasIndex("CourseDetailsId")
                         .IsUnique();
@@ -122,10 +119,7 @@ namespace EduHome.DataAccess.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("AssesmentId")
-                        .HasColumnType("int");
-
-                    b.Property<Guid?>("AssesmentId1")
+                    b.Property<Guid>("AssesmentId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("ClassDuration")
@@ -146,16 +140,10 @@ namespace EduHome.DataAccess.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<int>("LanguageOptionId")
-                        .HasColumnType("int");
-
-                    b.Property<Guid?>("LanguageOptionId1")
+                    b.Property<Guid>("LanguageOptionId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("SkillId")
-                        .HasColumnType("int");
-
-                    b.Property<Guid?>("SkillId1")
+                    b.Property<Guid>("SkillLevelId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("Start")
@@ -166,11 +154,11 @@ namespace EduHome.DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AssesmentId1");
+                    b.HasIndex("AssesmentId");
 
-                    b.HasIndex("LanguageOptionId1");
+                    b.HasIndex("LanguageOptionId");
 
-                    b.HasIndex("SkillId1");
+                    b.HasIndex("SkillLevelId");
 
                     b.ToTable("courseDetails");
                 });
@@ -225,7 +213,9 @@ namespace EduHome.DataAccess.Migrations
                 {
                     b.HasOne("EduHome.Core.Entities.CourseCategory", "CourseCategory")
                         .WithMany("Courses")
-                        .HasForeignKey("CourseCategoryId1");
+                        .HasForeignKey("CourseCategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("EduHome.Core.Entities.CourseDetails", "Details")
                         .WithOne("Course")
@@ -242,15 +232,21 @@ namespace EduHome.DataAccess.Migrations
                 {
                     b.HasOne("EduHome.Core.Entities.Assesment", "Assesment")
                         .WithMany()
-                        .HasForeignKey("AssesmentId1");
+                        .HasForeignKey("AssesmentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("EduHome.Core.Entities.Language", "LanguageOption")
                         .WithMany()
-                        .HasForeignKey("LanguageOptionId1");
+                        .HasForeignKey("LanguageOptionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("EduHome.Core.Entities.SkillLevel", "Skill")
                         .WithMany()
-                        .HasForeignKey("SkillId1");
+                        .HasForeignKey("SkillLevelId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Assesment");
 
