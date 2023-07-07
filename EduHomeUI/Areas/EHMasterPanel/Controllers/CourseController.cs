@@ -23,7 +23,7 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            return View(await _context.courses.ToListAsync());
+            return View();
         }
 		//public async Task<IActionResult> Details(Guid courseId)
 		//{

@@ -46,6 +46,9 @@ namespace EduHomeUI.Services.Concretes
             return true;
         }
 
-
+        public async Task<List<Course>> GetAllCourseAsync()
+        {
+            return await _context.courses.ToListAsync();
+        }
     }
 }
