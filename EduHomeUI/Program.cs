@@ -17,6 +17,7 @@ builder.Services.AddScoped<ICourseCategoryService, CourseCategoryService>();
 builder.Services.AddScoped<ICourseService, CourseService>();
 builder.Services.AddScoped<ILanguageService, LanguageService>();
 builder.Services.AddScoped<IAssesmentService, AssesmentService>();
+builder.Services.AddScoped<ISkillService, SkillService>();
 
 
 
