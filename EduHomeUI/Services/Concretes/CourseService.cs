@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using EduHome.Core.Entities;
 using EduHome.DataAccess.Contexts;
-using EduHomeUI.Areas.EHMasterPanel.ViewModels;
+using EduHomeUI.Areas.EHMasterPanel.ViewModels.CourseViewModels;
 using EduHomeUI.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
@@ -34,10 +34,14 @@ namespace EduHomeUI.Services.Concretes
             courseDetail.LanguageOption = languageOption;
             courseDetail.Skill = skillLevel;
             courseDetail.Assesment = assesment;
+            courseDetail.DateCreated = DateTime.Now;
+            courseDetail.DateModified= DateTime.Now;
 
             var course = _mapper.Map<CourseViewModel, Course>(courses);
             course.CourseCategory = courseCategory;
             course.Details = courseDetail;
+            course.DateModified = DateTime.Now;
+            course.DateCreated = DateTime.Now;
 
             _context.courseDetails.Add(courseDetail);
             _context.courses.Add(course);

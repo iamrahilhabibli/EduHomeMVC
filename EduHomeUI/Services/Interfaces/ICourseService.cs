@@ -1,5 +1,5 @@
 ﻿using EduHome.Core.Entities;
-using EduHomeUI.Areas.EHMasterPanel.ViewModels;
+using EduHomeUI.Areas.EHMasterPanel.ViewModels.CourseViewModels;
 
 namespace EduHomeUI.Services.Interfaces
 {

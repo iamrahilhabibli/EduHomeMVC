@@ -1,6 +1,6 @@
 ﻿using EduHome.Core.Entities;
 using EduHome.DataAccess.Contexts;
-using EduHomeUI.Areas.EHMasterPanel.ViewModels;
+using EduHomeUI.Areas.EHMasterPanel.ViewModels.CourseViewModels;
 using EduHomeUI.Services.Interfaces;
 
 namespace EduHomeUI.Services.Concretes

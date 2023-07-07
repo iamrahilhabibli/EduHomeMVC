@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using EduHome.Core.Entities;
 using EduHome.DataAccess.Contexts;
-using EduHomeUI.Areas.EHMasterPanel.ViewModels;
+using EduHomeUI.Areas.EHMasterPanel.ViewModels.CourseViewModels;
 using EduHomeUI.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -23,7 +23,8 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            return View();
+            var coursesList = await _courseService.GetAllCourseAsync();
+            return View(coursesList);
         }
 		//public async Task<IActionResult> Details(Guid courseId)
 		//{

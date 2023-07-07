@@ -1,14 +1,14 @@
 ﻿using AutoMapper;
 using EduHome.Core.Entities;
 using EduHome.DataAccess.Contexts;
-using EduHomeUI.Areas.EHMasterPanel.ViewModels;
+using EduHomeUI.Areas.EHMasterPanel.ViewModels.CourseViewModels;
 using EduHomeUI.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace EduHomeUI.Areas.EHMasterPanel.Controllers
 {
-	[Area("EHMasterPanel")]
+    [Area("EHMasterPanel")]
 	public class CourseCategoryController : Controller
 	{
 		private readonly AppDbContext _context;
