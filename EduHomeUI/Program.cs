@@ -14,7 +14,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
 });
 builder.Services.AddScoped<ICourseCategoryService, CourseCategoryService>();
-builder.Services.AddScoped<ICourseService, CourseService>();        
+builder.Services.AddScoped<ICourseService, CourseService>();
+builder.Services.AddScoped<ICourseDetailsService, CourseDetailsService>();
 
 
 var app = builder.Build();
