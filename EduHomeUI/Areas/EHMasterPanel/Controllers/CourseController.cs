@@ -57,8 +57,6 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
         }
 
 
-
-
         //public async Task<IActionResult> Delete(Guid Id)
         //{
 
