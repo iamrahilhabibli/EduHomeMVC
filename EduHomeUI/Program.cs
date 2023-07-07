@@ -15,7 +15,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 });
 builder.Services.AddScoped<ICourseCategoryService, CourseCategoryService>();
 builder.Services.AddScoped<ICourseService, CourseService>();
-builder.Services.AddScoped<ICourseDetailsService, CourseDetailsService>();
+
 
 
 var app = builder.Build();
