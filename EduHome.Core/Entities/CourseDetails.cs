@@ -5,9 +5,7 @@ namespace EduHome.Core.Entities
 {
     public class CourseDetails : BaseEntity
     {
-        //public string? HowToApply { get; set; }
-        //public string? AboutCourse { get; set; }
-        //public string? Certification { get; set; }
+      
         public DateTime Start { get; set; }
         public string? Duration { get; set; }
         public string? ClassDuration { get; set; }

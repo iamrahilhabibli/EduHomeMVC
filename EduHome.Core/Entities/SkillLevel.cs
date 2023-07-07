@@ -1,10 +1,9 @@
-﻿using EduHome.Core.Interfaces;
+﻿using EduHome.Core.Entities.Common;
 
 namespace EduHome.Core.Entities
 {
-    public class SkillLevel : IEntity
+	public class SkillLevel : BaseEntity
     {
-        public int Id { get; set; }
         public string? Skill { get; set; }
         CourseDetails? CourseDetail { get; set; }
 

@@ -62,5 +62,12 @@ namespace EduHomeUI.Services.Concretes
             if (course is null) return false;
             return true;
         }
-    }
+
+		public async Task<CourseDetails> GetCourseDetailsAsync(Guid courseId)
+		{
+            var courseDetails = await _context.courseDetails
+            .FirstOrDefaultAsync(cd => cd.Course.Id == courseId);
+            return courseDetails;
+        }
+	}
 }

@@ -26,19 +26,14 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
             var coursesList = await _courseService.GetAllCourseAsync();
             return View(coursesList);
         }
-		//public async Task<IActionResult> Details(Guid courseId)
-		//{
-		//	var courseDetails = await _context.courseDetails
-		//		.FirstOrDefaultAsync(cd => cd.CourseId == courseId);
+        public async Task<IActionResult> Details(Guid courseId)
+        {
+            if (courseId == Guid.Empty) return NotFound();
+            var courseDetails =   _courseService.GetCourseDetailsAsync(courseId);
+            return View(courseDetails);
+        }
 
-		//	if (courseDetails == null)
-		//	{
-		//		return NotFound(); 
-		//	}
-		//	return View(courseDetails);
-		//}
-
-		public async Task<IActionResult> Create()
+        public async Task<IActionResult> Create()
         {
             ViewBag.Categories = await _context.courseCategories.ToListAsync();
             ViewBag.Assesments = await _context.Assesments.ToListAsync();

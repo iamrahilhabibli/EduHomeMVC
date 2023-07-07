@@ -1,10 +1,9 @@
-﻿using EduHome.Core.Interfaces;
+﻿using EduHome.Core.Entities.Common;
 
 namespace EduHome.Core.Entities
 {
-    public class Assesment:IEntity
+	public class Assesment:BaseEntity
     {
-        public int Id { get; set; }
         public string? AssesmentType { get; set; }
         CourseDetails? CourseDetail { get; set; }
     }

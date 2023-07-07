@@ -1,10 +1,9 @@
-﻿using EduHome.Core.Interfaces;
+﻿using EduHome.Core.Entities.Common;
 
 namespace EduHome.Core.Entities
 {
-    public class Language : IEntity
+	public class Language : BaseEntity
     {
-        public int Id { get; set; }
         public string? LanguageOption { get; set; }
         CourseDetails? CourseDetail { get; set; }
 
