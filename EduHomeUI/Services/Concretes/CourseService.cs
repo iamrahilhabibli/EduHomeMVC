@@ -54,5 +54,13 @@ namespace EduHomeUI.Services.Concretes
         {
             return await _context.courses.ToListAsync();
         }
+
+
+        public async Task<bool> GetCourseById(Guid courseId)
+        {
+            var course = await _context.courses.FindAsync(courseId);
+            if (course is null) return false;
+            return true;
+        }
     }
 }

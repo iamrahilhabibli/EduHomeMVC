@@ -7,5 +7,6 @@ namespace EduHomeUI.Services.Interfaces
     {
         Task<bool> CreateCourseAsync(CourseViewModel courses);
         Task<List<Course>> GetAllCourseAsync();
+        Task<bool> GetCourseById(Guid courseId);
     }
 }

@@ -57,21 +57,18 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
                 return BadRequest(ModelState);
             }
             if (!await _courseService.CreateCourseAsync(courses)) return BadRequest();
+            TempData["Success"] = "Course Created Successfully!";
             return RedirectToAction(nameof(Index));
         }
 
 
 
 
-        //public async Task<IActionResult> Delete(int Id)
+        //public async Task<IActionResult> Delete(Guid Id)
         //{
-        //    Courses course = await _context.courses.FindAsync(Id);
-        //    if (course == null)
-        //    {
-        //        return NotFound();
-        //    }
 
-        //    return View(course);
+        //    if (!await _courseService.GetCourseById(Id)) return NotFound();
+            
         //}
         //[HttpPost]
         //[ActionName("Delete")]
