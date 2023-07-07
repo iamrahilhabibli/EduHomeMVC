@@ -21,13 +21,13 @@
 
                         </div>
                     </div>
-                    <div class="mb-3 row">
+@*                    <div class="mb-3 row">
                         <label asp-for="Description" for="example-search-input" class="col-md-2 col-form-label">Description</label>
                         <div class="col-md-10">
                             <input asp-for="Description" class="form-control" type="text"
                                    id="example-search-input">
                         </div>
-                    </div>
+                    </div>*@
                     <div class="mb-3 row">
                         <label asp-for="ImagePath" for="example-email-input" class="col-md-2 col-form-label">Image Path</label>
                         <div class="col-md-10">
@@ -71,7 +71,15 @@
                     </div>
 
                     <h3>Course Details</h3>
-                    <textarea id="tiny" name="content"></textarea>
+                    <div class="mb-3 row">
+                        <label asp-for="Description" class="col-md-2 col-form-label">Description</label>
+                        <div class="col-md-10">
+                            <textarea id="tiny" asp-for="Description" class="form-control"></textarea>
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                        </div>
+                    </div>
+
+
                     <div class="mt-4">
                         <div class="mb-3 row">
                             <label class="col-md-2 col-form-label">Select Course Language</label>
