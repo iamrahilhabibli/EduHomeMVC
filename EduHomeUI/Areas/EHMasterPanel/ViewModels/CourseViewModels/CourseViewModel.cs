@@ -23,10 +23,10 @@ namespace EduHomeUI.Areas.EHMasterPanel.ViewModels.CourseViewModels
         public string? Duration { get; set; }
         public string? ClassDuration { get; set; }
         public decimal CourseFee { get; set; }
-        public int LanguageOptionId { get; set; }
-        public int AssesmentId { get; set; }
-        public int SkillLevelId { get; set; }
+        public Guid LanguageOptionId { get; set; }
+        public Guid AssesmentId { get; set; }
+        public Guid SkillLevelId { get; set; }
 
-        public int CourseCategoryId { get; set; }
+        public Guid CourseCategoryId { get; set; }
     }
 }

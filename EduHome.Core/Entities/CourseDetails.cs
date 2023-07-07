@@ -16,9 +16,9 @@ namespace EduHome.Core.Entities
         public Assesment? Assesment { get; set; }
         public SkillLevel? Skill { get; set; } 
 
-        public int LanguageOptionId { get; set; }
-        public int AssesmentId { get; set; }
-        public int SkillId { get; set; }
+        public Guid LanguageOptionId { get; set; }
+        public Guid AssesmentId { get; set; }
+        public Guid SkillId { get; set; }
         public int StudentCount { get; set; }
     }
 }
