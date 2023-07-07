@@ -57,35 +57,46 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
         }
 
 
-        //public async Task<IActionResult> Delete(Guid Id)
-        //{
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            if (!await _courseService.GetCourseById(id))
+            {
+                return NotFound();
+            }
 
-        //    if (!await _courseService.GetCourseById(Id)) return NotFound();
-            
-        //}
-        //[HttpPost]
-        //[ActionName("Delete")]
-        //[AutoValidateAntiforgeryToken]
-        //public async Task<IActionResult> DeletePost(int Id)
-        //{
-        //    Courses course = await _context.courses.FindAsync(Id);
-        //    if (course == null)
-        //    {
-        //        return NotFound();
-        //    }
+            return View();
+        }
 
-        //    CourseDetails details = await _context.courseDetails.FindAsync(course.Id);
-        //    if (details != null)
-        //    {
-        //        _context.courseDetails.Remove(details);
-        //    }
+        [HttpPost]
+        [ActionName("Delete")]
+        [AutoValidateAntiforgeryToken]
+        public async Task<IActionResult> DeletePost(Guid id)
+        {
+            if (!await _courseService.GetCourseById(id))
+            {
+                return NotFound();
+            }
 
-        //    _context.courses.Remove(course);
-        //    await _context.SaveChangesAsync();
-        //    TempData["Success"] = "Course Deleted Successfully";
+            var courseDetailExists = await _courseService.GetCourseDetailById(id);
+            if (courseDetailExists)
+            {
+                await _courseService.UpdateCourseDetailIsDeleted(id, true);
+            }
 
-        //    return RedirectToAction(nameof(Index));
-        //}
+            var deleted = await _courseService.UpdateCourseIsDeleted(id, true);
+            if (deleted)
+            {
+                TempData["Success"] = "Course Deleted Successfully";
+            }
+            else
+            {
+                TempData["Error"] = "Failed to delete the course.";
+            }
+
+            return RedirectToAction(nameof(Index));
+        }
+
+
 
 
         //public async Task<IActionResult> Update(int Id)

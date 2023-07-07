@@ -8,6 +8,11 @@ namespace EduHomeUI.Services.Interfaces
         Task<bool> CreateCourseAsync(CourseViewModel courses);
         Task<List<Course>> GetAllCourseAsync();
         Task<bool> GetCourseById(Guid courseId);
+        Task<bool> GetCourseDetailById(Guid courseId);
         Task<CourseDetails> GetCourseDetailsAsync(Guid courseId);
+        Task<bool> UpdateCourseIsDeleted(Guid courseId, bool isDeleted);
+        Task<bool> UpdateCourseDetailIsDeleted(Guid courseDetailId, bool isDeleted);
+        Task<bool> DeleteCourseById(Guid courseId);
+
     }
 }
