@@ -47,11 +47,18 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
 			return RedirectToAction(nameof(Index));
 		}
 
-		public IActionResult Delete(Guid id)
+		public async Task<IActionResult> Delete(Guid id)
 		{
-			CourseCategory category = _context.courseCategories.Find(id);
-			if (category == null) { return NotFound(); }
-			return View(category);
+            if (!await _categoryService.GetCategoryById(id))
+            {
+                return NotFound();
+            }
+            var category =await _categoryService.GetCategoryByIdCategory(id);
+            var viewModel = new CourseCategoryDeleteViewModel()
+            {
+                Category = category.Category
+            };
+            return View(viewModel);
 		}
         [HttpPost]
         [ActionName("Delete")]

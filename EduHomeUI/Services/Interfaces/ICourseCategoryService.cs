@@ -8,5 +8,7 @@ namespace EduHomeUI.Services.Interfaces
         Task<bool> CreateCategoryAsync(CourseCategoryViewModel newCategory);
         Task<bool> DeleteCourseCategoryById(Guid categoryId);
         Task<List<CourseCategory>> GetAllCategoriesAsync();
+        Task<bool>GetCategoryById(Guid categoryId);
+        Task<CourseCategory> GetCategoryByIdCategory(Guid categoryId);
     }
 }

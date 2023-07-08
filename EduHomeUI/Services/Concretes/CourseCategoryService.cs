@@ -49,5 +49,17 @@ namespace EduHomeUI.Services.Concretes
 
             return true;
         }
+
+        public async Task<bool> GetCategoryById(Guid categoryId)
+        {
+            var category = await _context.courseCategories.FindAsync(categoryId);
+            if (category is null) return false;
+            return true;
+        }
+
+        public async Task<CourseCategory> GetCategoryByIdCategory(Guid categoryId)
+        {
+            return await _context.courseCategories.FindAsync(categoryId);
+        }
     }
 }

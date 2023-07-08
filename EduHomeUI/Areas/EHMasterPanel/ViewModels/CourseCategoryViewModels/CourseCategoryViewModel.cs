@@ -7,6 +7,5 @@ namespace EduHomeUI.Areas.EHMasterPanel.ViewModels.CourseCategoryViewModels
     {
         public string Category { get; set; }
         public DateTime DateModified { get; set; }
-
     }
 }
