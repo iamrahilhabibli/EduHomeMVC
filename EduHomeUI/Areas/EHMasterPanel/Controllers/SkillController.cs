@@ -54,5 +54,18 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
             };
             return View(viewModel);
         }
+        [HttpPost]
+        [ActionName("Delete")]
+        [AutoValidateAntiforgeryToken]
+        public async Task<IActionResult> DeleteSKillLevel(Guid id)
+        {
+            bool isDeleted = await _skillService.DeleteSkillLevelById(id);
+
+            if (!isDeleted) return NotFound();
+
+            TempData["Success"] = "SkillLevel Deleted Successfully";
+            return RedirectToAction(nameof(Index));
+        }
+
     }
 }
