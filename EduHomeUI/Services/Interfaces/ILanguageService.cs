@@ -7,5 +7,7 @@ namespace EduHomeUI.Services.Interfaces
 	{
 		Task<bool> CreateLanguageAsync(LanguageViewModel languageVm);
 		Task<List<Language>> GetAllLanguages();
+		Task<bool> GetLanguageById(Guid langId);
+		Task<Language>GetLanguageByIdLanguage(Guid langId);
 	}
 }

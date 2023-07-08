@@ -31,5 +31,16 @@ namespace EduHomeUI.Services.Concretes
         {
             return await _context.Languages.ToListAsync();
         }
+
+		public async Task<bool> GetLanguageById(Guid langId)
+		{
+			var language = await _context.Languages.FindAsync(langId);
+			if (language is null) return false;
+			return true;
+		}
+		public async Task<Language> GetLanguageByIdLanguage(Guid langId)
+		{
+			return await _context.Languages.FindAsync(langId);
+		}
     }
 }

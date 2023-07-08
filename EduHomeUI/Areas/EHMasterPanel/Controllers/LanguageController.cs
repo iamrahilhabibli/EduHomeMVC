@@ -43,5 +43,18 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
 			TempData["Success"] = "Language Created Successfully!";
 			return RedirectToAction(nameof(Index));
 		}
+
+		public async Task<IActionResult> Delete(Guid id)
+		{
+			if (!await _languageService.GetLanguageById(id)) return NotFound();
+
+			var language = await _languageService.GetLanguageByIdLanguage(id);
+
+			var viewModel = new LanguageViewModel()
+			{
+				LanguageOption = language.LanguageOption
+			};
+			return View(viewModel);
+		}
 	}
 }
