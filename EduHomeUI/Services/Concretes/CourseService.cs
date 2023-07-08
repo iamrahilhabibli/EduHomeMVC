@@ -20,7 +20,8 @@ namespace EduHomeUI.Services.Concretes
         }
         public async Task<bool> CreateCourseAsync(CourseViewModel courses)
         {
-            if (courses is null) return false;
+            if (courses is null)
+                return false;
 
             var languageOption = await _context.Languages.FindAsync(courses.LanguageOptionId);
             var assesment = await _context.Assesments.FindAsync(courses.AssesmentId);
@@ -31,17 +32,18 @@ namespace EduHomeUI.Services.Concretes
                 return false;
 
             var courseDetail = _mapper.Map<CourseViewModel, CourseDetails>(courses);
-            courseDetail.LanguageOption = languageOption;
-            courseDetail.Skill = skillLevel;
-            courseDetail.Assesment = assesment;
             courseDetail.DateCreated = DateTime.Now;
             courseDetail.DateModified = DateTime.Now;
 
             var course = _mapper.Map<CourseViewModel, Course>(courses);
-            course.CourseCategory = courseCategory;
+            course.CourseCategoryId = courseCategory.Id;
             course.Details = courseDetail;
             course.DateModified = DateTime.Now;
             course.DateCreated = DateTime.Now;
+
+            courseDetail.LanguageOption.Add(languageOption);
+            courseDetail.Assesment.Add(assesment);
+            courseDetail.Skill.Add(skillLevel);
 
             _context.CourseDetails.Add(courseDetail);
             _context.Courses.Add(course);
@@ -49,6 +51,8 @@ namespace EduHomeUI.Services.Concretes
 
             return true;
         }
+
+
 
         public async Task<List<Course>> GetAllCourseAsync()
         {
