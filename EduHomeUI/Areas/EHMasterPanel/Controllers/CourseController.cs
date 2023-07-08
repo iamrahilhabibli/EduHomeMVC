@@ -21,47 +21,62 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
             _mapper = mapper;
             _courseService = courseService;
         }
-		public async Task<IActionResult> Index()
-		{
-			var coursesList = await _courseService.GetAllCourseAsync();
+        public async Task<IActionResult> Index()
+        {
+            var coursesList = await _courseService.GetAllCourseAsync();
 
-			var viewModel = new CourseIndexViewModel
-			{
-				courses = coursesList
-			};
+            var viewModel = new CourseIndexViewModel
+            {
+                courses = coursesList
+            };
 
-			return View(viewModel);
-		}
-
-        public async Task<IActionResult> Details()
+            return View(viewModel);
+        }
+        public async Task<IActionResult> Details(Guid courseId)
         {
             var courseDetails = await _context.CourseDetails
-                .Include(cd => cd.CourseDetailsSkillLevels)
-                .Include(cd => cd.CourseDetailsLanguages)
-                .Include(cd => cd.CourseDetailsAssesments)
-                .Include(cd => cd.Course)
-                .FirstOrDefaultAsync();
+     .Include(cd => cd.CourseDetailsSkillLevels)
+         .ThenInclude(cdsl => cdsl.SkillLevel)
+     .Include(cd => cd.CourseDetailsLanguages)
+         .ThenInclude(cdl => cdl.Language)
+     .Include(cd => cd.CourseDetailsAssesments)
+         .ThenInclude(cda => cda.Assesment)
+     .FirstOrDefaultAsync(cd => cd.CourseId == courseId);
 
             if (courseDetails == null)
-                return NotFound();
-
-            var viewModel = new CourseDetailsViewModel
             {
-                Description = courseDetails.Course.Description,
-                ImagePath = courseDetails.Course.ImagePath,
-                ImageName = courseDetails.Course.ImageName,
-                Start = courseDetails.Start,
-                Duration = courseDetails.Duration,
-                ClassDuration = courseDetails.ClassDuration,
-                CourseFee = courseDetails.CourseFee,
-                StudentCount = courseDetails.StudentCount
-            };
+                return NotFound();
+            }
+
 
             ViewBag.CourseDetails = courseDetails;
             ViewBag.CourseName = courseDetails.Course?.Name;
 
-            return View(viewModel);
+            var courseDetailsViewModel = new CourseDetailsViewModel
+            {
+                Start = courseDetails.Start,
+                Duration = courseDetails.Duration,
+                ClassDuration = courseDetails.ClassDuration,
+                CourseFee = courseDetails.CourseFee,
+                StudentCount = courseDetails.StudentCount,
+                CourseDetailsSkills = courseDetails.CourseDetailsSkillLevels?
+                    .Select(cdsl => cdsl.SkillLevel)
+                    .Where(skillLevel => skillLevel != null)
+                    .ToList(),
+                CourseDetailsLanguages = courseDetails.CourseDetailsLanguages?
+                    .Select(cdl => cdl.Language)
+                    .ToList(),
+                CourseDetailsAssesments = courseDetails.CourseDetailsAssesments?
+                    .Select(cda => cda.Assesment)
+                    .ToList()
+            };
+
+            return View(courseDetailsViewModel);
         }
+
+
+
+
 
         public async Task<IActionResult> Create()
         {
@@ -87,26 +102,26 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
         }
 
 
-		public async Task<IActionResult> Delete(Guid id)
-		{
-			if (!await _courseService.GetCourseById(id))
-			{
-				return NotFound();
-			}
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            if (!await _courseService.GetCourseById(id))
+            {
+                return NotFound();
+            }
 
-			var course = await _courseService.GetCourseByIdCourse(id);
+            var course = await _courseService.GetCourseByIdCourse(id);
 
-			var viewModel = new CourseDeleteViewModel
-			{
-				Name = course.Name,
-				Description = course.Description,
-			};
+            var viewModel = new CourseDeleteViewModel
+            {
+                Name = course.Name,
+                Description = course.Description,
+            };
 
-			return View(viewModel);
-		}
+            return View(viewModel);
+        }
 
 
-		[HttpPost]
+        [HttpPost]
         [ActionName("Delete")]
         [AutoValidateAntiforgeryToken]
         public async Task<IActionResult> DeleteCourse(Guid id)
@@ -145,7 +160,7 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
 
             var viewModelCourse = await _courseService.MapCourseVM(course);
 
-           
+
             ViewBag.LanguageOptions = await _context.Languages.ToListAsync();
             ViewBag.AssessmentOptions = await _context.Assesments.ToListAsync();
             ViewBag.SkillLevelOptions = await _context.SkillLevels.ToListAsync();

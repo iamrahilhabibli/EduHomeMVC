@@ -1,6 +1,7 @@
 ﻿using EduHome.Core.Entities.Common;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EduHome.Core.Entities
 {
@@ -10,6 +11,8 @@ namespace EduHome.Core.Entities
         public string? Duration { get; set; }
         public string? ClassDuration { get; set; }
         public decimal CourseFee { get; set; }
+        [ForeignKey("Course")]
+        public Guid CourseId { get; set; }
         public Course? Course { get; set; }
         public ICollection<CourseDetailsLanguage> CourseDetailsLanguages { get; set; }
         public int StudentCount { get; set; }
