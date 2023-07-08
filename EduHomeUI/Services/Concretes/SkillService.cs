@@ -51,5 +51,9 @@ namespace EduHomeUI.Services.Concretes
             if (skill is null) return false;
             return true;
         }
+        public async Task<SkillLevel> GetSkillLevelByIdSkillLevel(Guid skillId)
+        {
+            return await _context.SkillLevels.FindAsync(skillId);
+        }
     }
 }

@@ -45,6 +45,14 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
         public async Task<IActionResult> Delete(Guid id)
         {
             if (!await _skillService.GetSkillLevelById(id)) return NotFound();
+
+            var skill = await _skillService.GetSkillLevelByIdSkillLevel(id);
+
+            var viewModel = new SkillViewModel()
+            {
+                Skill = skill.Skill
+            };
+            return View(viewModel);
         }
     }
 }
