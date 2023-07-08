@@ -56,5 +56,17 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
 			};
 			return View(viewModel);
 		}
-	}
+        [HttpPost]
+        [ActionName("Delete")]
+        [AutoValidateAntiforgeryToken]
+        public async Task<IActionResult> DeleteLanguage(Guid id)
+        {
+            bool isDeleted = await _languageService.DeleteLanguageById(id);
+
+            if (!isDeleted) return NotFound();
+
+            TempData["Success"] = "Language Deleted Successfully";
+            return RedirectToAction(nameof(Index));
+        }
+    }
 }

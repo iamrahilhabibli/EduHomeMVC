@@ -42,5 +42,20 @@ namespace EduHomeUI.Services.Concretes
 		{
 			return await _context.Languages.FindAsync(langId);
 		}
+		public async Task<bool> DeleteLanguageById(Guid langId)
+		{
+            var language = await _context.Languages.FindAsync(langId);
+
+            if (language is null)
+            {
+                return false;
+            }
+
+            language.IsDeleted = true;
+            _context.Languages.Update(language);
+            await _context.SaveChangesAsync();
+
+            return true;
+        }
     }
 }

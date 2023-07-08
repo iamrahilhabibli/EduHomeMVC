@@ -1,5 +1,5 @@
-﻿@using EduHomeUI.Areas.EHMasterPanel.ViewModels.SkillViewModels;
-@model SkillViewModel
+﻿@using EduHomeUI.Areas.EHMasterPanel.ViewModels.LanguageViewModels;
+@model LanguageViewModel
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 <form asp-action="Delete" method="post">
@@ -7,12 +7,12 @@
         <div class="col-xl-6">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title mb-4">Delete SkillLevel</h4>
+                    <h4 class="card-title mb-4">Delete Language</h4>
 
                     <div class="row mb-4">
-                        <label asp-for="Skill" class="col-sm-3 col-form-label">Skill</label>
+                        <label asp-for="LanguageOption" class="col-sm-3 col-form-label">Language</label>
                         <div class="col-sm-9">
-                            <input asp-for="Skill" disabled class="form-control" />
+                            <input asp-for="LanguageOption" disabled class="form-control" />
                         </div>
                     </div>
 

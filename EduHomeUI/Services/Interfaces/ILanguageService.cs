@@ -9,5 +9,7 @@ namespace EduHomeUI.Services.Interfaces
 		Task<List<Language>> GetAllLanguages();
 		Task<bool> GetLanguageById(Guid langId);
 		Task<Language>GetLanguageByIdLanguage(Guid langId);
-	}
+
+        Task<bool> DeleteLanguageById(Guid skillId);
+    }
 }
