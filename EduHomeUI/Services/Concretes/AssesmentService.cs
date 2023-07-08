@@ -22,7 +22,6 @@ namespace EduHomeUI.Services.Concretes
 			}
 			Assesment newAssesment = new()
 			{
-				Id = Guid.NewGuid(),
 				AssesmentType = assementVM.AssesmentType,
 			};
 			await _context.Assesments.AddAsync(newAssesment);

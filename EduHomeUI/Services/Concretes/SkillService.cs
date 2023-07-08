@@ -19,7 +19,6 @@ namespace EduHomeUI.Services.Concretes
             if (skillVM == null) { return false; }
             SkillLevel newSkill = new()
             {
-                Id = Guid.NewGuid(),
                 Skill = skillVM.Skill
             };
             await _context.SkillLevels.AddAsync(newSkill);

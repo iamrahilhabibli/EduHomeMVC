@@ -19,7 +19,6 @@ namespace EduHomeUI.Services.Concretes
 			if (languageVm is null) return false;
 			Language newLanguage = new()
 			{
-				Id = Guid.NewGuid(),
 				LanguageOption = languageVm.LanguageOption,
 				IsDeleted = false
 			};

@@ -27,6 +27,8 @@ namespace EduHome.DataAccess.Contexts
         {
             optionsBuilder.AddInterceptors(new DateModifiedInterceptor());
             base.OnConfiguring(optionsBuilder);
+            optionsBuilder.AddInterceptors(new IdGenerationInterceptor());
+            base.OnConfiguring(optionsBuilder);
         }
     }
 }
