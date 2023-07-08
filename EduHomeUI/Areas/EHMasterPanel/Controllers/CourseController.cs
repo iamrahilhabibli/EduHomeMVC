@@ -34,45 +34,25 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
         }
         public async Task<IActionResult> Details(Guid courseId)
         {
-            var courseDetails = await _context.CourseDetails
-     .Include(cd => cd.CourseDetailsSkillLevels)
-         .ThenInclude(cdsl => cdsl.SkillLevel)
-     .Include(cd => cd.CourseDetailsLanguages)
-         .ThenInclude(cdl => cdl.Language)
-     .Include(cd => cd.CourseDetailsAssesments)
-         .ThenInclude(cda => cda.Assesment)
-     .FirstOrDefaultAsync(cd => cd.CourseId == courseId);
+            var courseDetailsViewModel = await _courseService.GetCourseDetailsViewModelAsync(courseId);
 
-            if (courseDetails == null)
+            if (courseDetailsViewModel == null)
             {
                 return NotFound();
             }
 
-
-            ViewBag.CourseDetails = courseDetails;
-            ViewBag.CourseName = courseDetails.Course?.Name;
-
-            var courseDetailsViewModel = new CourseDetailsViewModel
+            var course = await _courseService.GetCourseByIdCourse(courseId);
+            if (course == null)
             {
-                Start = courseDetails.Start,
-                Duration = courseDetails.Duration,
-                ClassDuration = courseDetails.ClassDuration,
-                CourseFee = courseDetails.CourseFee,
-                StudentCount = courseDetails.StudentCount,
-                CourseDetailsSkills = courseDetails.CourseDetailsSkillLevels?
-                    .Select(cdsl => cdsl.SkillLevel)
-                    .Where(skillLevel => skillLevel != null)
-                    .ToList(),
-                CourseDetailsLanguages = courseDetails.CourseDetailsLanguages?
-                    .Select(cdl => cdl.Language)
-                    .ToList(),
-                CourseDetailsAssesments = courseDetails.CourseDetailsAssesments?
-                    .Select(cda => cda.Assesment)
-                    .ToList()
-            };
+                return NotFound();
+            }
+
+            ViewBag.CourseName = course.Name;
 
             return View(courseDetailsViewModel);
         }
+
+
 
 
 

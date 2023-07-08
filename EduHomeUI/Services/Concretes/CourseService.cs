@@ -136,8 +136,8 @@ namespace EduHomeUI.Services.Concretes
             if (courseDetail is null) return false;
             return true;
         }
-		public async Task<CourseDetails> GetCourseDetailsAsync(Guid courseId)
-		{
+        public async Task<CourseDetails> GetCourseDetailsAsync(Guid courseId)
+        {
             var courseDetails = await _context.CourseDetails
             .FirstOrDefaultAsync(cd => cd.Course.Id == courseId);
             return courseDetails;
@@ -221,6 +221,52 @@ namespace EduHomeUI.Services.Concretes
 
             return true;
         }
+        public async Task<CourseDetailsViewModel> GetCourseDetailsViewModelAsync(Guid courseId)
+        {
+            var courseDetails = await _context.CourseDetails
+                .Include(cd => cd.CourseDetailsSkillLevels)
+                    .ThenInclude(cdsl => cdsl.SkillLevel)
+                .Include(cd => cd.CourseDetailsLanguages)
+                    .ThenInclude(cdl => cdl.Language)
+                .Include(cd => cd.CourseDetailsAssesments)
+                    .ThenInclude(cda => cda.Assesment)
+                .Include(cd => cd.Course)
+                .FirstOrDefaultAsync(cd => cd.CourseId == courseId);
+
+            if (courseDetails == null)
+            {
+                return null;
+            }
+
+            var courseDetailsViewModel = new CourseDetailsViewModel
+            {
+                Description = courseDetails.Course.Description,
+                ImagePath = courseDetails.Course.ImagePath,
+                ImageName = courseDetails.Course.ImageName,
+                Start = courseDetails.Start,
+                Duration = courseDetails.Duration,
+                ClassDuration = courseDetails.ClassDuration,
+                CourseFee = courseDetails.CourseFee,
+                StudentCount = courseDetails.StudentCount,
+                CourseDetailsSkills = courseDetails.CourseDetailsSkillLevels?
+                    .Select(cdsl => cdsl.SkillLevel)
+                    .Where(skillLevel => skillLevel != null)
+                    .ToList(),
+                CourseDetailsLanguages = courseDetails.CourseDetailsLanguages?
+                    .Select(cdl => cdl.Language)
+                    .ToList(),
+                CourseDetailsAssesments = courseDetails.CourseDetailsAssesments?
+                    .Select(cda => cda.Assesment)
+                    .ToList()
+            };
+
+            return courseDetailsViewModel;
+        }
+
+
+
+
+
 
     }
 }

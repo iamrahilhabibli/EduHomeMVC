@@ -6,6 +6,7 @@ namespace EduHomeUI.Areas.EHMasterPanel.ViewModels.CourseViewModels
 {
     public class CourseDetailsViewModel
     {
+        public CourseDetailsViewModel Course { get; set; }
         public string? Description { get; set; }
         public string? ImagePath { get; set; }
         public string? ImageName { get; set; }
