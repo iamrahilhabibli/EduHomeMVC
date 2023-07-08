@@ -112,66 +112,70 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        public async Task<IActionResult> Update(Guid Id)
+        public async Task<IActionResult> Update(Guid id)
         {
-            if (await _courseService.GetCourseByIdCourse(Id) is null) return NotFound();
-            var viewModelCourse = await _courseService.MapCourseVM(await _courseService.GetCourseByIdCourse(Id));
+            var course = await _courseService.GetCourseByIdCourse(id);
+            if (course == null)
+            {
+                return NotFound();
+            }
+
+            var viewModelCourse = await _courseService.MapCourseVM(course);
+
+            // Populate ViewBag properties for dropdown options
+            ViewBag.LanguageOptions = await _context.Languages.ToListAsync();
+            ViewBag.AssessmentOptions = await _context.Assesments.ToListAsync();
+            ViewBag.SkillLevelOptions = await _context.SkillLevels.ToListAsync();
+
             return View(viewModelCourse);
         }
 
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> Update(int id, CoursesViewModel courses)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return View(courses);
-        //    }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Update(Guid id, CourseViewModel viewModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(viewModel);
+            }
 
-        //    Courses course = await _context.courses.Include(c => c.Details).FirstOrDefaultAsync(c => c.Id == id);
-        //    if (course == null)
-        //    {
-        //        return NotFound();
-        //    }
+            var course = await _courseService.GetCourseByIdCourse(id);
+            if (course == null)
+            {
+                return NotFound();
+            }
 
-        //    course.Name = courses.Name;
-        //    course.Description = courses.Description;
-        //    course.ImagePath = courses.ImagePath;
+            course.Name = viewModel.Name;
+            course.ImagePath = viewModel.ImagePath;
+            course.ImageName = viewModel.ImageName;
+            course.Description = viewModel.Description;
 
-        //    if (course.Details != null)
-        //    {
-        //        course.Details.StartDate = courses.StartDate;
-        //        course.Details.Duration = courses.Duration;
-        //        course.Details.SkillLevel = courses.SkillLevel;
-        //        course.Details.Language = courses.Language;
-        //        course.Details.StudentCount = courses.StudentCount;
-        //        course.Details.Assesment = courses.Assesment;
-        //        course.Details.Fee = courses.Fee;
+            if (course.Details != null)
+            {
+                course.Details.Start = viewModel.Start;
+                course.Details.Duration = viewModel.Duration;
+                course.Details.ClassDuration = viewModel.ClassDuration;
+                course.Details.CourseFee = viewModel.CourseFee;
 
-        //        _context.Entry(course.Details).State = EntityState.Modified;
-        //    }
-        //    else
-        //    {
-        //        CourseDetails newDetails = new CourseDetails
-        //        {
-        //            StartDate = courses.StartDate,
-        //            Duration = courses.Duration,
-        //            SkillLevel = courses.SkillLevel,
-        //            Language = courses.Language,
-        //            StudentCount = courses.StudentCount,
-        //            Assesment = courses.Assesment,
-        //            Fee = courses.Fee
-        //        };
-        //        course.Details = newDetails;
-        //        _context.courseDetails.Add(newDetails);
-        //    }
-
-        //    _context.Entry(course).State = EntityState.Modified;
-        //    await _context.SaveChangesAsync();
-
-        //    TempData["Success"] = "Course Updated Successfully";
-
-        //    return RedirectToAction(nameof(Index));
-        //}
+                _context.Entry(course.Details).State = EntityState.Modified;
+            }
+            else
+            {
+                CourseDetails newDetails = new CourseDetails
+                {
+                    Start = viewModel.Start,
+                    Duration = viewModel.Duration,
+                    ClassDuration = viewModel.ClassDuration,
+                    CourseFee = viewModel.CourseFee,
+                    Course = course 
+                };
+                _context.courseDetails.Add(newDetails);
+            }
+                _context.Entry(course).State = EntityState.Modified;
+                await _context.SaveChangesAsync();
+                TempData["Success"] = "Course Updated Successfully";
+                return RedirectToAction(nameof(Index));
+            
+        }
     }
 }
