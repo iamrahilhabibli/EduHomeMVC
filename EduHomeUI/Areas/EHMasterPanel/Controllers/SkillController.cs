@@ -40,7 +40,7 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
             if (!ModelState.IsValid) return NotFound();
             if (!await _skillService.CreateSkillAsync(skillVm)) return BadRequest();
             TempData["Success"] = "Skill Created Successfully!";
-            return RedirectToAction("Index", "Dashboard");
+            return RedirectToAction(nameof(Index));
         }
 
     }

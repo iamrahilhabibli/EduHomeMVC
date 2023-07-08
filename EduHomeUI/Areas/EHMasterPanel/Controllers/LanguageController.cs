@@ -41,7 +41,7 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
 			if (!ModelState.IsValid)return NotFound();
 			if (!await _languageService.CreateLanguageAsync(languageVm)) return BadRequest();
 			TempData["Success"] = "Language Created Successfully!";
-			return RedirectToAction("Index","Dashboard");
+			return RedirectToAction(nameof(Index));
 		}
 	}
 }

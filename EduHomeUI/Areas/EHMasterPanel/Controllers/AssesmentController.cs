@@ -41,8 +41,8 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
 		{
 			if (!ModelState.IsValid) return NotFound();
 			if (!await _assesmentService.CreateAssesmentAsync(assesmentVm)) return BadRequest();
-			TempData["Success"] = "Language Created Successfully!";
-			return RedirectToAction("Index", "Dashboard");
+			TempData["Success"] = "Assesment Created Successfully!";
+			return RedirectToAction(nameof(Index));
 		}
 	}
 }
