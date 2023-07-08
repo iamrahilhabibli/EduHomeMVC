@@ -1,25 +1,7 @@
-using EduHome.Core.Entities;
-using EduHome.DataAccess.Contexts;
-using EduHomeUI.Services.Concretes;
-using EduHomeUI.Services.Interfaces;
-using Microsoft.AspNetCore.Cors.Infrastructure;
-using Microsoft.EntityFrameworkCore;
-using System;
+using EduHomeUI.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddControllersWithViews();
-builder.Services.AddAutoMapper(typeof(Program));
-builder.Services.AddDbContext<AppDbContext>(options =>
-{
-    options.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
-});
-builder.Services.AddScoped<ICourseCategoryService, CourseCategoryService>();
-builder.Services.AddScoped<ICourseService, CourseService>();
-builder.Services.AddScoped<ILanguageService, LanguageService>();
-builder.Services.AddScoped<IAssesmentService, AssesmentService>();
-builder.Services.AddScoped<ISkillService, SkillService>();
-
-
+builder.Services.AddCustomServices();
 
 var app = builder.Build();
 app.UseStaticFiles();
