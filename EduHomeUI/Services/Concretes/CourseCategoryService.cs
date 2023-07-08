@@ -61,7 +61,6 @@ namespace EduHomeUI.Services.Concretes
         {
             return await _context.courseCategories.FindAsync(categoryId);
         }
-        // CourseCategoryService.cs
 
         public async Task<bool> UpdateCourseCategory(Guid categoryId, string newCategory)
         {

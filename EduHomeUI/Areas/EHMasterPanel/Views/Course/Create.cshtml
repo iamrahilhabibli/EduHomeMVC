@@ -18,7 +18,7 @@
                         <label asp-for="Name" for="example-text-input" class="col-md-2 col-form-label">Title</label>
                         <div class="col-md-10">
                             <input asp-for="Name" class="form-control" type="text">
-
+                            <span asp-validation-for="Name" class="text-danger"></span>
                         </div>
                     </div>
                     <div class="mb-3 row">
@@ -26,12 +26,14 @@
                         <div class="col-md-10">
                             <input asp-for="ImagePath" class="form-control" type="text"
                                    id="example-email-input">
+                            <span asp-validation-for="ImagePath" class="text-danger"></span>
                         </div>
                     </div> <div class="mb-3 row">
                         <label asp-for="ImageName" for="example-email-input" class="col-md-2 col-form-label">Image Name</label>
                         <div class="col-md-10">
                             <input asp-for="ImageName" class="form-control" type="text"
                                    id="example-email-input">
+                            <span asp-validation-for="ImageName" class="text-danger"></span>
                         </div>
                     </div>
                     <!-- Add these inputs to the form -->
@@ -39,6 +41,7 @@
                         <label asp-for="Start" class="col-md-2 col-form-label">Start</label>
                         <div class="col-md-10">
                             <input asp-for="Start" class="form-control" type="text">
+                            <span asp-validation-for="Start" class="text-danger"></span>
                         </div>
                     </div>
 
@@ -46,6 +49,7 @@
                         <label asp-for="Duration" class="col-md-2 col-form-label">Duration</label>
                         <div class="col-md-10">
                             <input asp-for="Duration" class="form-control" type="text">
+                            <span asp-validation-for="Duration" class="text-danger"></span>
                         </div>
                     </div>
 
@@ -53,6 +57,7 @@
                         <label asp-for="ClassDuration" class="col-md-2 col-form-label">Class Duration</label>
                         <div class="col-md-10">
                             <input asp-for="ClassDuration" class="form-control" type="text">
+                            <span asp-validation-for="ClassDuration" class="text-danger"></span>
                         </div>
                     </div>
 
@@ -60,6 +65,7 @@
                         <label asp-for="CourseFee" class="col-md-2 col-form-label">Course Fee</label>
                         <div class="col-md-10">
                             <input asp-for="CourseFee" class="form-control" type="text">
+                            <span asp-validation-for="CourseFee" class="text-danger"></span>
                         </div>
                     </div>
 
