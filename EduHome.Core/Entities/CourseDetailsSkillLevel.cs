@@ -3,6 +3,7 @@
 
     public class CourseDetailsSkillLevel
     {
+        public Guid Id { get; set; }
         public Guid CourseDetailsId { get; set; }
         public CourseDetails CourseDetails { get; set; }
 

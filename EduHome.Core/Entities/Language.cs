@@ -6,6 +6,12 @@ namespace EduHome.Core.Entities
     public class Language : BaseEntity
     {
         public string? LanguageOption { get; set; }
-        public ICollection<CourseDetails> CourseDetails { get; set; }
+
+        public ICollection<CourseDetailsLanguage> CourseDetailsLanguages { get; set; }
+
+        public Language()
+        {
+            CourseDetailsLanguages = new List<CourseDetailsLanguage>();
+        }
     }
 }

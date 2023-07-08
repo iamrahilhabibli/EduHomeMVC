@@ -41,9 +41,27 @@ namespace EduHomeUI.Services.Concretes
             course.DateModified = DateTime.Now;
             course.DateCreated = DateTime.Now;
 
-            courseDetail.LanguageOption.Add(languageOption);
-            courseDetail.Assesment.Add(assesment);
-            courseDetail.Skill.Add(skillLevel);
+            var courseDetailsLanguage = new CourseDetailsLanguage
+            {
+                LanguageId = languageOption.Id,
+                CourseDetailsId = courseDetail.Id
+            };
+
+            var courseDetailsSkillLevel = new CourseDetailsSkillLevel
+            {
+                SkillLevelId = skillLevel.Id,
+                CourseDetailsId = courseDetail.Id
+            };
+
+            var courseDetailsAssesment = new CourseDetailsAssesment
+            {
+                AssesmentId = assesment.Id,
+                CourseDetailsId = courseDetail.Id
+            };
+
+            courseDetail.CourseDetailsLanguages.Add(courseDetailsLanguage);
+            courseDetail.CourseDetailsSkillLevels.Add(courseDetailsSkillLevel);
+            courseDetail.CourseDetailsAssesments.Add(courseDetailsAssesment);
 
             _context.CourseDetails.Add(courseDetail);
             _context.Courses.Add(course);
@@ -51,6 +69,9 @@ namespace EduHomeUI.Services.Concretes
 
             return true;
         }
+
+
+
 
 
 

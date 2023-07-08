@@ -22,21 +22,6 @@ namespace EduHome.DataAccess.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("CourseDetailsLanguage", b =>
-                {
-                    b.Property<Guid>("CourseDetailsId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("LanguageOptionId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("CourseDetailsId", "LanguageOptionId");
-
-                    b.HasIndex("LanguageOptionId");
-
-                    b.ToTable("CourseDetailsLanguage");
-                });
-
             modelBuilder.Entity("EduHome.Core.Entities.Assesment", b =>
                 {
                     b.Property<Guid>("Id")
@@ -46,7 +31,7 @@ namespace EduHome.DataAccess.Migrations
                     b.Property<string>("AssesmentType")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("CourseDetailsId")
+                    b.Property<Guid?>("CourseDetailsId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("DateCreated")
@@ -177,10 +162,76 @@ namespace EduHome.DataAccess.Migrations
                     b.ToTable("CourseDetails");
                 });
 
+            modelBuilder.Entity("EduHome.Core.Entities.CourseDetailsAssesment", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("AssesmentId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("CourseDetailsId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AssesmentId");
+
+                    b.HasIndex("CourseDetailsId");
+
+                    b.ToTable("CourseDetailsAssesments");
+                });
+
+            modelBuilder.Entity("EduHome.Core.Entities.CourseDetailsLanguage", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("CourseDetailsId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("LanguageId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CourseDetailsId");
+
+                    b.HasIndex("LanguageId");
+
+                    b.ToTable("CourseDetailsLanguage");
+                });
+
+            modelBuilder.Entity("EduHome.Core.Entities.CourseDetailsSkillLevel", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("CourseDetailsId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("SkillLevelId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CourseDetailsId");
+
+                    b.HasIndex("SkillLevelId");
+
+                    b.ToTable("CourseDetailsSkillLevels");
+                });
+
             modelBuilder.Entity("EduHome.Core.Entities.Language", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("CourseDetailsId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("DateCreated")
@@ -197,6 +248,8 @@ namespace EduHome.DataAccess.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CourseDetailsId");
+
                     b.ToTable("Languages");
                 });
 
@@ -206,7 +259,7 @@ namespace EduHome.DataAccess.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("CourseDetailsId")
+                    b.Property<Guid?>("CourseDetailsId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("DateCreated")
@@ -228,30 +281,11 @@ namespace EduHome.DataAccess.Migrations
                     b.ToTable("SkillLevels");
                 });
 
-            modelBuilder.Entity("CourseDetailsLanguage", b =>
-                {
-                    b.HasOne("EduHome.Core.Entities.CourseDetails", null)
-                        .WithMany()
-                        .HasForeignKey("CourseDetailsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("EduHome.Core.Entities.Language", null)
-                        .WithMany()
-                        .HasForeignKey("LanguageOptionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("EduHome.Core.Entities.Assesment", b =>
                 {
-                    b.HasOne("EduHome.Core.Entities.CourseDetails", "CourseDetails")
+                    b.HasOne("EduHome.Core.Entities.CourseDetails", null)
                         .WithMany("Assesment")
-                        .HasForeignKey("CourseDetailsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("CourseDetails");
+                        .HasForeignKey("CourseDetailsId");
                 });
 
             modelBuilder.Entity("EduHome.Core.Entities.Course", b =>
@@ -273,15 +307,80 @@ namespace EduHome.DataAccess.Migrations
                     b.Navigation("Details");
                 });
 
-            modelBuilder.Entity("EduHome.Core.Entities.SkillLevel", b =>
+            modelBuilder.Entity("EduHome.Core.Entities.CourseDetailsAssesment", b =>
                 {
+                    b.HasOne("EduHome.Core.Entities.Assesment", "Assesment")
+                        .WithMany("CourseDetailsAssesment")
+                        .HasForeignKey("AssesmentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("EduHome.Core.Entities.CourseDetails", "CourseDetails")
-                        .WithMany("Skill")
+                        .WithMany("CourseDetailsAssesments")
                         .HasForeignKey("CourseDetailsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.Navigation("Assesment");
+
                     b.Navigation("CourseDetails");
+                });
+
+            modelBuilder.Entity("EduHome.Core.Entities.CourseDetailsLanguage", b =>
+                {
+                    b.HasOne("EduHome.Core.Entities.CourseDetails", "CourseDetails")
+                        .WithMany()
+                        .HasForeignKey("CourseDetailsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("EduHome.Core.Entities.Language", "Language")
+                        .WithMany("CourseDetailsLanguages")
+                        .HasForeignKey("LanguageId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CourseDetails");
+
+                    b.Navigation("Language");
+                });
+
+            modelBuilder.Entity("EduHome.Core.Entities.CourseDetailsSkillLevel", b =>
+                {
+                    b.HasOne("EduHome.Core.Entities.CourseDetails", "CourseDetails")
+                        .WithMany("CourseDetailsSkillLevels")
+                        .HasForeignKey("CourseDetailsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("EduHome.Core.Entities.SkillLevel", "SkillLevel")
+                        .WithMany("CourseDetailsSkillLevels")
+                        .HasForeignKey("SkillLevelId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CourseDetails");
+
+                    b.Navigation("SkillLevel");
+                });
+
+            modelBuilder.Entity("EduHome.Core.Entities.Language", b =>
+                {
+                    b.HasOne("EduHome.Core.Entities.CourseDetails", null)
+                        .WithMany("LanguageOption")
+                        .HasForeignKey("CourseDetailsId");
+                });
+
+            modelBuilder.Entity("EduHome.Core.Entities.SkillLevel", b =>
+                {
+                    b.HasOne("EduHome.Core.Entities.CourseDetails", null)
+                        .WithMany("Skill")
+                        .HasForeignKey("CourseDetailsId");
+                });
+
+            modelBuilder.Entity("EduHome.Core.Entities.Assesment", b =>
+                {
+                    b.Navigation("CourseDetailsAssesment");
                 });
 
             modelBuilder.Entity("EduHome.Core.Entities.CourseCategory", b =>
@@ -295,7 +394,23 @@ namespace EduHome.DataAccess.Migrations
 
                     b.Navigation("Course");
 
+                    b.Navigation("CourseDetailsAssesments");
+
+                    b.Navigation("CourseDetailsSkillLevels");
+
+                    b.Navigation("LanguageOption");
+
                     b.Navigation("Skill");
+                });
+
+            modelBuilder.Entity("EduHome.Core.Entities.Language", b =>
+                {
+                    b.Navigation("CourseDetailsLanguages");
+                });
+
+            modelBuilder.Entity("EduHome.Core.Entities.SkillLevel", b =>
+                {
+                    b.Navigation("CourseDetailsSkillLevels");
                 });
 #pragma warning restore 612, 618
         }
