@@ -20,8 +20,6 @@ namespace EduHomeUI.Services.Concretes
             SkillLevel newSkill = new()
             {
                 Id = Guid.NewGuid(),
-                DateCreated = DateTime.Now,
-                DateModified = DateTime.Now,
                 Skill = skillVM.Skill
             };
             await _context.SkillLevels.AddAsync(newSkill);

@@ -21,8 +21,6 @@ namespace EduHomeUI.Services.Concretes
 			{
 				Id = Guid.NewGuid(),
 				LanguageOption = languageVm.LanguageOption,
-				DateCreated = DateTime.Now,
-				DateModified = DateTime.Now,
 				IsDeleted = false
 			};
 			_context.Languages.Add(newLanguage);

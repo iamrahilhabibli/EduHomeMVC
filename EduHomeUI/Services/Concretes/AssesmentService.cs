@@ -24,8 +24,6 @@ namespace EduHomeUI.Services.Concretes
 			{
 				Id = Guid.NewGuid(),
 				AssesmentType = assementVM.AssesmentType,
-				DateCreated = DateTime.Now,
-				DateModified = DateTime.Now,
 			};
 			await _context.Assesments.AddAsync(newAssesment);
 			_context.SaveChanges();

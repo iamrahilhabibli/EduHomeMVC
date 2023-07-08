@@ -168,10 +168,5 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
 
             return RedirectToAction(nameof(Index));
         }
-
-
-
-
-
     }
 }

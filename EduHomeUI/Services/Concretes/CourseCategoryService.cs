@@ -26,8 +26,6 @@ namespace EduHomeUI.Services.Concretes
             CourseCategory newCourseCategory = new()
             {
                 Category = newCategory.Category,
-                DateCreated = DateTime.Now,
-                DateModified = DateTime.Now
             };
             await _context.CourseCategories.AddAsync(newCourseCategory);
             await _context.SaveChangesAsync();
