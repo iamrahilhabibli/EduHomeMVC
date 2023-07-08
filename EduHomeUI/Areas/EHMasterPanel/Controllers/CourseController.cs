@@ -33,11 +33,34 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
 			return View(viewModel);
 		}
 
-		public async Task<IActionResult> Details(Guid courseId)
+        public async Task<IActionResult> Details()
         {
-            if (courseId == Guid.Empty) return NotFound();
-            var courseDetails =   _courseService.GetCourseDetailsAsync(courseId);
-            return View(courseDetails);
+            var courseDetails = await _context.CourseDetails
+                .Include(cd => cd.CourseDetailsSkillLevels)
+                .Include(cd => cd.CourseDetailsLanguages)
+                .Include(cd => cd.CourseDetailsAssesments)
+                .Include(cd => cd.Course)
+                .FirstOrDefaultAsync();
+
+            if (courseDetails == null)
+                return NotFound();
+
+            var viewModel = new CourseDetailsViewModel
+            {
+                Description = courseDetails.Course.Description,
+                ImagePath = courseDetails.Course.ImagePath,
+                ImageName = courseDetails.Course.ImageName,
+                Start = courseDetails.Start,
+                Duration = courseDetails.Duration,
+                ClassDuration = courseDetails.ClassDuration,
+                CourseFee = courseDetails.CourseFee,
+                StudentCount = courseDetails.StudentCount
+            };
+
+            ViewBag.CourseDetails = courseDetails;
+            ViewBag.CourseName = courseDetails.Course?.Name;
+
+            return View(viewModel);
         }
 
         public async Task<IActionResult> Create()
