@@ -117,5 +117,11 @@ namespace EduHomeUI.Services.Concretes
             .FirstOrDefaultAsync(cd => cd.Course.Id == courseId);
             return courseDetails;
         }
+        public async Task<CourseViewModel> MapCourseVM(Course course)
+        {
+            var courseViewModel = _mapper.Map<CourseViewModel>(course);
+
+            return courseViewModel;
+        }
     }
 }

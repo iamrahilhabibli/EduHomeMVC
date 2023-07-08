@@ -112,20 +112,12 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-
-
-
-        //public async Task<IActionResult> Update(int Id)
-        //{
-        //    Courses course = await _context.courses.FindAsync(Id);
-        //    if (course == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    CoursesViewModel courseViewModel = _mapper.Map<CoursesViewModel>(course);
-        //    return View(courseViewModel);
-        //}
+        public async Task<IActionResult> Update(Guid Id)
+        {
+            if (await _courseService.GetCourseByIdCourse(Id) is null) return NotFound();
+           var viewModelCourse =  _courseService.MapCourseVM(await _courseService.GetCourseByIdCourse(Id));
+            return View(viewModelCourse);
+        }
         //[HttpPost]
         //[ValidateAntiForgeryToken]
         //public async Task<IActionResult> Update(int id, CoursesViewModel courses)
