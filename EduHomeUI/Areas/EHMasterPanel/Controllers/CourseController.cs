@@ -21,12 +21,19 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
             _mapper = mapper;
             _courseService = courseService;
         }
-        public async Task<IActionResult> Index()
-        {
-            var coursesList = await _courseService.GetAllCourseAsync();
-            return View(coursesList);
-        }
-        public async Task<IActionResult> Details(Guid courseId)
+		public async Task<IActionResult> Index()
+		{
+			var coursesList = await _courseService.GetAllCourseAsync();
+
+			var viewModel = new CourseIndexViewModel
+			{
+				courses = coursesList
+			};
+
+			return View(viewModel);
+		}
+
+		public async Task<IActionResult> Details(Guid courseId)
         {
             if (courseId == Guid.Empty) return NotFound();
             var courseDetails =   _courseService.GetCourseDetailsAsync(courseId);
