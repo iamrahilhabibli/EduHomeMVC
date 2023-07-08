@@ -2,6 +2,7 @@
 using EduHome.DataAccess.Contexts;
 using EduHomeUI.Areas.EHMasterPanel.ViewModels.LanguageViewModels;
 using EduHomeUI.Services.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace EduHomeUI.Services.Concretes
 {
@@ -28,5 +29,10 @@ namespace EduHomeUI.Services.Concretes
 			await _context.SaveChangesAsync();
 			return true;
 		}
-	}
+
+        public async Task<List<Language>> GetAllLanguages()
+        {
+            return await _context.Languages.ToListAsync();
+        }
+    }
 }

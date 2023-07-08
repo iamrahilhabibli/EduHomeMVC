@@ -21,7 +21,13 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
         }
         public async Task<IActionResult> Index()
 		{
-			return View(await _context.Languages.ToListAsync());
+			var languageList = await _languageService.GetAllLanguages();
+
+			var viewModel = new LanguageIndexViewModel()
+			{
+				Languages = languageList
+			};
+			return View(viewModel);
 		}
 
 		public async Task<IActionResult> Create()

@@ -1,5 +1,5 @@
-﻿@using EduHome.Core.Entities
-@model IEnumerable<Language>
+﻿@using EduHomeUI.Areas.EHMasterPanel.ViewModels.LanguageViewModels;
+@model LanguageIndexViewModel
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 <partial name="_Notification" />
 @{
@@ -21,7 +21,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach (var language in Model)
+                            @foreach (var language in Model.Languages)
                             {
                                 <tr>
                                     <td>@count</td>
