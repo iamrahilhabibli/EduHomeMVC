@@ -2,11 +2,9 @@
 
 namespace EduHome.Core.Entities
 {
-	public class SkillLevel : BaseEntity
+    public class SkillLevel : BaseEntity
     {
         public string? Skill { get; set; }
-        CourseDetails? CourseDetail { get; set; }
-
+        public CourseDetails CourseDetails { get; set; }
     }
-
 }

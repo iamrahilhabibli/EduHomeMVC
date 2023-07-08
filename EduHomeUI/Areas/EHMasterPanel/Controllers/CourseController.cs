@@ -167,15 +167,21 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
                     Duration = viewModel.Duration,
                     ClassDuration = viewModel.ClassDuration,
                     CourseFee = viewModel.CourseFee,
-                    Course = course 
+                    AssesmentId = viewModel.AssesmentId,
+                    LanguageOptionId = viewModel.LanguageOptionId,
+                    SkillLevelId = viewModel.SkillLevelId,
+                    Course = course
                 };
                 _context.courseDetails.Add(newDetails);
             }
-                _context.Entry(course).State = EntityState.Modified;
-                await _context.SaveChangesAsync();
-                TempData["Success"] = "Course Updated Successfully";
-                return RedirectToAction(nameof(Index));
-            
+
+            _context.Entry(course).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+
+            TempData["Success"] = "Course Updated Successfully";
+            return RedirectToAction(nameof(Index));
         }
+
+
     }
 }

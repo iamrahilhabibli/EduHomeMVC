@@ -154,11 +154,14 @@ namespace EduHome.DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AssesmentId");
+                    b.HasIndex("AssesmentId")
+                        .IsUnique();
 
-                    b.HasIndex("LanguageOptionId");
+                    b.HasIndex("LanguageOptionId")
+                        .IsUnique();
 
-                    b.HasIndex("SkillLevelId");
+                    b.HasIndex("SkillLevelId")
+                        .IsUnique();
 
                     b.ToTable("courseDetails");
                 });
@@ -231,20 +234,20 @@ namespace EduHome.DataAccess.Migrations
             modelBuilder.Entity("EduHome.Core.Entities.CourseDetails", b =>
                 {
                     b.HasOne("EduHome.Core.Entities.Assesment", "Assesment")
-                        .WithMany()
-                        .HasForeignKey("AssesmentId")
+                        .WithOne("CourseDetails")
+                        .HasForeignKey("EduHome.Core.Entities.CourseDetails", "AssesmentId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("EduHome.Core.Entities.Language", "LanguageOption")
-                        .WithMany()
-                        .HasForeignKey("LanguageOptionId")
+                        .WithOne("CourseDetails")
+                        .HasForeignKey("EduHome.Core.Entities.CourseDetails", "LanguageOptionId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("EduHome.Core.Entities.SkillLevel", "Skill")
-                        .WithMany()
-                        .HasForeignKey("SkillLevelId")
+                        .WithOne("CourseDetails")
+                        .HasForeignKey("EduHome.Core.Entities.CourseDetails", "SkillLevelId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -255,6 +258,12 @@ namespace EduHome.DataAccess.Migrations
                     b.Navigation("Skill");
                 });
 
+            modelBuilder.Entity("EduHome.Core.Entities.Assesment", b =>
+                {
+                    b.Navigation("CourseDetails")
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("EduHome.Core.Entities.CourseCategory", b =>
                 {
                     b.Navigation("Courses");
@@ -263,6 +272,18 @@ namespace EduHome.DataAccess.Migrations
             modelBuilder.Entity("EduHome.Core.Entities.CourseDetails", b =>
                 {
                     b.Navigation("Course");
+                });
+
+            modelBuilder.Entity("EduHome.Core.Entities.Language", b =>
+                {
+                    b.Navigation("CourseDetails")
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("EduHome.Core.Entities.SkillLevel", b =>
+                {
+                    b.Navigation("CourseDetails")
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }
