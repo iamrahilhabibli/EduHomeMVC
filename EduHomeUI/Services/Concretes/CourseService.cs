@@ -119,9 +119,38 @@ namespace EduHomeUI.Services.Concretes
         }
         public async Task<CourseViewModel> MapCourseVM(Course course)
         {
-            var courseViewModel = _mapper.Map<CourseViewModel>(course);
+            var courseWithDetails = await _context.courses
+                .Include(c => c.Details)
+                .FirstOrDefaultAsync(c => c.Id == course.Id);
+
+            if (courseWithDetails == null)
+            {
+                return null;
+            }
+
+            var courseViewModel = new CourseViewModel
+            {
+                Name = courseWithDetails.Name,
+                Description = courseWithDetails.Description,
+                ImagePath = courseWithDetails.ImagePath,
+                ImageName = courseWithDetails.ImageName,
+                CourseCategoryId = courseWithDetails.CourseCategoryId
+            };
+
+            if (courseWithDetails.Details != null)
+            {
+                courseViewModel.Start = courseWithDetails.Details.Start;
+                courseViewModel.Duration = courseWithDetails.Details.Duration;
+                courseViewModel.ClassDuration = courseWithDetails.Details.ClassDuration;
+                courseViewModel.CourseFee = courseWithDetails.Details.CourseFee;
+                courseViewModel.LanguageOptionId = courseWithDetails.Details.LanguageOptionId;
+                courseViewModel.AssesmentId = courseWithDetails.Details.AssesmentId;
+                courseViewModel.SkillLevelId = courseWithDetails.Details.SkillLevelId;
+            }
 
             return courseViewModel;
         }
+
+
     }
 }

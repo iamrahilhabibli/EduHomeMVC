@@ -19,6 +19,13 @@
         </div>
     </div>
     <div class="row mb-4">
+        <label asp-for="ImageName" class="col-sm-3 col-form-label"></label>
+        <div class="col-sm-9">
+            <input asp-for="ImageName" class="form-control" />
+            <span asp-validation-for="ImageName" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row mb-4">
         <label asp-for="Start" class="col-sm-3 col-form-label"></label>
         <div class="col-sm-9">
             <input asp-for="Start" class="form-control" />
