@@ -122,7 +122,7 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
 
             var viewModelCourse = await _courseService.MapCourseVM(course);
 
-            // Populate ViewBag properties for dropdown options
+           
             ViewBag.LanguageOptions = await _context.Languages.ToListAsync();
             ViewBag.AssessmentOptions = await _context.Assesments.ToListAsync();
             ViewBag.SkillLevelOptions = await _context.SkillLevels.ToListAsync();
@@ -132,30 +132,32 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Update(Guid id, CourseViewModel viewModel)
+        public async Task<IActionResult> Update(Guid id, CourseViewModel courses)
         {
             if (!ModelState.IsValid)
             {
-                return View(viewModel);
+                return View(courses);
             }
 
-            var course = await _courseService.GetCourseByIdCourse(id);
+            Course course = await _context.courses.Include(c => c.Details).FirstOrDefaultAsync(c => c.Id == id);
             if (course == null)
             {
                 return NotFound();
             }
 
-            course.Name = viewModel.Name;
-            course.ImagePath = viewModel.ImagePath;
-            course.ImageName = viewModel.ImageName;
-            course.Description = viewModel.Description;
+            course.Name = courses.Name;
+            course.Description = courses.Description;
+            course.ImagePath = courses.ImagePath;
 
             if (course.Details != null)
             {
-                course.Details.Start = viewModel.Start;
-                course.Details.Duration = viewModel.Duration;
-                course.Details.ClassDuration = viewModel.ClassDuration;
-                course.Details.CourseFee = viewModel.CourseFee;
+                course.Details.Start = courses.Start;
+                course.Details.Duration = courses.Duration;
+                course.Details.ClassDuration = courses.ClassDuration;
+                course.Details.LanguageOptionId = courses.LanguageOptionId;
+                course.Details.AssesmentId = courses.AssesmentId;
+                course.Details.SkillLevelId = courses.SkillLevelId;
+                course.Details.CourseFee = courses.CourseFee;
 
                 _context.Entry(course.Details).State = EntityState.Modified;
             }
@@ -163,15 +165,15 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
             {
                 CourseDetails newDetails = new CourseDetails
                 {
-                    Start = viewModel.Start,
-                    Duration = viewModel.Duration,
-                    ClassDuration = viewModel.ClassDuration,
-                    CourseFee = viewModel.CourseFee,
-                    AssesmentId = viewModel.AssesmentId,
-                    LanguageOptionId = viewModel.LanguageOptionId,
-                    SkillLevelId = viewModel.SkillLevelId,
-                    Course = course
+                    Start = courses.Start,
+                    Duration = courses.Duration,
+                    ClassDuration = courses.ClassDuration,
+                    LanguageOptionId = courses.LanguageOptionId,
+                    SkillLevelId = courses.SkillLevelId,
+                    AssesmentId = courses.AssesmentId,
+                    CourseFee = courses.CourseFee
                 };
+                course.Details = newDetails;
                 _context.courseDetails.Add(newDetails);
             }
 
@@ -179,8 +181,11 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
             await _context.SaveChangesAsync();
 
             TempData["Success"] = "Course Updated Successfully";
+
             return RedirectToAction(nameof(Index));
         }
+
+
 
 
     }
