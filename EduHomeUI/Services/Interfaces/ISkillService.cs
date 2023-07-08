@@ -7,5 +7,7 @@ namespace EduHomeUI.Services.Interfaces
     {
         Task<bool> CreateSkillAsync(SkillViewModel skillVM);
         Task<List<SkillLevel>> GetAllSkills();
+        Task<bool> DeleteSkillLevelById(Guid skillId);
+        Task<bool> GetSkillLevelById(Guid skillId); 
     }
 }

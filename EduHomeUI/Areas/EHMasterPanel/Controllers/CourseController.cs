@@ -52,12 +52,6 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
             return View(courseDetailsViewModel);
         }
 
-
-
-
-
-
-
         public async Task<IActionResult> Create()
         {
             ViewBag.Categories = await _context.CourseCategories.ToListAsync();

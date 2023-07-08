@@ -42,6 +42,9 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
             TempData["Success"] = "Skill Created Successfully!";
             return RedirectToAction(nameof(Index));
         }
-
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            if (!await _skillService.GetSkillLevelById(id)) return NotFound();
+        }
     }
 }
