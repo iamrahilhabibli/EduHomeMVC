@@ -2,6 +2,8 @@
 using EduHome.Core.Entities;
 using EduHome.DataAccess.Contexts;
 using EduHomeUI.Areas.EHMasterPanel.ViewModels.CourseCategoryViewModels;
+using EduHomeUI.Areas.EHMasterPanel.ViewModels.CourseViewModels;
+using EduHomeUI.Services.Concretes;
 using EduHomeUI.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -18,11 +20,18 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
 		{
 			_context = context;
 			_mapper = mapper;
-			_categoryService = categoryService;
-		}
+            _categoryService = categoryService;
+        }
 		public async Task<IActionResult> Index()
 		{
-			return View(await _context.courseCategories.ToListAsync());
+            var categoriesList = await _categoryService.GetAllCategoriesAsync();
+
+            var viewModel = new CourseCategoryIndexViewModel
+            {
+                Category = categoriesList
+            };
+
+            return View(viewModel);
 		}
 		public IActionResult Create()
 		{

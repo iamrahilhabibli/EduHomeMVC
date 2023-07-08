@@ -2,6 +2,7 @@
 using EduHome.DataAccess.Contexts;
 using EduHomeUI.Areas.EHMasterPanel.ViewModels.CourseCategoryViewModels;
 using EduHomeUI.Services.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace EduHomeUI.Services.Concretes
 {
@@ -11,6 +12,11 @@ namespace EduHomeUI.Services.Concretes
         public CourseCategoryService(AppDbContext context)
         {
             _context = context;
+        }
+
+        public async Task<List<CourseCategory>> GetAllCategoriesAsync()
+        {
+            return await _context.courseCategories.ToListAsync();
         }
 
         public async Task<bool> CreateCategoryAsync(CourseCategoryViewModel newCategory)

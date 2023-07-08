@@ -1,4 +1,5 @@
-﻿using EduHomeUI.Areas.EHMasterPanel.ViewModels.CourseCategoryViewModels;
+﻿using EduHome.Core.Entities;
+using EduHomeUI.Areas.EHMasterPanel.ViewModels.CourseCategoryViewModels;
 
 namespace EduHomeUI.Services.Interfaces
 {
@@ -6,5 +7,6 @@ namespace EduHomeUI.Services.Interfaces
     {
         Task<bool> CreateCategoryAsync(CourseCategoryViewModel newCategory);
         Task<bool> DeleteCourseCategoryById(Guid categoryId);
+        Task<List<CourseCategory>> GetAllCategoriesAsync();
     }
 }
