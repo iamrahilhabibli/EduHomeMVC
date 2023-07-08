@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using EduHome.Core.Entities;
 using EduHome.DataAccess.Contexts;
-using EduHomeUI.Areas.EHMasterPanel.ViewModels.CourseViewModels;
+using EduHomeUI.Areas.EHMasterPanel.ViewModels.CourseCategoryViewModels;
 using EduHomeUI.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -38,68 +38,64 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
 			return RedirectToAction(nameof(Index));
 		}
 
-		public IActionResult Delete(int id)
+		public IActionResult Delete(Guid id)
 		{
 			CourseCategory category = _context.courseCategories.Find(id);
 			if (category == null) { return NotFound(); }
 			return View(category);
 		}
-		[HttpPost]
-		[ActionName("Delete")]
-		[AutoValidateAntiforgeryToken]
-		public async Task<IActionResult> DeleteCategory(int Id)
-		{
-			CourseCategory category = await _context.courseCategories.FindAsync(Id);
-			if (category == null)
-			{
-				return NotFound();
-			}
-			category.IsDeleted = true;
-			await _context.SaveChangesAsync();
-			TempData["Success"] = "Category Deleted Successfully";
+        [HttpPost]
+        [ActionName("Delete")]
+        [AutoValidateAntiforgeryToken]
+        public async Task<IActionResult> DeleteCategory(Guid id)
+        {
+            bool isDeleted = await _categoryService.DeleteCourseCategoryById(id);
 
-			return RedirectToAction(nameof(Index));
-		}
+            if (!isDeleted) return NotFound();
 
-		//public IActionResult Update(int Id)
-		//{
-		//	CourseCategory category = _context.courseCategories.Find(Id);
-		//	if (category == null)
-		//	{
-		//		return NotFound();
-		//	}
+            TempData["Success"] = "Category Deleted Successfully";
+            return RedirectToAction(nameof(Index));
+        }
 
-		//	CourseCategoryViewModel viewModel = new()
-		//	{
-		//		Category = category.Category,
-		//		DateModified = category.DateModified
-		//	};
+        //public IActionResult Update(int Id)
+        //{
+        //	CourseCategory category = _context.courseCategories.Find(Id);
+        //	if (category == null)
+        //	{
+        //		return NotFound();
+        //	}
 
-		//	return View(viewModel);
-		//}
+        //	CourseCategoryViewModel viewModel = new()
+        //	{
+        //		Category = category.Category,
+        //		DateModified = category.DateModified
+        //	};
 
-		//[HttpPost]
-		//[ValidateAntiForgeryToken]
-		//public IActionResult Update(int id, CourseCategoryViewModel newCategory)
-		//{
-		//	if (!ModelState.IsValid)
-		//	{
-		//		return View(newCategory);
-		//	}
+        //	return View(viewModel);
+        //}
 
-		//	CourseCategory category = _context.courseCategories.Find(id);
-		//	if (category == null)
-		//	{
-		//		return NotFound();
-		//	}
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public IActionResult Update(int id, CourseCategoryViewModel newCategory)
+        //{
+        //	if (!ModelState.IsValid)
+        //	{
+        //		return View(newCategory);
+        //	}
 
-		//	category.Category = newCategory.Category;
-		//	category.DateModified = DateTime.Now;
-		//	_context.SaveChanges();
+        //	CourseCategory category = _context.courseCategories.Find(id);
+        //	if (category == null)
+        //	{
+        //		return NotFound();
+        //	}
 
-		//	TempData["Success"] = "Category Updated Successfully";
-		//	return RedirectToAction(nameof(Index));
-		//}
+        //	category.Category = newCategory.Category;
+        //	category.DateModified = DateTime.Now;
+        //	_context.SaveChanges();
 
-	}
+        //	TempData["Success"] = "Category Updated Successfully";
+        //	return RedirectToAction(nameof(Index));
+        //}
+
+    }
 }

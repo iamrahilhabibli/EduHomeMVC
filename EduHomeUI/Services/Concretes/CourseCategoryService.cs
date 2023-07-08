@@ -1,6 +1,6 @@
 ﻿using EduHome.Core.Entities;
 using EduHome.DataAccess.Contexts;
-using EduHomeUI.Areas.EHMasterPanel.ViewModels.CourseViewModels;
+using EduHomeUI.Areas.EHMasterPanel.ViewModels.CourseCategoryViewModels;
 using EduHomeUI.Services.Interfaces;
 
 namespace EduHomeUI.Services.Concretes
@@ -25,6 +25,22 @@ namespace EduHomeUI.Services.Concretes
             };
             await _context.courseCategories.AddAsync(newCourseCategory);
             await _context.SaveChangesAsync();
+            return true;
+        }
+
+        public async Task<bool> DeleteCourseCategoryById(Guid categoryId)
+        {
+            var category = await _context.courseCategories.FindAsync(categoryId);
+
+            if (category is null)
+            {
+                return false;
+            }
+
+            category.IsDeleted = true;
+            _context.courseCategories.Update(category);
+            await _context.SaveChangesAsync();
+
             return true;
         }
     }
