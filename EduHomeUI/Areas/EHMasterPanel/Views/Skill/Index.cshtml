@@ -24,6 +24,9 @@
                         <tbody>
                             @foreach (var skillLevel in Model.SkillLevels)
                             {
+                                if (!skillLevel.IsDeleted)
+                                {
+                                    
                                 <tr>
                                     <td>@count</td>
                                     <td>@skillLevel.Skill</td>
@@ -32,6 +35,7 @@
                                     </td>
                                 </tr>
                                 count++;
+                                }
                             }
                         </tbody>
                     </table>

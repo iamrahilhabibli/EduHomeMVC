@@ -23,6 +23,8 @@
                         <tbody>
                             @foreach (var assesment in Model.Assesments)
                             {
+                                if (!assesment.IsDeleted)
+                                {
                                 <tr>
                                     <td>@count</td>
                                     <td>@assesment.AssesmentType</td>
@@ -31,6 +33,7 @@
                                     </td>
                                 </tr>
                                 count++;
+                                }
                             }
                         </tbody>
                     </table>
