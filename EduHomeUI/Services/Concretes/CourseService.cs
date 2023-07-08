@@ -151,6 +151,51 @@ namespace EduHomeUI.Services.Concretes
             return courseViewModel;
         }
 
+        public async Task<bool> UpdateCourseAsync(Guid courseId, CourseViewModel courses)
+        {
+            Course course = await _context.courses.Include(c => c.Details).FirstOrDefaultAsync(c => c.Id == courseId);
+            if (course == null)
+            {
+                return false;
+            }
+
+            course.Name = courses.Name;
+            course.Description = courses.Description;
+            course.ImagePath = courses.ImagePath;
+
+            if (course.Details != null)
+            {
+                course.Details.Start = courses.Start;
+                course.Details.Duration = courses.Duration;
+                course.Details.ClassDuration = courses.ClassDuration;
+                course.Details.LanguageOptionId = courses.LanguageOptionId;
+                course.Details.AssesmentId = courses.AssesmentId;
+                course.Details.SkillLevelId = courses.SkillLevelId;
+                course.Details.CourseFee = courses.CourseFee;
+
+                _context.Entry(course.Details).State = EntityState.Modified;
+            }
+            else
+            {
+                CourseDetails newDetails = new CourseDetails
+                {
+                    Start = courses.Start,
+                    Duration = courses.Duration,
+                    ClassDuration = courses.ClassDuration,
+                    LanguageOptionId = courses.LanguageOptionId,
+                    SkillLevelId = courses.SkillLevelId,
+                    AssesmentId = courses.AssesmentId,
+                    CourseFee = courses.CourseFee
+                };
+                course.Details = newDetails;
+                _context.courseDetails.Add(newDetails);
+            }
+
+            _context.Entry(course).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+
+            return true;
+        }
 
     }
 }

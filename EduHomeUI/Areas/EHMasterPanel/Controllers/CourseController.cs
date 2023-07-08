@@ -139,51 +139,18 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
                 return View(courses);
             }
 
-            Course course = await _context.courses.Include(c => c.Details).FirstOrDefaultAsync(c => c.Id == id);
-            if (course == null)
+            bool isUpdated = await _courseService.UpdateCourseAsync(id, courses);
+
+            if (!isUpdated)
             {
                 return NotFound();
             }
-
-            course.Name = courses.Name;
-            course.Description = courses.Description;
-            course.ImagePath = courses.ImagePath;
-
-            if (course.Details != null)
-            {
-                course.Details.Start = courses.Start;
-                course.Details.Duration = courses.Duration;
-                course.Details.ClassDuration = courses.ClassDuration;
-                course.Details.LanguageOptionId = courses.LanguageOptionId;
-                course.Details.AssesmentId = courses.AssesmentId;
-                course.Details.SkillLevelId = courses.SkillLevelId;
-                course.Details.CourseFee = courses.CourseFee;
-
-                _context.Entry(course.Details).State = EntityState.Modified;
-            }
-            else
-            {
-                CourseDetails newDetails = new CourseDetails
-                {
-                    Start = courses.Start,
-                    Duration = courses.Duration,
-                    ClassDuration = courses.ClassDuration,
-                    LanguageOptionId = courses.LanguageOptionId,
-                    SkillLevelId = courses.SkillLevelId,
-                    AssesmentId = courses.AssesmentId,
-                    CourseFee = courses.CourseFee
-                };
-                course.Details = newDetails;
-                _context.courseDetails.Add(newDetails);
-            }
-
-            _context.Entry(course).State = EntityState.Modified;
-            await _context.SaveChangesAsync();
 
             TempData["Success"] = "Course Updated Successfully";
 
             return RedirectToAction(nameof(Index));
         }
+
 
 
 

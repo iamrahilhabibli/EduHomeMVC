@@ -15,6 +15,6 @@ namespace EduHomeUI.Services.Interfaces
         Task<bool> DeleteCourseById(Guid courseId);
         Task<Course> GetCourseByIdCourse(Guid courseId);
         Task<CourseViewModel> MapCourseVM(Course course);
-
+        Task<bool> UpdateCourseAsync(Guid courseId, CourseViewModel courses);
     }
 }
