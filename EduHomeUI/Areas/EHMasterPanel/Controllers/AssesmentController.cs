@@ -1,6 +1,8 @@
 ﻿using EduHome.DataAccess.Contexts;
 using EduHomeUI.Areas.EHMasterPanel.ViewModels.AssesmentViewModels;
+using EduHomeUI.Areas.EHMasterPanel.ViewModels.CourseViewModels;
 using EduHomeUI.Areas.EHMasterPanel.ViewModels.LanguageViewModels;
+using EduHomeUI.Services.Concretes;
 using EduHomeUI.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -20,8 +22,15 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
         }
         public async Task<IActionResult> Index()
 		{
-			return View(await _context.Assesments.ToListAsync());
-		}
+            var assesmentsList = await _assesmentService.GetAllAssesment();
+
+            var viewModel = new AssesmentIndexViewModel
+            {
+                Assesments = assesmentsList
+            };
+
+            return View(viewModel);
+        }
 		public async Task<IActionResult> Create()
 		{
 			return View();

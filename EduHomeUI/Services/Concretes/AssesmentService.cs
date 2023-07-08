@@ -2,6 +2,7 @@
 using EduHome.DataAccess.Contexts;
 using EduHomeUI.Areas.EHMasterPanel.ViewModels.AssesmentViewModels;
 using EduHomeUI.Services.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace EduHomeUI.Services.Concretes
 {
@@ -30,5 +31,10 @@ namespace EduHomeUI.Services.Concretes
 			_context.SaveChanges();
 			return true;
 		}
-	}
+
+        public async Task<List<Assesment>> GetAllAssesment()
+        {
+			return await _context.Assesments.ToListAsync();
+        }
+    }
 }
