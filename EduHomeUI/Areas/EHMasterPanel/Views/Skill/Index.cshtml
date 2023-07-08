@@ -1,5 +1,6 @@
-﻿@using EduHome.Core.Entities
-@model IEnumerable<SkillLevel>
+﻿@using EduHomeUI.Areas.EHMasterPanel.ViewModels.SkillViewModels;
+@model SkillIndexViewModel
+
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 <partial name="_Notification" />
 @{
@@ -21,7 +22,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach (var skillLevel in Model)
+                            @foreach (var skillLevel in Model.SkillLevels)
                             {
                                 <tr>
                                     <td>@count</td>

@@ -2,6 +2,7 @@
 using EduHome.DataAccess.Contexts;
 using EduHomeUI.Areas.EHMasterPanel.ViewModels.SkillViewModels;
 using EduHomeUI.Services.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace EduHomeUI.Services.Concretes
 {
@@ -26,6 +27,11 @@ namespace EduHomeUI.Services.Concretes
             await _context.SkillLevels.AddAsync(newSkill);
             _context.SaveChanges();
             return true;
+        }
+
+        public async Task<List<SkillLevel>> GetAllSkills()
+        {
+           return await _context.SkillLevels.ToListAsync();
         }
     }
 }

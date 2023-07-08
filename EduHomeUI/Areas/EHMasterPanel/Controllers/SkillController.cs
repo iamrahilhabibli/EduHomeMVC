@@ -21,7 +21,13 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            return View(await _context.SkillLevels.ToListAsync());
+            var skillsList = await _skillService.GetAllSkills();
+
+            var viewModel = new SkillIndexViewModel()
+            {
+                SkillLevels = skillsList
+            };
+            return View(viewModel);
         }
         public async Task<IActionResult> Create()
         {
