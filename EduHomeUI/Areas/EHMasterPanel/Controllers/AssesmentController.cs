@@ -3,6 +3,7 @@ using EduHomeUI.Areas.EHMasterPanel.ViewModels.AssesmentViewModels;
 using EduHomeUI.Areas.EHMasterPanel.ViewModels.LanguageViewModels;
 using EduHomeUI.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace EduHomeUI.Areas.EHMasterPanel.Controllers
 {
@@ -17,9 +18,9 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
 			_context = context;
 			_assesmentService = assesmentService;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
 		{
-			return View();
+			return View(await _context.Assesments.ToListAsync());
 		}
 		public async Task<IActionResult> Create()
 		{

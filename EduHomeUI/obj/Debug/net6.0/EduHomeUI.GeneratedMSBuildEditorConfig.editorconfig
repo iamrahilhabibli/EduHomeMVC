@@ -20,6 +20,10 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRUhNYXN0ZXJQYW5lbFxWaWV3c1xBc3Nlc21lbnRcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Rhabi/OneDrive/Documents/Backend/MVCFinalEdu/EduHomeMVC/EduHomeUI/Areas/EHMasterPanel/Views/Assesment/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRUhNYXN0ZXJQYW5lbFxWaWV3c1xBc3Nlc21lbnRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Rhabi/OneDrive/Documents/Backend/MVCFinalEdu/EduHomeMVC/EduHomeUI/Areas/EHMasterPanel/Views/CourseCategory/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRUhNYXN0ZXJQYW5lbFxWaWV3c1xDb3Vyc2VDYXRlZ29yeVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -86,6 +90,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Rhabi/OneDrive/Documents/Backend/MVCFinalEdu/EduHomeMVC/EduHomeUI/Areas/EHMasterPanel/Views/Skill/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRUhNYXN0ZXJQYW5lbFxWaWV3c1xTa2lsbFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rhabi/OneDrive/Documents/Backend/MVCFinalEdu/EduHomeMVC/EduHomeUI/Areas/EHMasterPanel/Views/Skill/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRUhNYXN0ZXJQYW5lbFxWaWV3c1xTa2lsbFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Rhabi/OneDrive/Documents/Backend/MVCFinalEdu/EduHomeMVC/EduHomeUI/Areas/EHMasterPanel/Views/_ViewStart.cshtml]

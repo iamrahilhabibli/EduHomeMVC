@@ -4,6 +4,7 @@ using EduHomeUI.Areas.EHMasterPanel.ViewModels.SkillViewModels;
 using EduHomeUI.Services.Concretes;
 using EduHomeUI.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace EduHomeUI.Areas.EHMasterPanel.Controllers
 {
@@ -18,9 +19,9 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
             _context = context;
             _skillService = skillService;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            return View(await _context.SkillLevels.ToListAsync());
         }
         public async Task<IActionResult> Create()
         {
