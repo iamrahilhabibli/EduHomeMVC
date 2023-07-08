@@ -115,9 +115,10 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
         public async Task<IActionResult> Update(Guid Id)
         {
             if (await _courseService.GetCourseByIdCourse(Id) is null) return NotFound();
-           var viewModelCourse =  _courseService.MapCourseVM(await _courseService.GetCourseByIdCourse(Id));
+            var viewModelCourse = await _courseService.MapCourseVM(await _courseService.GetCourseByIdCourse(Id));
             return View(viewModelCourse);
         }
+
         //[HttpPost]
         //[ValidateAntiForgeryToken]
         //public async Task<IActionResult> Update(int id, CoursesViewModel courses)
