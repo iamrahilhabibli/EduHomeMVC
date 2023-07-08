@@ -1,32 +1,43 @@
 ﻿@using EduHomeUI.Areas.EHMasterPanel.ViewModels.CourseViewModels;
 @model CourseDeleteViewModel
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
 <partial name="_Notification" />
 
 <form asp-controller="Course" asp-action="Delete" method="post">
-    <div class="row mb-4">
-        <label asp-for="Name" class="col-sm-3 col-form-label"></label>
-        <div class="col-sm-9">
-            <input asp-for="Name" disabled class="form-control" />
-        </div>
-    </div>
-    <div class="row mb-4">
-        <label asp-for="Description" class="col-sm-3 col-form-label"></label>
-        <div class="col-sm-9">
-            <input asp-for="Description" disabled class="form-control" />
-        </div>
-    </div>
+    <div class="row">
+        <div class="col-xl-6">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title mb-4">Delete Course</h4>
 
-    <div class="row justify-content-end">
-        <div class="col-sm-9">
-            <div>
-                <button type="submit" class="btn btn-danger w-md">Delete</button>
+                    <div class="row mb-4">
+                        <label asp-for="Name" class="col-sm-3 col-form-label">Title</label>
+                        <div class="col-sm-9">
+                            <input asp-for="Name" disabled class="form-control" />
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <label asp-for="Description" class="col-sm-3 col-form-label">Description</label>
+                        <div class="col-sm-9">
+                            <input asp-for="Description" disabled class="form-control" />
+                        </div>
+                    </div>
+                    <div class="row justify-content-end">
+                        <div class="col-sm-9">
+                            <div>
+                                <button type="submit" class="btn btn-danger w-md">Delete</button>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <a asp-controller="Course" asp-action="Index" class="btn btn-outline-secondary border form-control">
+                                Back to list
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="col-6 col-md-3">
-            <a asp-controller="Course" asp-action="Index" class="btn btn-outline-secondary border form-control ">
-                Back to list
-            </a>
         </div>
     </div>
 </form>

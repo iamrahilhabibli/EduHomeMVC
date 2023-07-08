@@ -8,151 +8,144 @@
 }
 
 <div class="row">
-
-    <div class="col-12">
+    <div class="col-md-8 offset-md-2">
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title">Create course</h4>
-                <form method="post" class="app-search d-none d-lg-block">
-                    <div class="mb-3 row">
-                        <label asp-for="Name" for="example-text-input" class="col-md-2 col-form-label">Title</label>
-                        <div class="col-md-10">
-                            <input asp-for="Name" class="form-control" type="text">
+                <form method="post" >
+                    <div class="row mb-3">
+                        <label asp-for="Name" class="col-md-3 col-form-label">Title</label>
+                        <div class="col-sm-9">
+                            <input asp-for="Name" class="form-control" />
                             <span asp-validation-for="Name" class="text-danger"></span>
                         </div>
                     </div>
-                    <div class="mb-3 row">
-                        <label asp-for="ImagePath" for="example-email-input" class="col-md-2 col-form-label">Image Path</label>
-                        <div class="col-md-10">
-                            <input asp-for="ImagePath" class="form-control" type="text"
-                                   id="example-email-input">
+
+                    <div class="row mb-3">
+                        <label asp-for="ImagePath" class="col-md-3 col-form-label">Image Path</label>
+                        <div class="col-sm-9">
+                            <input asp-for="ImagePath" class="form-control" />
                             <span asp-validation-for="ImagePath" class="text-danger"></span>
                         </div>
-                    </div> <div class="mb-3 row">
-                        <label asp-for="ImageName" for="example-email-input" class="col-md-2 col-form-label">Image Name</label>
-                        <div class="col-md-10">
-                            <input asp-for="ImageName" class="form-control" type="text"
-                                   id="example-email-input">
+                    </div>
+
+                    <div class="row mb-3">
+                        <label asp-for="ImageName" class="col-md-3 col-form-label">Image Name</label>
+                        <div class="col-sm-9">
+                            <input asp-for="ImageName" class="form-control" />
                             <span asp-validation-for="ImageName" class="text-danger"></span>
                         </div>
                     </div>
-                    <!-- Add these inputs to the form -->
-                    <div class="mb-3 row">
-                        <label asp-for="Start" class="col-md-2 col-form-label">Start</label>
-                        <div class="col-md-10">
-                            <input asp-for="Start" class="form-control" type="text">
+
+                    <div class="row mb-3">
+                        <label asp-for="Start" class="col-md-3 col-form-label">Start</label>
+                        <div class="col-sm-9">
+                            <input asp-for="Start" class="form-control" />
                             <span asp-validation-for="Start" class="text-danger"></span>
                         </div>
                     </div>
 
-                    <div class="mb-3 row">
-                        <label asp-for="Duration" class="col-md-2 col-form-label">Duration</label>
-                        <div class="col-md-10">
-                            <input asp-for="Duration" class="form-control" type="text">
+                    <div class="row mb-3">
+                        <label asp-for="Duration" class="col-md-3 col-form-label">Duration</label>
+                        <div class="col-sm-9">
+                            <input asp-for="Duration" class="form-control" />
                             <span asp-validation-for="Duration" class="text-danger"></span>
                         </div>
                     </div>
 
-                    <div class="mb-3 row">
-                        <label asp-for="ClassDuration" class="col-md-2 col-form-label">Class Duration</label>
-                        <div class="col-md-10">
-                            <input asp-for="ClassDuration" class="form-control" type="text">
+                    <div class="row mb-3">
+                        <label asp-for="ClassDuration" class="col-md-3 col-form-label">Class Duration</label>
+                        <div class="col-sm-9">
+                            <input asp-for="ClassDuration" class="form-control" />
                             <span asp-validation-for="ClassDuration" class="text-danger"></span>
                         </div>
                     </div>
 
-                    <div class="mb-3 row">
-                        <label asp-for="CourseFee" class="col-md-2 col-form-label">Course Fee</label>
-                        <div class="col-md-10">
-                            <input asp-for="CourseFee" class="form-control" type="text">
+                    <div class="row mb-3">
+                        <label asp-for="CourseFee" class="col-md-3 col-form-label">Course Fee</label>
+                        <div class="col-sm-9">
+                            <input asp-for="CourseFee" class="form-control" />
                             <span asp-validation-for="CourseFee" class="text-danger"></span>
                         </div>
                     </div>
 
                     <h3>Course Details</h3>
-                    <div class="mb-3 row">
-                        <label asp-for="Description" class="col-md-2 col-form-label">Description</label>
-                        <div class="col-md-10">
+
+                    <div class="row mb-3">
+                        <label asp-for="Description" class="col-md-3 col-form-label">Description</label>
+                        <div class="col-sm-9">
                             <textarea id="tiny" asp-for="Description" class="form-control"></textarea>
                             <span asp-validation-for="Description" class="text-danger"></span>
                         </div>
                     </div>
 
-
-                    <div class="mt-4">
-                        <div class="mb-3 row">
-                            <label class="col-md-2 col-form-label">Select Course Language</label>
-                            <div class="col-md-10">
-                                <div class="col-2">
-
-                                    <select class="form-select" asp-for="LanguageOptionId">
-                                        @foreach (var language in ViewBag.Languages)
-                                        {
-                                            <option value="@language.Id">@language.LanguageOption</option>
-                                        }
-                                    </select>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mt-4">
-                        <div class="mb-3 row">
-                            <label class="col-md-2 col-form-label">Select Course Level</label>
-                            <div class="col-md-10">
-                                <div class="col-2">
-                                    <select class="form-select" asp-for="SkillLevelId">
-                                        @foreach (var skillLevel in ViewBag.SkillLevels)
-                                        {
-                                            <option value="@skillLevel.Id">@skillLevel.Skill</option>
-                                        }
-                                    </select>
-
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mt-4">
-                        <div class="mb-3 row">
-                            <label class="col-md-2 col-form-label">Select Course Assesments</label>
-                            <div class="col-md-10">
-                                <div class="col-2">
-                                    <select class="form-select" asp-for="AssesmentId">
-                                        @foreach (var assesment in ViewBag.Assesments)
-                                        {
-                                            <option value="@assesment.Id">@assesment.AssesmentType</option>
-                                        }
-                                    </select>
-                                </div>
-
-                            </div>
+                    <div class="row mb-3">
+                        <label class="col-md-3 col-form-label">Select Course Language</label>
+                        <div class="col-sm-9">
+                            <select class="form-select" asp-for="LanguageOptionId">
+                                @foreach (var language in ViewBag.Languages)
+                                {
+                                    <option value="@language.Id">@language.LanguageOption</option>
+                                }
+                            </select>
+                            <span asp-validation-for="LanguageOptionId" class="text-danger"></span>
                         </div>
                     </div>
 
-                    <div class="mt-4">
-                        <div class="mb-3 row">
-                            <label class="col-md-2 col-form-label">Select Category</label>
-                            <div class="col-md-10">
-                                <div class="col-2">
-
-                                    <select class="form-select" asp-for="CourseCategoryId">
-                                        @foreach (var category in ViewBag.Categories)
-                                        {
-                                            <option value="@category.Id">@category.Category</option>
-                                        }
-                                    </select>
-                                </div>
-
-                            </div>
+                    <div class="row mb-3">
+                        <label class="col-md-3 col-form-label">Select Course Level</label>
+                        <div class="col-sm-9">
+                            <select class="form-select" asp-for="SkillLevelId">
+                                @foreach (var skillLevel in ViewBag.SkillLevels)
+                                {
+                                    <option value="@skillLevel.Id">@skillLevel.Skill</option>
+                                }
+                            </select>
+                            <span asp-validation-for="SkillLevelId" class="text-danger"></span>
                         </div>
                     </div>
 
-                    <div>
-                        <button type="submit" class="btn btn-primary waves-effect waves-light">Create</button>
+                    <div class="row mb-3">
+                        <label class="col-md-3 col-form-label">Select Course Assessments</label>
+                        <div class="col-sm-9">
+                            <select class="form-select" asp-for="AssesmentId">
+                                @foreach (var assessment in ViewBag.Assesments)
+                                {
+                                    <option value="@assessment.Id">@assessment.AssesmentType</option>
+                                }
+                            </select>
+                            <span asp-validation-for="AssesmentId" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label class="col-md-3 col-form-label">Select Category</label>
+                        <div class="col-sm-9">
+                            <select class="form-select" asp-for="CourseCategoryId">
+                                @foreach (var category in ViewBag.Categories)
+                                {
+                                    <option value="@category.Id">@category.Category</option>
+                                }
+                            </select>
+                            <span asp-validation-for="CourseCategoryId" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-end">
+                        <div class="col-sm-9">
+                            <div class="mt-3">
+                                <button type="submit" class="btn btn-warning w-md">Create</button>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3 mt-3">
+                            <a asp-controller="Course" asp-action="Index" class="btn btn-outline-primary border form-control">
+                                Back to list
+                            </a>
+                        </div>
                     </div>
                 </form>
+
             </div>
         </div>
-    </div> <!-- end col -->
+    </div>
 </div>

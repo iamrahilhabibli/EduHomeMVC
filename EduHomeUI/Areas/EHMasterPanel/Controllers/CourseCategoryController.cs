@@ -75,7 +75,7 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
 
         public IActionResult Update(Guid Id)
         {
-            CourseCategory category = _context.courseCategories.Find(Id);
+            CourseCategory category = _context.CourseCategories.Find(Id);
             if (category == null)
             {
                 return NotFound();

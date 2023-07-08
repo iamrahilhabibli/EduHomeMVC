@@ -16,7 +16,7 @@ namespace EduHomeUI.Services.Concretes
 
         public async Task<List<CourseCategory>> GetAllCategoriesAsync()
         {
-            return await _context.courseCategories.ToListAsync();
+            return await _context.CourseCategories.ToListAsync();
         }
 
         public async Task<bool> CreateCategoryAsync(CourseCategoryViewModel newCategory)
@@ -29,14 +29,14 @@ namespace EduHomeUI.Services.Concretes
                 DateCreated = DateTime.Now,
                 DateModified = DateTime.Now
             };
-            await _context.courseCategories.AddAsync(newCourseCategory);
+            await _context.CourseCategories.AddAsync(newCourseCategory);
             await _context.SaveChangesAsync();
             return true;
         }
 
         public async Task<bool> DeleteCourseCategoryById(Guid categoryId)
         {
-            var category = await _context.courseCategories.FindAsync(categoryId);
+            var category = await _context.CourseCategories.FindAsync(categoryId);
 
             if (category is null)
             {
@@ -44,7 +44,7 @@ namespace EduHomeUI.Services.Concretes
             }
 
             category.IsDeleted = true;
-            _context.courseCategories.Update(category);
+            _context.CourseCategories.Update(category);
             await _context.SaveChangesAsync();
 
             return true;
@@ -52,19 +52,19 @@ namespace EduHomeUI.Services.Concretes
 
         public async Task<bool> GetCategoryById(Guid categoryId)
         {
-            var category = await _context.courseCategories.FindAsync(categoryId);
+            var category = await _context.CourseCategories.FindAsync(categoryId);
             if (category is null) return false;
             return true;
         }
 
         public async Task<CourseCategory> GetCategoryByIdCategory(Guid categoryId)
         {
-            return await _context.courseCategories.FindAsync(categoryId);
+            return await _context.CourseCategories.FindAsync(categoryId);
         }
 
         public async Task<bool> UpdateCourseCategory(Guid categoryId, string newCategory)
         {
-            var category = await _context.courseCategories.FindAsync(categoryId);
+            var category = await _context.CourseCategories.FindAsync(categoryId);
 
             if (category == null)
             {
@@ -74,7 +74,7 @@ namespace EduHomeUI.Services.Concretes
             category.Category = newCategory;
             category.DateModified = DateTime.Now;
 
-            _context.courseCategories.Update(category);
+            _context.CourseCategories.Update(category);
             await _context.SaveChangesAsync();
 
             return true;

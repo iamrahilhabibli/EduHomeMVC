@@ -5,10 +5,10 @@
 <div class="col-xl-6">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title mb-4">Course Create Form</h4>
+            <h4 class="card-title mb-4">Course Category Create Form</h4>
             <form asp-action="Create" method="post">
                 <div class="row mb-4">
-                    <label asp-for="Category" class="col-sm-3 col-form-label"></label>
+                    <label asp-for="Category" class="col-sm-3 col-form-label">Category</label>
                     <div class="col-sm-9">
                         <input asp-for="Category" class="form-control" />
                         <span asp-validation-for="Category" class="text-danger"></span>
@@ -21,7 +21,7 @@
                         </div>
                     </div>
                     <div class="col-6 col-md-3">
-                        <a asp-action="Index" class="btn btn-outline-secondary border form-control ">
+                        <a asp-action="Index" class="btn btn-outline-secondary border form-control">
                             Back to list
                         </a>
                     </div>

@@ -42,7 +42,7 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
 
         public async Task<IActionResult> Create()
         {
-            ViewBag.Categories = await _context.courseCategories.ToListAsync();
+            ViewBag.Categories = await _context.CourseCategories.ToListAsync();
             ViewBag.Assesments = await _context.Assesments.ToListAsync();
             ViewBag.Languages = await _context.Languages.ToListAsync();
             ViewBag.SkillLevels = await _context.SkillLevels.ToListAsync();

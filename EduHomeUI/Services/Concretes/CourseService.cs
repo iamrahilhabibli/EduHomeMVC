@@ -25,7 +25,7 @@ namespace EduHomeUI.Services.Concretes
             var languageOption = await _context.Languages.FindAsync(courses.LanguageOptionId);
             var assesment = await _context.Assesments.FindAsync(courses.AssesmentId);
             var skillLevel = await _context.SkillLevels.FindAsync(courses.SkillLevelId);
-            var courseCategory = await _context.courseCategories.FindAsync(courses.CourseCategoryId);
+            var courseCategory = await _context.CourseCategories.FindAsync(courses.CourseCategoryId);
 
             if (languageOption is null || assesment is null || skillLevel is null || courseCategory is null)
                 return false;
@@ -43,8 +43,8 @@ namespace EduHomeUI.Services.Concretes
             course.DateModified = DateTime.Now;
             course.DateCreated = DateTime.Now;
 
-            _context.courseDetails.Add(courseDetail);
-            _context.courses.Add(course);
+            _context.CourseDetails.Add(courseDetail);
+            _context.Courses.Add(course);
             await _context.SaveChangesAsync();
 
             return true;
@@ -52,24 +52,24 @@ namespace EduHomeUI.Services.Concretes
 
         public async Task<List<Course>> GetAllCourseAsync()
         {
-            return await _context.courses.ToListAsync();
+            return await _context.Courses.ToListAsync();
         }
 
 
         public async Task<bool> GetCourseById(Guid courseId)
         {
-            var course = await _context.courses.FindAsync(courseId);
+            var course = await _context.Courses.FindAsync(courseId);
             if (course is null) return false;
             return true;
         }
         public async Task<Course> GetCourseByIdCourse(Guid courseId)
         {
-            return await _context.courses.FindAsync(courseId);
+            return await _context.Courses.FindAsync(courseId);
         }
 
         public async Task<bool> UpdateCourseIsDeleted(Guid courseId, bool isDeleted)
         {
-            var course = await _context.courses.FindAsync(courseId);
+            var course = await _context.Courses.FindAsync(courseId);
             if (course is null) return false;
 
             course.IsDeleted = isDeleted;
@@ -79,7 +79,7 @@ namespace EduHomeUI.Services.Concretes
         }
         public async Task<bool> UpdateCourseDetailIsDeleted(Guid courseDetailId, bool isDeleted)
         {
-            var courseDetail = await _context.courseDetails.FindAsync(courseDetailId);
+            var courseDetail = await _context.CourseDetails.FindAsync(courseDetailId);
             if (courseDetail is null) return false;
 
             courseDetail.IsDeleted = isDeleted;
@@ -90,7 +90,7 @@ namespace EduHomeUI.Services.Concretes
 
         public async Task<bool> DeleteCourseById(Guid courseId)
         {
-            var course = await _context.courses.FindAsync(courseId);
+            var course = await _context.Courses.FindAsync(courseId);
 
             if (course is null)
             {
@@ -98,7 +98,7 @@ namespace EduHomeUI.Services.Concretes
             }
 
             course.IsDeleted = true;
-            _context.courses.Update(course);
+            _context.Courses.Update(course);
             await _context.SaveChangesAsync();
 
             return true;
@@ -107,19 +107,19 @@ namespace EduHomeUI.Services.Concretes
 
         public async Task<bool> GetCourseDetailById(Guid courseId)
         {
-            var courseDetail = await _context.courseDetails.FindAsync(courseId);
+            var courseDetail = await _context.CourseDetails.FindAsync(courseId);
             if (courseDetail is null) return false;
             return true;
         }
 		public async Task<CourseDetails> GetCourseDetailsAsync(Guid courseId)
 		{
-            var courseDetails = await _context.courseDetails
+            var courseDetails = await _context.CourseDetails
             .FirstOrDefaultAsync(cd => cd.Course.Id == courseId);
             return courseDetails;
         }
         public async Task<CourseViewModel> MapCourseVM(Course course)
         {
-            var courseWithDetails = await _context.courses
+            var courseWithDetails = await _context.Courses
                 .Include(c => c.Details)
                 .FirstOrDefaultAsync(c => c.Id == course.Id);
 
@@ -153,7 +153,7 @@ namespace EduHomeUI.Services.Concretes
 
         public async Task<bool> UpdateCourseAsync(Guid courseId, CourseViewModel courses)
         {
-            Course course = await _context.courses.Include(c => c.Details).FirstOrDefaultAsync(c => c.Id == courseId);
+            Course course = await _context.Courses.Include(c => c.Details).FirstOrDefaultAsync(c => c.Id == courseId);
             if (course == null)
             {
                 return false;
@@ -188,7 +188,7 @@ namespace EduHomeUI.Services.Concretes
                     CourseFee = courses.CourseFee
                 };
                 course.Details = newDetails;
-                _context.courseDetails.Add(newDetails);
+                _context.CourseDetails.Add(newDetails);
             }
 
             _context.Entry(course).State = EntityState.Modified;
