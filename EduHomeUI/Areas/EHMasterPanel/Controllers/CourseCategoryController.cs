@@ -73,45 +73,36 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        //public IActionResult Update(int Id)
-        //{
-        //	CourseCategory category = _context.courseCategories.Find(Id);
-        //	if (category == null)
-        //	{
-        //		return NotFound();
-        //	}
+        public IActionResult Update(Guid Id)
+        {
+            CourseCategory category = _context.courseCategories.Find(Id);
+            if (category == null)
+            {
+                return NotFound();
+            }
 
-        //	CourseCategoryViewModel viewModel = new()
-        //	{
-        //		Category = category.Category,
-        //		DateModified = category.DateModified
-        //	};
+            CourseCategoryViewModel viewModel = new()
+            {
+                Category = category.Category,
+                DateModified = category.DateModified
+            };
+            return View(viewModel);
+        }
 
-        //	return View(viewModel);
-        //}
 
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public IActionResult Update(int id, CourseCategoryViewModel newCategory)
-        //{
-        //	if (!ModelState.IsValid)
-        //	{
-        //		return View(newCategory);
-        //	}
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Update(Guid id, CourseCategoryViewModel newCategory)
+        {
+            if (!ModelState.IsValid) return View(newCategory);
+            bool isUpdated = await _categoryService.UpdateCourseCategory(id, newCategory.Category);
 
-        //	CourseCategory category = _context.courseCategories.Find(id);
-        //	if (category == null)
-        //	{
-        //		return NotFound();
-        //	}
+            if (!isUpdated)return NotFound();
 
-        //	category.Category = newCategory.Category;
-        //	category.DateModified = DateTime.Now;
-        //	_context.SaveChanges();
+            TempData["Success"] = "Category Updated Successfully";
+            return RedirectToAction(nameof(Index));
+        }
 
-        //	TempData["Success"] = "Category Updated Successfully";
-        //	return RedirectToAction(nameof(Index));
-        //}
 
     }
 }

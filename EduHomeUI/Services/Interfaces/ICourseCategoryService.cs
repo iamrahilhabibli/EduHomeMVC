@@ -10,5 +10,6 @@ namespace EduHomeUI.Services.Interfaces
         Task<List<CourseCategory>> GetAllCategoriesAsync();
         Task<bool>GetCategoryById(Guid categoryId);
         Task<CourseCategory> GetCategoryByIdCategory(Guid categoryId);
+        Task<bool> UpdateCourseCategory(Guid categoryId, string newCategory);
     }
 }
