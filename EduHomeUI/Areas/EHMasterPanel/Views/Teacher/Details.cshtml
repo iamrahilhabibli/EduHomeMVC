@@ -13,7 +13,8 @@
                 <div class="teacher-details-content ml-50">
                     <h2>@Model.Name @Model.Surname</h2>
                     <h5>@Model.Position</h5>
-                    <p>@Model.Description</p>
+                    <p>@Html.Raw(Model.Description)</p>
+
                 </div>
             </div>
         </div>
