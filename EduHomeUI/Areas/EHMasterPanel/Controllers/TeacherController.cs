@@ -4,6 +4,7 @@ using EduHomeUI.Areas.EHMasterPanel.ViewModels.TeacherViewModels;
 using EduHomeUI.Services.Concretes;
 using EduHomeUI.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis.Host;
 
 namespace EduHomeUI.Areas.EHMasterPanel.Controllers
 {
@@ -59,6 +60,18 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
             var viewModel = _service.MapDeleteVM(teacher);
 
             return View(await viewModel);
+        }
+        [HttpPost]
+        [ActionName("Delete")]
+        [AutoValidateAntiforgeryToken]
+        public async Task<IActionResult> DeleteTeacher(Guid id)
+        {
+            bool isDeleted = await _service.DeleteTeacherById(id);
+
+            if (!isDeleted) return NotFound();
+
+            TempData["Success"] = "Teacher Deleted Successfully";
+            return RedirectToAction(nameof(Index));
         }
     }
 }
