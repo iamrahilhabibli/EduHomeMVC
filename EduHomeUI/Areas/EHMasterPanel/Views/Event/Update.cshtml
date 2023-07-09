@@ -64,6 +64,32 @@
                             <span asp-validation-for="Date" class="text-danger"></span>
                         </div>
                     </div>
+                    <div class="row mb-3">
+                        <label asp-for="SpeakerId" class="col-md-3 col-form-label">Speaker</label>
+                        <div class="col-sm-9">
+                            <select asp-for="SpeakerId" class="form-control">
+                                <option value="">No Speaker</option>
+                                @foreach (var speaker in Model.Speakers)
+                                {
+                                    if (!speaker.IsDeleted)
+                                    {
+                                        <option value="@speaker.Id">@speaker.Name</option>
+                                    }
+                                }
+                            </select>
+                            <input type="hidden" asp-for="Speakers" />
+                            <span asp-validation-for="SpeakerId" class="text-danger"></span>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
 
                     <div class="mb-3 row">
                         <label asp-for="Description" class="col-md-2 col-form-label">Description</label>

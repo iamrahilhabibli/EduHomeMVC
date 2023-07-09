@@ -14,6 +14,6 @@ namespace EduHome.Core.Entities
         public Guid EventDetailsId { get; set; }
         public EventDetails EventDetails { get; set; }
 
-        public ICollection<EventSpeaker> EventSpeakers { get; set; }
+        public ICollection<EventSpeaker>? EventSpeakers { get; set; }
     }
 }

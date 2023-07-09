@@ -127,11 +127,12 @@ namespace EduHomeUI.Services.Concretes
         {
             throw new NotImplementedException();
         }
-
         public async Task<EventUpdateViewModel> MapEventVM(Event @event)
         {
             var eventWithDetails = await _context.Events
                 .Include(e => e.EventDetails)
+                .Include(e => e.EventSpeakers)
+                    .ThenInclude(es => es.Speaker)
                 .FirstOrDefaultAsync(e => e.Id == @event.Id);
 
             if (eventWithDetails == null)
@@ -141,7 +142,6 @@ namespace EduHomeUI.Services.Concretes
 
             var eventViewModel = new EventUpdateViewModel
             {
-                Id = eventWithDetails.Id,
                 Title = eventWithDetails.Title,
                 ImagePath = eventWithDetails.ImagePath,
                 ImageName = eventWithDetails.ImageName,
@@ -150,6 +150,8 @@ namespace EduHomeUI.Services.Concretes
                 EndTime = eventWithDetails.EndTime,
                 Date = eventWithDetails.Date,
                 Description = eventWithDetails.EventDetails?.Description,
+                SpeakerId = eventWithDetails.EventSpeakers?.FirstOrDefault()?.SpeakerId,
+                Speaker = eventWithDetails.EventSpeakers?.FirstOrDefault()?.Speaker,
                 Speakers = await _context.Speakers.Where(s => !s.IsDeleted).ToListAsync()
             };
 
@@ -157,5 +159,59 @@ namespace EduHomeUI.Services.Concretes
         }
 
 
+
+
+        public async Task<bool> UpdateEventAsync(Guid eventId, EventUpdateViewModel eventVm)
+        {
+            Event @event = await _context.Events
+                .Include(e => e.EventDetails)
+                .Include(e => e.EventSpeakers)
+                .FirstOrDefaultAsync(e => e.Id == eventId);
+
+            if (@event == null)
+            {
+                return false;
+            }
+
+            @event.Title = eventVm.Title;
+            @event.ImagePath = eventVm.ImagePath;
+            @event.ImageName = eventVm.ImageName;
+            @event.Venue = eventVm.Venue;
+            @event.StartTime = eventVm.StartTime;
+            @event.EndTime = eventVm.EndTime;
+            @event.Date = eventVm.Date;
+
+            if (@event.EventDetails != null)
+            {
+                @event.EventDetails.Description = eventVm.Description;
+            }
+            else
+            {
+                EventDetails newEventDetails = new EventDetails
+                {
+                    Description = eventVm.Description
+                };
+                @event.EventDetails = newEventDetails;
+                _context.EventsDetails.Add(newEventDetails);
+            }
+
+            @event.EventSpeakers.Clear(); 
+
+            if (eventVm.SpeakerId.HasValue)
+            {
+                var speaker = await _context.Speakers.FindAsync(eventVm.SpeakerId.Value);
+                if (speaker != null)
+                {
+                    var eventSpeaker = new EventSpeaker
+                    {
+                        EventId = @event.Id,
+                        SpeakerId = speaker.Id
+                    };
+                    @event.EventSpeakers.Add(eventSpeaker);
+                }
+            }
+            await _context.SaveChangesAsync();
+            return true;
+        }
     }
 }
