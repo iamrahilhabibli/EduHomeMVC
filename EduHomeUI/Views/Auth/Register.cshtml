@@ -1,27 +1,57 @@
-﻿
+﻿@using EduHomeUI.ViewModels.UsersViewModel;
+@model UserRegisterViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
 <div class="register-area pt-150 pb-150">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 col-md-offset-3 text-center">
+            <div class="col-md-6 offset-md-3 text-center">
                 <div class="login">
                     <div class="login-form-container">
                         <div class="login-text">
-                            <h2>sign up</h2>
-                            <span>Please login using account detail bellow.</span>
+                            <h2>Sign Up</h2>
+                            <span>Please fill in the following details to create your account.</span>
                         </div>
                         <div class="login-form">
-                            <form action="#" method="post">
-                                <input type="text" name="user-name" placeholder="Username">
-                                <input type="password" name="user-password" placeholder="Password">
-                                <div class="button-box">
+                            <form  method="post">
+                                <div class="form-group">
+                                    <label asp-for="FirstName" class="form-label"></label>
+                                    <input asp-for="FirstName" type="text" class="form-control"  >
+                                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="LastName" class="form-label"></label>
+                                    <input asp-for="LastName" type="text" class="form-control"  >
+                                    <span asp-validation-for="LastName" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="EmailAddress" class="form-label"></label>
+                                    <input asp-for="EmailAddress" type="email" class="form-control" placeholder="example@email.com" >
+                                    <span asp-validation-for="EmailAddress" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Password" class="form-label"></label>
+                                    <input asp-for="Password" type="password" class="form-control" placeholder="Example123!" >
+                                    <span asp-validation-for="Password" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="ConfirmPassword" class="form-label"></label>
+                                    <input asp-for="ConfirmPassword" type="password" class="form-control"  >
+                                    <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
                                     <div class="login-toggle-btn">
                                         <input type="checkbox" id="remember">
                                         <label for="remember">Remember me</label>
                                         <a href="#">Forgot Password?</a>
                                     </div>
-                                    <button type="submit" class="default-btn">sign up</button>
+                                </div>
+                                <div class="form-group" style="margin-top: 20px;">
+                                    <button type="submit" class="btn btn-primary" style="background-color: transparent; color: red; border: 2px solid red;">Sign Up</button>
                                 </div>
                             </form>
+
+
                         </div>
                     </div>
                 </div>
@@ -29,4 +59,3 @@
         </div>
     </div>
 </div>
-<!-- Register end --> 
