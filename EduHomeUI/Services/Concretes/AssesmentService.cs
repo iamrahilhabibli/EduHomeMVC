@@ -33,5 +33,16 @@ namespace EduHomeUI.Services.Concretes
         {
 			return await _context.Assesments.ToListAsync();
         }
+
+        public async Task<bool> GetAssesmentById(Guid assesId)
+        {
+			var assesment = await _context.Assesments.FindAsync(assesId);
+			if (assesment is null) return false;
+			return true;
+        }
+		public async Task<Assesment> GetAssesmentByIdAssesment(Guid assesId)
+		{
+			return await _context.Assesments.FindAsync(assesId);
+		}
     }
 }

@@ -7,5 +7,7 @@ namespace EduHomeUI.Services.Interfaces
 	{
 		Task<bool> CreateAssesmentAsync(AssesmentViewModel assementVM);
 		Task<List<Assesment>> GetAllAssesment();
+		Task<bool> GetAssesmentById(Guid assesId);
+		Task<Assesment> GetAssesmentByIdAssesment(Guid assesId);
 	}
 }

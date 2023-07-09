@@ -1,11 +1,7 @@
-﻿// ServiceExtensions.cs
-
+﻿using EduHome.DataAccess.Contexts;
 using EduHomeUI.Services.Concretes;
 using EduHomeUI.Services.Interfaces;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
-using AutoMapper;
-using EduHome.DataAccess.Contexts;
 
 namespace EduHomeUI.Extensions
 {

@@ -2,6 +2,7 @@
 using EduHomeUI.Areas.EHMasterPanel.ViewModels.AssesmentViewModels;
 using EduHomeUI.Areas.EHMasterPanel.ViewModels.CourseViewModels;
 using EduHomeUI.Areas.EHMasterPanel.ViewModels.LanguageViewModels;
+using EduHomeUI.Areas.EHMasterPanel.ViewModels.SkillViewModels;
 using EduHomeUI.Services.Concretes;
 using EduHomeUI.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -44,5 +45,17 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
 			TempData["Success"] = "Assesment Created Successfully!";
 			return RedirectToAction(nameof(Index));
 		}
-	}
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            if (!await _assesmentService.GetAssesmentById(id)) return NotFound();
+
+            var assesment = await _assesmentService.GetAssesmentByIdAssesment(id);
+
+            var viewModel = new AssesmentViewModel()
+            {
+                AssesmentType = assesment.AssesmentType
+            };
+            return View(viewModel);
+        }
+    }
 }
