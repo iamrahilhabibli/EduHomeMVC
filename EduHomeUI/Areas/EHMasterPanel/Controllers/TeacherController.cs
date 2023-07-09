@@ -30,5 +30,18 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        [AutoValidateAntiforgeryToken]
+        public async Task<IActionResult> Create(TeacherCreateViewModel teacherVm)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            if (!await _service.CreateTeacherAsync(teacherVm)) return BadRequest();
+            TempData["Success"] = "Teacher Created Successfully!";
+            return RedirectToAction(nameof(Index));
+        }
     }
 }
