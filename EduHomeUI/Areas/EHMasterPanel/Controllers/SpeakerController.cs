@@ -56,17 +56,17 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
             };
             return View(viewModel);
         }
-        //[HttpPost]
-        //[ActionName("Delete")]
-        //[AutoValidateAntiforgeryToken]
-        //public async Task<IActionResult> DeleteLanguage(Guid id)
-        //{
-        //    bool isDeleted = await _languageService.DeleteLanguageById(id);
+        [HttpPost]
+        [ActionName("Delete")]
+        [AutoValidateAntiforgeryToken]
+        public async Task<IActionResult> DeleteSpeaker(Guid id)
+        {
+            bool isDeleted = await _speakerService.DeleteSpeakerById(id);
 
-        //    if (!isDeleted) return NotFound();
+            if (!isDeleted) return NotFound();
 
-        //    TempData["Success"] = "Language Deleted Successfully";
-        //    return RedirectToAction(nameof(Index));
-        //}
+            TempData["Success"] = "Speaker Deleted Successfully";
+            return RedirectToAction(nameof(Index));
+        }
     }
 }

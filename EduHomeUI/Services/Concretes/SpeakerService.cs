@@ -33,6 +33,22 @@ namespace EduHomeUI.Services.Concretes
             return true;
         }
 
+        public async Task<bool> DeleteSpeakerById(Guid speakerId)
+        {
+            var speaker = await _context.Speakers.FindAsync(speakerId);
+
+            if (speaker is null)
+            {
+                return false;
+            }
+
+            speaker.IsDeleted = true;
+            _context.Speakers.Update(speaker);
+            await _context.SaveChangesAsync();
+
+            return true;
+        }
+
         public async Task<List<Speaker>> GetAllSpeakers()
         {
             return await _context.Speakers.ToListAsync();
