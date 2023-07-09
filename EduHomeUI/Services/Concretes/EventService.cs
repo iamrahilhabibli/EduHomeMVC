@@ -38,6 +38,9 @@ namespace EduHomeUI.Services.Concretes
                 EventSpeakers = new List<EventSpeaker>()
             };
 
+            _context.Events.Add(@event);
+            await _context.SaveChangesAsync();
+
             if (eventVm.SpeakerId.HasValue)
             {
                 var speaker = await _context.Speakers.FindAsync(eventVm.SpeakerId.Value);
@@ -52,7 +55,6 @@ namespace EduHomeUI.Services.Concretes
                 }
             }
 
-            _context.Events.Add(@event);
             await _context.SaveChangesAsync();
 
             return true;
@@ -60,9 +62,22 @@ namespace EduHomeUI.Services.Concretes
 
 
 
+
         public async Task<List<Event>> GetAllEventsAsync()
         {
             return await _context.Events.ToListAsync();
+        }
+
+        public async Task<bool> GetEventById(Guid eventId)
+        {
+            var newEvent = await _context.Events.FindAsync(eventId);
+            if (newEvent is null) return false;
+            return true;
+        }
+
+        public async Task<Event> GetEventByIdEvent(Guid eventId)
+        {
+            return await _context.Events.FindAsync(eventId);
         }
     }
 }

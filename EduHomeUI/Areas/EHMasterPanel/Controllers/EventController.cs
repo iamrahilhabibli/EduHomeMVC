@@ -3,6 +3,7 @@ using EduHome.Core.Entities;
 using EduHome.DataAccess.Contexts;
 using EduHomeUI.Areas.EHMasterPanel.ViewModels.CourseViewModels;
 using EduHomeUI.Areas.EHMasterPanel.ViewModels.EventViewModels;
+using EduHomeUI.Areas.EHMasterPanel.ViewModels.SpeakerViewModels;
 using EduHomeUI.Services.Concretes;
 using EduHomeUI.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -56,6 +57,20 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
             TempData["Success"] = "Event Created Successfully!";
             return RedirectToAction(nameof(Index));
         }
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            if (!await _eventService.GetEventById(id)) return NotFound();
 
+            var newEvent = await _eventService.GetEventByIdEvent(id);
+
+            var viewModel = new EventDeleteViewModel()
+            {
+               Title = newEvent.Title,
+               Venue = newEvent.Venue,
+               ImagePath = newEvent.ImagePath,
+               Date = newEvent.Date
+            };
+            return View(viewModel);
+        }
     }
 }

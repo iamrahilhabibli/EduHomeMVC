@@ -8,5 +8,7 @@ namespace EduHomeUI.Services.Interfaces
     {
         Task<List<Event>> GetAllEventsAsync();
         Task<bool> CreateEventAsync(EventCreateViewModel eventVm);
+        Task<bool> GetEventById(Guid eventId);
+        Task<Event> GetEventByIdEvent(Guid eventId);
     }
 }
