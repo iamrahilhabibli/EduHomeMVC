@@ -30,7 +30,7 @@ namespace EduHomeUI.Extensions
             services.AddIdentity<AppUser, IdentityRole>(identityOptions =>
             {
                 identityOptions.User.RequireUniqueEmail = true;
-            
+
                 identityOptions.Password.RequireNonAlphanumeric = true;
                 identityOptions.Password.RequiredLength = 8;
                 identityOptions.Password.RequireDigit = true;
@@ -45,7 +45,7 @@ namespace EduHomeUI.Extensions
             })
                  .AddEntityFrameworkStores<AppDbContext>()
                  .AddDefaultTokenProviders();
-
+                 
         }
     }
 }
