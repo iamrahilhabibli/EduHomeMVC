@@ -29,6 +29,22 @@ namespace EduHomeUI.Services.Concretes
 			return true;
 		}
 
+        public async Task<bool> DeleteAssesmentById(Guid assesId)
+        {
+            var assesmments = await _context.Assesments.FindAsync(assesId);
+
+            if (assesmments is null)
+            {
+                return false;
+            }
+
+            assesmments.IsDeleted = true;
+            _context.Assesments.Update(assesmments);
+            await _context.SaveChangesAsync();
+
+            return true;
+        }
+
         public async Task<List<Assesment>> GetAllAssesment()
         {
 			return await _context.Assesments.ToListAsync();

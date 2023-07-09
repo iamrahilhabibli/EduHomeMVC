@@ -9,5 +9,6 @@ namespace EduHomeUI.Services.Interfaces
 		Task<List<Assesment>> GetAllAssesment();
 		Task<bool> GetAssesmentById(Guid assesId);
 		Task<Assesment> GetAssesmentByIdAssesment(Guid assesId);
+		Task<bool> DeleteAssesmentById(Guid assesId);
 	}
 }

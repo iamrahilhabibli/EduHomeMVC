@@ -57,5 +57,17 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
             };
             return View(viewModel);
         }
+        [HttpPost]
+        [ActionName("Delete")]
+        [AutoValidateAntiforgeryToken]
+        public async Task<IActionResult> DeleteAssesmentType(Guid id)
+        {
+            bool isDeleted = await _assesmentService.DeleteAssesmentById(id);
+
+            if (!isDeleted) return NotFound();
+
+            TempData["Success"] = "Assesment Deleted Successfully";
+            return RedirectToAction(nameof(Index));
+        }
     }
 }
