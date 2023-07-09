@@ -268,7 +268,8 @@ namespace EduHome.DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("EventDetailsId");
+                    b.HasIndex("EventDetailsId")
+                        .IsUnique();
 
                     b.ToTable("Events");
                 });
@@ -595,8 +596,8 @@ namespace EduHome.DataAccess.Migrations
             modelBuilder.Entity("EduHome.Core.Entities.Event", b =>
                 {
                     b.HasOne("EduHome.Core.Entities.EventDetails", "EventDetails")
-                        .WithMany()
-                        .HasForeignKey("EventDetailsId")
+                        .WithOne("Event")
+                        .HasForeignKey("EduHome.Core.Entities.Event", "EventDetailsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -668,6 +669,9 @@ namespace EduHome.DataAccess.Migrations
 
             modelBuilder.Entity("EduHome.Core.Entities.EventDetails", b =>
                 {
+                    b.Navigation("Event")
+                        .IsRequired();
+
                     b.Navigation("EventSpeakers");
                 });
 

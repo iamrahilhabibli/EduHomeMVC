@@ -8,5 +8,6 @@ namespace EduHome.Core.Entities
         public string Description { get; set; }
 
         public ICollection<EventSpeaker> EventSpeakers { get; set; }
+        public Event Event { get; set; }
     }
 }
