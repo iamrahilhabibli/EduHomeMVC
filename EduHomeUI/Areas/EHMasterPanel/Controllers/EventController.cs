@@ -1,10 +1,12 @@
 ﻿using AutoMapper;
+using EduHome.Core.Entities;
 using EduHome.DataAccess.Contexts;
 using EduHomeUI.Areas.EHMasterPanel.ViewModels.CourseViewModels;
 using EduHomeUI.Areas.EHMasterPanel.ViewModels.EventViewModels;
 using EduHomeUI.Services.Concretes;
 using EduHomeUI.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace EduHomeUI.Areas.EHMasterPanel.Controllers
 {
@@ -31,5 +33,17 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
 
             return View(viewModel);
         }
+        public async Task<IActionResult> Create()
+        {
+            List<Speaker> speakers = await _context.Speakers.ToListAsync();
+
+            EventCreateViewModel viewModel = new EventCreateViewModel
+            {
+                Speakers = speakers
+            };
+
+            return View(viewModel);
+        }
+
     }
 }

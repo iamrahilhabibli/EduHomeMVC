@@ -68,6 +68,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRUhNYXN0ZXJQYW5lbFxWaWV3c1xEYXNoYm9hcmRcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Rhabi/OneDrive/Documents/Backend/MVCFinalEdu/EduHomeMVC/EduHomeUI/Areas/EHMasterPanel/Views/Event/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRUhNYXN0ZXJQYW5lbFxWaWV3c1xFdmVudFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Rhabi/OneDrive/Documents/Backend/MVCFinalEdu/EduHomeMVC/EduHomeUI/Areas/EHMasterPanel/Views/Event/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRUhNYXN0ZXJQYW5lbFxWaWV3c1xFdmVudFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
