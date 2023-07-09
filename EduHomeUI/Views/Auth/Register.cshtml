@@ -16,27 +16,27 @@
                             <form  method="post">
                                 <div class="form-group">
                                     <label asp-for="FirstName" class="form-label"></label>
-                                    <input asp-for="FirstName" type="text" class="form-control"  >
+                                    <input asp-for="FirstName" type="text" class="form-control" >
                                     <span asp-validation-for="FirstName" class="text-danger"></span>
                                 </div>
                                 <div class="form-group">
                                     <label asp-for="LastName" class="form-label"></label>
-                                    <input asp-for="LastName" type="text" class="form-control"  >
+                                    <input asp-for="LastName" type="text" class="form-control" >
                                     <span asp-validation-for="LastName" class="text-danger"></span>
                                 </div>
                                 <div class="form-group">
                                     <label asp-for="EmailAddress" class="form-label"></label>
-                                    <input asp-for="EmailAddress" type="email" class="form-control" placeholder="example@email.com" >
+                                    <input asp-for="EmailAddress" type="email" class="form-control" >
                                     <span asp-validation-for="EmailAddress" class="text-danger"></span>
                                 </div>
                                 <div class="form-group">
                                     <label asp-for="Password" class="form-label"></label>
-                                    <input asp-for="Password" type="password" class="form-control" placeholder="Example123!" >
+                                    <input asp-for="Password" type="password" class="form-control" >
                                     <span asp-validation-for="Password" class="text-danger"></span>
                                 </div>
                                 <div class="form-group">
                                     <label asp-for="ConfirmPassword" class="form-label"></label>
-                                    <input asp-for="ConfirmPassword" type="password" class="form-control"  >
+                                    <input asp-for="ConfirmPassword" type="password" class="form-control" />
                                     <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
                                 </div>
                                 <div class="form-group">
@@ -49,6 +49,8 @@
                                 <div class="form-group" style="margin-top: 20px;">
                                     <button type="submit" class="btn btn-primary" style="background-color: transparent; color: red; border: 2px solid red;">Sign Up</button>
                                 </div>
+
+                                <partial name="_ValidationScript" />
                             </form>
 
 

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using EduHomeUI.ViewModels.UsersViewModel;
+using Microsoft.AspNetCore.Mvc;
 
 namespace EduHomeUI.Controllers
 {
@@ -6,6 +7,13 @@ namespace EduHomeUI.Controllers
     {
         public IActionResult Register()
         {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Register(UserRegisterViewModel userRegVm)
+        {
+            if (!ModelState.IsValid) return View(userRegVm);
             return View();
         }
     }

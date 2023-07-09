@@ -1015,3 +1015,4 @@ C:\Users\Rhabi\OneDrive\Documents\Backend\MVCFinalEdu\EduHomeMVC\EduHomeUI\bin\D
 C:\Users\Rhabi\OneDrive\Documents\Backend\MVCFinalEdu\EduHomeMVC\EduHomeUI\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\Rhabi\OneDrive\Documents\Backend\MVCFinalEdu\EduHomeMVC\EduHomeUI\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
 C:\Users\Rhabi\OneDrive\Documents\Backend\MVCFinalEdu\EduHomeMVC\EduHomeUI\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\Rhabi\OneDrive\Documents\Backend\MVCFinalEdu\EduHomeMVC\EduHomeUI\bin\Debug\net6.0\libman.json
