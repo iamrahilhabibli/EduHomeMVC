@@ -1,0 +1,52 @@
+﻿@using EduHomeUI.Areas.EHMasterPanel.ViewModels.SpeakerViewModels;
+@model SpeakerIndexViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<partial name="_Notification" />
+@{
+    int count = 1;
+}
+<div class="container-fluid">
+    <div class="row">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Languages</h4>
+                <a asp-controller="Language" asp-action="Create" class="btn btn-primary mb-4">Create New Language</a>
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Image</th>
+                                <th>Name</th>
+                                <th>Surname</th>
+                                <th>Position</th>
+                                <th>Company Name</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var speaker in Model.Speakers)
+                            {
+                                if (!speaker.IsDeleted)
+                                {
+                                    <tr>
+                                        <td>@count</td>
+                                        <td><img src="@speaker.ImagePath" alt="@speaker.ImageName" style="width:100px" /></td>
+                                        <td>@speaker.Name</td>
+                                        <td>@speaker.Surname</td>
+                                        <td>@speaker.Position</td>
+                                        <td>@speaker.CompanyName</td>
+                                        <td>
+                                            <a asp-action="Delete" asp-route-id="@speaker.Id" class="btn btn-danger"><i class="bi bi-trash-fill"></i></a>
+                                        </td>
+                                    </tr>
+                                    count++;
+
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
