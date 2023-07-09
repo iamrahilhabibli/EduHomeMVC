@@ -84,9 +84,9 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
                 return NotFound();
             }
 
-            var viewModel = _service.MapCreateVM(teacher);
-            return View(await viewModel);
-        }
+            var viewModel = await _service.MapTeacherVM(teacher);
 
+            return View(viewModel);
+        }
     }
 }

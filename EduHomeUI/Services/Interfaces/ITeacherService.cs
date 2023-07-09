@@ -12,5 +12,6 @@ namespace EduHomeUI.Services.Interfaces
         Task<TeacherDeleteViewModel> MapDeleteVM(Teacher teacher);
         Task<TeacherCreateViewModel> MapCreateVM(Teacher teacher);
         Task<bool> DeleteTeacherById(Guid langId);
+        Task<TeacherUpdateViewModel> MapTeacherVM(Teacher teacher);
     }
 }

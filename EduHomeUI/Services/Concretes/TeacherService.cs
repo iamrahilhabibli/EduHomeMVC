@@ -71,5 +71,22 @@ namespace EduHomeUI.Services.Concretes
 
             return true;
         }
+        public async Task<TeacherUpdateViewModel> MapTeacherVM(Teacher teacher)
+        {
+            var teacherWithDetails = await _context.Teachers
+                .Include(t => t.TeacherDetails)
+                .FirstOrDefaultAsync(t => t.Id == teacher.Id);
+
+            if (teacherWithDetails == null)
+            {
+                return null;
+            }
+
+            var viewModel = _mapper.Map<TeacherUpdateViewModel>(teacherWithDetails);
+
+            return viewModel;
+        }
+
+
     }
 }
