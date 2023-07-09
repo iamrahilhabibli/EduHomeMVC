@@ -10,7 +10,7 @@
                     <h4 class="card-title mb-4">Update Teacher</h4>
 
                     <div class="row mb-4">
-                        <label asp-for="Name" class="col-sm-3 col-form-label">Title</label>
+                        <label asp-for="Name" class="col-sm-3 col-form-label">Name</label>
                         <div class="col-sm-9">
                             <input asp-for="Name" class="form-control" />
                             <span asp-validation-for="Name" class="text-danger"></span>
@@ -32,7 +32,13 @@
                             <span asp-validation-for="ImagePath" class="text-danger"></span>
                         </div>
                     </div>
-
+                    <div class="row mb-4">
+                        <label asp-for="ImageName" class="col-sm-3 col-form-label">ImageName</label>
+                        <div class="col-sm-9">
+                            <input asp-for="ImageName" class="form-control" />
+                            <span asp-validation-for="ImageName" class="text-danger"></span>
+                        </div>
+                    </div>
                     <div class="row mb-4">
                         <label asp-for="Position" class="col-sm-3 col-form-label">Position</label>
                         <div class="col-sm-9">
