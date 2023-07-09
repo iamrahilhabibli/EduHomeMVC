@@ -1,0 +1,145 @@
+﻿@using EduHomeUI.Areas.EHMasterPanel.ViewModels.TeacherViewModels;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model TeacherCreateViewModel
+<partial name="_Notification" />
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Create Teacher</h4>
+                <form method="post">
+                    <div class="row mb-3">
+                        <label asp-for="Name" class="col-md-3 col-form-label">Name</label>
+                        <div class="col-sm-9">
+                            <input asp-for="Name" class="form-control" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label asp-for="Surname" class="col-md-3 col-form-label">Surname</label>
+                        <div class="col-sm-9">
+                            <input asp-for="Surname" class="form-control" />
+                            <span asp-validation-for="Surname" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label asp-for="ImagePath" class="col-md-3 col-form-label">Image Path</label>
+                        <div class="col-sm-9">
+                            <input asp-for="ImagePath" class="form-control" />
+                            <span asp-validation-for="ImagePath" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label asp-for="ImageName" class="col-md-3 col-form-label">Image Name</label>
+                        <div class="col-sm-9">
+                            <input asp-for="ImageName" class="form-control" />
+                            <span asp-validation-for="ImageName" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label asp-for="Position" class="col-md-3 col-form-label">Position</label>
+                        <div class="col-sm-9">
+                            <input asp-for="Position" class="form-control" />
+                            <span asp-validation-for="Position" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <h3>Teacher Details</h3>
+
+                    <div class="row mb-3">
+                        <label asp-for="Email" class="col-md-3 col-form-label">Email</label>
+                        <div class="col-sm-9">
+                            <input asp-for="Email" class="form-control" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label asp-for="PhoneNumber" class="col-md-3 col-form-label">PhoneNumber</label>
+                        <div class="col-sm-9">
+                            <input asp-for="PhoneNumber" class="form-control" />
+                            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label asp-for="SkypeAddress" class="col-md-3 col-form-label">SkypeAddress</label>
+                        <div class="col-sm-9">
+                            <input asp-for="SkypeAddress" class="form-control" />
+                            <span asp-validation-for="SkypeAddress" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label asp-for="LanguageSkills" class="col-md-3 col-form-label">LanguageSkills</label>
+                        <div class="col-sm-9">
+                            <input asp-for="LanguageSkills" class="form-control" />
+                            <span asp-validation-for="LanguageSkills" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label asp-for="TeamLeaderSkills" class="col-md-3 col-form-label">TeamLeaderSkills</label>
+                        <div class="col-sm-9">
+                            <input asp-for="TeamLeaderSkills" class="form-control" />
+                            <span asp-validation-for="TeamLeaderSkills" class="text-danger"></span>
+                        </div>
+                    </div>
+                         <div class="row mb-3">
+                        <label asp-for="DevelopmentSkills" class="col-md-3 col-form-label">DevelopmentSkills</label>
+                        <div class="col-sm-9">
+                            <input asp-for="DevelopmentSkills" class="form-control" />
+                            <span asp-validation-for="DevelopmentSkills" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label asp-for="Design" class="col-md-3 col-form-label">Design</label>
+                        <div class="col-sm-9">
+                            <input asp-for="Design" class="form-control" />
+                            <span asp-validation-for="Design" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label asp-for="Innovation" class="col-md-3 col-form-label">Innovation</label>
+                        <div class="col-sm-9">
+                            <input asp-for="Innovation" class="form-control" />
+                            <span asp-validation-for="Innovation" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label asp-for="Communication" class="col-md-3 col-form-label">Communication</label>
+                        <div class="col-sm-9">
+                            <input asp-for="Communication" class="form-control" />
+                            <span asp-validation-for="Communication" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label asp-for="Description" class="col-md-3 col-form-label">Description</label>
+                        <div class="col-sm-9">
+                            <textarea id="tiny" asp-for="Description" class="form-control"></textarea>
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                        </div>
+                    </div>
+
+
+                    <div class="row justify-content-end">
+                        <div class="col-sm-9">
+                            <div class="mt-3">
+                                <button type="submit" class="btn btn-warning w-md">Create</button>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3 mt-3">
+                            <a asp-controller="Course" asp-action="Index" class="btn btn-outline-primary border form-control">
+                                Back to list
+                            </a>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
