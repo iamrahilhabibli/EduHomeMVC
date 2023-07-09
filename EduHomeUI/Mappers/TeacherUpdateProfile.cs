@@ -9,7 +9,7 @@ namespace EduHomeUI.Mappers
         public TeacherUpdateProfile()
         {
             CreateMap<TeacherUpdateViewModel, Teacher>().ReverseMap();
-            CreateMap<TeacherUpdateViewModel, TeacherDetails>().ReverseMap();
+            CreateMap<Teacher, TeacherUpdateViewModel>().ReverseMap();
         }
     }
 }

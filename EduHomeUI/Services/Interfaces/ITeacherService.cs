@@ -1,4 +1,5 @@
 ﻿using EduHome.Core.Entities;
+using EduHomeUI.Areas.EHMasterPanel.ViewModels.CourseViewModels;
 using EduHomeUI.Areas.EHMasterPanel.ViewModels.TeacherViewModels;
 
 namespace EduHomeUI.Services.Interfaces
@@ -13,5 +14,6 @@ namespace EduHomeUI.Services.Interfaces
         Task<TeacherCreateViewModel> MapCreateVM(Teacher teacher);
         Task<bool> DeleteTeacherById(Guid langId);
         Task<TeacherUpdateViewModel> MapTeacherVM(Teacher teacher);
+        Task<bool> UpdateTeacherAsync(Guid courseId, TeacherUpdateViewModel teacher);
     }
 }

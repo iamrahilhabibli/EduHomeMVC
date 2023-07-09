@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using EduHome.Core.Entities;
 using EduHome.DataAccess.Contexts;
+using EduHomeUI.Areas.EHMasterPanel.ViewModels.CourseViewModels;
 using EduHomeUI.Areas.EHMasterPanel.ViewModels.TeacherViewModels;
 using EduHomeUI.Services.Interfaces;
 using Humanizer;
@@ -82,11 +83,81 @@ namespace EduHomeUI.Services.Concretes
                 return null;
             }
 
-            var viewModel = _mapper.Map<TeacherUpdateViewModel>(teacherWithDetails);
+            var viewModel = new TeacherUpdateViewModel
+            {
+                Name = teacherWithDetails.Name,
+                Surname = teacherWithDetails.Surname,
+                ImagePath = teacherWithDetails.ImagePath,
+                ImageName = teacherWithDetails.ImageName,
+                Position = teacherWithDetails.Position,
+                Description = teacherWithDetails.TeacherDetails?.Description,
+                Email = teacherWithDetails.TeacherDetails?.Email,
+                PhoneNumber = teacherWithDetails.TeacherDetails?.PhoneNumber,
+                SkypeAddress = teacherWithDetails.TeacherDetails?.SkypeAddress,
+                LanguageSkills = teacherWithDetails.TeacherDetails?.LanguageSkills ?? 0,
+                TeamLeaderSkills = teacherWithDetails.TeacherDetails?.TeamLeaderSkills ?? 0,
+                DevelopmentSkills = teacherWithDetails.TeacherDetails?.DevelopmentSkills ?? 0,
+                Design = teacherWithDetails.TeacherDetails?.Design ?? 0,
+                Innovation = teacherWithDetails.TeacherDetails?.Innovation ?? 0,
+                Communication = teacherWithDetails.TeacherDetails?.Communication ?? 0
+            };
 
             return viewModel;
         }
 
+        public async Task<bool> UpdateTeacherAsync(Guid teacherId, TeacherUpdateViewModel teacher)
+        {
+            Teacher existingTeacher = await _context.Teachers.Include(t => t.TeacherDetails).FirstOrDefaultAsync(t => t.Id == teacherId);
+            if (existingTeacher == null)
+            {
+                return false;
+            }
 
+            existingTeacher.Name = teacher.Name;
+            existingTeacher.Surname = teacher.Surname;
+            existingTeacher.ImagePath = teacher.ImagePath;
+            existingTeacher.ImageName = teacher.ImageName;
+            existingTeacher.Position = teacher.Position;
+
+            if (existingTeacher.TeacherDetails != null)
+            {
+                existingTeacher.TeacherDetails.Description = teacher.Description;
+                existingTeacher.TeacherDetails.Email = teacher.Email;
+                existingTeacher.TeacherDetails.PhoneNumber = teacher.PhoneNumber;
+                existingTeacher.TeacherDetails.SkypeAddress = teacher.SkypeAddress;
+                existingTeacher.TeacherDetails.LanguageSkills = teacher.LanguageSkills;
+                existingTeacher.TeacherDetails.TeamLeaderSkills = teacher.TeamLeaderSkills;
+                existingTeacher.TeacherDetails.DevelopmentSkills = teacher.DevelopmentSkills;
+                existingTeacher.TeacherDetails.Design = teacher.Design;
+                existingTeacher.TeacherDetails.Innovation = teacher.Innovation;
+                existingTeacher.TeacherDetails.Communication = teacher.Communication;
+
+                _context.Entry(existingTeacher.TeacherDetails).State = EntityState.Modified;
+            }
+            else
+            {
+                TeacherDetails newDetails = new TeacherDetails
+                {
+                    Description = teacher.Description,
+                    Email = teacher.Email,
+                    PhoneNumber = teacher.PhoneNumber,
+                    SkypeAddress = teacher.SkypeAddress,
+                    LanguageSkills = teacher.LanguageSkills,
+                    TeamLeaderSkills = teacher.TeamLeaderSkills,
+                    DevelopmentSkills = teacher.DevelopmentSkills,
+                    Design = teacher.Design,
+                    Innovation = teacher.Innovation,
+                    Communication = teacher.Communication
+                };
+
+                existingTeacher.TeacherDetails = newDetails;
+                _context.TeacherDetails.Add(newDetails);
+            }
+
+            _context.Entry(existingTeacher).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+
+            return true;
+        }
     }
 }

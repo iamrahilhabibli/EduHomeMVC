@@ -88,5 +88,25 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
 
             return View(viewModel);
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Update(Guid id, TeacherUpdateViewModel teacher)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(teacher);
+            }
+
+            bool isUpdated = await _service.UpdateTeacherAsync(id, teacher);
+
+            if (!isUpdated)
+            {
+                return NotFound();
+            }
+
+            TempData["Success"] = "Teacher Updated Successfully";
+
+            return RedirectToAction(nameof(Index));
+        }
     }
 }
