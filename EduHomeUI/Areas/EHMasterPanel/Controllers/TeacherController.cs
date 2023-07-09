@@ -76,7 +76,7 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
             TempData["Success"] = "Teacher Deleted Successfully";
             return RedirectToAction(nameof(Index));
         }
-        public IActionResult Update(Guid Id)
+        public async Task<IActionResult> Update(Guid Id)
         {
             Teacher teacher = _context.Teachers.Find(Id);
             if (teacher == null)
@@ -85,7 +85,7 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
             }
 
             var viewModel = _service.MapCreateVM(teacher);
-            return View(viewModel);
+            return View(await viewModel);
         }
 
     }
