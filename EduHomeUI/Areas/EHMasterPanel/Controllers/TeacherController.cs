@@ -1,4 +1,7 @@
-﻿using EduHome.DataAccess.Contexts;
+﻿using AutoMapper;
+using EduHome.Core.Entities;
+using EduHome.DataAccess.Contexts;
+using EduHomeUI.Areas.EHMasterPanel.ViewModels.CourseCategoryViewModels;
 using EduHomeUI.Areas.EHMasterPanel.ViewModels.CourseViewModels;
 using EduHomeUI.Areas.EHMasterPanel.ViewModels.TeacherViewModels;
 using EduHomeUI.Services.Concretes;
@@ -73,5 +76,17 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
             TempData["Success"] = "Teacher Deleted Successfully";
             return RedirectToAction(nameof(Index));
         }
+        public IActionResult Update(Guid Id)
+        {
+            Teacher teacher = _context.Teachers.Find(Id);
+            if (teacher == null)
+            {
+                return NotFound();
+            }
+
+            var viewModel = _service.MapCreateVM(teacher);
+            return View(viewModel);
+        }
+
     }
 }
