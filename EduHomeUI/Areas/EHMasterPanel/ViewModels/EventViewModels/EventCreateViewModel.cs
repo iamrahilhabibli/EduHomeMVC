@@ -31,7 +31,6 @@ namespace EduHomeUI.Areas.EHMasterPanel.ViewModels.EventViewModels
 
         public string Description { get; set; }
         public Guid? SpeakerId { get; set; }
-
         public List<Speaker> Speakers { get; set; }
     }
 }

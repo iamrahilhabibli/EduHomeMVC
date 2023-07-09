@@ -14,7 +14,6 @@ namespace EduHomeUI.Services.Concretes
         {
             _context = context;
         }
-
         public async Task<bool> CreateEventAsync(EventCreateViewModel eventVm)
         {
             if (eventVm is null)
