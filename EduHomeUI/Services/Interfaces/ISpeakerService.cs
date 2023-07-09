@@ -8,5 +8,7 @@ namespace EduHomeUI.Services.Interfaces
     {
         Task<List<Speaker>> GetAllSpeakers();
         Task<bool> CreateSpeakerAsync(SpeakerCreateViewModel speakerVm);
+        Task<bool> GetSpeakerById(Guid speakerId);
+        Task<Speaker> GetSpeakerByIdSpeaker(Guid speakerId);
     }
 }

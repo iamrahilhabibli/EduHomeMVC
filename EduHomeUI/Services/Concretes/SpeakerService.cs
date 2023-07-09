@@ -37,5 +37,15 @@ namespace EduHomeUI.Services.Concretes
         {
             return await _context.Speakers.ToListAsync();
         }
+        public async Task<bool> GetSpeakerById(Guid speakerId)
+        {
+            var speaker = await _context.Speakers.FindAsync(speakerId);
+            if (speaker is null) return false;
+            return true;
+        }
+        public async Task<Speaker> GetSpeakerByIdSpeaker(Guid speakerId)
+        {
+            return await _context.Speakers.FindAsync(speakerId);
+        }
     }
 }
