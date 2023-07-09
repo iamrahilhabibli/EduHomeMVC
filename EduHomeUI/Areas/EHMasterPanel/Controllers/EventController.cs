@@ -72,5 +72,17 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
             };
             return View(viewModel);
         }
+        [HttpPost]
+        [ActionName("Delete")]
+        [AutoValidateAntiforgeryToken]
+        public async Task<IActionResult> DeleteEvent(Guid id)
+        {
+            bool isDeleted = await _eventService.DeleteEventById(id);
+
+            if (!isDeleted) return NotFound();
+
+            TempData["Success"] = "Event Deleted Successfully";
+            return RedirectToAction(nameof(Index));
+        }
     }
 }

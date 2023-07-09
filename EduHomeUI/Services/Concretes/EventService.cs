@@ -60,8 +60,21 @@ namespace EduHomeUI.Services.Concretes
             return true;
         }
 
+        public async Task<bool> DeleteEventById(Guid skillId)
+        {
+            var newEvent = await _context.Events.FindAsync(skillId);
 
+            if (newEvent is null)
+            {
+                return false;
+            }
 
+            newEvent.IsDeleted = true;
+            _context.Events.Update(newEvent);
+            await _context.SaveChangesAsync();
+
+            return true;
+        }
 
         public async Task<List<Event>> GetAllEventsAsync()
         {
