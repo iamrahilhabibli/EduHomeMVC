@@ -95,6 +95,20 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
 
             return View(eventDetailsViewModel);
         }
+        public async Task<IActionResult> Update(Guid id)
+        {
+            var @event = await _eventService.GetEventByIdEvent(id);
+            if (@event == null)
+            {
+                return NotFound();
+            }
+
+            var viewModelEvent = await _eventService.MapEventVM(@event);
+
+            ViewBag.Speakers = await _context.Speakers.ToListAsync();
+
+            return View(viewModelEvent);
+        }
 
     }
 }

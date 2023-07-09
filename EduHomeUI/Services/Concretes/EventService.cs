@@ -123,6 +123,39 @@ namespace EduHomeUI.Services.Concretes
             return eventDetailsViewModel;
         }
 
+        public Task<EventCreateViewModel> GetEventViewModelById(Guid eventId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<EventUpdateViewModel> MapEventVM(Event @event)
+        {
+            var eventWithDetails = await _context.Events
+                .Include(e => e.EventDetails)
+                .FirstOrDefaultAsync(e => e.Id == @event.Id);
+
+            if (eventWithDetails == null)
+            {
+                return null;
+            }
+
+            var eventViewModel = new EventUpdateViewModel
+            {
+                Id = eventWithDetails.Id,
+                Title = eventWithDetails.Title,
+                ImagePath = eventWithDetails.ImagePath,
+                ImageName = eventWithDetails.ImageName,
+                Venue = eventWithDetails.Venue,
+                StartTime = eventWithDetails.StartTime,
+                EndTime = eventWithDetails.EndTime,
+                Date = eventWithDetails.Date,
+                Description = eventWithDetails.EventDetails?.Description,
+                Speakers = await _context.Speakers.Where(s => !s.IsDeleted).ToListAsync()
+            };
+
+            return eventViewModel;
+        }
+
 
     }
 }
