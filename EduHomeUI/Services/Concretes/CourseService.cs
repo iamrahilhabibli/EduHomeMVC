@@ -263,10 +263,5 @@ namespace EduHomeUI.Services.Concretes
             return courseDetailsViewModel;
         }
 
-
-
-
-
-
     }
 }

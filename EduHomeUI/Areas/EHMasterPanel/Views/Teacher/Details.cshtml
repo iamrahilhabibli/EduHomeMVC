@@ -1,0 +1,106 @@
+﻿@using EduHomeUI.Areas.EHMasterPanel.ViewModels.TeacherViewModels
+@model TeacherDetailsViewModel
+
+<div class="teacher-details-area pt-150 pb-60">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="teacher-details-img">
+                    <img src="@Model.ImagePath" alt="teacher">
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="teacher-details-content ml-50">
+                    <h2>@Model.Name @Model.Surname</h2>
+                    <h5>@Model.Position</h5>
+                    <p>@Model.Description</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-4">
+                <div class="teacher-contact">
+                    <h4>Contact Information</h4>
+                    <p><span>Mail me: </span>@Model.Email</p>
+                    <p><span>Make a call: </span>@Model.PhoneNumber</p>
+                    <p><span>Skype: </span>@Model.SkypeAddress</p>
+                    <ul>
+                        <li><a href="#"><i class="zmdi zmdi-facebook"></i></a></li>
+                        <li><a href="#"><i class="zmdi zmdi-pinterest"></i></a></li>
+                        <li><a href="#"><i class="zmdi zmdi-vimeo"></i></a></li>
+                        <li><a href="#"><i class="zmdi zmdi-twitter"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-9 col-md-8">
+                <div class="skill-area">
+                    <h4>Skills</h4>
+                </div>
+                <div class="skill-wrapper">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="skill-bar-item">
+                                <span>Language</span>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: @Model.LanguageSkills%">
+                                        <span class="text-top">@Model.LanguageSkills%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="skill-bar-item">
+                                <span>Team Leader</span>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: @Model.TeamLeaderSkills%">
+                                        <span class="text-top">@Model.TeamLeaderSkills%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="skill-bar-item">
+                                <span>Development</span>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: @Model.DevelopmentSkills%">
+                                        <span class="text-top">@Model.DevelopmentSkills%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="skill-bar-item">
+                                <span>Design</span>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: @Model.Design%">
+                                        <span class="text-top">@Model.Design%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="skill-bar-item">
+                                <span>Innovation</span>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: @Model.Innovation%">
+                                        <span class="text-top">@Model.Innovation%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="skill-bar-item">
+                                <span>Communication</span>
+                                <div class="progress">
+                                    <div class="progress-bar" style="width: @Model.Communication%">
+                                        <span class="text-top">@Model.Communication%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

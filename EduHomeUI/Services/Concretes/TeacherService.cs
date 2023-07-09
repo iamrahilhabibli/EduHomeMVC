@@ -159,5 +159,37 @@ namespace EduHomeUI.Services.Concretes
 
             return true;
         }
+        public async Task<TeacherDetailsViewModel> GetTeacherDetailsViewModelAsync(Guid teacherId)
+        {
+            var teacherDetails = await _context.Teachers
+                .Include(t => t.TeacherDetails)
+                .FirstOrDefaultAsync(t => t.Id == teacherId);
+
+            if (teacherDetails == null)
+            {
+                return null;
+            }
+
+            var teacherDetailsViewModel = new TeacherDetailsViewModel
+            {
+                Name = teacherDetails.Name,
+                Surname = teacherDetails.Surname,
+                ImagePath = teacherDetails.ImagePath,
+                Position = teacherDetails.Position,
+                Description = teacherDetails.TeacherDetails?.Description,
+                Email = teacherDetails.TeacherDetails?.Email,
+                PhoneNumber = teacherDetails.TeacherDetails?.PhoneNumber,
+                SkypeAddress = teacherDetails.TeacherDetails?.SkypeAddress,
+                LanguageSkills = teacherDetails.TeacherDetails?.LanguageSkills ?? 0,
+                TeamLeaderSkills = teacherDetails.TeacherDetails?.TeamLeaderSkills ?? 0,
+                DevelopmentSkills = teacherDetails.TeacherDetails?.DevelopmentSkills ?? 0,
+                Design = teacherDetails.TeacherDetails?.Design ?? 0,
+                Innovation = teacherDetails.TeacherDetails?.Innovation ?? 0,
+                Communication = teacherDetails.TeacherDetails?.Communication ?? 0
+            };
+
+            return teacherDetailsViewModel;
+        }
+
     }
 }

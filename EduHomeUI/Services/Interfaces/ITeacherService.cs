@@ -15,5 +15,6 @@ namespace EduHomeUI.Services.Interfaces
         Task<bool> DeleteTeacherById(Guid langId);
         Task<TeacherUpdateViewModel> MapTeacherVM(Teacher teacher);
         Task<bool> UpdateTeacherAsync(Guid courseId, TeacherUpdateViewModel teacher);
+        Task<TeacherDetailsViewModel> GetTeacherDetailsViewModelAsync(Guid teacherId);
     }
 }

@@ -108,5 +108,12 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+        public async Task<IActionResult> Details(Guid id)
+        {
+            var teacherDetailsView = await _service.GetTeacherDetailsViewModelAsync(id);
+            if (teacherDetailsView is null) return NotFound();
+
+            return View(teacherDetailsView);
+        }
     }
 }
