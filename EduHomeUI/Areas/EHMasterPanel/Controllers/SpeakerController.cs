@@ -24,5 +24,9 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
             };
             return View(viewModel);
         }
+        public async Task<IActionResult> Create()
+        {
+            return View();
+        }
     }
 }
