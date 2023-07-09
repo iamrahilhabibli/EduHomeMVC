@@ -4,6 +4,7 @@ namespace EduHome.Core.Entities
 {
     public class AppUser : IdentityUser
     {
-        public string Fullname { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
     }
 }
