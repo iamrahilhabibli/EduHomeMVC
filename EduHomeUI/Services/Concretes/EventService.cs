@@ -7,13 +7,11 @@ namespace EduHomeUI.Services.Concretes
 {
     public class EventService:IEventService
     {
-        private readonly IEventService _eventService;
         private readonly AppDbContext _context;
 
-        public EventService(AppDbContext context, IEventService eventService)
+        public EventService(AppDbContext context)
         {
             _context = context;
-            _eventService = eventService;
         }
 
         public async Task<List<Event>> GetAllEventsAsync()
