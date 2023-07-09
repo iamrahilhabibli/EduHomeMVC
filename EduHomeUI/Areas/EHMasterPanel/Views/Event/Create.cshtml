@@ -1,7 +1,6 @@
-﻿@using EduHomeUI.Areas.EHMasterPanel.ViewModels.CourseViewModels;
-
+﻿@using EduHomeUI.Areas.EHMasterPanel.ViewModels.EventViewModels;
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
-@model CourseViewModel
+@model EventCreateViewModel
 <partial name="_Notification" />
 @{
     ViewData["Title"] = "Create";
@@ -11,13 +10,13 @@
     <div class="col-md-8 offset-md-2">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Create course</h4>
+                <h4 class="card-title">Create Event</h4>
                 <form method="post">
                     <div class="row mb-3">
-                        <label asp-for="Name" class="col-md-3 col-form-label">Title</label>
+                        <label asp-for="Title" class="col-md-3 col-form-label">Title</label>
                         <div class="col-sm-9">
-                            <input asp-for="Name" class="form-control" />
-                            <span asp-validation-for="Name" class="text-danger"></span>
+                            <input asp-for="Title" class="form-control" />
+                            <span asp-validation-for="Title" class="text-danger"></span>
                         </div>
                     </div>
 
@@ -38,38 +37,46 @@
                     </div>
 
                     <div class="row mb-3">
-                        <label asp-for="Start" class="col-md-3 col-form-label">Start</label>
+                        <label asp-for="Venue" class="col-md-3 col-form-label">Venue</label>
                         <div class="col-sm-9">
-                            <input asp-for="Start" class="form-control" />
-                            <span asp-validation-for="Start" class="text-danger"></span>
+                            <input asp-for="Venue" class="form-control" />
+                            <span asp-validation-for="Venue" class="text-danger"></span>
                         </div>
                     </div>
 
                     <div class="row mb-3">
-                        <label asp-for="Duration" class="col-md-3 col-form-label">Duration</label>
+                        <label asp-for="StartTime" class="col-md-3 col-form-label">StartTime</label>
                         <div class="col-sm-9">
-                            <input asp-for="Duration" class="form-control" />
-                            <span asp-validation-for="Duration" class="text-danger"></span>
+                            <input asp-for="StartTime" class="form-control" />
+                            <span asp-validation-for="StartTime" class="text-danger"></span>
                         </div>
                     </div>
 
                     <div class="row mb-3">
-                        <label asp-for="ClassDuration" class="col-md-3 col-form-label">Class Duration</label>
+                        <label asp-for="EndTime" class="col-md-3 col-form-label">EndTime</label>
                         <div class="col-sm-9">
-                            <input asp-for="ClassDuration" class="form-control" />
-                            <span asp-validation-for="ClassDuration" class="text-danger"></span>
+                            <input asp-for="EndTime" class="form-control" />
+                            <span asp-validation-for="EndTime" class="text-danger"></span>
                         </div>
                     </div>
 
                     <div class="row mb-3">
-                        <label asp-for="CourseFee" class="col-md-3 col-form-label">Course Fee</label>
+                        <label asp-for="Date" class="col-md-3 col-form-label">Date</label>
                         <div class="col-sm-9">
-                            <input asp-for="CourseFee" class="form-control" />
-                            <span asp-validation-for="CourseFee" class="text-danger"></span>
+                            <input asp-for="Date" class="form-control" />
+                            <span asp-validation-for="Date" class="text-danger"></span>
                         </div>
                     </div>
 
-                    <h3>Course Details</h3>
+                    <div class="row mb-3">
+                        <label asp-for="SpeakerId" class="col-md-3 col-form-label">Speaker</label>
+                        <div class="col-sm-9">
+                            <select asp-for="SpeakerId" asp-items="@(new SelectList(Model.Speakers, "Id", "Name"))" class="form-control"></select>
+                            <span asp-validation-for="SpeakerId" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <h3>Event Details</h3>
 
                     <div class="row mb-3">
                         <label asp-for="Description" class="col-md-3 col-form-label">Description</label>
@@ -79,57 +86,6 @@
                         </div>
                     </div>
 
-                    <div class="row mb-3">
-                        <label class="col-md-3 col-form-label">Select Course Language</label>
-                        <div class="col-sm-9">
-                            <select class="form-select" asp-for="LanguageOptionId">
-                                @foreach (var language in ViewBag.Languages)
-                                {
-                                    <option value="@language.Id">@language.LanguageOption</option>
-                                }
-                            </select>
-                            <span asp-validation-for="LanguageOptionId" class="text-danger"></span>
-                        </div>
-                    </div>
-
-                    <div class="row mb-3">
-                        <label class="col-md-3 col-form-label">Select Course Level</label>
-                        <div class="col-sm-9">
-                            <select class="form-select" asp-for="SkillLevelId">
-                                @foreach (var skillLevel in ViewBag.SkillLevels)
-                                {
-                                    <option value="@skillLevel.Id">@skillLevel.Skill</option>
-                                }
-                            </select>
-                            <span asp-validation-for="SkillLevelId" class="text-danger"></span>
-                        </div>
-                    </div>
-
-                    <div class="row mb-3">
-                        <label class="col-md-3 col-form-label">Select Course Assessments</label>
-                        <div class="col-sm-9">
-                            <select class="form-select" asp-for="AssesmentId">
-                                @foreach (var assessment in ViewBag.Assesments)
-                                {
-                                    <option value="@assessment.Id">@assessment.AssesmentType</option>
-                                }
-                            </select>
-                            <span asp-validation-for="AssesmentId" class="text-danger"></span>
-                        </div>
-                    </div>
-
-                    <div class="row mb-3">
-                        <label class="col-md-3 col-form-label">Select Category</label>
-                        <div class="col-sm-9">
-                            <select class="form-select" asp-for="CourseCategoryId">
-                                @foreach (var category in ViewBag.Categories)
-                                {
-                                    <option value="@category.Id">@category.Category</option>
-                                }
-                            </select>
-                            <span asp-validation-for="CourseCategoryId" class="text-danger"></span>
-                        </div>
-                    </div>
 
                     <div class="row justify-content-end">
                         <div class="col-sm-9">

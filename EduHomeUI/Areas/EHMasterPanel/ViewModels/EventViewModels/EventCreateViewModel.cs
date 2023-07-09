@@ -12,7 +12,7 @@ namespace EduHomeUI.Areas.EHMasterPanel.ViewModels.EventViewModels
         public DateTime EndTime { get; set; }
         public DateTime Date { get; set; }
         public string Description { get; set; }
-        public Guid SpeakerId { get; set; }
+        public Guid? SpeakerId { get; set; }
 
         public List<Speaker> Speakers { get; set; }
     }
