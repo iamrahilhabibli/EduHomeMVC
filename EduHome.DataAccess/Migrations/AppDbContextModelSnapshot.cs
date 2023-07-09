@@ -223,6 +223,106 @@ namespace EduHome.DataAccess.Migrations
                     b.ToTable("CourseDetailsSkillLevels");
                 });
 
+            modelBuilder.Entity("EduHome.Core.Entities.Event", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateModified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("EndTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("EventDetailsId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("ImageName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImagePath")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("StartTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Venue")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EventDetailsId");
+
+                    b.ToTable("Events");
+                });
+
+            modelBuilder.Entity("EduHome.Core.Entities.EventDetails", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateModified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("EventsDetails");
+                });
+
+            modelBuilder.Entity("EduHome.Core.Entities.EventSpeaker", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("EventDetailsId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("EventId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("SpeakerId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EventDetailsId");
+
+                    b.HasIndex("EventId");
+
+                    b.HasIndex("SpeakerId");
+
+                    b.ToTable("EventSpeakers");
+                });
+
             modelBuilder.Entity("EduHome.Core.Entities.Language", b =>
                 {
                     b.Property<Guid>("Id")
@@ -267,6 +367,50 @@ namespace EduHome.DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("SkillLevels");
+                });
+
+            modelBuilder.Entity("EduHome.Core.Entities.Speaker", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CompanyName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateModified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ImageName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImagePath")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Position")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Surname")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Speakers");
                 });
 
             modelBuilder.Entity("EduHome.Core.Entities.Teacher", b =>
@@ -448,6 +592,40 @@ namespace EduHome.DataAccess.Migrations
                     b.Navigation("SkillLevel");
                 });
 
+            modelBuilder.Entity("EduHome.Core.Entities.Event", b =>
+                {
+                    b.HasOne("EduHome.Core.Entities.EventDetails", "EventDetails")
+                        .WithMany()
+                        .HasForeignKey("EventDetailsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("EventDetails");
+                });
+
+            modelBuilder.Entity("EduHome.Core.Entities.EventSpeaker", b =>
+                {
+                    b.HasOne("EduHome.Core.Entities.EventDetails", null)
+                        .WithMany("EventSpeakers")
+                        .HasForeignKey("EventDetailsId");
+
+                    b.HasOne("EduHome.Core.Entities.Event", "Event")
+                        .WithMany("EventSpeakers")
+                        .HasForeignKey("EventId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("EduHome.Core.Entities.Speaker", "Speaker")
+                        .WithMany("EventSpeakers")
+                        .HasForeignKey("SpeakerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Event");
+
+                    b.Navigation("Speaker");
+                });
+
             modelBuilder.Entity("EduHome.Core.Entities.TeacherDetails", b =>
                 {
                     b.HasOne("EduHome.Core.Entities.Teacher", "Teacher")
@@ -483,6 +661,16 @@ namespace EduHome.DataAccess.Migrations
                     b.Navigation("CourseDetailsSkillLevels");
                 });
 
+            modelBuilder.Entity("EduHome.Core.Entities.Event", b =>
+                {
+                    b.Navigation("EventSpeakers");
+                });
+
+            modelBuilder.Entity("EduHome.Core.Entities.EventDetails", b =>
+                {
+                    b.Navigation("EventSpeakers");
+                });
+
             modelBuilder.Entity("EduHome.Core.Entities.Language", b =>
                 {
                     b.Navigation("CourseDetailsLanguages");
@@ -491,6 +679,11 @@ namespace EduHome.DataAccess.Migrations
             modelBuilder.Entity("EduHome.Core.Entities.SkillLevel", b =>
                 {
                     b.Navigation("CourseDetailsSkillLevels");
+                });
+
+            modelBuilder.Entity("EduHome.Core.Entities.Speaker", b =>
+                {
+                    b.Navigation("EventSpeakers");
                 });
 
             modelBuilder.Entity("EduHome.Core.Entities.Teacher", b =>
