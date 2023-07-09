@@ -47,7 +47,7 @@
                     <div class="row mb-3">
                         <label asp-for="StartTime" class="col-md-3 col-form-label">StartTime</label>
                         <div class="col-sm-9">
-                            <input asp-for="StartTime" class="form-control" />
+                            <input asp-for="StartTime" type="time" class="form-control" />
                             <span asp-validation-for="StartTime" class="text-danger"></span>
                         </div>
                     </div>
@@ -55,10 +55,11 @@
                     <div class="row mb-3">
                         <label asp-for="EndTime" class="col-md-3 col-form-label">EndTime</label>
                         <div class="col-sm-9">
-                            <input asp-for="EndTime" class="form-control" />
+                            <input asp-for="EndTime" type="time" class="form-control" />
                             <span asp-validation-for="EndTime" class="text-danger"></span>
                         </div>
                     </div>
+
 
                     <div class="row mb-3">
                         <label asp-for="Date" class="col-md-3 col-form-label">Date</label>
