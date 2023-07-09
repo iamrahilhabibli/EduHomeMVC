@@ -71,7 +71,14 @@
                     <div class="row mb-3">
                         <label asp-for="SpeakerId" class="col-md-3 col-form-label">Speaker</label>
                         <div class="col-sm-9">
-                            <select asp-for="SpeakerId" asp-items="@(new SelectList(Model.Speakers, "Id", "Name"))" class="form-control"></select>
+                            <select asp-for="SpeakerId" class="form-control">
+                                <option value="">No Speaker</option>
+                                @foreach (var speaker in Model.Speakers)
+                                {
+                                    <option value="@speaker.Id">@speaker.Name</option>
+                                }
+                            </select>
+                            <input type="hidden" asp-for="Speakers" />
                             <span asp-validation-for="SpeakerId" class="text-danger"></span>
                         </div>
                     </div>

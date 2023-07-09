@@ -34,30 +34,30 @@ namespace EduHomeUI.Services.Concretes
                 StartTime = eventVm.StartTime,
                 EndTime = eventVm.EndTime,
                 Date = eventVm.Date,
-                EventDetails = eventDetails
+                EventDetails = eventDetails,
+                EventSpeakers = new List<EventSpeaker>()
             };
 
-            if (eventVm.SpeakerId != null)
+            if (eventVm.SpeakerId.HasValue)
             {
-                var speaker = await _context.Speakers.FindAsync(eventVm.SpeakerId);
+                var speaker = await _context.Speakers.FindAsync(eventVm.SpeakerId.Value);
                 if (speaker != null)
                 {
                     var eventSpeaker = new EventSpeaker
                     {
-                        SpeakerId = speaker.Id,
-                        EventId = @event.Id
+                        EventId = @event.Id,
+                        SpeakerId = speaker.Id
                     };
-
                     @event.EventSpeakers.Add(eventSpeaker);
                 }
             }
 
-            _context.EventsDetails.Add(eventDetails);
             _context.Events.Add(@event);
             await _context.SaveChangesAsync();
 
             return true;
         }
+
 
 
         public async Task<List<Event>> GetAllEventsAsync()
