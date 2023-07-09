@@ -44,6 +44,18 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
 
             return View(viewModel);
         }
+        [HttpPost]
+        [AutoValidateAntiforgeryToken]
+        public async Task<IActionResult> Create(EventCreateViewModel eventVm)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            if (!await _eventService.CreateEventAsync(eventVm)) return BadRequest();
+            TempData["Success"] = "Event Created Successfully!";
+            return RedirectToAction(nameof(Index));
+        }
 
     }
 }
