@@ -48,9 +48,24 @@ namespace EduHomeUI.Services.Concretes
             return await _context.Teachers.FindAsync(id);
         }
 
-       public async Task<TeacherDeleteViewModel> MapDeleteVM(Teacher teacher)
-    {
-        return await Task.FromResult(_mapper.Map<TeacherDeleteViewModel>(teacher));
-    }
+        public async Task<TeacherDeleteViewModel> MapDeleteVM(Teacher teacher)
+        {
+            return await Task.FromResult(_mapper.Map<TeacherDeleteViewModel>(teacher));
+        }
+        public async Task<bool> DeleteTeacherById(Guid langId)
+        {
+            var teacher = await _context.Teachers.FindAsync(langId);
+
+            if (teacher is null)
+            {
+                return false;
+            }
+
+            teacher.IsDeleted = true;
+            _context.Teachers.Update(teacher);
+            await _context.SaveChangesAsync();
+
+            return true;
+        }
     }
 }
