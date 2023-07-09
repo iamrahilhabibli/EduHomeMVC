@@ -22,6 +22,7 @@ namespace EduHomeUI.Extensions
             services.AddScoped<IAssesmentService, AssesmentService>();
             services.AddScoped<ISkillService, SkillService>();
             services.AddScoped<ITeacherService, TeacherService>();
+            services.AddScoped<IEventService, EventService>();
         }
     }
 }

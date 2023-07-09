@@ -1,0 +1,59 @@
+﻿@using EduHomeUI.Areas.EHMasterPanel.ViewModels.EventViewModels;
+@model EventIndexViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<partial name="_Notification" />
+@{
+    ViewData["Title"] = "Index";
+    int count = 1;
+}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Events</h4>
+                    <a asp-controller="Event" asp-action="Create" class="btn btn-primary mb-4">Create New Event</a>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Image</th>
+                                    <th>Title</th>
+                                    <th>Venue</th>
+                                    <th>Date</th>
+                                    <th>StartTime</th>
+                                    <th>EndTime</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var newEvent in Model.Events)
+                                {
+                                    @if (!newEvent.IsDeleted)
+                                    {
+                                        <tr>
+                                            <td>@count</td>
+                                            <td><img src="@newEvent.ImagePath" alt="@newEvent.ImageName" style="width:100px" /></td>
+                                            <td>@newEvent.Title</td>
+                                            <td>@newEvent.Venue</td>
+                                            <td>@newEvent.Date</td>
+                                            <td>@newEvent.StartTime</td>
+                                            <td>@newEvent.EndTime</td>
+                                            <td>
+                                                <a asp-action="Update" asp-route-id="@newEvent.Id" class="btn btn-warning"><i class="bi bi-pencil-square"></i></a>
+                                                <a asp-action="Delete" asp-route-id="@newEvent.Id" class="btn btn-danger"><i class="bi bi-trash-fill"></i></a>
+                                                <a asp-controller="Course" asp-action="Details" asp-route-id="@newEvent.Id" class="btn btn-success"><i class="bi bi-chat-left-dots"></i></a>
+
+                                            </td>
+                                        </tr>
+                                        count++;
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
