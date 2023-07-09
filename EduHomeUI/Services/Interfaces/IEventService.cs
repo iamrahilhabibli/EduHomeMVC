@@ -12,5 +12,6 @@ namespace EduHomeUI.Services.Interfaces
         Task<Event> GetEventByIdEvent(Guid eventId);
 
         Task<bool> DeleteEventById(Guid skillId);
+        Task<EventDetailsViewModel> GetEventDetailsViewModelAsync(Guid eventId);
     }
 }

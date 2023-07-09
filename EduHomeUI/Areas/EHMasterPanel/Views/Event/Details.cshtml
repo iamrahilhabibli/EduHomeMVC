@@ -1,0 +1,46 @@
+﻿@using EduHomeUI.Areas.EHMasterPanel.ViewModels.EventViewModels;
+@model EventDetailsViewModel
+<div class="event-details-area blog-area pt-150 pb-140">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="event-details">
+                    <div class="event-details-img">
+                        <img src="@Model.ImagePath" alt="@Model.ImageName">
+                        <div class="event-date">
+                            <h3> <span>@Model.Date</span></h3>
+                        </div>
+                    </div>
+                    <div class="event-details-content">
+                        <h2>@Model.Title</h2>
+                        <ul>
+                            <li><span>time : </span>@Model.StartTime - @Model.EndTime</li>
+                            <li><span>venue : </span>@Model.Venue</li>
+                        </ul>
+                        <p>I must explain to you how all this a mistaken idea of denouncing great explorer of the rut the is lder of human happiness pcias unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit asnatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui </p>
+                        <p>I must explain to you how all this a mistaken idea of denouncing great explorer of the rut the is lder of human happiness pcias unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem </p>
+                        <p>I must explain to you how all this a mistaken idea of denouncing great explorer of the rut the is lder of human happiness pcias unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</p>
+                        <div class="speakers-area fix">
+                            <h4>Speakers</h4>
+                            @foreach (var speaker in Model.Speakers)
+                            {
+                                <div class="single-speaker">
+                                    <div class="speaker-img">
+                                        <img src="@speaker.ImagePath" alt="speaker">
+                                    </div>
+                                    <div class="speaker-name">
+                                        <h5>@speaker.Name</h5>
+                                        <p>@speaker.Position, @speaker.CompanyName</p>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Event Details End -->

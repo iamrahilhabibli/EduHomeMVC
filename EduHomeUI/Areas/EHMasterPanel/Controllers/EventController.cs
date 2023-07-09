@@ -84,5 +84,17 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
             TempData["Success"] = "Event Deleted Successfully";
             return RedirectToAction(nameof(Index));
         }
+        public async Task<IActionResult> Details(Guid eventId)
+        {
+            var eventDetailsViewModel = await _eventService.GetEventDetailsViewModelAsync(eventId);
+
+            if (eventDetailsViewModel == null)
+            {
+                return NotFound();
+            }
+
+            return View(eventDetailsViewModel);
+        }
+
     }
 }

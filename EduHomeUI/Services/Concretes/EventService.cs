@@ -92,5 +92,38 @@ namespace EduHomeUI.Services.Concretes
         {
             return await _context.Events.FindAsync(eventId);
         }
+        public async Task<EventDetailsViewModel> GetEventDetailsViewModelAsync(Guid eventId)
+        {
+            var eventDetails = await _context.EventsDetails
+                .Include(ed => ed.Event)
+                .FirstOrDefaultAsync(ed => ed.Event.Id == eventId);
+
+            if (eventDetails == null)
+            {
+                return null;
+            }
+
+            var eventSpeakers = await _context.EventSpeakers
+                .Include(es => es.Speaker)
+                .Where(es => es.EventId == eventId)
+                .Select(es => es.Speaker)
+                .ToListAsync();
+
+            var eventDetailsViewModel = new EventDetailsViewModel
+            {
+                Title = eventDetails.Event.Title,
+                ImagePath = eventDetails.Event.ImagePath,
+                ImageName = eventDetails.Event.ImageName,
+                StartTime = eventDetails.Event.StartTime,
+                EndTime = eventDetails.Event.EndTime,
+                Date = eventDetails.Event.Date,
+                EventDetails = eventDetails,
+                Speakers = eventSpeakers
+            };
+
+            return eventDetailsViewModel;
+        }
+
+
     }
 }
