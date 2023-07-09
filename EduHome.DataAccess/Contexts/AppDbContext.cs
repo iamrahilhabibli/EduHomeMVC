@@ -22,7 +22,8 @@ namespace EduHome.DataAccess.Contexts
         public DbSet<CourseCategory> CourseCategories { get; set; }
         public DbSet<CourseDetailsAssesment> CourseDetailsAssesments { get; set; }
         public DbSet<CourseDetailsSkillLevel> CourseDetailsSkillLevels { get; set; }
-
+        public DbSet<Teacher> Teachers { get; set; }
+        public DbSet<TeacherDetails> TeacherDetails { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.AddInterceptors(new DateModifiedInterceptor());
