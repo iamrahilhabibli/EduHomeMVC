@@ -1,5 +1,7 @@
 ﻿using EduHome.DataAccess.Contexts;
+using EduHomeUI.Areas.EHMasterPanel.ViewModels.CourseViewModels;
 using EduHomeUI.Areas.EHMasterPanel.ViewModels.TeacherViewModels;
+using EduHomeUI.Services.Concretes;
 using EduHomeUI.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,6 +12,7 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
     {
         private readonly AppDbContext _context;
         private readonly ITeacherService _service;
+
 
         public TeacherController(AppDbContext context, ITeacherService service) 
         {
@@ -42,6 +45,20 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
             if (!await _service.CreateTeacherAsync(teacherVm)) return BadRequest();
             TempData["Success"] = "Teacher Created Successfully!";
             return RedirectToAction(nameof(Index));
+        }
+
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            if (!await _service.GetTeacherById(id))
+            {
+                return NotFound();
+            }
+
+            var teacher = await _service.GetTeacherByIdTeacher(id);
+
+            var viewModel = _service.MapDeleteVM(teacher);
+
+            return View(await viewModel);
         }
     }
 }

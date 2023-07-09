@@ -7,5 +7,8 @@ namespace EduHomeUI.Services.Interfaces
     {
         Task<List<Teacher>> GetAllTeachersAsync();
         Task<bool> CreateTeacherAsync(TeacherCreateViewModel teacherVm);
+        Task<bool> GetTeacherById(Guid id);
+        Task<Teacher> GetTeacherByIdTeacher(Guid id);
+        Task<TeacherDeleteViewModel> MapDeleteVM(Teacher teacher);
     }
 }

@@ -36,5 +36,21 @@ namespace EduHomeUI.Services.Concretes
         {
             return await _context.Teachers.ToListAsync();
         }
+
+        public async Task<bool> GetTeacherById(Guid id)
+        {
+            var teacher = await _context.Teachers.FindAsync(id);
+            if (teacher is null) return false;
+            return true;
+        }
+        public async Task<Teacher> GetTeacherByIdTeacher(Guid id)
+        {
+            return await _context.Teachers.FindAsync(id);
+        }
+
+       public async Task<TeacherDeleteViewModel> MapDeleteVM(Teacher teacher)
+    {
+        return await Task.FromResult(_mapper.Map<TeacherDeleteViewModel>(teacher));
+    }
     }
 }
