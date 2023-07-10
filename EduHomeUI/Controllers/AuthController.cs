@@ -98,7 +98,7 @@ namespace EduHomeUI.Controllers
                 return RedirectToAction(nameof(ForgotPasswordConfirmation));
             }
             var token = await _userManager.GeneratePasswordResetTokenAsync(user);
-            var callback = Url.Action(nameof(ResetPassword), "Account", new { token, email = user.Email }, Request.Scheme);
+            var callback = Url.Action(nameof(ResetPassword), "Auth", new { token, email = user.Email }, Request.Scheme);
             var message = new EmailService.Message(new string[] { user.Email }, "Reset Password Token", callback);
             _emailSenderService.SendEmail(message);
             return RedirectToAction(nameof(ForgotPasswordConfirmation));
@@ -107,6 +107,7 @@ namespace EduHomeUI.Controllers
         {
             return View();
         }
+        [HttpGet]
         public IActionResult ResetPassword(string token, string email)
         {
             var model = new EduHome.Core.Entities.ResetPasswordModel { Token = token, Email = email };
