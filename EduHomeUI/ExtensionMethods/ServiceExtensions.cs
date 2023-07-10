@@ -45,7 +45,10 @@ namespace EduHomeUI.Extensions
             })
                  .AddEntityFrameworkStores<AppDbContext>()
                  .AddDefaultTokenProviders();
-                 
+            services.Configure<DataProtectionTokenProviderOptions>(opt =>
+            {
+                opt.TokenLifespan = TimeSpan.FromMinutes(15);
+            });
         }
     }
 }
