@@ -1024,3 +1024,5 @@ C:\Users\Rhabi\OneDrive\Documents\Backend\MVCFinalEdu\EduHomeMVC\EduHomeUI\bin\D
 C:\Users\Rhabi\OneDrive\Documents\Backend\MVCFinalEdu\EduHomeMVC\EduHomeUI\bin\Debug\net6.0\BouncyCastle.Crypto.dll
 C:\Users\Rhabi\OneDrive\Documents\Backend\MVCFinalEdu\EduHomeMVC\EduHomeUI\bin\Debug\net6.0\EduHome.EmailServices.dll
 C:\Users\Rhabi\OneDrive\Documents\Backend\MVCFinalEdu\EduHomeMVC\EduHomeUI\bin\Debug\net6.0\EduHome.EmailServices.pdb
+C:\Users\Rhabi\OneDrive\Documents\Backend\MVCFinalEdu\EduHomeMVC\EduHomeUI\bin\Debug\net6.0\GoogleReCaptcha.V3.dll
+C:\Users\Rhabi\OneDrive\Documents\Backend\MVCFinalEdu\EduHomeMVC\EduHomeUI\obj\Debug\net6.0\EduHomeUI.MvcApplicationPartsAssemblyInfo.cs
