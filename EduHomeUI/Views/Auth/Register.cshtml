@@ -1,6 +1,9 @@
-﻿@using EduHomeUI.ViewModels.UsersViewModel;
+﻿@using EduHome.Core.Entities;
+@using EduHomeUI.ViewModels.UsersViewModel;
 @model UserRegisterViewModel
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using Microsoft.Extensions.Options
+@inject IOptions<ReCAPTCHASettings>  GooglereCAPTCHA
 
 <div class="register-area pt-150 pb-150">
     <div class="container">
@@ -15,6 +18,7 @@
                         <div class="login-form">
                             <form method="post">
                                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <partial name="_CaptchaInput" />
                                 <div class="form-group">
                                     <label asp-for="FirstName" class="form-label">First Name</label>
                                     <input asp-for="FirstName" type="text" class="form-control">
@@ -65,7 +69,7 @@
                                     <p>Already have an account? <a asp-action="Login">Log in</a></p>
                                 </div>
 
-                                <partial name="_ValidationScript" />
+@*                                <partial name="_ValidationScript" />*@
                             </form>
 
 
@@ -81,4 +85,16 @@
 @section Script{
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js" integrity="sha512-rstIgDs0xPgmG6RX1Aba4KV5cWJbAMcvRCVmglpam9SoHZiUCyQVDdH2LPlxoHtrv17XWblE/V/PP+Tr04hbtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/4.0.0/jquery.validate.unobtrusive.min.js" integrity="sha512-xq+Vm8jC94ynOikewaQXMEkJIOBp7iArs3IhFWSWdRT3Pq8wFz46p+ZDFAR7kHnSFf+zUv52B3prRYnbDRdgog==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://www.google.com/recaptcha/api.js?render=@GooglereCAPTCHA.Value.ReCAPTCHA_Site_Key"></script>
+    <script>
+        function onClick(e) {
+            e.preventDefault();
+            grecaptcha.ready(function () {
+                grecaptcha.execute('reCAPTCHA_site_key', { action: 'submit' }).then(function (token) {
+                   
+                });
+            });
+        }
+    </script>
 }

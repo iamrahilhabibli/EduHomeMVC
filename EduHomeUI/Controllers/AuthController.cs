@@ -12,6 +12,7 @@ using System.Net;
 using Microsoft.AspNetCore.Identity.UI.V4.Pages.Account.Internal;
 using EmailService;
 using Message = EmailService.Message;
+using GoogleReCaptcha.V3.Interface;
 
 namespace EduHomeUI.Controllers
 {
@@ -20,12 +21,14 @@ namespace EduHomeUI.Controllers
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
         private readonly IEmailSenderService _emailSenderService;
+        private readonly ICaptchaValidator _captchaValidator;
 
-        public AuthController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, IEmailSenderService emailSenderService)
+        public AuthController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, IEmailSenderService emailSenderService, ICaptchaValidator captchaValidator)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _emailSenderService = emailSenderService;
+            _captchaValidator = captchaValidator;
         }
         public IActionResult Register()
         {
@@ -36,6 +39,11 @@ namespace EduHomeUI.Controllers
         public async Task<IActionResult> Register(UserRegisterViewModel userRegVm)
         {
             if (!ModelState.IsValid) return View(userRegVm);
+            if(!await _captchaValidator.IsCaptchaPassedAsync(userRegVm.Captcha))
+            {
+                TempData["ErrorMeesage"] = "Error";
+                return View(userRegVm);
+            }
             AppUser user = new()
             {
                 FirstName = userRegVm.FirstName,
