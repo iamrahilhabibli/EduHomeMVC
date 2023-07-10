@@ -8,9 +8,12 @@ namespace EduHomeUI.Controllers
     public class AuthController : Controller
     {
         private readonly UserManager<AppUser> _userManager;
-        public AuthController(UserManager<AppUser> userManager)
+        private readonly SignInManager<AppUser> _signInManager;
+        public AuthController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)
         {
             _userManager = userManager;
+            _signInManager = signInManager;
+
         }
         public IActionResult Register()
         {
@@ -35,9 +38,23 @@ namespace EduHomeUI.Controllers
                 {
                     ModelState.AddModelError("", error.Description);
                 }
-                return View(userRegVm); 
+                return View(userRegVm);
             }
             return Ok();
+        }
+
+        public IActionResult Login()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Login(UserLoginViewModel userLogVm)
+        {
+            if (!ModelState.IsValid) return View(userLogVm);
+            AppUser user = await _userManager.FindByEmailAsync(userLogVm.EmailAddress);
+            if (user is null) { ModelState.AddModelError("", "Invalid login credentials"); }
+
+            return RedirectToAction("Index", "Home");
         }
     }
 }

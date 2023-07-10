@@ -9,6 +9,8 @@ namespace EduHomeUI.ViewModels.UsersViewModel
         [Required]
         public string LastName { get; set; } = null!;
         [Required]
+        public DateTime DateOfBirth { get; set; }
+        [Required]
         public string UserName { get; set; } = null!;
         [Required,DataType(DataType.EmailAddress)]
         public string EmailAddress { get; set; }
