@@ -7,12 +7,9 @@ using System.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddCustomServices();
+builder.Services.AddCustomServices(builder.Configuration);
 
-var emailConfig = builder.Configuration.GetSection("EmailConfiguration").Get<EmailConfiguration>();
-builder.Services.AddSingleton(emailConfig);
-builder.Services.AddControllers();
-builder.Services.AddScoped<IEmailSenderService, EmailSenderService>();
+
 
 var app = builder.Build();
 app.UseAuthentication();
