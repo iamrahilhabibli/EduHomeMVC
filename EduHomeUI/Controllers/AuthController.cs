@@ -11,6 +11,7 @@ using System.Net.Mail;
 using System.Net;
 using Microsoft.AspNetCore.Identity.UI.V4.Pages.Account.Internal;
 using EmailService;
+using Message = EmailService.Message;
 
 namespace EduHomeUI.Controllers
 {
@@ -52,34 +53,78 @@ namespace EduHomeUI.Controllers
                 }
                 return View(userRegVm);
             }
-            return Ok();
+            var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+            var confirmationLink = Url.Action(nameof(ConfirmEmail), "Auth", new { token, email = user.Email }, Request.Scheme);
+            var message = new Message(new string[] { user.Email }, "Confirmation email link", confirmationLink);
+            await _userManager.AddToRoleAsync(user, "Visitor");
+            return RedirectToAction(nameof(SuccessRegistration));
+        }
+        [HttpGet]
+        public async Task<IActionResult> ConfirmEmail(string token, string email)
+        {
+            var user = await _userManager.FindByEmailAsync(email);
+            if (user == null)
+            {
+                return View("Error");
+            }
+            var result = await _userManager.ConfirmEmailAsync(user, token);
+            return View(result.Succeeded ? nameof(ConfirmEmail) : "Error");
+        }
+        [HttpGet]
+        public IActionResult Error()
+        {
+            return View();
+        }
+        [HttpGet]
+        public IActionResult SuccessRegistration()
+        {
+            return View();
         }
         public IActionResult Login()
         {
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> Login(UserLoginViewModel userLogVm)
-        {
-            if (!ModelState.IsValid) return View(userLogVm);
-            AppUser user = await _userManager.FindByEmailAsync(userLogVm.EmailAddress);
-            if (user is null)
-            {
-                ModelState.AddModelError("", "Invalid login credentials");
-            }
-            Microsoft.AspNetCore.Identity.SignInResult signInResult = await _signInManager.PasswordSignInAsync(user, userLogVm.Password, userLogVm.RememberMe, true);
-            if (signInResult.IsLockedOut)
-            {
-                ModelState.AddModelError("", "Your Account is Temporarily Locked - Try Again Later");
-            }
-            if (!signInResult.Succeeded)
-            {
-                ModelState.AddModelError("", "Invalid login credentials");
-            }
-            return RedirectToAction("Index", "Home");
-        }
+		public async Task<IActionResult> Login(UserLoginViewModel userLogVm)
+		{
+			if (!ModelState.IsValid)
+			{
+				return View(userLogVm);
+			}
 
-        [AllowAnonymous]
+			AppUser user = await _userManager.FindByEmailAsync(userLogVm.EmailAddress);
+
+			if (user is null)
+			{
+				ModelState.AddModelError("", "Invalid login credentials");
+				return View(userLogVm);
+			}
+
+			if (!await _userManager.IsEmailConfirmedAsync(user))
+			{
+				ModelState.AddModelError("", "Please confirm your email address to log in.");
+				return View(userLogVm);
+			}
+
+			Microsoft.AspNetCore.Identity.SignInResult signInResult = await _signInManager.PasswordSignInAsync(user, userLogVm.Password, userLogVm.RememberMe, true);
+
+			if (signInResult.IsLockedOut)
+			{
+				ModelState.AddModelError("", "Your account is temporarily locked. Please try again later.");
+				return View(userLogVm);
+			}
+
+			if (!signInResult.Succeeded)
+			{
+				ModelState.AddModelError("", "Invalid login credentials");
+				return View(userLogVm);
+			}
+
+			return RedirectToAction("Index", "Home");
+		}
+
+
+		[AllowAnonymous]
         public IActionResult ForgotPassword()
         {
             return View();
