@@ -116,7 +116,25 @@ namespace EduHomeUI.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult>ResetPassword(EduHome.Core.Entities.ResetPasswordModel model)
         {
-            return View();
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+            var user = await _userManager.FindByEmailAsync(model.Email);
+            if (user == null)
+            {
+                return RedirectToAction(nameof(ResetPasswordConfirmation));
+            }
+            var resetPassResult = await _userManager.ResetPasswordAsync(user, model.Token, model.Password);
+            if (!resetPassResult.Succeeded) 
+            {
+                foreach (var error in resetPassResult.Errors)
+                {
+                    ModelState.TryAddModelError(error.Code, error.Description);
+                }
+                return View();
+            }
+            return RedirectToAction(nameof(ResetPasswordConfirmation));
         }
         public IActionResult ResetPasswordConfirmation()
         {

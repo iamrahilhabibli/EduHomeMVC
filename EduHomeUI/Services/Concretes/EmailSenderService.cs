@@ -14,6 +14,7 @@ namespace EmailService
         public void SendEmail(Message message)
         {
             var emailMessage = CreateEmailMessage(message);
+            Send(emailMessage);
         }
         private MimeMessage CreateEmailMessage(Message message)
         {
