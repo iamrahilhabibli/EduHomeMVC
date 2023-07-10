@@ -56,7 +56,8 @@ namespace EduHomeUI.Controllers
             var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
             var confirmationLink = Url.Action(nameof(ConfirmEmail), "Auth", new { token, email = user.Email }, Request.Scheme);
             var message = new Message(new string[] { user.Email }, "Confirmation email link", confirmationLink);
-            await _userManager.AddToRoleAsync(user, "Visitor");
+            _emailSenderService.SendEmail(message); // ASYNC
+            //await _userManager.AddToRoleAsync(user, "Visitor");
             return RedirectToAction(nameof(SuccessRegistration));
         }
         [HttpGet]
