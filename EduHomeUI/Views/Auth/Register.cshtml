@@ -91,7 +91,7 @@
         function onClick(e) {
             e.preventDefault();
             grecaptcha.ready(function () {
-                grecaptcha.execute('reCAPTCHA_site_key', { action: 'submit' }).then(function (token) {
+                grecaptcha.execute('@GooglereCAPTCHA.Value.ReCAPTCHA_Site_Key', { action: 'submit' }).then(function (token) {
                    
                 });
             });
