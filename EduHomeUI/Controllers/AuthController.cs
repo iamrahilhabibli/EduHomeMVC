@@ -25,9 +25,10 @@ namespace EduHomeUI.Controllers
             {
                 FirstName = userRegVm.FirstName,
                 LastName = userRegVm.LastName,
+                UserName = userRegVm.UserName,
                 Email = userRegVm.EmailAddress
             };
-            IdentityResult result = await _userManager.AddPasswordAsync(user, userRegVm.Password);
+            IdentityResult result = await _userManager.CreateAsync(user, userRegVm.Password);
             if (!result.Succeeded)
             {
                 foreach (var error in result.Errors)

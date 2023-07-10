@@ -8,6 +8,8 @@ namespace EduHomeUI.ViewModels.UsersViewModel
         public string FirstName { get; set; } = null!;
         [Required]
         public string LastName { get; set; } = null!;
+        [Required]
+        public string UserName { get; set; } = null!;
         [Required,DataType(DataType.EmailAddress)]
         public string EmailAddress { get; set; }
         [Required,DataType(DataType.Password)]
