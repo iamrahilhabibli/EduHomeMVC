@@ -29,7 +29,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EduHome.DataAccess\EduHome.DataAccess.csproj" />
-    <ProjectReference Include="..\EmailService\EmailService.csproj" />
+    <ProjectReference Include="..\EmailService\EduHome.EmailServices.csproj" />
   </ItemGroup>
 
 </Project>

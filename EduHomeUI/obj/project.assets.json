@@ -4014,6 +4014,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "EduHome.EmailServices": "1.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.18",
           "Microsoft.EntityFrameworkCore": "6.0.18"
         },
@@ -4040,17 +4041,17 @@
           "bin/placeholder/EduHome.DataAccess.dll": {}
         }
       },
-      "EmailService/1.0.0": {
+      "EduHome.EmailServices/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "NETCore.MailKit": "2.1.0"
         },
         "compile": {
-          "bin/placeholder/EmailService.dll": {}
+          "bin/placeholder/EduHome.EmailServices.dll": {}
         },
         "runtime": {
-          "bin/placeholder/EmailService.dll": {}
+          "bin/placeholder/EduHome.EmailServices.dll": {}
         }
       }
     }
@@ -11407,17 +11408,17 @@
       "path": "../EduHome.DataAccess/EduHome.DataAccess.csproj",
       "msbuildProject": "../EduHome.DataAccess/EduHome.DataAccess.csproj"
     },
-    "EmailService/1.0.0": {
+    "EduHome.EmailServices/1.0.0": {
       "type": "project",
-      "path": "../EmailService/EmailService.csproj",
-      "msbuildProject": "../EmailService/EmailService.csproj"
+      "path": "../EmailService/EduHome.EmailServices.csproj",
+      "msbuildProject": "../EmailService/EduHome.EmailServices.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 12.0.1",
       "EduHome.DataAccess >= 1.0.0",
-      "EmailService >= 1.0.0",
+      "EduHome.EmailServices >= 1.0.0",
       "Microsoft.AspNetCore.Identity.UI >= 6.0.18",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.18",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.18",
@@ -11460,8 +11461,8 @@
             "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHome.DataAccess\\EduHome.DataAccess.csproj": {
               "projectPath": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHome.DataAccess\\EduHome.DataAccess.csproj"
             },
-            "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EmailService\\EmailService.csproj": {
-              "projectPath": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EmailService\\EmailService.csproj"
+            "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EmailService\\EduHome.EmailServices.csproj": {
+              "projectPath": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EmailService\\EduHome.EmailServices.csproj"
             }
           }
         }

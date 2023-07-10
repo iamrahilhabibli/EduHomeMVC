@@ -10,7 +10,7 @@
         "dependencies": {
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
           "EduHome.DataAccess": "1.0.0",
-          "EmailService": "1.0.0",
+          "EduHome.EmailServices": "1.0.0",
           "Microsoft.AspNetCore.Identity.UI": "6.0.18",
           "Microsoft.EntityFrameworkCore.Design": "6.0.18",
           "Microsoft.EntityFrameworkCore.Tools": "6.0.18",
@@ -2628,6 +2628,7 @@
       },
       "EduHome.Core/1.0.0": {
         "dependencies": {
+          "EduHome.EmailServices": "1.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.18",
           "Microsoft.EntityFrameworkCore": "6.0.18"
         },
@@ -2646,12 +2647,12 @@
           "EduHome.DataAccess.dll": {}
         }
       },
-      "EmailService/1.0.0": {
+      "EduHome.EmailServices/1.0.0": {
         "dependencies": {
           "NETCore.MailKit": "2.1.0"
         },
         "runtime": {
-          "EmailService.dll": {}
+          "EduHome.EmailServices.dll": {}
         }
       }
     }
@@ -4275,7 +4276,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "EmailService/1.0.0": {
+    "EduHome.EmailServices/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

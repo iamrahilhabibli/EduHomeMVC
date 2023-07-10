@@ -6,11 +6,8 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using System.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
-
+builder.Services.AddControllersWithViews();
 builder.Services.AddCustomServices(builder.Configuration);
-
-
-
 var app = builder.Build();
 app.UseAuthentication();
 app.UseAuthorization();

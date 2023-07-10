@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EduHome.DataAccess", "EduHo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EduHome.Core", "EduHome.Core\EduHome.Core.csproj", "{2E943ABF-0CF2-4487-ADC2-8F86C3F62D47}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailService", "EmailService\EmailService.csproj", "{863F63DB-C484-4D45-8BFA-1F67FB5763B2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EduHome.EmailServices", "EmailService\EduHome.EmailServices.csproj", "{863F63DB-C484-4D45-8BFA-1F67FB5763B2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

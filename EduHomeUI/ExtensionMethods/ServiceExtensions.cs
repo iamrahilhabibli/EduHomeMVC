@@ -15,17 +15,11 @@ namespace EduHomeUI.Extensions
     {
         public static void AddCustomServices(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddControllersWithViews();
-            services.AddAutoMapper(typeof(Program));
-            services.AddDbContext<AppDbContext>(options =>
-            {
-                options.UseSqlServer(configuration.GetConnectionString("Default"));
-            });
 
-            var emailConfig = configuration.GetSection("EmailConfiguration").Get<EmailConfiguration>();
-            services.AddSingleton(emailConfig);
-            services.AddControllers();
-            services.AddScoped<IEmailSenderService, EmailSenderService>();
+            services.AddAutoMapper(typeof(Program));
+
+            services.AddPersistenceServices(configuration);
+            services.AddEmailServices(configuration);
 
             services.AddScoped<ICourseCategoryService, CourseCategoryService>();
             services.AddScoped<ICourseService, CourseService>();
@@ -35,6 +29,14 @@ namespace EduHomeUI.Extensions
             services.AddScoped<ITeacherService, TeacherService>();
             services.AddScoped<IEventService, EventService>();
             services.AddScoped<ISpeakerService, SpeakerService>();
+        }
+
+        public static void AddPersistenceServices(this IServiceCollection services, IConfiguration configuration)
+        {
+            services.AddDbContext<AppDbContext>(options =>
+            {
+                options.UseSqlServer(configuration.GetConnectionString("Default"));
+            });
 
             services.AddIdentity<AppUser, IdentityRole>(identityOptions =>
             {
@@ -59,6 +61,13 @@ namespace EduHomeUI.Extensions
             {
                 opt.TokenLifespan = TimeSpan.FromMinutes(15);
             });
+        }
+
+        public static void AddEmailServices(this IServiceCollection services, IConfiguration configuration)
+        {
+            var emailConfig = configuration.GetSection("EmailConfiguration").Get<EmailConfiguration>();
+            services.AddSingleton(emailConfig);
+            services.AddScoped<IEmailSenderService, EmailSenderService>();
         }
     }
 }

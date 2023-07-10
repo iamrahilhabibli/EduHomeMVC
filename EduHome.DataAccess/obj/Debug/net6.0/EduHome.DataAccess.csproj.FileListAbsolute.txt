@@ -66,3 +66,5 @@ C:\Users\Rhabi\OneDrive\Documents\Backend\MVCFinalEdu\EduHomeMVC\EduHome.DataAcc
 C:\Users\Rhabi\OneDrive\Documents\Backend\MVCFinalEdu\EduHomeMVC\EduHome.DataAccess\obj\Debug\net6.0\EduHome.DataAccess.pdb
 C:\Users\Rhabi\OneDrive\Documents\Backend\MVCFinalEdu\EduHomeMVC\EduHome.DataAccess\obj\Debug\net6.0\EduHome.DataAccess.genruntimeconfig.cache
 C:\Users\Rhabi\OneDrive\Documents\Backend\MVCFinalEdu\EduHomeMVC\EduHome.DataAccess\obj\Debug\net6.0\ref\EduHome.DataAccess.dll
+C:\Users\Rhabi\OneDrive\Documents\Backend\MVCFinalEdu\EduHomeMVC\EduHome.DataAccess\bin\Debug\net6.0\EduHome.EmailServices.dll
+C:\Users\Rhabi\OneDrive\Documents\Backend\MVCFinalEdu\EduHomeMVC\EduHome.DataAccess\bin\Debug\net6.0\EduHome.EmailServices.pdb

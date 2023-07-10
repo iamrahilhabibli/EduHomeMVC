@@ -404,9 +404,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EmailService\\EmailService.csproj",
-      "projectName": "EmailService",
-      "projectPath": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EmailService\\EmailService.csproj",
+      "projectUniqueName": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EmailService\\EduHome.EmailServices.csproj",
+      "projectName": "EduHome.EmailServices",
+      "projectPath": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EmailService\\EduHome.EmailServices.csproj",
       "packagesPath": "C:\\Users\\Rhabi\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EmailService\\obj\\",
       "projectStyle": "PackageReference",

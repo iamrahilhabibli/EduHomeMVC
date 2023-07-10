@@ -31,7 +31,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EmailService\\EduHome.EmailServices.csproj": {
+                "projectPath": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EmailService\\EduHome.EmailServices.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -188,8 +192,8 @@
               "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHome.DataAccess\\EduHome.DataAccess.csproj": {
                 "projectPath": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHome.DataAccess\\EduHome.DataAccess.csproj"
               },
-              "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EmailService\\EmailService.csproj": {
-                "projectPath": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EmailService\\EmailService.csproj"
+              "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EmailService\\EduHome.EmailServices.csproj": {
+                "projectPath": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EmailService\\EduHome.EmailServices.csproj"
               }
             }
           }
@@ -252,12 +256,12 @@
         }
       }
     },
-    "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EmailService\\EmailService.csproj": {
+    "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EmailService\\EduHome.EmailServices.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EmailService\\EmailService.csproj",
-        "projectName": "EmailService",
-        "projectPath": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EmailService\\EmailService.csproj",
+        "projectUniqueName": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EmailService\\EduHome.EmailServices.csproj",
+        "projectName": "EduHome.EmailServices",
+        "projectPath": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EmailService\\EduHome.EmailServices.csproj",
         "packagesPath": "C:\\Users\\Rhabi\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EmailService\\obj\\",
         "projectStyle": "PackageReference",

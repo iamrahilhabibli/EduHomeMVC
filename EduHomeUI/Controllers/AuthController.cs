@@ -84,6 +84,11 @@ namespace EduHomeUI.Controllers
         {
             return View();
         }
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Index", "Home");
+        }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> ForgotPassword(ForgotPassword forgotPasswordModel)
