@@ -30,6 +30,8 @@ namespace EduHome.DataAccess.Contexts
         public DbSet<EventDetails> EventsDetails { get; set; }  
         public DbSet<Speaker> Speakers { get; set; }
         public DbSet<EventSpeaker> EventSpeakers { get; set; }
+        public DbSet<Blog> Blogs { get; set; }
+        public DbSet<BlogDetails> BlogDetails { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.AddInterceptors(new DateModifiedInterceptor());

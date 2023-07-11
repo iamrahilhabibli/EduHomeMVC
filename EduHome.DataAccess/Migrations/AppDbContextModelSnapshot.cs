@@ -121,6 +121,75 @@ namespace EduHome.DataAccess.Migrations
                     b.ToTable("Assesments");
                 });
 
+            modelBuilder.Entity("EduHome.Core.Entities.Blog", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("AuthorName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("BlogDetailsId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("CommentCount")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateModified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ImageName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImagePath")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BlogDetailsId")
+                        .IsUnique();
+
+                    b.ToTable("Blogs");
+                });
+
+            modelBuilder.Entity("EduHome.Core.Entities.BlogDetails", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateModified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("BlogDetails");
+                });
+
             modelBuilder.Entity("EduHome.Core.Entities.Course", b =>
                 {
                     b.Property<Guid>("Id")
@@ -723,6 +792,17 @@ namespace EduHome.DataAccess.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("EduHome.Core.Entities.Blog", b =>
+                {
+                    b.HasOne("EduHome.Core.Entities.BlogDetails", "BlogDetails")
+                        .WithOne("Blog")
+                        .HasForeignKey("EduHome.Core.Entities.Blog", "BlogDetailsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("BlogDetails");
+                });
+
             modelBuilder.Entity("EduHome.Core.Entities.Course", b =>
                 {
                     b.HasOne("EduHome.Core.Entities.CourseCategory", "CourseCategory")
@@ -901,6 +981,12 @@ namespace EduHome.DataAccess.Migrations
             modelBuilder.Entity("EduHome.Core.Entities.Assesment", b =>
                 {
                     b.Navigation("CourseDetailsAssesment");
+                });
+
+            modelBuilder.Entity("EduHome.Core.Entities.BlogDetails", b =>
+                {
+                    b.Navigation("Blog")
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("EduHome.Core.Entities.Course", b =>
