@@ -31,6 +31,9 @@ namespace EduHomeUI.Extensions
             services.AddScoped<IEventService, EventService>();
             services.AddScoped<ISpeakerService, SpeakerService>();
             services.AddScoped<IBlogService, BlogService>();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+
         }
 
         public static void AddPersistenceServices(this IServiceCollection services, IConfiguration configuration)

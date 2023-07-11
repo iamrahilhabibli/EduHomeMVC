@@ -32,8 +32,11 @@ namespace EduHomeUI.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(UserRegisterViewModel userRegVm)
         {
-            if (!ModelState.IsValid) return View(userRegVm);
-         
+            if (!ModelState.IsValid)
+            {
+                return View(userRegVm);
+            }
+
             AppUser user = new()
             {
                 FirstName = userRegVm.FirstName,
@@ -42,6 +45,7 @@ namespace EduHomeUI.Controllers
                 Email = userRegVm.EmailAddress,
                 DateOfBirth = userRegVm.DateOfBirth
             };
+
             IdentityResult result = await _userManager.CreateAsync(user, userRegVm.Password);
             if (!result.Succeeded)
             {
@@ -51,13 +55,20 @@ namespace EduHomeUI.Controllers
                 }
                 return View(userRegVm);
             }
+
             var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
             var confirmationLink = Url.Action(nameof(ConfirmEmail), "Auth", new { token, email = user.Email }, Request.Scheme);
-            var message = new Message(new string[] { user.Email }, "Confirmation email link", confirmationLink);
+
+            var emailContent = $"Click the following link to confirm your account: <a href=\"{confirmationLink}\">Confirm Account</a>";
+
+            var message = new Message(new string[] { user.Email }, "Confirmation email link", emailContent);
             _emailSenderService.SendEmail(message); // ASYNC
+
             //await _userManager.AddToRoleAsync(user, "Visitor");
+
             return RedirectToAction(nameof(SuccessRegistration));
         }
+
         [HttpGet]
         public async Task<IActionResult> ConfirmEmail(string token, string email)
         {

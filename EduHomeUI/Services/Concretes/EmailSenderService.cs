@@ -34,6 +34,8 @@ namespace EmailService
         }
 
 
+
+
         private void Send(MimeMessage mailMessage) 
         { 
             using(var client = new SmtpClient())
