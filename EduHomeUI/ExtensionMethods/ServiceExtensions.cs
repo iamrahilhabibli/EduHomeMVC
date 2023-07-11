@@ -86,5 +86,6 @@ namespace EduHomeUI.Extensions
         //            opt.SignInScheme = IdentityConstants.ExternalScheme;
         //        });
         //}
+       
     }
 }

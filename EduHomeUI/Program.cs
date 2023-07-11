@@ -1,6 +1,8 @@
 using EduHome.Core.Entities;
 using EduHomeUI.Extensions;
 using EmailService;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using GoogleReCaptcha.V3;
 using GoogleReCaptcha.V3.Interface;
 using Microsoft.AspNetCore.Identity;
@@ -13,6 +15,10 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddCustomServices(builder.Configuration);
 builder.Services.Configure<ReCAPTCHASettings>(builder.Configuration.GetSection("GooglereCAPTCHA"));
 builder.Services.AddHttpClient<ICaptchaValidator,GoogleReCaptchaValidator>();
+
+builder.Services.AddFluentValidationAutoValidation();
+builder.Services.AddFluentValidationClientsideAdapters();
+builder.Services.AddValidatorsFromAssemblyContaining<AssesmentViewModelValidator>();
 
 builder.Services.AddAuthentication()
     .AddGoogle("google", opt =>

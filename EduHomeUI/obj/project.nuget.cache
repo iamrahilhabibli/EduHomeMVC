@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "u8L1bWIJRSlz4ORo+NUtd/nXhjCuiFJ/naB0Qt5Cd+9KGQwFn4WAPMQUm1mmN16e+6ZlgEtHxpxNs6E+sLHhrw==",
+  "dgSpecHash": "g2TTUvUACST5o349DQV+ncOU9BncO1ga9wslXMqw7NXj6lRY0v4FA5Z7oEBqIDPXz6uO1esRXjnD6IMF9Xy/WA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\EduHomeUI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Rhabi\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Rhabi\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
+    "C:\\Users\\Rhabi\\.nuget\\packages\\fluentvalidation\\11.6.0\\fluentvalidation.11.6.0.nupkg.sha512",
+    "C:\\Users\\Rhabi\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
+    "C:\\Users\\Rhabi\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.5.1\\fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",
     "C:\\Users\\Rhabi\\.nuget\\packages\\googlerecaptcha.v3\\1.3.1\\googlerecaptcha.v3.1.3.1.nupkg.sha512",
     "C:\\Users\\Rhabi\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\Rhabi\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
