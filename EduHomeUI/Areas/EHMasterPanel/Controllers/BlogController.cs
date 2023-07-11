@@ -1,5 +1,7 @@
 ﻿using EduHome.DataAccess.Contexts;
 using EduHomeUI.Areas.EHMasterPanel.ViewModels.BlogViewModels;
+using EduHomeUI.Areas.EHMasterPanel.ViewModels.CourseViewModels;
+using EduHomeUI.Services.Concretes;
 using EduHomeUI.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -29,6 +31,18 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
         public async Task<IActionResult> Create()
         {
             return View();
+        }
+        [HttpPost]
+        [AutoValidateAntiforgeryToken]
+        public async Task<IActionResult> Create(BlogCreateViewModel blogVm)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            if (!await _blogService.CreateBlogAsync(blogVm)) return BadRequest();
+            TempData["Success"] = "Blog Created Successfully!";
+            return RedirectToAction(nameof(Index));
         }
     }
 }
