@@ -1,5 +1,6 @@
 using EduHome.Core.Entities;
 using EduHomeUI.Extensions;
+using EduHomeUI.Validators.CreateValidators;
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using GoogleReCaptcha.V3;
@@ -11,13 +12,8 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddCustomServices(builder.Configuration);
 builder.Services.Configure<ReCAPTCHASettings>(builder.Configuration.GetSection("GooglereCAPTCHA"));
 builder.Services.AddHttpClient<ICaptchaValidator,GoogleReCaptchaValidator>();
+builder.Services.AddFluentValidationValidators();
 
-builder.Services.AddFluentValidationAutoValidation();
-builder.Services.AddFluentValidationClientsideAdapters();
-builder.Services.AddValidatorsFromAssemblyContaining<AssesmentViewModelValidator>();
-builder.Services.AddValidatorsFromAssemblyContaining<BlogViewModelValidator>();
-builder.Services.AddValidatorsFromAssemblyContaining<CourseCategoryViewModelValidator>();
-builder.Services.AddValidatorsFromAssemblyContaining<CourseViewModelValidator>();
 
 builder.Services.AddAuthentication()
     .AddGoogle("google", opt =>

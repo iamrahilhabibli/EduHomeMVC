@@ -25,6 +25,7 @@ namespace EduHomeUI.Areas.EHMasterPanel.ViewModels.CourseViewModels
         public string? ClassDuration { get; set; }
 
         public decimal CourseFee { get; set; }
+        public int StudentCount { get; set; }
 
 
         public Guid LanguageOptionId { get; set; }

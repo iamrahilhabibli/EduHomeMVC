@@ -32,14 +32,12 @@ namespace EduHomeUI.Services.Concretes
                 return false;
 
             var courseDetail = _mapper.Map<CourseViewModel, CourseDetails>(courses);
-            //courseDetail.DateCreated = DateTime.Now;
-            //courseDetail.DateModified = DateTime.Now;
+
 
             var course = _mapper.Map<CourseViewModel, Course>(courses);
             course.CourseCategoryId = courseCategory.Id;
             course.Details = courseDetail;
-            //course.DateModified = DateTime.Now;
-            //course.DateCreated = DateTime.Now;
+
 
             var courseDetailsLanguage = new CourseDetailsLanguage
             {
