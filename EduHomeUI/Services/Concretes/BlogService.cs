@@ -43,5 +43,16 @@ namespace EduHomeUI.Services.Concretes
         {
             return await _context.Blogs.ToListAsync();
         }
+        public async Task<bool> GetBlogById(Guid blogId)
+        {
+            var blog = await _context.Blogs.FindAsync(blogId);
+            if (blog is null) return false;
+            return true;
+        }
+        public async Task<Blog> GetBlogByIdBlog(Guid blogId)
+        {
+            return await _context.Blogs.FindAsync(blogId);
+        }
+
     }
 }

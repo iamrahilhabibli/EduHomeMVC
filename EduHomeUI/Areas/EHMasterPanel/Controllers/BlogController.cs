@@ -44,5 +44,25 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
             TempData["Success"] = "Blog Created Successfully!";
             return RedirectToAction(nameof(Index));
         }
+
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            if (!await _blogService.GetBlogById(id))
+            {
+                return NotFound();
+            }
+
+            var blog = await _blogService.GetBlogByIdBlog(id);
+
+            var viewModel = new BlogDeleteViewModel
+            {
+                Title = blog.Title,
+                AuthorName = blog.AuthorName,
+                ImagePath = blog.ImagePath,
+            };
+
+            return View(viewModel);
+        }
+
     }
 }

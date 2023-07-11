@@ -8,5 +8,7 @@ namespace EduHomeUI.Services.Interfaces
     {
         Task<List<Blog>> GetAllBlogsAsync();
         Task<bool> CreateBlogAsync(BlogCreateViewModel blogVm);
+        Task<bool> GetBlogById(Guid blogId);
+        Task<Blog> GetBlogByIdBlog(Guid blogId);
     }
 }
