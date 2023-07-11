@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace EduHomeUI.Areas.EHMasterPanel.Controllers
 {
+    [Area("EHMasterPanel")]
     public class BlogController : Controller
     {
         private readonly AppDbContext _context;
@@ -24,6 +25,10 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
                 Blogs = blogList
             };
             return View(viewModel);
+        }
+        public async Task<IActionResult> Create()
+        {
+            return View();
         }
     }
 }

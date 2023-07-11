@@ -1,0 +1,82 @@
+﻿@using EduHomeUI.Areas.EHMasterPanel.ViewModels.BlogViewModels;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model BlogCreateViewModel
+<partial name="_Notification" />
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Create Blog</h4>
+                <form method="post">
+                    <div class="row mb-3">
+                        <label asp-for="Title" class="col-md-3 col-form-label">Title</label>
+                        <div class="col-sm-9">
+                            <input asp-for="Title" class="form-control" />
+                            <span asp-validation-for="Title" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label asp-for="AuthorName" class="col-md-3 col-form-label">AuthorName</label>
+                        <div class="col-sm-9">
+                            <input asp-for="AuthorName" class="form-control" />
+                            <span asp-validation-for="AuthorName" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label asp-for="ImagePath" class="col-md-3 col-form-label">ImagePath</label>
+                        <div class="col-sm-9">
+                            <input asp-for="ImagePath" class="form-control" />
+                            <span asp-validation-for="ImagePath" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label asp-for="ImageName" class="col-md-3 col-form-label">ImageName</label>
+                        <div class="col-sm-9">
+                            <input asp-for="ImageName" class="form-control" />
+                            <span asp-validation-for="ImageName" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label asp-for="CommentCount" class="col-md-3 col-form-label">CommentCount</label>
+                        <div class="col-sm-9">
+                            <input asp-for="CommentCount" class="form-control" />
+                            <span asp-validation-for="CommentCount" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <h3>Blog Details</h3>
+
+                    <div class="row mb-3">
+                        <label asp-for="Description" class="col-md-3 col-form-label">Description</label>
+                        <div class="col-sm-9">
+                            <textarea id="tiny" asp-for="Description" class="form-control"></textarea>
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-end">
+                        <div class="col-sm-9">
+                            <div class="mt-3">
+                                <button type="submit" class="btn btn-warning w-md">Create</button>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3 mt-3">
+                            <a asp-controller="Blog" asp-action="Index" class="btn btn-outline-primary border form-control">
+                                Back to list
+                            </a>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
