@@ -25,7 +25,7 @@
     <script>
         tinymce.init({
             selector: 'textarea#tiny',
-                    plugins: [
+            plugins: [
                 'a11ychecker', 'advlist', 'advcode', 'advtable', 'autolink', 'checklist', 'export',
                 'lists', 'link', 'image', 'charmap', 'preview', 'anchor', 'searchreplace', 'visualblocks',
                 'powerpaste', 'fullscreen', 'formatpainter', 'insertdatetime', 'media', 'table', 'help', 'wordcount'
@@ -1015,12 +1015,20 @@
         <script src="/adminAssets/js/pages/dashboard.init.js"></script>
         <script src="assetsAdmin/lib/jquery-validation/jquery.validate.min.js"></script>
         <script src="assetsAdmin/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+        <script src="/adminAssets/libs/jquery/jquery.min.js"></script>
+        <script src="~/jquery.dataTables.js"></script>
+        <script src="/jquery.dataTables.min.js"></script>
+
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js" integrity="sha512-rstIgDs0xPgmG6RX1Aba4KV5cWJbAMcvRCVmglpam9SoHZiUCyQVDdH2LPlxoHtrv17XWblE/V/PP+Tr04hbtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/4.0.0/jquery.validate.unobtrusive.min.js" integrity="sha512-xq+Vm8jC94ynOikewaQXMEkJIOBp7iArs3IhFWSWdRT3Pq8wFz46p+ZDFAR7kHnSFf+zUv52B3prRYnbDRdgog==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+@*
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.css" />
+
+        <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.js"></script>*@
         <!-- App js -->
         <script src="/adminAssets/js/app.js"></script>
-        @RenderSection("Script",false)
+        @RenderSection("Scripts",false)
 </body>
 
 

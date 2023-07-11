@@ -1,10 +1,6 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\Course.js",
-      "PackagePath": "staticwebassets\\Course.js"
-    },
-    {
       "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\css\\app.min.css",
       "PackagePath": "staticwebassets\\adminAssets\\css\\app.min.css"
     },
@@ -1639,6 +1635,18 @@
     {
       "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\assets\\js\\vendor\\modernizr-3.11.2.min.js",
       "PackagePath": "staticwebassets\\assets\\js\\vendor\\modernizr-3.11.2.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\datatable_file.js",
+      "PackagePath": "staticwebassets\\datatable_file.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\jquery.dataTables.js",
+      "PackagePath": "staticwebassets\\jquery.dataTables.js"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\jquery.dataTables.min.js",
+      "PackagePath": "staticwebassets\\jquery.dataTables.min.js"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.EduHomeUI.Microsoft.AspNetCore.StaticWebAssets.props",
