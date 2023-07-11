@@ -1641,6 +1641,14 @@
       "PackagePath": "staticwebassets\\datatable_file.js"
     },
     {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\datatables.css",
+      "PackagePath": "staticwebassets\\datatables.css"
+    },
+    {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\datatables.min.css",
+      "PackagePath": "staticwebassets\\datatables.min.css"
+    },
+    {
       "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\jquery.dataTables.js",
       "PackagePath": "staticwebassets\\jquery.dataTables.js"
     },

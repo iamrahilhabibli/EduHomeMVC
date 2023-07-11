@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "c8PGVVYJFBQqiig29CNHx/0h3yGoZwXnDtB78NqeulQ=",
+  "Hash": "4pfRAp/thn4jvdUE9ikp9Eu1BHaumaxHgFljqih59Po=",
   "Source": "EduHomeUI",
   "BasePath": "_content/EduHomeUI",
   "Mode": "Default",
@@ -8005,6 +8005,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\datatable_file.js"
+    },
+    {
+      "Identity": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\datatables.css",
+      "SourceId": "EduHomeUI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\",
+      "BasePath": "_content/EduHomeUI",
+      "RelativePath": "datatables.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\datatables.css"
+    },
+    {
+      "Identity": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\datatables.min.css",
+      "SourceId": "EduHomeUI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\",
+      "BasePath": "_content/EduHomeUI",
+      "RelativePath": "datatables.min.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\datatables.min.css"
     },
     {
       "Identity": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\jquery.dataTables.js",
