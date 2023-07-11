@@ -157,7 +157,16 @@ namespace EduHomeUI.Services.Concretes
 
             return eventViewModel;
         }
+        public async Task<bool> UpdateEventIsDeleted(Guid eventId, bool isDeleted)
+        {
+            var @event = await _context.Events.FindAsync(eventId);
+            if (@event is null) return false;
 
+            @event.IsDeleted = isDeleted;
+            await _context.SaveChangesAsync();
+
+            return true;
+        }
 
 
 
@@ -211,6 +220,42 @@ namespace EduHomeUI.Services.Concretes
                 }
             }
             await _context.SaveChangesAsync();
+            return true;
+        }
+        public async Task<bool> GetEventDetailById(Guid eventId)
+        {
+            var @event = await _context.Events.FindAsync(eventId);
+            if (@event is null || @event.EventDetailsId == null) return false;
+
+            var eventDetails = await _context.EventsDetails.FindAsync(@event.EventDetailsId);
+            if (eventDetails is null) return false;
+
+            return true;
+        }
+        public async Task<bool> UpdateEventDetailIsDeleted(Guid eventId, bool isDeleted)
+        {
+            var @event = await _context.Events.FindAsync(eventId);
+            if (@event is null) return false;
+
+
+            var eventDetailsId = @event.EventDetailsId;
+
+            var eventDetails = await _context.EventsDetails.FindAsync(eventDetailsId);
+            if (eventDetails is null) return false;
+
+            eventDetails.IsDeleted = isDeleted;
+            await _context.SaveChangesAsync();
+
+            return true;
+        }
+        public async Task<bool> UpdateBlogIsDeleted(Guid blogId, bool isDeleted)
+        {
+            var blog = await _context.Blogs.FindAsync(blogId);
+            if (blog is null) return false;
+
+            blog.IsDeleted = isDeleted;
+            await _context.SaveChangesAsync();
+
             return true;
         }
     }

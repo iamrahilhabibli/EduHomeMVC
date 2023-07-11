@@ -75,13 +75,29 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
         [HttpPost]
         [ActionName("Delete")]
         [AutoValidateAntiforgeryToken]
-        public async Task<IActionResult> DeleteEvent(Guid id)
+        public async Task<IActionResult> DeleteBlog(Guid id)
         {
-            bool isDeleted = await _eventService.DeleteEventById(id);
+            if (!await _eventService.GetEventById(id))
+            {
+                return NotFound();
+            }
 
-            if (!isDeleted) return NotFound();
+            var blogDetailExist = await _eventService.GetEventDetailById(id);
+            if (blogDetailExist)
+            {
+                await _eventService.UpdateEventDetailIsDeleted(id, true);
+            }
 
-            TempData["Success"] = "Event Deleted Successfully";
+            var deleted = await _eventService.UpdateEventIsDeleted(id, true);
+            if (deleted)
+            {
+                TempData["Success"] = "Event Deleted Successfully";
+            }
+            else
+            {
+                TempData["Error"] = "Failed to delete the Event.";
+            }
+
             return RedirectToAction(nameof(Index));
         }
         public async Task<IActionResult> Details(Guid eventId)
