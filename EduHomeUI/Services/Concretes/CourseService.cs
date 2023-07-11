@@ -32,12 +32,10 @@ namespace EduHomeUI.Services.Concretes
                 return false;
 
             var courseDetail = _mapper.Map<CourseViewModel, CourseDetails>(courses);
-
-
             var course = _mapper.Map<CourseViewModel, Course>(courses);
-            course.CourseCategoryId = courseCategory.Id;
-            course.Details = courseDetail;
 
+          
+            course.Details = courseDetail;
 
             var courseDetailsLanguage = new CourseDetailsLanguage
             {
@@ -67,6 +65,7 @@ namespace EduHomeUI.Services.Concretes
 
             return true;
         }
+
 
         public async Task<List<Course>> GetAllCourseAsync()
         {

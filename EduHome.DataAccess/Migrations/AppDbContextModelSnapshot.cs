@@ -199,9 +199,6 @@ namespace EduHome.DataAccess.Migrations
                     b.Property<Guid>("CourseCategoryId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("CourseDetailsId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<DateTime>("DateCreated")
                         .HasColumnType("datetime2");
 

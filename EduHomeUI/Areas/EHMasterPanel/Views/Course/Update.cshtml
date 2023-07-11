@@ -107,6 +107,21 @@
                         </div>
                     </div>
 
+                    <div class="row mb-4">
+                        <label asp-for="CourseCategoryId" class="col-sm-3 col-form-label">Course Category</label>
+                        <div class="col-sm-9">
+                            <select asp-for="CourseCategoryId" class="form-control">
+                                <option value="">-- Select Course Category --</option>
+                                @foreach (var category in ViewBag.CourseCategories)
+                                {
+                                    <option value="@category.Id">@category.Category</option>
+                                }
+                            </select>
+                            <span asp-validation-for="CourseCategoryId" class="text-danger"></span>
+                        </div>
+                    </div>
+
+
                     <div class="mb-3 row">
                         <label asp-for="Description" class="col-md-2 col-form-label">Description</label>
                         <div class="col-md-10">

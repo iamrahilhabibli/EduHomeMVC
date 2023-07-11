@@ -139,6 +139,7 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
             ViewBag.LanguageOptions = await _context.Languages.ToListAsync();
             ViewBag.AssessmentOptions = await _context.Assesments.ToListAsync();
             ViewBag.SkillLevelOptions = await _context.SkillLevels.ToListAsync();
+            ViewBag.CourseCategories = await _context.CourseCategories.ToListAsync();
 
             return View(viewModelCourse);
         }

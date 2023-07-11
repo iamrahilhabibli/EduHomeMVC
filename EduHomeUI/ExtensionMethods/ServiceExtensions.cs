@@ -41,6 +41,7 @@ namespace EduHomeUI.Extensions
             services.AddDbContext<AppDbContext>(options =>
             {
                 options.UseSqlServer(configuration.GetConnectionString("Default"));
+
             });
 
             services.AddIdentity<AppUser, IdentityRole>(identityOptions =>
