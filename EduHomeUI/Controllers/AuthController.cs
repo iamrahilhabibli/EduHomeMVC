@@ -39,11 +39,7 @@ namespace EduHomeUI.Controllers
         public async Task<IActionResult> Register(UserRegisterViewModel userRegVm)
         {
             if (!ModelState.IsValid) return View(userRegVm);
-            if(!await _captchaValidator.IsCaptchaPassedAsync(userRegVm.Captcha))
-            {
-                TempData["ErrorMeesage"] = "Error";
-                return View(userRegVm);
-            }
+         
             AppUser user = new()
             {
                 FirstName = userRegVm.FirstName,

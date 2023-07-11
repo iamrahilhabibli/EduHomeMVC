@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "E5aQZRfHx3pWr9Cdo+apbjmRX1rfiXjWwveX0iGTJrQ=",
+  "Hash": "4dgLAbxTlDmK/PxlU3xTivVga6gp39heYRjHFwaQKO0=",
   "Source": "EduHomeUI",
   "BasePath": "_content/EduHomeUI",
   "Mode": "Default",
@@ -7988,6 +7988,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\js\\vendor\\modernizr-3.11.2.min.js"
+    },
+    {
+      "Identity": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\Course.js",
+      "SourceId": "EduHomeUI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\",
+      "BasePath": "_content/EduHomeUI",
+      "RelativePath": "Course.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Course.js"
     }
   ]
 }

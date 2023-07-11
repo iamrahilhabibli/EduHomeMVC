@@ -23,6 +23,7 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
         }
         public async Task<IActionResult> Index()
         {
+
             var coursesList = await _courseService.GetAllCourseAsync();
 
             var viewModel = new CourseIndexViewModel
@@ -162,5 +163,22 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+
+        #region API calls
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+
+            var coursesList =  await _courseService.GetAllCourseAsync();
+
+            var viewModel = new CourseIndexViewModel
+            {
+                courses = coursesList
+            };
+
+            return Json(viewModel);
+        }
+        #endregion
     }
+
 }

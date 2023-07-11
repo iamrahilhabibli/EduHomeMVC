@@ -1,6 +1,10 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\Course.js",
+      "PackagePath": "staticwebassets\\Course.js"
+    },
+    {
       "Id": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\wwwroot\\adminAssets\\css\\app.min.css",
       "PackagePath": "staticwebassets\\adminAssets\\css\\app.min.css"
     },
