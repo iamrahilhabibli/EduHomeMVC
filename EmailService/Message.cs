@@ -1,5 +1,5 @@
-﻿using MimeKit;
-using MailKit.Net.Smtp;
+﻿using System.Collections.Generic;
+using MimeKit;
 
 namespace EmailService
 {
@@ -8,12 +8,12 @@ namespace EmailService
         public List<MailboxAddress> To { get; set; }
         public string Subject { get; set; }
         public string Content { get; set; }
+        public string ResetToken { get; set; } 
 
         public Message(IEnumerable<string> to, string subject, string content)
         {
             To = new List<MailboxAddress>();
-
-            To.AddRange(to.Select(x => new MailboxAddress("address",x)));
+            To.AddRange(to.Select(x => new MailboxAddress("address", x)));
             Subject = subject;
             Content = content;
         }

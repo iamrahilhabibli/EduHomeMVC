@@ -141,17 +141,24 @@ namespace EduHomeUI.Controllers
             {
                 return View(forgotPasswordModel);
             }
+
             var user = await _userManager.FindByEmailAsync(forgotPasswordModel.Email);
             if (user is null)
             {
                 return RedirectToAction(nameof(ForgotPasswordConfirmation));
             }
+
             var token = await _userManager.GeneratePasswordResetTokenAsync(user);
-            var callback = Url.Action(nameof(ResetPassword), "Auth", new { token, email = user.Email }, Request.Scheme);
-            var message = new EmailService.Message(new string[] { user.Email }, "Reset Password Token", callback);
+            var resetUrl = Url.Action(nameof(ResetPassword), "Auth", new { token, email = user.Email }, Request.Scheme);
+
+            var emailContent = $"Click the following link to reset your password: <a href=\"{resetUrl}\">Reset Password</a>";
+
+            var message = new Message(new string[] { user.Email }, "Reset Password Token", emailContent);
             _emailSenderService.SendEmail(message);
+
             return RedirectToAction(nameof(ForgotPasswordConfirmation));
         }
+
         public IActionResult ForgotPasswordConfirmation()
         {
             return View();
