@@ -16,6 +16,7 @@ builder.Services.AddFluentValidationAutoValidation();
 builder.Services.AddFluentValidationClientsideAdapters();
 builder.Services.AddValidatorsFromAssemblyContaining<AssesmentViewModelValidator>();
 builder.Services.AddValidatorsFromAssemblyContaining<BlogViewModelValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<CourseCategoryViewModelValidator>();
 
 builder.Services.AddAuthentication()
     .AddGoogle("google", opt =>

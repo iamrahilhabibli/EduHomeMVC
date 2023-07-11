@@ -6,8 +6,6 @@ namespace EduHomeUI.Areas.EHMasterPanel.ViewModels.CourseCategoryViewModels
 {
     public class CourseCategoryViewModel
     {
-        [Required(ErrorMessage = "Category is required")]
-        [RegularExpression(@"^[a-zA-Z\s]+$", ErrorMessage = "Category cannot contain digits or symbols")]
         public string Category { get; set; }
 
 
