@@ -59,18 +59,28 @@ namespace EduHomeUI.Services.Concretes
 
         public async Task<bool> GetBlogDetailById(Guid blogId)
         {
-            var blogDetails = await _context.BlogDetails.FindAsync(blogId);
+            var blog = await _context.Blogs.FindAsync(blogId);
+            if (blog is null || blog.BlogDetailsId == null) return false;
+
+            var blogDetails = await _context.BlogDetails.FindAsync(blog.BlogDetailsId);
             if (blogDetails is null) return false;
+
             return true;
         }
 
-        public async Task<bool> UpdateBlogDetailIsDeleted(Guid blogDetailId, bool isDeleted)
+
+        public async Task<bool> UpdateBlogDetailIsDeleted(Guid blogId, bool isDeleted)
         {
+            var blog = await _context.Blogs.FindAsync(blogId);
+            if (blog is null) return false;
 
-            var blogDetail = await _context.BlogDetails.FindAsync(blogDetailId);
-            if (blogDetail is null) return false;
+   
+            var blogDetailsId = blog.BlogDetailsId;
 
-            blogDetail.IsDeleted = isDeleted;
+            var blogDetails = await _context.BlogDetails.FindAsync(blogDetailsId);
+            if (blogDetails is null) return false;
+
+            blogDetails.IsDeleted = isDeleted;
             await _context.SaveChangesAsync();
 
             return true;
