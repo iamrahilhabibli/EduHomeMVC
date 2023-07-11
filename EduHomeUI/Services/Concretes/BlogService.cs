@@ -54,5 +54,34 @@ namespace EduHomeUI.Services.Concretes
             return await _context.Blogs.FindAsync(blogId);
         }
 
+        public async Task<bool> GetBlogDetailById(Guid blogId)
+        {
+            var blogDetails = await _context.BlogDetails.FindAsync(blogId);
+            if (blogDetails is null) return false;
+            return true;
+        }
+
+        public async Task<bool> UpdateBlogDetailIsDeleted(Guid blogDetailId, bool isDeleted)
+        {
+
+            var blogDetail = await _context.BlogDetails.FindAsync(blogDetailId);
+            if (blogDetail is null) return false;
+
+            blogDetail.IsDeleted = isDeleted;
+            await _context.SaveChangesAsync();
+
+            return true;
+        }
+
+        public async Task<bool> UpdateBlogIsDeleted(Guid blogId, bool isDeleted)
+        {
+            var blog = await _context.Blogs.FindAsync(blogId);
+            if (blog is null) return false;
+
+            blog.IsDeleted = isDeleted;
+            await _context.SaveChangesAsync();
+
+            return true;
+        }
     }
 }

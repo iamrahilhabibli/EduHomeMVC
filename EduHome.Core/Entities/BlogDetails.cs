@@ -1,4 +1,5 @@
 ﻿using EduHome.Core.Entities.Common;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EduHome.Core.Entities
 {
@@ -6,5 +7,7 @@ namespace EduHome.Core.Entities
     {
         public string Description { get; set; }
         public Blog Blog { get; set; }
+        [ForeignKey("Blog")]
+        public Guid BlogId { get; set; }
     }
 }

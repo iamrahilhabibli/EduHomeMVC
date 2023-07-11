@@ -64,5 +64,35 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
             return View(viewModel);
         }
 
+        [HttpPost]
+        [ActionName("Delete")]
+        [AutoValidateAntiforgeryToken]
+        public async Task<IActionResult> DeleteBlog(Guid id)
+        {
+            if (!await _blogService.GetBlogById(id))
+            {
+                return NotFound();
+            }
+
+            var blogDetailExist = await _blogService.GetBlogDetailById(id);
+            if (blogDetailExist)
+            {
+                await _blogService.UpdateBlogDetailIsDeleted(id, true);
+            }
+
+            var deleted = await _blogService.UpdateBlogIsDeleted(id, true);
+            if (deleted)
+            {
+                TempData["Success"] = "Blog Deleted Successfully";
+            }
+            else
+            {
+                TempData["Error"] = "Failed to delete the blog.";
+            }
+
+            return RedirectToAction(nameof(Index));
+        }
+
+
     }
 }
