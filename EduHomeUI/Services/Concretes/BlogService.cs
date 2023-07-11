@@ -20,6 +20,11 @@ namespace EduHomeUI.Services.Concretes
             if (blogVm is null)
                 return false;
 
+            var blogDetails = new BlogDetails
+            {
+                Description = blogVm.Description
+            };
+
             var blog = new Blog
             {
                 Title = blogVm.Title,
@@ -27,10 +32,7 @@ namespace EduHomeUI.Services.Concretes
                 ImagePath = blogVm.ImagePath,
                 ImageName = blogVm.ImageName,
                 CommentCount = blogVm.CommentCount,
-                BlogDetails = new BlogDetails
-                {
-                    Description = blogVm.Description
-                }
+                BlogDetails = blogDetails
             };
 
             _context.Blogs.Add(blog);
@@ -38,6 +40,7 @@ namespace EduHomeUI.Services.Concretes
 
             return true;
         }
+
 
         public async Task<List<Blog>> GetAllBlogsAsync()
         {

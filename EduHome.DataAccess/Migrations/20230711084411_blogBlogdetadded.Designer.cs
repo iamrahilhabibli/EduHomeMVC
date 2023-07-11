@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EduHome.DataAccess.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230711082412_blogblogdet")]
-    partial class blogblogdet
+    [Migration("20230711084411_blogBlogdetadded")]
+    partial class blogBlogdetadded
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -162,6 +162,9 @@ namespace EduHome.DataAccess.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("BlogDetailsId")
+                        .IsUnique();
+
                     b.ToTable("Blogs");
                 });
 
@@ -169,9 +172,6 @@ namespace EduHome.DataAccess.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("BlogId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("DateCreated")
@@ -188,9 +188,6 @@ namespace EduHome.DataAccess.Migrations
                         .HasColumnType("bit");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("BlogId")
-                        .IsUnique();
 
                     b.ToTable("BlogDetails");
                 });
@@ -797,15 +794,15 @@ namespace EduHome.DataAccess.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("EduHome.Core.Entities.BlogDetails", b =>
+            modelBuilder.Entity("EduHome.Core.Entities.Blog", b =>
                 {
-                    b.HasOne("EduHome.Core.Entities.Blog", "Blog")
-                        .WithOne("BlogDetails")
-                        .HasForeignKey("EduHome.Core.Entities.BlogDetails", "BlogId")
+                    b.HasOne("EduHome.Core.Entities.BlogDetails", "BlogDetails")
+                        .WithOne("Blog")
+                        .HasForeignKey("EduHome.Core.Entities.Blog", "BlogDetailsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Blog");
+                    b.Navigation("BlogDetails");
                 });
 
             modelBuilder.Entity("EduHome.Core.Entities.Course", b =>
@@ -988,9 +985,9 @@ namespace EduHome.DataAccess.Migrations
                     b.Navigation("CourseDetailsAssesment");
                 });
 
-            modelBuilder.Entity("EduHome.Core.Entities.Blog", b =>
+            modelBuilder.Entity("EduHome.Core.Entities.BlogDetails", b =>
                 {
-                    b.Navigation("BlogDetails")
+                    b.Navigation("Blog")
                         .IsRequired();
                 });
 
