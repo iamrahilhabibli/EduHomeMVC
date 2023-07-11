@@ -13,6 +13,18 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddCustomServices(builder.Configuration);
 builder.Services.Configure<ReCAPTCHASettings>(builder.Configuration.GetSection("GooglereCAPTCHA"));
 builder.Services.AddHttpClient<ICaptchaValidator,GoogleReCaptchaValidator>();
+
+builder.Services.AddAuthentication()
+    .AddGoogle("google", opt =>
+    {
+        var serviceProvider = builder.Services.BuildServiceProvider();
+        var configuration = serviceProvider.GetService<IConfiguration>();
+        var googleAuth = configuration.GetSection("Authentication:Google");
+        opt.ClientId = googleAuth["ClientId"];
+        opt.ClientSecret = googleAuth["ClientSecret"];
+        opt.SignInScheme = IdentityConstants.ExternalScheme;
+    });
+
 var app = builder.Build();
 app.UseAuthentication();
 app.UseAuthorization();

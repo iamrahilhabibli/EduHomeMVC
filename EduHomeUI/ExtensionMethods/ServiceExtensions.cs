@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
+using System.Configuration;
 
 namespace EduHomeUI.Extensions
 {
@@ -69,6 +70,18 @@ namespace EduHomeUI.Extensions
             var emailConfig = configuration.GetSection("EmailConfiguration").Get<EmailConfiguration>();
             services.AddSingleton(emailConfig);
             services.AddScoped<IEmailSenderService, EmailSenderService>();
+
         }
+        //public static void AddGoogleLogin(this IServiceCollection services, IConfiguration configuration)
+        //{
+        //    services.AddAuthentication()
+        //        .AddGoogle("google", opt =>
+        //        {
+        //            var googleConfig = configuration.GetSection("Authentication:Google");
+        //            opt.ClientId = googleConfig["ClientId"];
+        //            opt.ClientSecret = googleConfig["ClientSecret"];
+        //            opt.SignInScheme = IdentityConstants.ExternalScheme;
+        //        });
+        //}
     }
 }
