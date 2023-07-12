@@ -8,5 +8,7 @@ namespace EduHomeUI.Services.Interfaces
     {
         Task<List<Notice>> GetAllNotices();
         Task<bool> CreateNoticeAsync(NoticeCreateViewModel noticeVm);
+        Task<bool> GetNoticeById(Guid noticeId);
+        Task<Notice> GetNoticeByIdNotice(Guid noticeId);
     }
 }

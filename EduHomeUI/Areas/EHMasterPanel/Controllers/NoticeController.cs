@@ -40,6 +40,29 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
             TempData["Success"] = "Notice Created Successfully!";
             return RedirectToAction(nameof(Index));
         }
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            if (!await _noticeService.GetNoticeById(id)) return NotFound();
 
+            var notice = await _noticeService.GetNoticeByIdNotice(id);
+
+            var viewModel = new NoticeCreateViewModel()
+            {
+                Description = notice.Description
+            };
+            return View(viewModel);
+        }
+        //[HttpPost]
+        //[ActionName("Delete")]
+        //[AutoValidateAntiforgeryToken]
+        //public async Task<IActionResult> DeleteLanguage(Guid id)
+        //{
+        //    bool isDeleted = await _languageService.DeleteLanguageById(id);
+
+        //    if (!isDeleted) return NotFound();
+
+        //    TempData["Success"] = "Language Deleted Successfully";
+        //    return RedirectToAction(nameof(Index));
+        //}
     }
 }
