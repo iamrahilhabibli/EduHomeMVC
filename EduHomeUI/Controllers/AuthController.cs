@@ -71,7 +71,7 @@ namespace EduHomeUI.Controllers
             var message = new Message(new string[] { user.Email }, "Confirmation email link", emailContent);
             _emailSenderService.SendEmail(message); // ASYNC
 
-            //await _userManager.AddToRoleAsync(user, "Visitor");
+            await _userManager.AddToRoleAsync(user, "Visitor");
 
             return RedirectToAction(nameof(SuccessRegistration));
         }
@@ -304,18 +304,18 @@ namespace EduHomeUI.Controllers
             return View(nameof(ExternalLogin), model);
         }
         #region Create Role
-        [AllowAnonymous]
-        public async Task CreateRole()
-        {
-            foreach (var role in Enum.GetValues(typeof(UserRole.Roles)))
-            {
-                bool exists = await _roleManager.RoleExistsAsync(role.ToString());
-                if (!exists)
-                {
-                    await _roleManager.CreateAsync(new IdentityRole { Name = role.ToString() });
-                }
-            }
-        }
+        //[AllowAnonymous]
+        //public async Task CreateRole()
+        //{
+        //    foreach (var role in Enum.GetValues(typeof(UserRole.Roles)))
+        //    {
+        //        bool exists = await _roleManager.RoleExistsAsync(role.ToString());
+        //        if (!exists)
+        //        {
+        //            await _roleManager.CreateAsync(new IdentityRole { Name = role.ToString() });
+        //        }
+        //    }
+        //}
         #endregion
     }
 }
