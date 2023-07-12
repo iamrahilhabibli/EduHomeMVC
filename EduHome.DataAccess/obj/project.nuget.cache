@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ML3d2dpLJ2jJlIjMbFECm6ciAZRNJ43dgki6j7QP4WM364j3QVpIA+bJ+jsHCml8JJ2Ao+buz3S4q0aE8O1DBg==",
+  "dgSpecHash": "kkqPRkFbHhhWl0iXgf4GfYHjJ13T9UxLK4Iyhuif4BioZ+2wy1AKUvnHc9RkRGmeml+PvTRzq4WRGwBhDth9vw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHome.DataAccess\\EduHome.DataAccess.csproj",
   "expectedPackageFiles": [
@@ -41,6 +41,7 @@
     "C:\\Users\\Rhabi\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\Rhabi\\.nuget\\packages\\mimekit\\3.2.0\\mimekit.3.2.0.nupkg.sha512",
     "C:\\Users\\Rhabi\\.nuget\\packages\\netcore.mailkit\\2.1.0\\netcore.mailkit.2.1.0.nupkg.sha512",
+    "C:\\Users\\Rhabi\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\Rhabi\\.nuget\\packages\\portable.bouncycastle\\1.9.0\\portable.bouncycastle.1.9.0.nupkg.sha512",
     "C:\\Users\\Rhabi\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\Rhabi\\.nuget\\packages\\system.configuration.configurationmanager\\4.7.0\\system.configuration.configurationmanager.4.7.0.nupkg.sha512",

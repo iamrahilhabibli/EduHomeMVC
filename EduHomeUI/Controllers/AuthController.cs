@@ -18,18 +18,21 @@ namespace EduHomeUI.Controllers
         private readonly IEmailSenderService _emailSenderService;
         private readonly ICaptchaValidator _captchaValidator;
         private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly GoogleCaptchaService _googleCaptchaService;
 
         public AuthController(UserManager<AppUser> userManager,
                               SignInManager<AppUser> signInManager,
                               IEmailSenderService emailSenderService,
                               ICaptchaValidator captchaValidator,
-                              RoleManager<IdentityRole> roleManager)
+                              RoleManager<IdentityRole> roleManager,
+                              GoogleCaptchaService googleCaptchaService)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _emailSenderService = emailSenderService;
             _captchaValidator = captchaValidator;
             _roleManager = roleManager;
+            _googleCaptchaService = googleCaptchaService;
         }
         public IActionResult Register()
         {
@@ -39,6 +42,8 @@ namespace EduHomeUI.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(UserRegisterViewModel userRegVm)
         {
+            var googleReCaptcha = _googleCaptchaService.VerifyCaptcha();
+
             if (!ModelState.IsValid)
             {
                 return View(userRegVm);

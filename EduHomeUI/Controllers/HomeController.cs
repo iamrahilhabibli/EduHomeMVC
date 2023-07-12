@@ -1,4 +1,5 @@
 ﻿using EduHome.DataAccess.Contexts;
+using EduHomeUI.Areas.EHMasterPanel.ViewModels.CourseViewModels;
 using EduHomeUI.ViewModels.HomeViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;

@@ -54,6 +54,7 @@
                                     <input asp-for="ConfirmPassword" type="password" class="form-control" />
                                     <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
                                 </div>
+                                <input asp-for="Token" />
                                 <div class="form-group">
                                     <div class="login-toggle-btn">
                                         <input type="checkbox" id="remember">
@@ -92,7 +93,8 @@
             e.preventDefault();
             grecaptcha.ready(function () {
                 grecaptcha.execute('@GooglereCAPTCHA.Value.ReCAPTCHA_Site_Key', { action: 'submit' }).then(function (token) {
-                   
+                    console.log(token)
+                   $('#Input_Token').val(token)
                 });
             });
         }
