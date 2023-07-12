@@ -7,6 +7,7 @@ using EmailService;
 using Message = EmailService.Message;
 using GoogleReCaptcha.V3.Interface;
 using System.Security.Claims;
+using EduHome.Core.Utilities;
 
 namespace EduHomeUI.Controllers
 {
@@ -16,13 +17,19 @@ namespace EduHomeUI.Controllers
         private readonly SignInManager<AppUser> _signInManager;
         private readonly IEmailSenderService _emailSenderService;
         private readonly ICaptchaValidator _captchaValidator;
+        private readonly RoleManager<IdentityRole> _roleManager;
 
-        public AuthController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, IEmailSenderService emailSenderService, ICaptchaValidator captchaValidator)
+        public AuthController(UserManager<AppUser> userManager,
+                              SignInManager<AppUser> signInManager,
+                              IEmailSenderService emailSenderService,
+                              ICaptchaValidator captchaValidator,
+                              RoleManager<IdentityRole> roleManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _emailSenderService = emailSenderService;
             _captchaValidator = captchaValidator;
+            _roleManager = roleManager;
         }
         public IActionResult Register()
         {
@@ -296,6 +303,19 @@ namespace EduHomeUI.Controllers
 
             return View(nameof(ExternalLogin), model);
         }
-
+        #region Create Role
+        [AllowAnonymous]
+        public async Task CreateRole()
+        {
+            foreach (var role in Enum.GetValues(typeof(UserRole.Roles)))
+            {
+                bool exists = await _roleManager.RoleExistsAsync(role.ToString());
+                if (!exists)
+                {
+                    await _roleManager.CreateAsync(new IdentityRole { Name = role.ToString() });
+                }
+            }
+        }
+        #endregion
     }
 }
