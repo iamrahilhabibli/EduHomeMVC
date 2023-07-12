@@ -1,5 +1,6 @@
 ﻿@using EduHomeUI.ViewModels.CourseViewModels;
 @model CourseIndexViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 <!-- Course Start -->
 <div class="course-area pt-150 pb-150">
     <div class="container">
@@ -22,7 +23,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="single-course mb-70">
                         <div class="course-img">
-                            <a href="course-details.html">
+                            <a asp-action="Details" asp-route-id="@course.Id">
                                 <img src="@course.ImagePath" alt="@course.ImageName">
                                 <div class="course-hover">
                                     <i class="fa fa-link"></i>
@@ -30,9 +31,9 @@
                             </a>
                         </div>
                         <div class="course-content">
-                            <h3><a href="course-details.html">@course.Name</a></h3>
+                            <h3><a asp-action="Details" asp-route-id="@course.Id">@course.Name</a></h3>
                             <p>@course.Description</p>
-                            <a class="default-btn" href="course-details.html">read more</a>
+                            <a class="default-btn" asp-action="Details" asp-route-id="@course.Id">read more</a>
                         </div>
                     </div>
                 </div>

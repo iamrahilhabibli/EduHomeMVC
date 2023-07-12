@@ -33,7 +33,7 @@ namespace EduHomeUI.Controllers
             CourseIndexViewModel courseVM = new()
             {
                 Courses = new List<Course> { course },
-                CoursesDetails = await _context.CourseDetails.ToListAsync()
+                CourseDetails = await _context.CourseDetails.ToListAsync()
             };
             return View(courseVM);
         }
