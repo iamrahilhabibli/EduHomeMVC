@@ -17,6 +17,7 @@ namespace EduHomeUI.Controllers
             HomeIndexViewModel model = new HomeIndexViewModel()
             {
                 Notices = await _context.Notices.ToListAsync(),
+                Courses = await _context.Courses.ToListAsync(),
             };
             return View(model);
         }
