@@ -33,11 +33,11 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(LanguageViewModel languageVm)
+        public async Task<IActionResult> Create(NoticeCreateViewModel noticeVm)
         {
             if (!ModelState.IsValid) return NotFound();
-            if (!await _languageService.CreateLanguageAsync(languageVm)) return BadRequest();
-            TempData["Success"] = "Language Created Successfully!";
+            if (!await _noticeService.CreateNoticeAsync(noticeVm)) return BadRequest();
+            TempData["Success"] = "Notice Created Successfully!";
             return RedirectToAction(nameof(Index));
         }
 
