@@ -25,7 +25,7 @@ namespace EduHome.DataAccess.Contexts
         public DbSet<CourseDetailsSkillLevel> CourseDetailsSkillLevels { get; set; }
         public DbSet<Teacher> Teachers { get; set; }
         public DbSet<TeacherDetails> TeacherDetails { get; set; }
-
+        public DbSet<Notice> Notices { get; set; }
         public DbSet<Event> Events { get; set; }
         public DbSet<EventDetails> EventsDetails { get; set; }  
         public DbSet<Speaker> Speakers { get; set; }
