@@ -29,6 +29,22 @@ namespace EduHomeUI.Services.Concretes
             return true;
         }
 
+        public async Task<bool> DeleteNoticeById(Guid noticeId)
+        {
+            var notice = await _context.Notices.FindAsync(noticeId);
+
+            if (notice is null)
+            {
+                return false;
+            }
+
+            notice.IsDeleted = true;
+            _context.Notices.Update(notice);
+            await _context.SaveChangesAsync();
+
+            return true;
+        }
+
         public async Task<List<Notice>> GetAllNotices()
         {
             return await _context.Notices.ToListAsync();
