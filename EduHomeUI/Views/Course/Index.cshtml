@@ -17,7 +17,7 @@
             </div>
         </div>
         <div class="row">
-            @foreach (var course in Model.Courses)
+            @foreach (var course in Model.Courses.OrderByDescending(c => c.DateCreated).Take(9))
             {
                 <div class="col-lg-4 col-md-6">
                     <div class="single-course mb-70">
@@ -37,6 +37,7 @@
                     </div>
                 </div>
             }
+
         </div>
     </div>
 </div>

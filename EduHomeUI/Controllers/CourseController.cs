@@ -1,12 +1,24 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using EduHome.DataAccess.Contexts;
+using EduHomeUI.ViewModels.CourseViewModels;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace EduHomeUI.Controllers
 {
     public class CourseController : Controller
     {
-        public IActionResult Index()
+        private readonly AppDbContext _context;
+        public CourseController(AppDbContext context)
         {
-            return View();
+            _context = context;
+        }
+        public async Task<IActionResult> Index()
+        {
+            CourseIndexViewModel viewModel = new CourseIndexViewModel()
+            {
+                Courses = await _context.Courses.ToListAsync()
+            };
+            return View(viewModel);
         }
     }
 }
