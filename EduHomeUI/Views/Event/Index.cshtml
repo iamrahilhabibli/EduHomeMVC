@@ -1,0 +1,40 @@
+﻿@using EduHomeUI.ViewModels.EventViewModels;
+@model EventIndexViewModel     
+  
+<!-- Event Start -->
+<div class="event-area three text-center pt-150 pb-150">
+    <div class="container">
+        <div class="row">
+            @foreach (var newEvent in Model.Events)
+            {
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-event mb-60">
+                        <div class="event-img">
+                            <a href="event-details.html">
+                                <img src="@newEvent.ImagePath" alt="@newEvent.ImageName">
+                                <div class="course-hover">
+                                    <i class="fa fa-link"></i>
+                                </div>
+                            </a>
+                            <div class="event-date">
+                                <h3>@newEvent.Date.Day <span>@newEvent.Date.ToString("MMMM")</span></h3>
+                            </div>
+                        </div>
+                        <div class="event-content text-start">
+                            <h4><a href="event-details.html">@newEvent.Title</a></h4>
+                            <ul>
+                                <li><span>time:</span> @newEvent.StartTime.ToString("HH:mm") - @newEvent.EndTime.ToString("HH:mm")</li>
+                                <li><span>venue</span>@newEvent.Venue</li>
+                            </ul>
+                            <div class="event-content-right">
+                                <a class="default-btn" href="event-details.html">join now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</div>
+<!-- Event End -->

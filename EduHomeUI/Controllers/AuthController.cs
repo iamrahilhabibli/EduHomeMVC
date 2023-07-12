@@ -274,7 +274,7 @@ namespace EduHomeUI.Controllers
                 if (result.Succeeded)
                 {
                     await _signInManager.SignInAsync(user, isPersistent: false);
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction(returnUrl);
                 }
             }
             else
@@ -296,7 +296,7 @@ namespace EduHomeUI.Controllers
                     if (result.Succeeded)
                     {
                         await _signInManager.SignInAsync(user, isPersistent: false);
-                        return RedirectToAction("Index", "Home");
+                        return RedirectToAction(returnUrl);
                     }
                 }
             }
