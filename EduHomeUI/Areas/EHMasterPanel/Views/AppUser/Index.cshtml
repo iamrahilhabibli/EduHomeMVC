@@ -24,29 +24,49 @@
                                     <th>Email</th>
                                     <th>Username</th>
                                     <th>DateOfBirth</th>
+                                    <th>Role</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach (var user in Model.appUsers)
+                                @foreach (var user in Model.AppUsers)
                                 {
-                                    @*@if (!course.IsDeleted)
-                                    {*@
-                                        <tr>
-                                            <td>@count</td>
+                                    <tr>
+                                        <td>@count</td>
                                         <td>@user.FirstName</td>
                                         <td>@user.LastName</td>
                                         <td>@user.Email</td>
                                         <td>@user.UserName</td>
                                         <td>@user.DateOfBirth</td>
-                                            <td>
-                                                <a asp-action="Update" asp-route-id="@user.Id" class="btn btn-warning"><i class="bi bi-pencil-square"></i></a>
-
-                                            </td>
-                                        </tr>
-                                        count++;
-                                    @*}*@
+                                        <td>
+                                            @{
+                                                string roleName = null;
+                                                foreach (var userRole in ViewBag.UserRoles)
+                                                {
+                                                    if (userRole.UserId == user.Id)
+                                                    {
+                                                        foreach (var role in ViewBag.Roles)
+                                                        {
+                                                            if (role.Id == userRole.RoleId)
+                                                            {
+                                                                roleName = role.Name;
+                                                                break;
+                                                            }
+                                                        }
+                                                        break;
+                                                    }
+                                                }
+                                            }
+                                            @roleName
+                                        </td>
+                                        <td>
+                                            <a asp-action="Update" asp-route-id="@user.Id" class="btn btn-warning"><i class="bi bi-pencil-square"></i></a>
+                                        </td>
+                                    </tr>
+                                    count++;
                                 }
+
+
                             </tbody>
                         </table>
                     </div>

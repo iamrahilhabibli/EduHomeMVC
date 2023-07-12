@@ -16,10 +16,16 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            AppUserIndexViewModel model = new AppUserIndexViewModel()
+            var model = new AppUserIndexViewModel
             {
-                appUsers = await _context.Users.ToListAsync()
+                AppUsers = await _context.Users.ToListAsync()
             };
+
+            var userRoles = await _context.UserRoles.ToListAsync();
+            var roles = await _context.Roles.ToListAsync();
+
+            ViewBag.UserRoles = userRoles;
+            ViewBag.Roles = roles;
 
             return View(model);
         }
