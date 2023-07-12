@@ -42,7 +42,7 @@ namespace EduHomeUI.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(UserRegisterViewModel userRegVm)
         {
-            var googleReCaptcha = _googleCaptchaService.VerifyCaptcha();
+            //var googleReCaptcha = _googleCaptchaService.VerifyCaptcha();
 
             if (!ModelState.IsValid)
             {
