@@ -205,10 +205,7 @@
                 {
                     <div class="@(eventCount < 3 ? "single-event mb-35" : "single-event")">
                         <div class="event-date">
-                            <h3><a href="event-details.html">
-                                    <span>@newEvent.Date.ToString("dd")</span><br />
-                                    <span>@newEvent.Date.ToString("MMM")</span>
-                            </a></h3>
+                            <h3><a href="event-details.html">@newEvent.Date.Day <span>@newEvent.Date.ToString("MMMM")</span></a></h3>
                         </div>
                         <div class="event-content text-start">
                             <div class="event-content-left">
