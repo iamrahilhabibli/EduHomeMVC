@@ -28,22 +28,30 @@
 
                             <div class="speakers-area fix">
                                 <h4>speakers</h4>
-                                @foreach (var eventSpeaker in newEvent.EventSpeakers)
+                                @if (newEvent.EventSpeakers.Any())
                                 {
-                                    var speaker = eventSpeaker.Speaker;
-                                    <div class="single-speaker">
-                                        <div class="speaker-img">
-                                            <img src="@speaker.ImagePath" alt="speaker">
+                                    foreach (var eventSpeaker in newEvent.EventSpeakers)
+                                    {
+                                        var speaker = eventSpeaker.Speaker;
+                                        <div class="single-speaker">
+                                            <div class="speaker-img">
+                                                <img src="@speaker.ImagePath" alt="speaker">
+                                            </div>
+                                            <div class="speaker-name">
+                                                <h5>@speaker.Name</h5>
+                                                <p>@speaker.Position</p>
+                                            </div>
                                         </div>
-                                        <div class="speaker-name">
-                                            <h5>@speaker.Name</h5>
-                                            <p>@speaker.Position</p>
-                                        </div>
-                                    </div>
+                                    }
+                                }
+                                else
+                                {
+                                    <p>No speakers are assigned for this event.</p>
                                 }
                             </div>
                         </div>
                     }
+
 
 
 
