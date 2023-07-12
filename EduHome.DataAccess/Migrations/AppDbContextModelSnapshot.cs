@@ -489,6 +489,30 @@ namespace EduHome.DataAccess.Migrations
                     b.ToTable("Languages");
                 });
 
+            modelBuilder.Entity("EduHome.Core.Entities.Notice", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateModified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Notices");
+                });
+
             modelBuilder.Entity("EduHome.Core.Entities.SkillLevel", b =>
                 {
                     b.Property<Guid>("Id")
