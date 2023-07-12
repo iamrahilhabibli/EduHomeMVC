@@ -1,6 +1,9 @@
 ﻿@using EduHomeUI.ViewModels.HomeViewModels;
-@model HomeIndexViewModel 
-       
+@model HomeIndexViewModel
+
+@{
+    int eventCount = 0; 
+}
 <!-- Background Area Start -->
 <section id="slider-container" class="slider-area">
     <div class="slider-owl owl-theme owl-carousel">
@@ -158,7 +161,7 @@
             </div>
         </div>
         <div class="row">
-            @foreach (var course in Model.Courses.Take(3))
+            @foreach (var course in Model.Courses.OrderByDescending(c => c.DateCreated).Take(3))
             {
                 <div class="col-lg-4 col-md-6">
                     <div class="single-course">
@@ -195,74 +198,32 @@
         </div>
         <div class="row">
             <div class="col-lg-6">
-                <div class="single-event mb-35">
-                    <div class="event-date">
-                        <h3><a href="event-details.html">20 <span>June</span></a></h3>
-                    </div>
-                    <div class="event-content text-start">
-                        <div class="event-content-left">
-                            <h4><a href="event-details.html">MICRO BIOLOGICAL WORKSHOP</a></h4>
-                            <ul>
-                                <li><i class="fa fa-clock-o"></i>9.00 AM - 4.45 PM</li>
-                                <li><i class="fa fa-map-marker"></i>New Yourk City</li>
-                            </ul>
+                
+
+
+                @foreach (var newEvent in Model.Events.OrderByDescending(e => e.Date).Take(4))
+                {
+                    <div class="@(eventCount < 3 ? "single-event mb-35" : "single-event")">
+                        <div class="event-date">
+                            <h3><a href="event-details.html"><span>@newEvent.Date</span></a></h3>
                         </div>
-                        <div class="event-content-right">
-                            <a class="default-btn" href="event-details.html">join now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="single-event mb-35">
-                    <div class="event-date">
-                        <h3><a href="event-details.html">18 <span>June</span></a></h3>
-                    </div>
-                    <div class="event-content text-start">
-                        <div class="event-content-left">
-                            <h4><a href="event-details.html">ADVANCE PHP WORKSHOP</a></h4>
-                            <ul>
-                                <li><i class="fa fa-clock-o"></i>9.00 AM - 4.45 PM</li>
-                                <li><i class="fa fa-map-marker"></i>New Yourk City</li>
-                            </ul>
-                        </div>
-                        <div class="event-content-right">
-                            <a class="default-btn" href="event-details.html">join now</a>
+                        <div class="event-content text-start">
+                            <div class="event-content-left">
+                                <h4><a href="event-details.html">@newEvent.Title</a></h4>
+                                <ul>
+                                    <li><i class="fa fa-clock-o"></i>@newEvent.StartTime - @newEvent.EndTime</li>
+                                    <li><i class="fa fa-map-marker"></i>@newEvent.Venue</li>
+                                </ul>
+                            </div>
+                            <div class="event-content-right">
+                                <a class="default-btn" href="event-details.html">join now</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="single-event mb-35">
-                    <div class="event-date">
-                        <h3><a href="event-details.html">16 <span>June</span></a></h3>
-                    </div>
-                    <div class="event-content text-start">
-                        <div class="event-content-left">
-                            <h4><a href="event-details.html">LEARN ENGLISH HISTORY</a></h4>
-                            <ul>
-                                <li><i class="fa fa-clock-o"></i>9.00 AM - 4.45 PM</li>
-                                <li><i class="fa fa-map-marker"></i>New Yourk City</li>
-                            </ul>
-                        </div>
-                        <div class="event-content-right">
-                            <a class="default-btn" href="event-details.html">join now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="single-event">
-                    <div class="event-date">
-                        <h3><a href="event-details.html">14 <span>June</span></a></h3>
-                    </div>
-                    <div class="event-content text-start">
-                        <div class="event-content-left">
-                            <h4><a href="event-details.html">GLOBAL ECONOMIC CONFERENCE</a></h4>
-                            <ul>
-                                <li><i class="fa fa-clock-o"></i>9.00 AM - 4.45 PM</li>
-                                <li><i class="fa fa-map-marker"></i>New Yourk City</li>
-                            </ul>
-                        </div>
-                        <div class="event-content-right">
-                            <a class="default-btn" href="event-details.html">join now</a>
-                        </div>
-                    </div>
-                </div>
+
+                    eventCount++; 
+                }
+
             </div>
             <div class="col-lg-6 pt-5 pt-lg-0">
                 <div class="single-event mb-35">

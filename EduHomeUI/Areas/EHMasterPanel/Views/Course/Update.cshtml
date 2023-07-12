@@ -3,12 +3,12 @@
 @model CourseViewModel
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
-@{
+@*@{
     var assessmentOptions = ViewBag.AssessmentOptions as List<Assesment>;
     var skillLevelOptions = ViewBag.SkillLevelOptions as List<SkillLevel>;
     var languageOptions = ViewBag.LanguageOptions as List<Language>;
     var courseCategories = ViewBag.CourseCategories as List<CourseCategory>;
-}
+}*@
 <form asp-controller="Course" asp-action="Update" method="post">
     <div class="row">
         <div class="col-xl-6">
@@ -71,15 +71,21 @@
                             <span asp-validation-for="CourseFee" class="text-danger"></span>
                         </div>
                     </div>
-
+                    <div class="row mb-4">
+                        <label asp-for="StudentCount" class="col-sm-3 col-form-label">Student Count</label>
+                        <div class="col-sm-9">
+                            <input asp-for="StudentCount" class="form-control" />
+                            <span asp-validation-for="StudentCount" class="text-danger"></span>
+                        </div>
+                    </div>
                     <div class="row mb-4">
                         <label asp-for="AssesmentId" class="col-sm-3 col-form-label">Assessment</label>
                         <div class="col-sm-9">
                             <select asp-for="AssesmentId" class="form-control">
                                 <option value="">-- Select Assessment --</option>
-                                @if (assessmentOptions != null)
+                                @if (ViewBag.AssessmentOptions != null)
                                 {
-                                    foreach (var assessment in assessmentOptions)
+                                    foreach (var assessment in ViewBag.AssessmentOptions)
                                     {
                                         <option value="@assessment.Id">@assessment.AssesmentType</option>
                                     }
@@ -94,9 +100,9 @@
                         <div class="col-sm-9">
                             <select asp-for="SkillLevelId" class="form-control">
                                 <option value="">-- Select Skill Level --</option>
-                                @if (skillLevelOptions != null)
+                                @if (ViewBag.SkillLevelOptions != null)
                                 {
-                                    foreach (var skillLevel in skillLevelOptions)
+                                    foreach (var skillLevel in ViewBag.SkillLevelOptions)
                                     {
                                         <option value="@skillLevel.Id">@skillLevel.Skill</option>
                                     }
@@ -112,9 +118,9 @@
                         <div class="col-sm-9">
                             <select asp-for="LanguageOptionId" class="form-control">
                                 <option value="">-- Select Language Option --</option>
-                                @if (languageOptions != null)
+                                @if (ViewBag.LanguageOptions != null)
                                 {
-                                    foreach (var languageOption in languageOptions)
+                                    foreach (var languageOption in ViewBag.LanguageOptions)
                                     {
                                         <option value="@languageOption.Id">@languageOption.LanguageOption</option>
                                     }
@@ -129,9 +135,9 @@
                         <div class="col-sm-9">
                             <select asp-for="CourseCategoryId" class="form-control">
                                 <option value="">-- Select Course Category --</option>
-                                @if (courseCategories != null)
+                                @if (ViewBag.CourseCategories != null)
                                 {
-                                    foreach (var category in courseCategories)
+                                    foreach (var category in ViewBag.CourseCategories)
                                     {
                                         <option value="@category.Id">@category.Category</option>
                                     }
@@ -140,6 +146,7 @@
                             <span asp-validation-for="CourseCategoryId" class="text-danger"></span>
                         </div>
                     </div>
+
 
                     <div class="mb-3 row">
                         <label asp-for="Description" class="col-md-2 col-form-label">Description</label>

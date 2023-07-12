@@ -135,8 +135,8 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
 
             var viewModelCourse = await _courseService.MapCourseVM(course);
 
-            ViewBag.LanguageOptions = await _context.Languages.ToListAsync();
-            ViewBag.AssessmentOptions = await _context.Assesments.ToListAsync();
+            ViewBag.LanguageOptions =  await _context.Languages.ToListAsync();
+            ViewBag.AssessmentOptions =await  _context.Assesments.ToListAsync();
             ViewBag.SkillLevelOptions = await _context.SkillLevels.ToListAsync();
             ViewBag.CourseCategories = await _context.CourseCategories.ToListAsync();
 

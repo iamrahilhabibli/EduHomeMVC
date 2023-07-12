@@ -202,7 +202,8 @@ namespace EduHomeUI.Services.Concretes
                     LanguageOptionId = courses.LanguageOptionId,
                     SkillLevelId = courses.SkillLevelId,
                     AssesmentId = courses.AssesmentId,
-                    CourseFee = courses.CourseFee
+                    CourseFee = courses.CourseFee,
+                    StudentCount = courses.StudentCount
                 };
                 course.Details = newDetails;
                 _context.CourseDetails.Add(newDetails);
