@@ -45,6 +45,10 @@
 							<ul>
 								@if (User.Identity.IsAuthenticated)
 								{
+									@if (User.IsInRole("Master") || User.IsInRole("Admin"))
+									{
+										<li><a asp-area="EHMasterPanel" asp-controller="Dashboard" asp-action="Index">Admin Dashboard</a></li>
+									}
 									<li><a asp-controller="Auth">My account</a></li>
 									<li><a asp-controller="Auth" asp-controller="Auth" asp-action="Logout">Logout</a></li>
 								}
