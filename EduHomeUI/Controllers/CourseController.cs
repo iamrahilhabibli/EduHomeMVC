@@ -1,4 +1,5 @@
-﻿using EduHome.DataAccess.Contexts;
+﻿using EduHome.Core.Entities;
+using EduHome.DataAccess.Contexts;
 using EduHomeUI.ViewModels.CourseViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -19,6 +20,22 @@ namespace EduHomeUI.Controllers
                 Courses = await _context.Courses.ToListAsync()
             };
             return View(viewModel);
+        }
+        public async Task<IActionResult> Details(Guid id)
+        {
+            Course course = await _context.Courses.FindAsync(id);
+
+            if (course == null)
+            {
+                return NotFound();
+            }
+
+            CourseIndexViewModel courseVM = new()
+            {
+                Courses = new List<Course> { course },
+                CoursesDetails = await _context.CourseDetails.ToListAsync()
+            };
+            return View(courseVM);
         }
     }
 }
