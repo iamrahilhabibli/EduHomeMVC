@@ -9,7 +9,7 @@
     <div class="row">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Languages</h4>
+                <h4 class="card-title">Notices</h4>
                 <a asp-controller="Notice" asp-action="Create" class="btn btn-primary mb-4">Create New Notice</a>
                 <div class="table-responsive">
                     <table class="table table-striped table-bordered" id="dataTableData">
@@ -22,19 +22,19 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach (var language in Model.Languages)
+                            @foreach (var notice in Model.Notices)
                             {
-                                if (!language.IsDeleted)
+                                if (!notice.IsDeleted)
                                 {
                                     <tr>
                                         <td>@count</td>
-                                        <td>@language.LanguageOption</td>
+                                        <td>@notice.Description</td>
+                                        <td>@notice.DateCreated</td>
                                         <td>
-                                            <a asp-action="Delete" asp-route-id="@language.Id" class="btn btn-danger"><i class="bi bi-trash-fill"></i></a>
+                                            <a asp-action="Delete" asp-route-id="@notice.Id" class="btn btn-danger"><i class="bi bi-trash-fill"></i></a>
                                         </td>
                                     </tr>
                                     count++;
-
                                 }
                             }
                         </tbody>

@@ -32,7 +32,7 @@ namespace EduHomeUI.Extensions
             services.AddScoped<ISpeakerService, SpeakerService>();
             services.AddScoped<IBlogService, BlogService>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-
+            services.AddScoped<INoticeService, NoticeService>();
 
         }
 
