@@ -101,10 +101,15 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
         [AutoValidateAntiforgeryToken]
         public async Task<IActionResult> DeleteCourse(Guid id)
         {
-            if (!await _courseService.GetCourseById(id))
+            var course = await _courseService.GetCourseById(id);
+            if (course == null)
             {
                 return NotFound();
             }
+
+            var deletedCourseDetailAssessments = await _courseService.DeleteCourseDetailAssessments(id);
+            var deletedCourseDetailSkillLevels = await _courseService.DeleteCourseDetailSkillLevels(id);
+            var deletedCourseDetailLanguages = await _courseService.DeleteCourseDetailLanguages(id);
 
             var courseDetailExists = await _courseService.GetCourseDetailExists(id);
             if (courseDetailExists)
@@ -113,7 +118,7 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
             }
 
             var deleted = await _courseService.UpdateCourseIsDeleted(id, true);
-            if (deleted)
+            if (deleted && deletedCourseDetailAssessments && deletedCourseDetailSkillLevels && deletedCourseDetailLanguages)
             {
                 TempData["Success"] = "Course Deleted Successfully";
             }
@@ -124,6 +129,7 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
 
             return RedirectToAction(nameof(Index));
         }
+
 
         public async Task<IActionResult> Update(Guid id)
         {

@@ -105,6 +105,46 @@ namespace EduHomeUI.Services.Concretes
             return true;
         }
 
+        public async Task<bool> DeleteCourseDetailAssessments(Guid courseId)
+        {
+            var courseDetail = await _context.CourseDetails.FirstOrDefaultAsync(cd => cd.CourseId == courseId);
+            if (courseDetail == null) return false;
+
+            var assessments = await _context.CourseDetailsAssesments.Where(a => a.CourseDetailsId == courseDetail.Id).ToListAsync();
+
+            _context.CourseDetailsAssesments.RemoveRange(assessments);
+            await _context.SaveChangesAsync();
+
+            return true;
+        }
+
+        public async Task<bool> DeleteCourseDetailSkillLevels(Guid courseId)
+        {
+            var courseDetail = await _context.CourseDetails.FirstOrDefaultAsync(cd => cd.CourseId == courseId);
+            if (courseDetail == null) return false;
+
+            var skillLevels = await _context.CourseDetailsSkillLevels.Where(s => s.CourseDetailsId == courseDetail.Id).ToListAsync();
+
+
+            _context.CourseDetailsSkillLevels.RemoveRange(skillLevels);
+            await _context.SaveChangesAsync();
+
+            return true;
+        }
+
+        public async Task<bool> DeleteCourseDetailLanguages(Guid courseId)
+        {
+            var courseDetail = await _context.CourseDetails.FirstOrDefaultAsync(cd => cd.CourseId == courseId);
+            if (courseDetail == null) return false;
+
+            var languages = await _context.CourseDetailsLanguages.Where(l => l.CourseDetailsId == courseDetail.Id).ToListAsync();
+            
+
+            _context.CourseDetailsLanguages.RemoveRange(languages);
+            await _context.SaveChangesAsync();
+
+            return true;
+        }
 
         public async Task<bool> DeleteCourseById(Guid courseId)
         {
