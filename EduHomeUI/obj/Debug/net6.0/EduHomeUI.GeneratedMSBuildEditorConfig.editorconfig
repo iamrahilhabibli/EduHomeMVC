@@ -288,16 +288,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Rhabi/OneDrive/Documents/Backend/MVCFinalEdu/EduHomeMVC/EduHomeUI/Views/Shared/Captcha/_CaptchaInput.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENhcHRjaGFcX0NhcHRjaGFJbnB1dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Rhabi/OneDrive/Documents/Backend/MVCFinalEdu/EduHomeMVC/EduHomeUI/Views/Shared/Components/Header/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcSGVhZGVyXERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Rhabi/OneDrive/Documents/Backend/MVCFinalEdu/EduHomeMVC/EduHomeUI/Views/Shared/_CaptchaInput.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9DYXB0Y2hhSW5wdXQuY3NodG1s
+[C:/Users/Rhabi/OneDrive/Documents/Backend/MVCFinalEdu/EduHomeMVC/EduHomeUI/Views/Shared/Components/Head/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcSGVhZFxEZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Rhabi/OneDrive/Documents/Backend/MVCFinalEdu/EduHomeMVC/EduHomeUI/Views/Shared/_ExternalAuthentication.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9FeHRlcm5hbEF1dGhlbnRpY2F0aW9uLmNzaHRtbA==
+[C:/Users/Rhabi/OneDrive/Documents/Backend/MVCFinalEdu/EduHomeMVC/EduHomeUI/Views/Shared/ExternalAuth/_ExternalAuthentication.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEV4dGVybmFsQXV0aFxfRXh0ZXJuYWxBdXRoZW50aWNhdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Rhabi/OneDrive/Documents/Backend/MVCFinalEdu/EduHomeMVC/EduHomeUI/Views/Shared/_Layout.cshtml]
