@@ -34,6 +34,7 @@ namespace EduHomeUI.Extensions
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped<INoticeService, NoticeService>();
             services.AddTransient<GoogleCaptchaService>();
+            services.AddScoped<ISettingService, SettingService>();
 
         }
 

@@ -2,11 +2,13 @@
 using EduHomeUI.Areas.EHMasterPanel.ViewModels.AssesmentViewModels;
 using EduHomeUI.Areas.EHMasterPanel.ViewModels.SettingViewModels;
 using EduHomeUI.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EduHomeUI.Areas.EHMasterPanel.Controllers
 {
-
+    [Area("EHMasterPanel")]
+    [Authorize]
     public class SettingController : Controller
     {
         private readonly AppDbContext _context;
