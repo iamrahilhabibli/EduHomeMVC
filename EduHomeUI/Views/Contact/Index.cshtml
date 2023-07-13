@@ -68,7 +68,14 @@
                     </div>
                 </div>
             </div>
-            <partial name="_UserReplySection" />
+            @if (User.Identity.IsAuthenticated)
+            {
+                <partial name="_UserReplySection" />
+            }
+            else
+            {
+                <p>Login to Send Us a Message!</p>
+            }
 
         </div>
     </div>
