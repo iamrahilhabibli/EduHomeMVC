@@ -1,5 +1,6 @@
-﻿using EduHome.DataAccess.Contexts;
-using EduHomeUI.Areas.EHMasterPanel.ViewModels.TeacherViewModels;
+﻿using EduHome.Core.Entities;
+using EduHome.DataAccess.Contexts;
+using EduHomeUI.ViewModels.TeacherViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -20,6 +21,22 @@ namespace EduHomeUI.Controllers
                 Teachers = await _context.Teachers.ToListAsync()
             };
             return View(model);
+        }
+        public async Task<IActionResult> Details(Guid id)
+        {
+            Teacher teacher = await _context.Teachers.FindAsync(id);
+
+            if (teacher == null)
+            {
+                return NotFound();
+            }
+
+            TeacherIndexViewModel teacherVM = new()
+            {
+                Teachers = new List<Teacher> { teacher },
+                Details = await _context.TeacherDetails.ToListAsync()
+            };
+            return View(teacherVM);
         }
     }
 }
