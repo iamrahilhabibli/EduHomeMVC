@@ -1,4 +1,6 @@
-﻿using EduHome.DataAccess.Contexts;
+﻿using EduHome.Core.Entities;
+using EduHome.DataAccess.Contexts;
+using EduHomeUI.ViewModels.UserReplyViewModel.cs;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EduHomeUI.Controllers
@@ -14,6 +16,22 @@ namespace EduHomeUI.Controllers
         public IActionResult Index()
         {
             return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(UserReplyCreateViewModel userReply)
+        {
+            UserReply newUserReply = new()
+            {
+                Name = userReply.Name,
+                Subject = userReply.Subject,
+                Email = userReply.Email,
+                Body = userReply.Message
+            };
+            _context.UserReplies.Add(newUserReply);
+            _context.SaveChanges();
+            TempData["Success"] = "Reply Sent Successfully";
+            return View(nameof(Index));
         }
     }
 }

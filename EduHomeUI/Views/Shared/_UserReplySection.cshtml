@@ -1,0 +1,28 @@
+﻿@using EduHomeUI.ViewModels.UserReplyViewModel.cs;
+@model UserReplyCreateViewModel
+<div class="col-lg-7 col-md-7">
+    <div class="reply-area">
+        <h3>LEAVE A message</h3>
+        <p>I must explain to you how all this a mistaken idea of ncing great explorer of the rut the is lder of human happinescias unde omnis iste natus error sit volptatem </p>
+        <form id="contact-form" asp-controller="Contact" asp-action="Create">
+            <div class="row">
+                <div class="col-md-12">
+                    <p>Name</p>
+                    <input type="text" asp-for="Name">
+                </div>
+                <div class="col-md-12">
+                    <p>Email</p>
+                    <input type="text" asp-for="Email">
+                </div>
+                <div class="col-md-12">
+                    <p>Subject</p>
+                    <input type="text" asp-for="Subject">
+                    <p>Massage</p>
+                    <textarea cols="15" rows="10" asp-for="Message"></textarea>
+                </div>
+            </div>
+            <button class="reply-btn" type="submit"><span>send message</span></button>
+            <p class="form-message"></p>
+        </form>
+    </div>
+</div>
