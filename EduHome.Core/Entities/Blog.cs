@@ -9,7 +9,7 @@ namespace EduHome.Core.Entities
         public string ImagePath { get; set; }
         public string ImageName { get; set; }
         public int CommentCount { get; set; }
-
+        public override bool IsDeleted { get; set; }
         public Guid BlogDetailsId { get; set; }
         public BlogDetails BlogDetails { get; set; }
     }

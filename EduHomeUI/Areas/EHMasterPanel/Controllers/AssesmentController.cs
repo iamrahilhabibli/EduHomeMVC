@@ -1,4 +1,5 @@
-﻿using EduHome.DataAccess.Contexts;
+﻿using EduHome.Core.Entities;
+using EduHome.DataAccess.Contexts;
 using EduHomeUI.Areas.EHMasterPanel.ViewModels.AssesmentViewModels;
 using EduHomeUI.Areas.EHMasterPanel.ViewModels.CourseViewModels;
 using EduHomeUI.Areas.EHMasterPanel.ViewModels.LanguageViewModels;
@@ -62,11 +63,20 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
         [AutoValidateAntiforgeryToken]
         public async Task<IActionResult> DeleteAssesmentType(Guid id)
         {
-            bool isDeleted = await _assesmentService.DeleteAssesmentById(id);
+            //bool isDeleted = await _assesmentService.DeleteAssesmentById(id);
 
-            if (!isDeleted) return NotFound();
+            //if (!isDeleted) return NotFound();
 
-            TempData["Success"] = "Assesment Deleted Successfully";
+            //TempData["Success"] = "Assesment Deleted Successfully";
+            //return RedirectToAction(nameof(Index));
+            Assesment assesment = await _context.Assesments.FindAsync(id);
+            if (assesment is null)
+            {
+                return NotFound();
+            }
+            _context.Assesments.Remove(assesment);
+            _context.SaveChanges();
+            TempData["Success"] = "Assesment Removed Successfully";
             return RedirectToAction(nameof(Index));
         }
     }
