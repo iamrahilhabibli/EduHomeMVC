@@ -61,10 +61,17 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
         [AutoValidateAntiforgeryToken]
         public async Task<IActionResult> DeleteLanguage(Guid id)
         {
-            bool isDeleted = await _languageService.DeleteLanguageById(id);
+			//bool isDeleted = await _languageService.DeleteLanguageById(id);
 
-            if (!isDeleted) return NotFound();
+			//if (!isDeleted) return NotFound();
 
+			//TempData["Success"] = "Language Deleted Successfully";
+			//return RedirectToAction(nameof(Index));
+
+			Language newLanguage = await _context.Languages.FindAsync(id);
+			if (newLanguage == null) { return NotFound(); }
+			_context.Languages.Remove(newLanguage);
+			_context.SaveChanges();
             TempData["Success"] = "Language Deleted Successfully";
             return RedirectToAction(nameof(Index));
         }

@@ -12,6 +12,7 @@ namespace EduHome.Core.Entities
         public int LanguageSkills { get; set; }
         public int TeamLeaderSkills { get; set; }
         public int DevelopmentSkills { get; set; }
+        public override bool IsDeleted { get; set; }
         public int Design { get; set; }
         public int Innovation { get; set; }
         public int Communication { get; set; }

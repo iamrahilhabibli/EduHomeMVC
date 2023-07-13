@@ -10,6 +10,7 @@ namespace EduHome.Core.Entities
         public string ImagePath { get; set; }
         public string ImageName { get; set; }
         public string Position { get; set; }
+        public override bool IsDeleted { get; set; }
         public TeacherDetails TeacherDetails { get; set; }
     }
 }

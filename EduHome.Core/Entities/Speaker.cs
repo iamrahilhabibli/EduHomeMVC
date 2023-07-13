@@ -10,6 +10,7 @@ namespace EduHome.Core.Entities
         public string CompanyName { get; set; }
         public string ImagePath { get; set; }
         public string ImageName { get; set; }
+        public override bool IsDeleted { get; set; }
 
         public ICollection<EventSpeaker> EventSpeakers { get; set; }
     }

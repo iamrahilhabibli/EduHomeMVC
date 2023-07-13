@@ -1,4 +1,5 @@
-﻿using EduHome.DataAccess.Contexts;
+﻿using EduHome.Core.Entities;
+using EduHome.DataAccess.Contexts;
 using EduHomeUI.Areas.EHMasterPanel.ViewModels.AssesmentViewModels;
 using EduHomeUI.Areas.EHMasterPanel.ViewModels.SkillViewModels;
 using EduHomeUI.Services.Concretes;
@@ -59,10 +60,19 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
         [AutoValidateAntiforgeryToken]
         public async Task<IActionResult> DeleteSKillLevel(Guid id)
         {
-            bool isDeleted = await _skillService.DeleteSkillLevelById(id);
+            //bool isDeleted = await _skillService.DeleteSkillLevelById(id);
 
-            if (!isDeleted) return NotFound();
+            //if (!isDeleted) return NotFound();
 
+            //TempData["Success"] = "SkillLevel Deleted Successfully";
+            //return RedirectToAction(nameof(Index));
+            SkillLevel skillLevel = await _context.SkillLevels.FindAsync(id);
+            if (skillLevel is null)
+            {
+                return NotFound();
+            }
+            _context.SkillLevels.Remove(skillLevel);
+            _context.SaveChanges();
             TempData["Success"] = "SkillLevel Deleted Successfully";
             return RedirectToAction(nameof(Index));
         }

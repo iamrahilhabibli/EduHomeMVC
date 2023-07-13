@@ -8,6 +8,7 @@ namespace EduHome.Core.Entities
         public string ImagePath { get; set; }
         public string ImageName { get; set; }
         public string Venue { get; set; }
+        public override bool IsDeleted { get; set; }
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
         public DateTime Date { get; set; }
