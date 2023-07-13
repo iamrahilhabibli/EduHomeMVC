@@ -1,6 +1,6 @@
 ﻿@using EduHomeUI.ViewModels.BlogViewModels;
 @model BlogIndexViewModel
-
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 <!-- Banner Area Start -->
 <div class="banner-area-wrapper">
     <div class="banner-area text-center">
@@ -27,7 +27,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="single-blog mb-60">
                         <div class="blog-img">
-                            <a href="#"><img src="@blog.ImagePath" alt="@blog.ImageName"></a>
+                            <a asp-action="Details" asp-route-id="@blog.Id"><img src="@blog.ImagePath" alt="@blog.ImageName"></a>
                             <div class="blog-hover">
                                 <i class="fa fa-link"></i>
                             </div>
@@ -37,8 +37,8 @@
                                 <p>By @blog.AuthorName /  @blog.DateCreated  /  <i class="fa fa-comments-o"></i> @blog.CommentCount</p>
                             </div>
                             <div class="blog-bottom">
-                                <h2><a href="blog-details.html">@blog.Title </a></h2>
-                                <a href="blog-details.html">read more</a>
+                                <h2><a asp-action="Details" asp-route-id="@blog.Id">@blog.Title </a></h2>
+                                <a asp-action="Details" asp-route-id="@blog.Id">read more</a>
                             </div>
                         </div>
                     </div>

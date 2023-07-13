@@ -1,4 +1,5 @@
-﻿using EduHome.DataAccess.Contexts;
+﻿using EduHome.Core.Entities;
+using EduHome.DataAccess.Contexts;
 using EduHomeUI.ViewModels.BlogViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -20,9 +21,21 @@ namespace EduHomeUI.Controllers
             };
             return View(viewModel);
         }
-        public async Task<IActionResult> Details()
+        public async Task<IActionResult> Details(Guid id)
         {
-            return View();
+            Blog blog = await _context.Blogs.FindAsync(id);
+
+            if (blog == null)
+            {
+                return NotFound();
+            }
+
+            BlogIndexViewModel blogVm = new()
+            {
+                Blogs = new List<Blog> { blog },
+                BlogDetails = await _context.BlogDetails.ToListAsync()
+            };
+            return View(blogVm);
         }
     }
 }
