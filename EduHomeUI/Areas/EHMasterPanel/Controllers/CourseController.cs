@@ -106,7 +106,7 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
                 return NotFound();
             }
 
-            var courseDetailExists = await _courseService.GetCourseDetailById(id);
+            var courseDetailExists = await _courseService.GetCourseDetailExists(id);
             if (courseDetailExists)
             {
                 await _courseService.UpdateCourseDetailIsDeleted(id, true);

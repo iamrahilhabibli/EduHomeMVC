@@ -94,16 +94,17 @@ namespace EduHomeUI.Services.Concretes
 
             return true;
         }
-        public async Task<bool> UpdateCourseDetailIsDeleted(Guid courseDetailId, bool isDeleted)
+        public async Task<bool> UpdateCourseDetailIsDeleted(Guid courseId, bool isDeleted)
         {
-            var courseDetail = await _context.CourseDetails.FindAsync(courseDetailId);
-            if (courseDetail is null) return false;
+            var courseDetail = await _context.CourseDetails.FirstOrDefaultAsync(cd => cd.CourseId == courseId);
+            if (courseDetail == null) return false;
 
             courseDetail.IsDeleted = isDeleted;
             await _context.SaveChangesAsync();
 
             return true;
         }
+
 
         public async Task<bool> DeleteCourseById(Guid courseId)
         {
@@ -121,13 +122,11 @@ namespace EduHomeUI.Services.Concretes
             return true;
         }
 
-
-        public async Task<bool> GetCourseDetailById(Guid courseId)
+        public async Task<bool> GetCourseDetailExists(Guid courseId)
         {
-            var courseDetail = await _context.CourseDetails.FindAsync(courseId);
-            if (courseDetail is null) return false;
-            return true;
+            return await _context.CourseDetails.AnyAsync(cd => cd.CourseId == courseId);
         }
+
         public async Task<CourseDetails> GetCourseDetailsAsync(Guid courseId)
         {
             var courseDetails = await _context.CourseDetails
