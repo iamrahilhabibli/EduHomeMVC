@@ -7,5 +7,7 @@ namespace EduHomeUI.Services.Interfaces
     {
         Task<List<Setting>> GetAllSettingsAsync();
         Task<bool> CreateSettingAsync(SettingCreateViewModel settingVm);
+        Task<bool> GetSettingById(Guid settingId);
+        Task<Setting> GetSettingByIdSetting(Guid settingId);
     }
 }

@@ -36,5 +36,16 @@ namespace EduHomeUI.Services.Concretes
 
             return true;
         }
+        public async Task<bool> GetSettingById(Guid settingId)
+        {
+            var setting = await _context.Settings.FindAsync(settingId);
+            if (setting is null) return false;
+            return true;
+        }
+        public async Task<Setting> GetSettingByIdSetting(Guid settingId)
+        {
+            return await _context.Settings.FindAsync(settingId);
+        }
+
     }
 }

@@ -46,5 +46,22 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
             TempData["Success"] = "Setting Created Successfully!";
             return RedirectToAction(nameof(Index));
         }
-    }
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            if (!await _settingService.GetSettingById(id))
+            {
+                return NotFound();
+            }
+
+            var setting = await _settingService.GetSettingByIdSetting(id);
+
+            var viewModel = new SettingCreateViewModel
+            {
+                Key = setting.Key,
+                Value = setting.Value
+            };
+
+            return View(viewModel);
+            }
+        }
 }
