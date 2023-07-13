@@ -2,11 +2,13 @@
 using EduHomeUI.Areas.EHMasterPanel.ViewModels.LanguageViewModels;
 using EduHomeUI.Areas.EHMasterPanel.ViewModels.NoticeViewModels.cs;
 using EduHomeUI.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EduHomeUI.Areas.EHMasterPanel.Controllers
 {
     [Area("EHMasterPanel")]
+    [Authorize]
     public class NoticeController : Controller
     {
         private readonly AppDbContext _context;

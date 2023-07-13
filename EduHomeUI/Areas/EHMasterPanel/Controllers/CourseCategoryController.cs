@@ -5,12 +5,14 @@ using EduHomeUI.Areas.EHMasterPanel.ViewModels.CourseCategoryViewModels;
 using EduHomeUI.Areas.EHMasterPanel.ViewModels.CourseViewModels;
 using EduHomeUI.Services.Concretes;
 using EduHomeUI.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace EduHomeUI.Areas.EHMasterPanel.Controllers
 {
     [Area("EHMasterPanel")]
+    [Authorize]
 	public class CourseCategoryController : Controller
 	{
 		private readonly AppDbContext _context;

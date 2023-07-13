@@ -3,12 +3,14 @@ using EduHome.DataAccess.Contexts;
 using EduHomeUI.Areas.EHMasterPanel.ViewModels.LanguageViewModels;
 using EduHomeUI.Services.Concretes;
 using EduHomeUI.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace EduHomeUI.Areas.EHMasterPanel.Controllers
 {
 	[Area("EHMasterPanel")]
+	[Authorize]
 	public class LanguageController : Controller
 	{
 		private readonly AppDbContext _context;

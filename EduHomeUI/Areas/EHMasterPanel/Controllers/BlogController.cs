@@ -3,11 +3,13 @@ using EduHomeUI.Areas.EHMasterPanel.ViewModels.BlogViewModels;
 using EduHomeUI.Areas.EHMasterPanel.ViewModels.CourseViewModels;
 using EduHomeUI.Services.Concretes;
 using EduHomeUI.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EduHomeUI.Areas.EHMasterPanel.Controllers
 {
     [Area("EHMasterPanel")]
+    [Authorize]
     public class BlogController : Controller
     {
         private readonly AppDbContext _context;

@@ -25,7 +25,11 @@
                                     <th>Username</th>
                                     <th>DateOfBirth</th>
                                     <th>Role</th>
-                                    <th>Actions</th>
+                                    @if (User.Identity.IsAuthenticated && User.IsInRole("Master"))
+                                    {
+                                        <th>Actions</th>
+                                    }
+
                                 </tr>
                             </thead>
                             <tbody>
@@ -59,9 +63,15 @@
                                             }
                                             @roleName
                                         </td>
-                                        <td>
-                                            <a asp-action="Update" asp-route-id="@user.Id" class="btn btn-warning"><i class="bi bi-pencil-square"></i></a>
-                                        </td>
+                                        @if (User.Identity.IsAuthenticated && User.IsInRole("Master"))
+                                        {
+                                            <td>
+                                                <a asp-action="Update" asp-route-id="@user.Id" class="btn btn-warning"><i class="bi bi-pencil-square">MAKE ADMIN</i></a>
+                                                <a asp-action="Master" asp-route-id="@user.Id" class="btn btn-danger"><i class="bi bi-pencil-square">MAKE MASTER</i></a>
+                                                <a asp-action="Visitor" asp-route-id="@user.Id" class="btn btn-success"><i class="bi bi-pencil-square">MAKE VISITOR</i></a>
+                                            </td>
+                                        }
+
                                     </tr>
                                     count++;
                                 }

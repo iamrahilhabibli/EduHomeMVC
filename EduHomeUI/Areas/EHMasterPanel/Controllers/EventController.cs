@@ -6,12 +6,14 @@ using EduHomeUI.Areas.EHMasterPanel.ViewModels.EventViewModels;
 using EduHomeUI.Areas.EHMasterPanel.ViewModels.SpeakerViewModels;
 using EduHomeUI.Services.Concretes;
 using EduHomeUI.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace EduHomeUI.Areas.EHMasterPanel.Controllers
 {
     [Area("EHMasterPanel")]
+    [Authorize]
     public class EventController : Controller
     {
         private readonly AppDbContext _context;

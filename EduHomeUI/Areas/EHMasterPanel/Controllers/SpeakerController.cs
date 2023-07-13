@@ -2,12 +2,14 @@
 using EduHomeUI.Areas.EHMasterPanel.ViewModels.LanguageViewModels;
 using EduHomeUI.Areas.EHMasterPanel.ViewModels.SpeakerViewModels;
 using EduHomeUI.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace EduHomeUI.Areas.EHMasterPanel.Controllers
 {
     [Area("EHMasterPanel")]
+    [Authorize]
     public class SpeakerController : Controller
     {
         private readonly AppDbContext _context;
