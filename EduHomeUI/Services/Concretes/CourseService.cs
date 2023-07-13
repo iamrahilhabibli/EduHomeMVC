@@ -160,6 +160,7 @@ namespace EduHomeUI.Services.Concretes
                 courseViewModel.Duration = courseWithDetails.Details.Duration;
                 courseViewModel.ClassDuration = courseWithDetails.Details.ClassDuration;
                 courseViewModel.CourseFee = courseWithDetails.Details.CourseFee;
+                courseViewModel.StudentCount = courseWithDetails.Details.StudentCount;
                 courseViewModel.LanguageOptionId = courseWithDetails.Details.LanguageOptionId;
                 courseViewModel.AssesmentId = courseWithDetails.Details.AssesmentId;
                 courseViewModel.SkillLevelId = courseWithDetails.Details.SkillLevelId;

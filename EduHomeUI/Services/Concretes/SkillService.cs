@@ -22,7 +22,7 @@ namespace EduHomeUI.Services.Concretes
                 Skill = skillVM.Skill
             };
             await _context.SkillLevels.AddAsync(newSkill);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
             return true;
         }
 
