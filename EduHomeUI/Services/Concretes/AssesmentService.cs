@@ -25,7 +25,7 @@ namespace EduHomeUI.Services.Concretes
 				AssesmentType = assementVM.AssesmentType,
 			};
 			await _context.Assesments.AddAsync(newAssesment);
-			_context.SaveChanges();
+			await _context.SaveChangesAsync();
 			return true;
 		}
 
