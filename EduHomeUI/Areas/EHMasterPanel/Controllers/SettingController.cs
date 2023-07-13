@@ -1,6 +1,8 @@
 ﻿using EduHome.DataAccess.Contexts;
 using EduHomeUI.Areas.EHMasterPanel.ViewModels.AssesmentViewModels;
+using EduHomeUI.Areas.EHMasterPanel.ViewModels.BlogViewModels;
 using EduHomeUI.Areas.EHMasterPanel.ViewModels.SettingViewModels;
+using EduHomeUI.Services.Concretes;
 using EduHomeUI.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -28,5 +30,21 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
             };
             return View(viewModel);
         }
+        public async Task<IActionResult> Create()
+        {
+            return View();
+        }
+        //[HttpPost]
+        //[AutoValidateAntiforgeryToken]
+        //public async Task<IActionResult> Create(BlogCreateViewModel blogVm)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
+        //    if (!await _blogService.CreateBlogAsync(blogVm)) return BadRequest();
+        //    TempData["Success"] = "Blog Created Successfully!";
+        //    return RedirectToAction(nameof(Index));
+        //}
     }
 }
