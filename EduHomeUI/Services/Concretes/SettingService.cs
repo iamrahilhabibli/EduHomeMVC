@@ -46,6 +46,20 @@ namespace EduHomeUI.Services.Concretes
         {
             return await _context.Settings.FindAsync(settingId);
         }
+        public async Task<bool> DeleteSettingById(Guid settingId)
+        {
+            var settings = await _context.Settings.FindAsync(settingId);
 
+            if (settings is null)
+            {
+                return false;
+            }
+
+            settings.IsDeleted = true;
+            _context.Settings.Update(settings);
+            await _context.SaveChangesAsync();
+
+            return true;
+        }
     }
 }

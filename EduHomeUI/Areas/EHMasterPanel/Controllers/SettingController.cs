@@ -20,7 +20,7 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
             _context = context;
             _settingService = settingService;
         }
-        public async Task <IActionResult> Index()
+        public async Task<IActionResult> Index()
         {
             var settingList = await _settingService.GetAllSettingsAsync();
 
@@ -62,6 +62,19 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
             };
 
             return View(viewModel);
-            }
         }
+        [HttpPost]
+        [ActionName("Delete")]
+        [AutoValidateAntiforgeryToken]
+        public async Task<IActionResult> DeleteSetting(Guid id)
+        {
+            bool isDeleted = await _settingService.DeleteSettingById(id);
+
+        if (!isDeleted) return NotFound();
+
+            TempData["Success"] = "Setting Deleted Successfully";
+            return RedirectToAction(nameof(Index));
+        }
+
+    }
 }
