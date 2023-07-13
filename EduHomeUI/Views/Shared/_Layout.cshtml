@@ -1,8 +1,7 @@
 ﻿<!doctype html>
 <html class="no-js" lang="en">
-
-<!-- Mirrored from htmldemo.net/tm/eduhome/eduhome/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 24 Jun 2023 06:56:44 GMT -->
-<head>
+	@await Component.InvokeAsync("Header")
+	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<title>Eduhome - Educational HTML Template</title>
@@ -10,7 +9,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- Favicon -->
-	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+@*	<link rel="shortcut icon" type="image/x-icon" href="@Model["faviconuserlayout"]">*@
 
 	<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/assets/css/animate.min.css">
@@ -32,110 +31,6 @@
 		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 	<![endif]-->
 	<!-- Header Area Start -->
-	<header class="top">
-		<div class="header-top">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8 col-sm-8">
-						<div class="header-top-left">
-							<p>HAVE ANY QUESTION ?  +880 5698  598  6587</p>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-4">
-						<div class="header-top-right text-md-end text-center">
-							<ul>
-								@if (User.Identity.IsAuthenticated)
-								{
-									@if (User.IsInRole("Master") || User.IsInRole("Admin"))
-									{
-										<li><a asp-area="EHMasterPanel" asp-controller="Dashboard" asp-action="Index">Admin Dashboard</a></li>
-									}
-									<li><a asp-controller="Auth">My account</a></li>
-									<li><a asp-controller="Auth" asp-controller="Auth" asp-action="Logout">Logout</a></li>
-								}
-								else
-								{
-									<li><a asp-controller="Auth" asp-action="Login">login</a></li>
-									<li><a asp-controller="Auth" asp-action="Register">signup</a></li>
-								}
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="header-area two header-sticky">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-3 col-sm-5 col-6">
-						<div class="logo">
-							<a asp-controller="Home" asp-action="Index"><img src="/assets/img/logo/logo2.png" alt="eduhome" /></a>
-						</div>
-					</div>
-					<div class="col-md-9 col-sm-7 col-6">
-						<div class="content-wrapper text-end">
-							<!-- Main Menu Start -->
-							<div class="main-menu">
-								<nav>
-									<ul>
-										<li>
-											<a asp-controller="Home" asp-action="Index">Home</a>
-											<ul>
-												<li><a href="index.html">Home One</a></li>
-												<li><a href="index-2.html">Home Two</a></li>
-												<li><a href="index-3.html">Home Three</a></li>
-												<li><a href="index-4.html">Home Four</a></li>
-												<li><a href="index-5.html">Home Five</a></li>
-											</ul>
-										</li>
-										<li><a href="about.html">About</a></li>
-										<li>
-											<a asp-controller="Course" asp-action="Index">courses</a>
-										</li>
-										<li>
-											<a asp-controller="Event" asp-action="Index">event</a>
-										</li>
-										<li class="hidden-sm">
-											<a asp-controller="Teacher" asp-action="Index">teacher</a>
-
-										</li>
-										<li>
-											<a asp-controller="Blog" asp-action="Index">blog</a>
-										</li>
-										<li><a href="contact.html">Contact</a></li>
-										<li><a href="contact.html">Buy Now</a>
-									</ul>
-								</nav>
-							</div>
-							<!--Search Form Start-->
-							<div class="search-btn">
-								<ul class="header-search search-toggle">
-									<li class="search-menu">
-										<i class="fa fa-search"></i>
-									</li>
-								</ul>
-								<div class="search">
-									<div class="search-form">
-										<form id="search-form" action="#">
-											<input type="search" placeholder="Search here..." name="search" />
-											<button type="submit">
-												<span><i class="fa fa-search"></i></span>
-											</button>
-										</form>
-									</div>
-								</div>
-							</div>
-							<!--End of Search Form-->
-							<!-- Main Menu End -->
-						</div>
-					</div>
-					<div class="col-12">
-						<div class="mobile-menu hidden-sm"></div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</header>
 	<!-- Header Area End -->
 	@RenderBody()
 	<!-- Footer Start -->
