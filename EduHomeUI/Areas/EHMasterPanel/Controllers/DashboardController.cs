@@ -1,10 +1,12 @@
 ﻿using EduHome.Core.Entities;
 using EduHome.DataAccess.Contexts;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace EduHomeUI.Areas.EHMasterPanel.Controllers
 {
+    [Authorize]
     [Area("EHMasterPanel")]
     public class DashboardController : Controller
     {
