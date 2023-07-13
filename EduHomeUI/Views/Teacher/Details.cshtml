@@ -34,7 +34,7 @@
                         <h2>@teacher.Name @teacher.Surname</h2>
                         <h5>@teacher.Position</h5>
                         <h4>about me</h4>
-                        <p>@teacher.TeacherDetails.Description</p>
+                        @Html.Raw(@teacher.TeacherDetails.Description)
                     </div>
                 </div>
             </div>
