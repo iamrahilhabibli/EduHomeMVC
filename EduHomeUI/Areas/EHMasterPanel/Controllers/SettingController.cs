@@ -34,17 +34,17 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
         {
             return View();
         }
-        //[HttpPost]
-        //[AutoValidateAntiforgeryToken]
-        //public async Task<IActionResult> Create(BlogCreateViewModel blogVm)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return BadRequest(ModelState);
-        //    }
-        //    if (!await _blogService.CreateBlogAsync(blogVm)) return BadRequest();
-        //    TempData["Success"] = "Blog Created Successfully!";
-        //    return RedirectToAction(nameof(Index));
-        //}
+        [HttpPost]
+        [AutoValidateAntiforgeryToken]
+        public async Task<IActionResult> Create(SettingCreateViewModel settingVm)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            if (!await _settingService.CreateSettingAsync(settingVm)) return BadRequest();
+            TempData["Success"] = "Setting Created Successfully!";
+            return RedirectToAction(nameof(Index));
+        }
     }
 }
