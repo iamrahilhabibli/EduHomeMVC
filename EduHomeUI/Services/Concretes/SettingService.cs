@@ -61,5 +61,23 @@ namespace EduHomeUI.Services.Concretes
 
             return true;
         }
-    }
+		public async Task<bool> UpdateSetting(Guid settingId, SettingCreateViewModel settingVm)
+		{
+			var setting = await _context.Settings.FindAsync(settingId);
+
+			if (setting == null)
+			{
+				return false;
+			}
+
+			setting.Key = settingVm.Key;
+            setting.Value = settingVm.Value;
+
+			_context.Settings.Update(setting);
+			await _context.SaveChangesAsync();
+
+			return true;
+		}
+
+	}
 }

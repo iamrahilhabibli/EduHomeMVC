@@ -1,7 +1,10 @@
-﻿using EduHome.DataAccess.Contexts;
+﻿using EduHome.Core.Entities;
+using EduHome.DataAccess.Contexts;
 using EduHomeUI.Areas.EHMasterPanel.ViewModels.AssesmentViewModels;
 using EduHomeUI.Areas.EHMasterPanel.ViewModels.BlogViewModels;
+using EduHomeUI.Areas.EHMasterPanel.ViewModels.CourseCategoryViewModels;
 using EduHomeUI.Areas.EHMasterPanel.ViewModels.SettingViewModels;
+using EduHomeUI.Areas.EHMasterPanel.ViewModels.TeacherViewModels;
 using EduHomeUI.Services.Concretes;
 using EduHomeUI.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
@@ -76,5 +79,40 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-    }
+		public IActionResult Update(Guid Id)
+		{
+			Setting setting = _context.Settings.Find(Id);
+			if (setting == null)
+			{
+				return NotFound();
+			}
+
+			SettingCreateViewModel viewModel = new()
+			{
+				Key = setting.Key,
+				Value = setting.Value
+			};
+			return View(viewModel);
+		}
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public async Task<IActionResult> Update(Guid id, SettingCreateViewModel setting)
+		{
+			if (!ModelState.IsValid)
+			{
+				return View(setting);
+			}
+
+			bool isUpdated = await _settingService.UpdateSetting(id, setting);
+
+			if (!isUpdated)
+			{
+				return NotFound();
+			}
+
+			TempData["Success"] = "Setting Updated Successfully";
+
+			return RedirectToAction(nameof(Index));
+		}
+	}
 }

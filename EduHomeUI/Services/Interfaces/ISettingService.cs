@@ -10,5 +10,7 @@ namespace EduHomeUI.Services.Interfaces
         Task<bool> GetSettingById(Guid settingId);
         Task<Setting> GetSettingByIdSetting(Guid settingId);
         Task<bool> DeleteSettingById(Guid settingId);
-    }
+        Task<bool> UpdateSetting(Guid settingId, SettingCreateViewModel settingVm);
+
+	}
 }

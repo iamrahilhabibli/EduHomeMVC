@@ -8,6 +8,9 @@ using Message = EmailService.Message;
 using GoogleReCaptcha.V3.Interface;
 using System.Security.Claims;
 using EduHome.Core.Utilities;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Google;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace EduHomeUI.Controllers
 {
@@ -229,32 +232,33 @@ namespace EduHomeUI.Controllers
             return Challenge(properties, provider);
         }
         [HttpGet]
-        public async Task<IActionResult> ExternalLoginCallback(string returnUrl = null)
-        {
-            var info = await _signInManager.GetExternalLoginInfoAsync();
-            if (info == null)
-            {
-                return RedirectToAction(nameof(Login));
-            }
+		public async Task<IActionResult> ExternalLoginCallback(string returnUrl = null)
+		{
+			var info = await _signInManager.GetExternalLoginInfoAsync();
+			if (info == null)
+			{
+				return RedirectToAction(nameof(Login));
+			}
 
-            var signInResult = await _signInManager.ExternalLoginSignInAsync(info.LoginProvider, info.ProviderKey, isPersistent: false, bypassTwoFactor: true);
-            if (signInResult.Succeeded)
-            {
-                return RedirectToAction("Index", "Home");
-            }
-            if (signInResult.IsLockedOut)
-            {
-                return RedirectToAction(nameof(ForgotPassword));
-            }
-            else
-            {
-                ViewData["ReturnUrl"] = returnUrl;
-                ViewData["Provider"] = info.LoginProvider;
-                var email = info.Principal.FindFirstValue(ClaimTypes.Email);
-                return View("ExternalLogin", new EduHome.Core.Entities.ExternalLoginModel { Email = email });
-            }
-        }
-        [HttpPost]
+			var signInResult = await _signInManager.ExternalLoginSignInAsync(info.LoginProvider, info.ProviderKey, isPersistent: false, bypassTwoFactor: true);
+			if (signInResult.Succeeded)
+			{
+				return Redirect(returnUrl); // Use Redirect() instead of RedirectToAction()
+			}
+			if (signInResult.IsLockedOut)
+			{
+				return RedirectToAction(nameof(ForgotPassword));
+			}
+			else
+			{
+				ViewData["ReturnUrl"] = returnUrl;
+				ViewData["Provider"] = info.LoginProvider;
+				var email = info.Principal.FindFirstValue(ClaimTypes.Email);
+				return View("ExternalLogin", new EduHome.Core.Entities.ExternalLoginModel { Email = email });
+			}
+		}
+
+		[HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> ExternalLoginConfirmation(EduHome.Core.Entities.ExternalLoginModel model, string returnUrl = null)
         {
@@ -274,7 +278,7 @@ namespace EduHomeUI.Controllers
                 if (result.Succeeded)
                 {
                     await _signInManager.SignInAsync(user, isPersistent: false);
-                    return RedirectToAction(returnUrl);
+                    return RedirectToLocal(returnUrl);
                 }
             }
             else
@@ -296,7 +300,7 @@ namespace EduHomeUI.Controllers
                     if (result.Succeeded)
                     {
                         await _signInManager.SignInAsync(user, isPersistent: false);
-                        return RedirectToAction(returnUrl);
+                        return RedirectToLocal(returnUrl);
                     }
                 }
             }
@@ -308,19 +312,27 @@ namespace EduHomeUI.Controllers
 
             return View(nameof(ExternalLogin), model);
         }
-        #region Create Role
-        //[AllowAnonymous]
-        //public async Task CreateRole()
-        //{
-        //    foreach (var role in Enum.GetValues(typeof(UserRole.Roles)))
-        //    {
-        //        bool exists = await _roleManager.RoleExistsAsync(role.ToString());
-        //        if (!exists)
-        //        {
-        //            await _roleManager.CreateAsync(new IdentityRole { Name = role.ToString() });
-        //        }
-        //    }
-        //}
-        #endregion
-    }
+		private ActionResult RedirectToLocal(string returnUrl)
+		{
+			if (Url.IsLocalUrl(returnUrl))
+			{
+				return Redirect(returnUrl);
+			}
+			return RedirectToAction("Index", "Home");
+		}
+		#region Create Role
+		//[AllowAnonymous]
+		//public async Task CreateRole()
+		//{
+		//    foreach (var role in Enum.GetValues(typeof(UserRole.Roles)))
+		//    {
+		//        bool exists = await _roleManager.RoleExistsAsync(role.ToString());
+		//        if (!exists)
+		//        {
+		//            await _roleManager.CreateAsync(new IdentityRole { Name = role.ToString() });
+		//        }
+		//    }
+		//}
+		#endregion
+	}
 }

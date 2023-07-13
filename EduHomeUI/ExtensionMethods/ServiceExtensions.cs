@@ -78,17 +78,5 @@ namespace EduHomeUI.Extensions
             services.AddScoped<IEmailSenderService, EmailSenderService>();
 
         }
-        //public static void AddGoogleLogin(this IServiceCollection services, IConfiguration configuration)
-        //{
-        //    services.AddAuthentication()
-        //        .AddGoogle("google", opt =>
-        //        {
-        //            var googleConfig = configuration.GetSection("Authentication:Google");
-        //            opt.ClientId = googleConfig["ClientId"];
-        //            opt.ClientSecret = googleConfig["ClientSecret"];
-        //            opt.SignInScheme = IdentityConstants.ExternalScheme;
-        //        });
-        //}
-       
     }
 }
