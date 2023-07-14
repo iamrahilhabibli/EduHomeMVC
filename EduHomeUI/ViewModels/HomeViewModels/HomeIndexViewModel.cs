@@ -7,5 +7,6 @@ namespace EduHomeUI.ViewModels.HomeViewModels
         public IEnumerable<Notice> Notices { get; set; }
         public IEnumerable<Course> Courses { get; set; }
         public IEnumerable<Event> Events { get; set; }
+        public IEnumerable<Slider> Sliders { get; set; }
     }
 }
