@@ -4,10 +4,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EduHomeUI.ViewComponents
 {
-    public class SectionLogoViewComponent:ViewComponent
+    public class SectionlogoViewComponent:ViewComponent
     {
         private readonly AppDbContext _context;
-        public SectionLogoViewComponent(AppDbContext context)
+        public SectionlogoViewComponent(AppDbContext context)
         {
             _context = context;
         }

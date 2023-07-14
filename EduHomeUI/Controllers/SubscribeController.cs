@@ -19,6 +19,7 @@ namespace EduHomeUI.Controllers
         {
             return View();
         }
+        [HttpPost]
         public async Task<IActionResult> Create(SubscriberCreateViewModel subVm)
         {
             if (!User.Identity.IsAuthenticated)
@@ -26,6 +27,7 @@ namespace EduHomeUI.Controllers
                 TempData["Error"] = "You need to sign up to subscribe or login if you are already signed up!";
                 return RedirectToAction("Register", "Auth");
             }
+
             var user = await _userManager.FindByEmailAsync(subVm.Email);
             if (user == null)
             {
@@ -39,11 +41,12 @@ namespace EduHomeUI.Controllers
                 UserId = Guid.Parse(user.Id)
             };
 
-
             await _context.Subscribers.AddAsync(newSub);
             await _context.SaveChangesAsync();
 
             TempData["Success"] = "You have successfully subscribed!";
+            TempData["Email"] = subVm.Email;
+
             return RedirectToAction("Index", "Contact");
         }
 

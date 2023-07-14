@@ -1,6 +1,7 @@
 ﻿using EduHome.DataAccess.Contexts;
 using EduHomeUI.Areas.EHMasterPanel.ViewModels.CourseViewModels;
 using EduHomeUI.ViewModels.HomeViewModels;
+using EduHomeUI.ViewModels.SubscribeViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,16 +14,23 @@ namespace EduHomeUI.Controllers
         {
             _context = context;
         }
+
         public async Task<IActionResult> Index()
         {
-            HomeIndexViewModel model = new HomeIndexViewModel()
+            HomeCompositeViewModel model = new HomeCompositeViewModel
             {
-                Notices = await _context.Notices.ToListAsync(),
-                Courses = await _context.Courses.ToListAsync(),
-                Events = await _context.Events.ToListAsync(),
-                Sliders = await _context.Sliders.ToListAsync(),
+                HomeIndex = new HomeIndexViewModel
+                {
+                    Notices = await _context.Notices.ToListAsync(),
+                    Courses = await _context.Courses.ToListAsync(),
+                    Events = await _context.Events.ToListAsync(),
+                    Sliders = await _context.Sliders.ToListAsync()
+                },
+                SubscriberCreate = new SubscriberCreateViewModel()
             };
+
             return View(model);
         }
+
     }
 }
