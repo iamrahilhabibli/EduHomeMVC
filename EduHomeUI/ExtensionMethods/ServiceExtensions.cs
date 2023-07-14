@@ -4,9 +4,11 @@ using EduHomeUI.Services.Concretes;
 using EduHomeUI.Services.Interfaces;
 using EmailService;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using RazorLight.Extensions;
 using System;
 using System.Configuration;
 
@@ -36,6 +38,9 @@ namespace EduHomeUI.Extensions
             services.AddTransient<GoogleCaptchaService>();
             services.AddScoped<ISettingService, SettingService>();
             services.AddScoped<ISliderService, SliderService>();
+            services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
+
+
 
         }
 

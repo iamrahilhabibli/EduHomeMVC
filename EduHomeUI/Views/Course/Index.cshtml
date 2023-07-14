@@ -1,7 +1,25 @@
 ﻿@using EduHomeUI.ViewModels.CourseViewModels;
-@model CourseIndexViewModel
+@model CourseCompositeViewModel
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
-<!-- Course Start -->
+
+<!-- Banner Area Start -->
+<div class="banner-area-wrapper">
+    <div class="banner-area text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="banner-content-wrapper">
+                        <div class="banner-content">
+                            <h2>courses</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Banner Area End --
+    <!-- Course Start -->
 <div class="course-area pt-150 pb-150">
     <div class="container">
         <div class="row">
@@ -18,7 +36,7 @@
             </div>
         </div>
         <div class="row">
-            @foreach (var course in Model.Courses.OrderByDescending(c => c.DateCreated).Take(9))
+            @foreach (var course in Model.CourseIndexViewModel.Courses.OrderByDescending(c => c.DateCreated).Take(9))
             {
                 <div class="col-lg-4 col-md-6">
                     <div class="single-course mb-70">
@@ -43,3 +61,4 @@
     </div>
 </div>
 <!-- Course End -->
+@await Html.PartialAsync("_SubscribeSection", Model.SubscriberCreate)

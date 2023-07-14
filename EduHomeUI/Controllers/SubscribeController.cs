@@ -1,6 +1,7 @@
 ﻿using EduHome.Core.Entities;
 using EduHome.DataAccess.Contexts;
 using EduHomeUI.ViewModels.SubscribeViewModels;
+using EduHomeUI.ViewModels.WelcomeViewModel;
 using EmailService;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -19,6 +20,7 @@ namespace EduHomeUI.Controllers
             _context = context;
             _userManager = userManager;
             _emailSenderService = emailSenderService;
+
         }
         public IActionResult Index()
         {
@@ -50,15 +52,13 @@ namespace EduHomeUI.Controllers
             await _context.SaveChangesAsync();
 
             TempData["Success"] = "You have successfully subscribed!";
-
-            var emailContent = $"Welcome to Edu Home ";
-
-            var message = new Message(new string[] { user.Email }, "Edu Home Weekly Subscription", emailContent);
+            var emailContent = "Welcome";
+            var message = new Message(new string[] { user.Email }, "Welcome to EduHome", emailContent);
             _emailSenderService.SendEmail(message); 
+
 
             return RedirectToAction("Index", "Contact");
         }
-
 
     }
 }

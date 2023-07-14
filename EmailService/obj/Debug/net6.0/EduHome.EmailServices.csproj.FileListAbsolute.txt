@@ -1,11 +1,11 @@
+C:\Users\Rhabi\OneDrive\Documents\Backend\MVCFinalEdu\EduHomeMVC\EmailService\bin\Debug\net6.0\EduHome.EmailServices.deps.json
+C:\Users\Rhabi\OneDrive\Documents\Backend\MVCFinalEdu\EduHomeMVC\EmailService\bin\Debug\net6.0\EduHome.EmailServices.dll
+C:\Users\Rhabi\OneDrive\Documents\Backend\MVCFinalEdu\EduHomeMVC\EmailService\bin\Debug\net6.0\EduHome.EmailServices.pdb
 C:\Users\Rhabi\OneDrive\Documents\Backend\MVCFinalEdu\EduHomeMVC\EmailService\obj\Debug\net6.0\EduHome.EmailServices.csproj.AssemblyReference.cache
 C:\Users\Rhabi\OneDrive\Documents\Backend\MVCFinalEdu\EduHomeMVC\EmailService\obj\Debug\net6.0\EduHome.EmailServices.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Rhabi\OneDrive\Documents\Backend\MVCFinalEdu\EduHomeMVC\EmailService\obj\Debug\net6.0\EduHome.EmailServices.AssemblyInfoInputs.cache
 C:\Users\Rhabi\OneDrive\Documents\Backend\MVCFinalEdu\EduHomeMVC\EmailService\obj\Debug\net6.0\EduHome.EmailServices.AssemblyInfo.cs
 C:\Users\Rhabi\OneDrive\Documents\Backend\MVCFinalEdu\EduHomeMVC\EmailService\obj\Debug\net6.0\EduHome.EmailServices.csproj.CoreCompileInputs.cache
-C:\Users\Rhabi\OneDrive\Documents\Backend\MVCFinalEdu\EduHomeMVC\EmailService\bin\Debug\net6.0\EduHome.EmailServices.deps.json
-C:\Users\Rhabi\OneDrive\Documents\Backend\MVCFinalEdu\EduHomeMVC\EmailService\bin\Debug\net6.0\EduHome.EmailServices.dll
-C:\Users\Rhabi\OneDrive\Documents\Backend\MVCFinalEdu\EduHomeMVC\EmailService\bin\Debug\net6.0\EduHome.EmailServices.pdb
 C:\Users\Rhabi\OneDrive\Documents\Backend\MVCFinalEdu\EduHomeMVC\EmailService\obj\Debug\net6.0\EduHome.EmailServices.dll
 C:\Users\Rhabi\OneDrive\Documents\Backend\MVCFinalEdu\EduHomeMVC\EmailService\obj\Debug\net6.0\refint\EduHome.EmailServices.dll
 C:\Users\Rhabi\OneDrive\Documents\Backend\MVCFinalEdu\EduHomeMVC\EmailService\obj\Debug\net6.0\EduHome.EmailServices.pdb
