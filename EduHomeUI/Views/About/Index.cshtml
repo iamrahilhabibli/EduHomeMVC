@@ -122,31 +122,37 @@
                 <div class="notice-left-wrapper">
                     <h3>notice board</h3>
                     <div class="notice-left">
-                        <div class="single-notice-left mb-23 pb-20">
-                            <h4>5, June 2021</h4>
-                            <p>I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete </p>
-                        </div>
-                        <div class="single-notice-left hidden-sm mb-23 pb-20">
-                            <h4>4, June 2021</h4>
-                            <p>I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete </p>
-                        </div>
-                        <div class="single-notice-left pb-70">
-                            <h4>3, June 2021</h4>
-                            <p>I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete </p>
-                        </div>
-                        <div class="single-notice-left mb-23 pb-20">
-                            <h4>5, June 2021</h4>
-                            <p>I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete </p>
-                        </div>
-                        <div class="single-notice-left hidden-sm mb-23 pb-20">
-                            <h4>4, June 2021</h4>
-                            <p>I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete </p>
-                        </div>
-                        <div class="single-notice-left pb-70">
-                            <h4>3, June 2021</h4>
-                            <p>I must explain to you how all this mistaken idea of denouncing plasure and praising pain was born and I will give you a complete </p>
-                        </div>
+                        @{
+                            int index = 0;
+                            int noticeCount = Model.Notices.Count();
+                        }
+
+                        @foreach (var notice in Model.Notices.OrderByDescending(n=>n.DateCreated).Take(6))
+                        {
+                            string divClass = "single-notice-left";
+
+                            if (index == noticeCount - 1 && index % 2 == 0)
+                            {
+                                divClass += " pb-70";
+                            }
+                            else if (index % 2 == 0)
+                            {
+                                divClass += " mb-23 pb-20";
+                            }
+                            else
+                            {
+                                divClass += " hidden-sm mb-23 pb-20";
+                            }
+
+                            <div class="@divClass">
+                                <h4>@notice.DateCreated.ToString("dd,MMMM,yyyy")</h4>
+                                <p>@notice.Description</p>
+                            </div>
+
+                            index++;
+                        }
                     </div>
+
                 </div>
             </div>
         </div>

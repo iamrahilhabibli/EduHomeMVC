@@ -137,7 +137,7 @@
                                 </a>
                             </div>
                             <div class="course-content">
-                                <h3><a href="course-details.html">@course.Name</a></h3>
+                                <h3><a asp-controller="Course" asp-action="Details" asp-route-id="@course.Id">@course.Name</a></h3>
                                 <p>@Html.Raw(course.Description.Substring(0, Math.Min(course.Description.Length, 155)))</p>
                                 <a class="default-btn" asp-controller="Course" asp-action="Details" asp-route-id="@course.Id">read more</a>
                             </div>
