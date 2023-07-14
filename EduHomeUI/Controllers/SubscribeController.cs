@@ -1,6 +1,7 @@
 ﻿using EduHome.Core.Entities;
 using EduHome.DataAccess.Contexts;
 using EduHomeUI.ViewModels.SubscribeViewModels;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EduHomeUI.Controllers
@@ -8,9 +9,11 @@ namespace EduHomeUI.Controllers
     public class SubscribeController : Controller
     {
         private readonly AppDbContext _context;
-        public SubscribeController(AppDbContext context)
+        private readonly UserManager<AppUser> _userManager;
+        public SubscribeController(AppDbContext context,UserManager<AppUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
         public IActionResult Index()
         {
@@ -18,15 +21,32 @@ namespace EduHomeUI.Controllers
         }
         public async Task<IActionResult> Create(SubscriberCreateViewModel subVm)
         {
-
-            Subscribers newSub = new()
+            if (!User.Identity.IsAuthenticated)
             {
-                Email = subVm.Email
+                TempData["Error"] = "You need to sign up to subscribe or login if you are already signed up!";
+                return RedirectToAction("Register", "Auth");
+            }
+            var user = await _userManager.FindByEmailAsync(subVm.Email);
+            if (user == null)
+            {
+                TempData["Error"] = "The provided email is not registered.";
+                return RedirectToAction("Index", "Contact");
+            }
+
+            Subscribers newSub = new Subscribers
+            {
+                Email = subVm.Email,
+                UserId = Guid.Parse(user.Id)
             };
-           await _context.Subscribers.AddAsync(newSub);
-           await _context.SaveChangesAsync();
+
+
+            await _context.Subscribers.AddAsync(newSub);
+            await _context.SaveChangesAsync();
+
             TempData["Success"] = "You have successfully subscribed!";
             return RedirectToAction("Index", "Contact");
         }
+
+
     }
 }

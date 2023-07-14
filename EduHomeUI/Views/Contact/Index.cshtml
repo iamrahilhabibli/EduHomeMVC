@@ -81,10 +81,4 @@
     </div>
 </div>
 <!-- Contact End -->
- @if(User.Identity.IsAuthenticated)
- {
-     <partial name="_SubscribeSection"/>
- }
- else{
-     <p>Login to Subscribe</p>
- }
+<partial name="_SubscribeSection"/>
