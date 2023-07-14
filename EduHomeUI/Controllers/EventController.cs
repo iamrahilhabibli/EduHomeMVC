@@ -2,6 +2,8 @@
 using EduHome.DataAccess.Contexts;
 using EduHomeUI.Areas.EHMasterPanel.ViewModels.EventViewModels;
 using EduHomeUI.ViewModels.EventViewModels;
+using EduHomeUI.ViewModels.HomeViewModels;
+using EduHomeUI.ViewModels.SubscribeViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,11 +18,16 @@ namespace EduHomeUI.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            ViewModels.EventViewModels.EventIndexViewModel viewModel = new()
+            EventCompositeViewModel model = new EventCompositeViewModel
             {
-                Events = await _context.Events.ToListAsync()
+                EventIndex = new ViewModels.EventViewModels.EventIndexViewModel
+                {
+                    Events = await _context.Events.ToListAsync(),
+                },
+                SubscriberCreate = new SubscriberCreateViewModel()
             };
-            return View(viewModel);
+
+            return View(model);
         }
         public async Task<IActionResult> Details(Guid id)
         {

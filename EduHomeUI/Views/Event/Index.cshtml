@@ -1,5 +1,5 @@
 ﻿@using EduHomeUI.ViewModels.EventViewModels;
-@model EventIndexViewModel     
+@model EventCompositeViewModel     
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 <!-- Banner Area Start -->
 <div class="banner-area-wrapper">
@@ -22,7 +22,7 @@
 <div class="event-area three text-center pt-150 pb-150">
     <div class="container">
         <div class="row">
-            @foreach (var newEvent in Model.Events.OrderByDescending(e => e.Date).Take(9))
+            @foreach (var newEvent in Model.EventIndex.Events.OrderByDescending(e => e.Date).Take(9))
             {
                 <div class="col-lg-4 col-md-6">
                     <div class="single-event mb-60">
@@ -55,3 +55,4 @@
     </div>
 </div>
 <!-- Event End -->
+@await Html.PartialAsync("_SubscribeSection", Model.SubscriberCreate)
