@@ -1,5 +1,7 @@
 ﻿using EduHome.DataAccess.Contexts;
 using EduHomeUI.ViewModels.AboutViewModels;
+using EduHomeUI.ViewModels.HomeViewModels;
+using EduHomeUI.ViewModels.SubscribeViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,11 +16,16 @@ namespace EduHomeUI.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            AboutIndexViewModel model = new()
+            AboutCompositeViewModel model = new AboutCompositeViewModel
             {
-                Teachers = await _context.Teachers.ToListAsync(),
-                Notices = await _context.Notices.ToListAsync()
+                AboutIndex = new AboutIndexViewModel
+                {
+                   Teachers = await _context.Teachers.ToListAsync(),
+                   Notices = await _context.Notices.ToListAsync()
+                },
+                SubscriberCreate = new SubscriberCreateViewModel()
             };
+
             return View(model);
         }
     }
