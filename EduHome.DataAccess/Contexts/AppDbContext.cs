@@ -35,6 +35,7 @@ namespace EduHome.DataAccess.Contexts
         public DbSet<BlogDetails> BlogDetails { get; set; }
         public DbSet<UserReply> UserReplies { get; set; }
         public DbSet<Setting> Settings { get; set; }
+        public DbSet<Subscribers> Subscribers { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.AddInterceptors(new DateModifiedInterceptor());
