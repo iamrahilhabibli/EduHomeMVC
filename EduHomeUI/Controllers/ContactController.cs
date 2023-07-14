@@ -17,6 +17,10 @@ namespace EduHomeUI.Controllers
         {
             return View();
         }
+        public async Task<IActionResult> Create()
+        {
+            return View();
+        }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(UserReplyCreateViewModel userReply)
@@ -31,7 +35,7 @@ namespace EduHomeUI.Controllers
             _context.UserReplies.Add(newUserReply);
             _context.SaveChanges();
             TempData["Success"] = "Reply Sent Successfully";
-            return View(nameof(Index));
+            return View(newUserReply);
         }
     }
 }
