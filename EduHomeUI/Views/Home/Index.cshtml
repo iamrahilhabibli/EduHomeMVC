@@ -47,26 +47,29 @@
 
                     @foreach (var notice in Model.HomeIndex.Notices.Take(9))
                     {
-                        string divClass = "single-notice-left";
-                        if (index == 2)
+                        if (!notice.IsDeleted)
                         {
-                            divClass += " pb-75";
-                        }
-                        else if (index == 5 || index == 7)
-                        {
-                            divClass += " pb-70";
-                        }
-                        else
-                        {
-                            divClass += " mb-25 pb-25";
-                        }
+                            string divClass = "single-notice-left";
+                            if (index == 2)
+                            {
+                                divClass += " pb-75";
+                            }
+                            else if (index == 5 || index == 7)
+                            {
+                                divClass += " pb-70";
+                            }
+                            else
+                            {
+                                divClass += " mb-25 pb-25";
+                            }
 
-                        <div class="@divClass">
-                            <h4>@notice.DateCreated.ToString("dd,MMMM,yyyy")</h4>
-                            <p>@notice.Description</p>
-                        </div>
+                            <div class="@divClass">
+                                <h4>@notice.DateCreated.ToString("dd,MMMM,yyyy")</h4>
+                                <p>@notice.Description</p>
+                            </div>
 
-                        index++;
+                            index++;
+                        }
                     }
 
                 </div>
@@ -121,24 +124,27 @@
         <div class="row">
             @foreach (var course in Model.HomeIndex.Courses.OrderByDescending(c => c.DateCreated).Take(3))
             {
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-course">
-                        <div class="course-img">
-                            <a asp-controller="Course" asp-action="Details" asp-route-id="@course.Id">
-                                <img src="/@course.ImagePath" alt="@course.ImageName">
-                                <div class="course-hover">
-                                    <i class="fa fa-link"></i>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="course-content">
-                            <h3><a href="course-details.html">@course.Name</a></h3>
-                            <p>@Html.Raw(course.Description.Substring(0, Math.Min(course.Description.Length, 155)))</p>
-                            <a class="default-btn" asp-controller="Course" asp-action="Details" asp-route-id="@course.Id">read more</a>
-                        </div>
+                if (!course.IsDeleted)
+                {
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-course">
+                            <div class="course-img">
+                                <a asp-controller="Course" asp-action="Details" asp-route-id="@course.Id">
+                                    <img src="/@course.ImagePath" alt="@course.ImageName">
+                                    <div class="course-hover">
+                                        <i class="fa fa-link"></i>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="course-content">
+                                <h3><a href="course-details.html">@course.Name</a></h3>
+                                <p>@Html.Raw(course.Description.Substring(0, Math.Min(course.Description.Length, 155)))</p>
+                                <a class="default-btn" asp-controller="Course" asp-action="Details" asp-route-id="@course.Id">read more</a>
+                            </div>
 
+                        </div>
                     </div>
-                </div>
+                }
             }
         </div>
     </div>
@@ -157,59 +163,58 @@
         </div>
         <div class="row">
             <div class="col-lg-6">
-                
-
-
                 @foreach (var newEvent in Model.HomeIndex.Events.OrderByDescending(e => e.Date).Take(4))
                 {
-                    <div class="@(eventCount < 3 ? "single-event mb-35" : "single-event")">
-                        <div class="event-date">
-                            <h3><a href="event-details.html">@newEvent.Date.Day <span>@newEvent.Date.ToString("MMMM")</span></a></h3>
-                        </div>
-                        <div class="event-content text-start">
-                            <div class="event-content-left">
-                                <h4><a href="event-details.html">@newEvent.Title</a></h4>
-                                <ul>
-                                    <li><i class="fa fa-clock-o"></i>@newEvent.StartTime.ToString("HH:mm") - @newEvent.EndTime.ToString("HH:mm")</li>
-                                    <li><i class="fa fa-map-marker"></i>@newEvent.Venue</li>
-                                </ul>
+                    if (!newEvent.IsDeleted)
+                    {
+                        <div class="@(eventCount < 3 ? "single-event mb-35" : "single-event")">
+                            <div class="event-date">
+                                <h3><a href="event-details.html">@newEvent.Date.Day <span>@newEvent.Date.ToString("MMMM")</span></a></h3>
                             </div>
-                            <div class="event-content-right">
-                                <a class="default-btn" href="event-details.html">join now</a>
+                            <div class="event-content text-start">
+                                <div class="event-content-left">
+                                    <h4><a href="event-details.html">@newEvent.Title</a></h4>
+                                    <ul>
+                                        <li><i class="fa fa-clock-o"></i>@newEvent.StartTime.ToString("HH:mm") - @newEvent.EndTime.ToString("HH:mm")</li>
+                                        <li><i class="fa fa-map-marker"></i>@newEvent.Venue</li>
+                                    </ul>
+                                </div>
+                                <div class="event-content-right">
+                                    <a class="default-btn" href="event-details.html">join now</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    eventCount++; 
+                        eventCount++;
+                    }
                 }
-
             </div>
             <div class="col-lg-6 pt-5 pt-lg-0">
                 @{
                     int eventCountEvent = 0;
                 }
-
                 @foreach (var newEvent in Model.HomeIndex.Events.OrderByDescending(e => e.Date).Skip(4).Take(4))
                 {
-                    <div class="@(eventCount < 3 ? "single-event mb-35" : "single-event")">
-                        <div class="event-date">
-                            <h3><a href="event-details.html">@newEvent.Date.Day <span>@newEvent.Date.ToString("MMMM")</span></a></h3>
-                        </div>
-                        <div class="event-content text-start">
-                            <div class="event-content-left">
-                                <h4><a href="event-details.html">@newEvent.Title</a></h4>
-                                <ul>
-                                    <li><i class="fa fa-clock-o"></i>@newEvent.StartTime.ToString("h:mm tt") - @newEvent.EndTime.ToString("h:mm tt")</li>
-                                    <li><i class="fa fa-map-marker"></i>@newEvent.Venue</li>
-                                </ul>
+                    if (!newEvent.IsDeleted)
+                    {
+                        <div class="@(eventCount < 3 ? "single-event mb-35" : "single-event")">
+                            <div class="event-date">
+                                <h3><a href="event-details.html">@newEvent.Date.Day <span>@newEvent.Date.ToString("MMMM")</span></a></h3>
                             </div>
-                            <div class="event-content-right">
-                                <a class="default-btn" href="event-details.html">join now</a>
+                            <div class="event-content text-start">
+                                <div class="event-content-left">
+                                    <h4><a href="event-details.html">@newEvent.Title</a></h4>
+                                    <ul>
+                                        <li><i class="fa fa-clock-o"></i>@newEvent.StartTime.ToString("h:mm tt") - @newEvent.EndTime.ToString("h:mm tt")</li>
+                                        <li><i class="fa fa-map-marker"></i>@newEvent.Venue</li>
+                                    </ul>
+                                </div>
+                                <div class="event-content-right">
+                                    <a class="default-btn" href="event-details.html">join now</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    eventCountEvent++;
+                        eventCountEvent++;
+                    }
                 }
 
             </div>
@@ -253,63 +258,31 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-4 col-md-6">
-                <div class="single-blog">
-                    <div class="blog-img">
-                        <a href="blog-details.html"><img src="img/blog/blog1.jpg" alt="blog"></a>
-                        <div class="blog-hover">
-                            <a href="blog-details.html"><i class="fa fa-link"></i></a>
+            @foreach (var blog in Model.HomeIndex.Blogs.OrderByDescending(b=>b.DateCreated).Take(3))
+            {
+                if (!blog.IsDeleted)
+                {
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-blog">
+                            <div class="blog-img">
+                                <a href="blog-details.html"><img src="img/blog/blog1.jpg" alt="blog"></a>
+                                <div class="blog-hover">
+                                    <a href="blog-details.html"><i class="fa fa-link"></i></a>
+                                </div>
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-top">
+                                    <p>By Alex  /  June 20, 2023  /  <i class="fa fa-comments-o"></i> 4</p>
+                                </div>
+                                <div class="blog-bottom">
+                                    <h2><a href="blog-details.html">I must explain to you how all this a mistaken idea </a></h2>
+                                    <a href="blog-details.html">read more</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="blog-content">
-                        <div class="blog-top">
-                            <p>By Alex  /  June 20, 2023  /  <i class="fa fa-comments-o"></i> 4</p>
-                        </div>
-                        <div class="blog-bottom">
-                            <h2><a href="blog-details.html">I must explain to you how all this a mistaken idea </a></h2>
-                            <a href="blog-details.html">read more</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="single-blog">
-                    <div class="blog-img">
-                        <a href="blog-details.html"><img src="img/blog/blog2.jpg" alt="blog"></a>
-                        <div class="blog-hover">
-                            <a href="blog-details.html"><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-top">
-                            <p>By Alex  /  June 20, 2023  /  <i class="fa fa-comments-o"></i> 4</p>
-                        </div>
-                        <div class="blog-bottom">
-                            <h2><a href="blog-details.html">I must explain to you how all this a mistaken idea </a></h2>
-                            <a href="blog-details.html">read more</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="single-blog mb-0">
-                    <div class="blog-img">
-                        <a href="blog-details.html"><img src="img/blog/blog3.jpg" alt="blog"></a>
-                        <div class="blog-hover">
-                            <a href="blog-details.html"><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-top">
-                            <p>By Alex  /  June 20, 2023  /  <i class="fa fa-comments-o"></i> 4</p>
-                        </div>
-                        <div class="blog-bottom">
-                            <h2><a href="blog-details.html">I must explain to you how all this a mistaken idea </a></h2>
-                            <a href="blog-details.html">read more</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                }
+            }
         </div>
     </div>
 </div>
