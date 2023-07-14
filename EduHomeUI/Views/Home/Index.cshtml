@@ -163,11 +163,11 @@
         </div>
         <div class="row">
             <div class="col-lg-6">
-                @foreach (var newEvent in Model.HomeIndex.Events.OrderByDescending(e => e.Date).Take(4))
+                @foreach (var newEvent in Model.HomeIndex.Events.OrderByDescending(e => e.Date).Take(5))
                 {
                     if (!newEvent.IsDeleted)
                     {
-                        <div class="@(eventCount < 3 ? "single-event mb-35" : "single-event")">
+                        <div class="single-event @(eventCount < 3 ? "mb-35" : "")">
                             <div class="event-date">
                                 <h3><a href="event-details.html">@newEvent.Date.Day <span>@newEvent.Date.ToString("MMMM")</span></a></h3>
                             </div>
@@ -192,11 +192,11 @@
                 @{
                     int eventCountEvent = 0;
                 }
-                @foreach (var newEvent in Model.HomeIndex.Events.OrderByDescending(e => e.Date).Skip(4).Take(4))
+                @foreach (var newEvent in Model.HomeIndex.Events.OrderByDescending(e => e.Date).Skip(4).Take(5))
                 {
                     if (!newEvent.IsDeleted)
                     {
-                        <div class="@(eventCount < 3 ? "single-event mb-35" : "single-event")">
+                        <div class="single-event @(eventCountEvent < 3 ? "mb-35" : "")">
                             <div class="event-date">
                                 <h3><a href="event-details.html">@newEvent.Date.Day <span>@newEvent.Date.ToString("MMMM")</span></a></h3>
                             </div>
@@ -216,8 +216,8 @@
                         eventCountEvent++;
                     }
                 }
-
             </div>
+
         </div>
     </div>
 </div>
@@ -265,9 +265,9 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="single-blog">
                             <div class="blog-img">
-                                <a href="blog-details.html"><img src="@blog.ImagePath" alt="@blog.ImageName"></a>
+                                <a asp-controller="Blog" asp-action="Details" asp-route-id="@blog.Id"><img src="@blog.ImagePath" alt="@blog.ImageName"></a>
                                 <div class="blog-hover">
-                                    <a href="blog-details.html"><i class="fa fa-link"></i></a>
+                                    <a asp-controller="Blog" asp-action="Details" asp-route-id="@blog.Id"><i class="fa fa-link"></i></a>
                                 </div>
                             </div>
                             <div class="blog-content">
@@ -275,8 +275,8 @@
                                     <p>By @blog.AuthorName  / @blog.DateCreated.ToString("dd,MMMM,yyyyy")  /  <i class="fa fa-comments-o"></i> @blog.CommentCount</p>
                                 </div>
                                 <div class="blog-bottom">
-                                    <h2><a href="blog-details.html">@blog.Title</a></h2>
-                                    <a href="blog-details.html">read more</a>
+                                    <h2><a asp-controller="Blog" asp-action="Details" asp-route-id="@blog.Id">@blog.Title</a></h2>
+                                    <a asp-controller="Blog" asp-action="Details" asp-route-id="@blog.Id">read more</a>
                                 </div>
                             </div>
                         </div>
