@@ -1,4 +1,7 @@
-﻿    <!-- Banner Area Start -->
+﻿@using EduHomeUI.ViewModels.AboutViewModels;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model AboutIndexViewModel
+<!-- Banner Area Start -->
 <div class="banner-area-wrapper">
     <div class="banner-area text-center">
         <div class="container">
@@ -24,7 +27,7 @@
                     <h2>WELCOME TO <span>EDUHOME</span></h2>
                     <p>I must explain to you how all this mistaken idea of denouncing pleure and prsing pain was born and I will give you a complete account of the system, and expound the actual teachings  the master-builder of humanit happiness</p>
                     <p class="hidden-sm">I must explain to you how all this mistaken idea of denouncing pleure and prsing pain was born and I will give you a complete account of the system</p>
-                    <a class="default-btn" href="#">view courses</a>
+                    <a class="default-btn" asp-controller="Course" asp-action="Index" >view courses</a>
                 </div>
             </div>
             <div class="col-md-6">
@@ -48,74 +51,29 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-3 col-sm-6">
-                <div class="single-teacher">
-                    <div class="single-teacher-img">
-                        <a href="teacher-details.html"><img src="img/teacher/teacher1.jpg" alt="teacher"></a>
+            @foreach (var teacher in Model.Teachers.OrderByDescending(t => t.DateCreated).Take(4))
+            {
+                @if (!teacher.IsDeleted)
+                {
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="single-teacher">
+                            <div class="single-teacher-img">
+                                <a asp-asp-controller="Teacher" asp-action="Details" asp-route-id="@teacher.Id"><img src="@teacher.ImagePath" alt="@teacher.ImageName"></a>
+                            </div>
+                            <div class="single-teacher-content text-center">
+                                <h2><a href="teacher-details.html">@teacher.Name @teacher.Surname</a></h2>
+                                <h4>@teacher.Position</h4>
+                                <ul>
+                                    <li><a href="#"><i class="zmdi zmdi-facebook"></i></a></li>
+                                    <li><a href="#"><i class="zmdi zmdi-pinterest"></i></a></li>
+                                    <li><a href="#"><i class="zmdi zmdi-vimeo"></i></a></li>
+                                    <li><a href="#"><i class="zmdi zmdi-twitter"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <div class="single-teacher-content text-center">
-                        <h2><a href="teacher-details.html">STUART KELVIN</a></h2>
-                        <h4>Associate Professor</h4>
-                        <ul>
-                            <li><a href="#"><i class="zmdi zmdi-facebook"></i></a></li>
-                            <li><a href="#"><i class="zmdi zmdi-pinterest"></i></a></li>
-                            <li><a href="#"><i class="zmdi zmdi-vimeo"></i></a></li>
-                            <li><a href="#"><i class="zmdi zmdi-twitter"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div class="single-teacher">
-                    <div class="single-teacher-img">
-                        <a href="teacher-details.html"><img src="img/teacher/teacher2.jpg" alt="teacher"></a>
-                    </div>
-                    <div class="single-teacher-content text-center">
-                        <h2><a href="teacher-details.html">eamily cristian</a></h2>
-                        <h4>Associate Professor</h4>
-                        <ul>
-                            <li><a href="#"><i class="zmdi zmdi-facebook"></i></a></li>
-                            <li><a href="#"><i class="zmdi zmdi-pinterest"></i></a></li>
-                            <li><a href="#"><i class="zmdi zmdi-vimeo"></i></a></li>
-                            <li><a href="#"><i class="zmdi zmdi-twitter"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div class="single-teacher">
-                    <div class="single-teacher-img">
-                        <a href="teacher-details.html"><img src="img/teacher/teacher3.jpg" alt="teacher"></a>
-                    </div>
-                    <div class="single-teacher-content text-center">
-                        <h2><a href="teacher-details.html">kevin williams</a></h2>
-                        <h4>Associate Professor</h4>
-                        <ul>
-                            <li><a href="#"><i class="zmdi zmdi-facebook"></i></a></li>
-                            <li><a href="#"><i class="zmdi zmdi-pinterest"></i></a></li>
-                            <li><a href="#"><i class="zmdi zmdi-vimeo"></i></a></li>
-                            <li><a href="#"><i class="zmdi zmdi-twitter"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-                <div class="single-teacher">
-                    <div class="single-teacher-img">
-                        <a href="teacher-details.html"><img src="img/teacher/teacher4.jpg" alt="teacher"></a>
-                    </div>
-                    <div class="single-teacher-content text-center">
-                        <h2><a href="teacher-details.html">salina gomaze</a></h2>
-                        <h4>Associate Professor</h4>
-                        <ul>
-                            <li><a href="#"><i class="zmdi zmdi-facebook"></i></a></li>
-                            <li><a href="#"><i class="zmdi zmdi-pinterest"></i></a></li>
-                            <li><a href="#"><i class="zmdi zmdi-vimeo"></i></a></li>
-                            <li><a href="#"><i class="zmdi zmdi-twitter"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+                }
+            }
         </div>
     </div>
 </div>
