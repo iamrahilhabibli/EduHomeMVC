@@ -1,26 +1,37 @@
-﻿using EduHome.Core.Entities;
+﻿using System;
+using System.IO;
+using System.Threading.Tasks;
+using EduHome.Core.Entities;
 using EduHome.DataAccess.Contexts;
 using EduHomeUI.ViewModels.SubscribeViewModels;
 using EduHomeUI.ViewModels.WelcomeViewModel;
 using EmailService;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Microsoft.AspNetCore.Mvc.Razor;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Mvc.ViewEngines;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace EduHomeUI.Controllers
 {
-    public class SubscribeController : Controller
+    public class SubscribeController : Microsoft.AspNetCore.Mvc.Controller
     {
         private readonly AppDbContext _context;
         private readonly UserManager<AppUser> _userManager;
         private readonly IEmailSenderService _emailSenderService;
+        
         public SubscribeController(AppDbContext context,
                                    UserManager<AppUser> userManager,
-                                   IEmailSenderService emailSenderService)
+                                   IEmailSenderService emailSenderService
+                                   )
         {
             _context = context;
             _userManager = userManager;
             _emailSenderService = emailSenderService;
-
+        
         }
         public IActionResult Index()
         {
@@ -52,13 +63,20 @@ namespace EduHomeUI.Controllers
             await _context.SaveChangesAsync();
 
             TempData["Success"] = "You have successfully subscribed!";
-            var emailContent = "Welcome";
-            var message = new Message(new string[] { user.Email }, "Welcome to EduHome", emailContent);
-            _emailSenderService.SendEmail(message); 
 
+            var model = new WelcomeViewModel
+            {
+                UserName = user.UserName
+            };
+
+            // Render the view to string
+            var viewPath = "~/Views/WelcomeTemplate.cshtml";
+            var emailContent = await ViewRenderer.RenderViewToStringAsync(this, viewPath, model);
+
+            var message = new Message(new string[] { user.Email }, "Welcome to EduHome", emailContent);
+            _emailSenderService.SendEmail(message);
 
             return RedirectToAction("Index", "Contact");
         }
-
     }
 }

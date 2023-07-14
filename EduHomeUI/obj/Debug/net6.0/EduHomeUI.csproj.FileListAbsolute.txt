@@ -1033,3 +1033,11 @@ C:\Users\Rhabi\OneDrive\Documents\Backend\MVCFinalEdu\EduHomeMVC\EduHomeUI\obj\D
 C:\Users\Rhabi\OneDrive\Documents\Backend\MVCFinalEdu\EduHomeMVC\EduHomeUI\obj\Debug\net6.0\EduHomeUI.pdb
 C:\Users\Rhabi\OneDrive\Documents\Backend\MVCFinalEdu\EduHomeMVC\EduHomeUI\obj\Debug\net6.0\EduHomeUI.genruntimeconfig.cache
 C:\Users\Rhabi\OneDrive\Documents\Backend\MVCFinalEdu\EduHomeMVC\EduHomeUI\obj\Debug\net6.0\ref\EduHomeUI.dll
+C:\Users\Rhabi\OneDrive\Documents\Backend\MVCFinalEdu\EduHomeMVC\EduHomeUI\bin\Debug\net6.0\Views\WelcomeTemplate.cshtml
+C:\Users\Rhabi\OneDrive\Documents\Backend\MVCFinalEdu\EduHomeMVC\EduHomeUI\bin\Debug\net6.0\System.Web.Mvc.dll
+C:\Users\Rhabi\OneDrive\Documents\Backend\MVCFinalEdu\EduHomeMVC\EduHomeUI\bin\Debug\net6.0\System.Web.Razor.dll
+C:\Users\Rhabi\OneDrive\Documents\Backend\MVCFinalEdu\EduHomeMVC\EduHomeUI\bin\Debug\net6.0\System.Web.Helpers.dll
+C:\Users\Rhabi\OneDrive\Documents\Backend\MVCFinalEdu\EduHomeMVC\EduHomeUI\bin\Debug\net6.0\System.Web.WebPages.Deployment.dll
+C:\Users\Rhabi\OneDrive\Documents\Backend\MVCFinalEdu\EduHomeMVC\EduHomeUI\bin\Debug\net6.0\System.Web.WebPages.Razor.dll
+C:\Users\Rhabi\OneDrive\Documents\Backend\MVCFinalEdu\EduHomeMVC\EduHomeUI\bin\Debug\net6.0\System.Web.WebPages.dll
+C:\Users\Rhabi\OneDrive\Documents\Backend\MVCFinalEdu\EduHomeMVC\EduHomeUI\bin\Debug\net6.0\Microsoft.Web.Infrastructure.dll

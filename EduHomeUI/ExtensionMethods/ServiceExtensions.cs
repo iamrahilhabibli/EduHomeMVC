@@ -40,8 +40,6 @@ namespace EduHomeUI.Extensions
             services.AddScoped<ISliderService, SliderService>();
             services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
 
-
-
         }
 
         public static void AddPersistenceServices(this IServiceCollection services, IConfiguration configuration)

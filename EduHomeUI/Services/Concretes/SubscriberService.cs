@@ -1,0 +1,21 @@
+﻿using EduHome.Core.Entities;
+using EduHome.DataAccess.Contexts;
+using EduHomeUI.Services.Interfaces;
+using Microsoft.EntityFrameworkCore;
+
+namespace EduHomeUI.Services.Concretes
+{
+    public class SubscriberService:ISubscriberService
+    {
+        private readonly AppDbContext _context;
+        public SubscriberService(AppDbContext context)
+        {
+            _context = context;
+        }
+        public async Task<List<Subscribers>> GetAllSubscribersAsync()
+        {
+            return await _context.Subscribers.ToListAsync();
+        }
+
+    }
+}
