@@ -124,7 +124,7 @@
                     <div class="single-course">
                         <div class="course-img">
                             <a href="course-details.html">
-                                <img src="@course.ImagePath" alt="@course.ImageName">
+                                <img src="/@course.ImagePath" alt="@course.ImageName">
                                 <div class="course-hover">
                                     <i class="fa fa-link"></i>
                                 </div>
@@ -132,9 +132,10 @@
                         </div>
                         <div class="course-content">
                             <h3><a href="course-details.html">@course.Name</a></h3>
-                            <p>@Html.Raw(course.Description)</p>
+                            <p>@Html.Raw(course.Description.Substring(0, Math.Min(course.Description.Length, 155)))</p>
                             <a class="default-btn" href="course-details.html">read more</a>
                         </div>
+
                     </div>
                 </div>
             }
