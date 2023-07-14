@@ -1,0 +1,48 @@
+﻿@using EduHomeUI.Areas.EHMasterPanel.ViewModels.SliderViewModels;
+@model SliderIndexViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<partial name="_Notification" />
+@{
+    int count = 1;
+}
+<div class="container-fluid">
+    <div class="row">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Sliders</h4>
+                <a asp-controller="Slider" asp-action="Create" class="btn btn-primary mb-4">Create new Slider</a>
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered" id="dataTableData">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Image</th>
+                                <th>Title</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var slider in Model.Sliders)
+                            {
+
+                                    <tr>
+                                        <td>@count</td>
+                                        <td><img src="@slider.ImagePath" alt="@slider.ImageName" style="width:100px" /></td>
+                                        <td>@slider.Title</td>
+                                        <td>@slider.Description</td>
+                                        <td>
+                                            <a asp-action="Delete" asp-route-id="@slider.Id" class="btn btn-danger"><i class="bi bi-trash-fill"></i></a>
+                                        </td>
+                                    </tr>
+                                    count++;
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <script src="~/datatable_file.js"></script>
+}

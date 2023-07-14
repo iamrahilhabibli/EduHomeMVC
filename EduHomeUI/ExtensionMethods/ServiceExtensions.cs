@@ -35,6 +35,7 @@ namespace EduHomeUI.Extensions
             services.AddScoped<INoticeService, NoticeService>();
             services.AddTransient<GoogleCaptchaService>();
             services.AddScoped<ISettingService, SettingService>();
+            services.AddScoped<ISliderService, SliderService>();
 
         }
 
