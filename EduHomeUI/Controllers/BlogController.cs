@@ -1,6 +1,7 @@
 ﻿using EduHome.Core.Entities;
 using EduHome.DataAccess.Contexts;
 using EduHomeUI.ViewModels.BlogViewModels;
+using EduHomeUI.ViewModels.SubscribeViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,11 +16,15 @@ namespace EduHomeUI.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            BlogIndexViewModel viewModel = new BlogIndexViewModel()
+            BlogCompositeViewModel model = new BlogCompositeViewModel()
             {
-                Blogs = await _context.Blogs.ToListAsync()
+                BlogIndex = new BlogIndexViewModel()
+                {
+                    Blogs = await _context.Blogs.ToListAsync()
+                },
+                SubscriberCreate = new SubscriberCreateViewModel()
             };
-            return View(viewModel);
+            return View(model);
         }
         public async Task<IActionResult> Details(Guid id)
         {
