@@ -1,5 +1,7 @@
 ﻿using EduHome.DataAccess.Contexts;
+using EduHomeUI.Areas.EHMasterPanel.ViewModels.BlogViewModels;
 using EduHomeUI.Areas.EHMasterPanel.ViewModels.SliderViewModels;
+using EduHomeUI.Services.Concretes;
 using EduHomeUI.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -25,6 +27,22 @@ namespace EduHomeUI.Areas.EHMasterPanel.Controllers
                 Sliders = sliderList
             };
             return View(viewModel);
+        }
+        public async Task<IActionResult> Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        [AutoValidateAntiforgeryToken]
+        public async Task<IActionResult> Create(SliderCreateViewModel sliderVm)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            if (!await _sliderService.CreateSliderAsync(sliderVm)) return BadRequest();
+            TempData["Success"] = "Slider Created Successfully!";
+            return RedirectToAction(nameof(Index));
         }
     }
 }
