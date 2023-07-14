@@ -1,5 +1,6 @@
 ﻿@using EduHomeUI.ViewModels.HomeViewModels;
 @model HomeIndexViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 @{
     int eventCount = 0; 
@@ -112,7 +113,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="section-title">
-                    <img src="assets/img/icon/section.png" alt="section-title">
+                    @await Component.InvokeAsync("sectionlogo")
                     <h2>COURSES WE OFFER</h2>
                 </div>
             </div>
@@ -123,7 +124,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="single-course">
                         <div class="course-img">
-                            <a href="course-details.html">
+                            <a asp-controller="Course" asp-action="Details" asp-route-id="@course.Id">
                                 <img src="/@course.ImagePath" alt="@course.ImageName">
                                 <div class="course-hover">
                                     <i class="fa fa-link"></i>
@@ -133,7 +134,7 @@
                         <div class="course-content">
                             <h3><a href="course-details.html">@course.Name</a></h3>
                             <p>@Html.Raw(course.Description.Substring(0, Math.Min(course.Description.Length, 155)))</p>
-                            <a class="default-btn" href="course-details.html">read more</a>
+                            <a class="default-btn" asp-controller="Course" asp-action="Details" asp-route-id="@course.Id">read more</a>
                         </div>
 
                     </div>

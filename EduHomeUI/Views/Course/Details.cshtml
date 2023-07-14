@@ -28,7 +28,7 @@
                         var courseDetails = Model.CourseDetails.FirstOrDefault(cd => cd.CourseId == course.Id);
 
                         <div class="courses-details-img">
-                            <img src="@course.ImagePath" alt="@course.ImageName">
+                            <img src="/@course.ImagePath" alt="@course.ImageName">
                         </div>
                         <div class="course-details-content">
                             <h2>@course.Name</h2>

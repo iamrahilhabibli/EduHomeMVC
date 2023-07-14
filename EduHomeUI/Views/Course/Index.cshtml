@@ -32,7 +32,7 @@
                         </div>
                         <div class="course-content">
                             <h3><a asp-action="Details" asp-route-id="@course.Id">@course.Name</a></h3>
-                            @Html.Raw(course.Description)
+                            <p>@Html.Raw(course.Description.Substring(0, Math.Min(course.Description.Length, 155)))</p>
                             <a class="default-btn" asp-action="Details" asp-route-id="@course.Id">read more</a>
                         </div>
                     </div>
