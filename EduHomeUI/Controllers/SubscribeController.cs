@@ -50,7 +50,6 @@ namespace EduHomeUI.Controllers
             await _context.SaveChangesAsync();
 
             TempData["Success"] = "You have successfully subscribed!";
-            TempData["Email"] = subVm.Email;
 
             var emailContent = $"Welcome to Edu Home ";
 
