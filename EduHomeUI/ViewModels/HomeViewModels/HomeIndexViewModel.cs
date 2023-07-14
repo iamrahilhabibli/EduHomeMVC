@@ -8,6 +8,5 @@ namespace EduHomeUI.ViewModels.HomeViewModels
         public IEnumerable<Course> Courses { get; set; }
         public IEnumerable<Event> Events { get; set; }
         public IEnumerable<Slider> Sliders { get; set; }
-        public string Email { get; set; }
     }
 }

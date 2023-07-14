@@ -315,5 +315,7 @@
 </div>
 <!-- Blog Area End -->
 <!-- Subscribe Start -->
-@*<partial name="_SubscribeSection" />*@
+<!-- Subscribe Start -->
+@await Html.PartialAsync("_SubscribeSection", Model.SubscriberCreate)
+<!-- Subscribe End -->
 <!-- Subscribe End -->
