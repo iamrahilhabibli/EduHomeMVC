@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace EduHomeUI.Areas.EHMasterPanel.Controllers
 {
     [Area("EHMasterPanel")]
-    [Authorize]
+    [Authorize(Roles = "Master,Admin")]
     public class SettingController : Controller
     {
         private readonly AppDbContext _context;

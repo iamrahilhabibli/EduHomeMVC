@@ -7,7 +7,7 @@ using System.Web.Mvc;
 namespace EduHomeUI.Areas.EHMasterPanel.Controllers
 {
     [Area("EHMasterPanel")]
-    [Authorize]
+    [Authorize(Roles = "Master,Admin")]
     public class SubscribersController : Microsoft.AspNetCore.Mvc.Controller
     {
         private readonly AppDbContext _context;

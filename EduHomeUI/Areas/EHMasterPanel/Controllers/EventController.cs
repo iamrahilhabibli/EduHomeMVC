@@ -13,7 +13,7 @@ using Microsoft.EntityFrameworkCore;
 namespace EduHomeUI.Areas.EHMasterPanel.Controllers
 {
     [Area("EHMasterPanel")]
-    [Authorize]
+    [Authorize(Roles = "Master,Admin")]
     public class EventController : Controller
     {
         private readonly AppDbContext _context;

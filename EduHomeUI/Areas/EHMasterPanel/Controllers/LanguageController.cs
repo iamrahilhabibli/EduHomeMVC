@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore;
 namespace EduHomeUI.Areas.EHMasterPanel.Controllers
 {
 	[Area("EHMasterPanel")]
-	[Authorize]
-	public class LanguageController : Controller
+    [Authorize(Roles = "Master,Admin")]
+    public class LanguageController : Controller
 	{
 		private readonly AppDbContext _context;
 		private readonly ILanguageService _languageService;

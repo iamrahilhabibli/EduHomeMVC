@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace EduHomeUI.Areas.EHMasterPanel.Controllers
 {
     [Area("EHMasterPanel")]
-    [Authorize]
+    [Authorize(Roles = "Master,Admin")]
     public class NoticeController : Controller
     {
         private readonly AppDbContext _context;

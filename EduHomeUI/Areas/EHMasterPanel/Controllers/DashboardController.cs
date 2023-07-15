@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EduHomeUI.Areas.EHMasterPanel.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Master,Admin")]
     [Area("EHMasterPanel")]
     public class DashboardController : Controller
     {

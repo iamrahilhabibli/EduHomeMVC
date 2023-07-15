@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore;
 namespace EduHomeUI.Areas.EHMasterPanel.Controllers
 {
     [Area("EHMasterPanel")]
-    [Authorize]
+    [Authorize(Roles = "Master,Admin")]
     public class CourseController : Controller
     {
         private readonly AppDbContext _context;

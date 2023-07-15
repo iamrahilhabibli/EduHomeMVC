@@ -13,8 +13,8 @@ using Microsoft.EntityFrameworkCore;
 namespace EduHomeUI.Areas.EHMasterPanel.Controllers
 {
 	[Area("EHMasterPanel")]
-    [Authorize]
-	public class AssesmentController : Controller
+    [Authorize(Roles = "Master,Admin")]
+    public class AssesmentController : Controller
 	{
 		private readonly AppDbContext _context;
 		private readonly IAssesmentService _assesmentService;

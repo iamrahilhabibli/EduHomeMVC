@@ -21,7 +21,7 @@ namespace EduHomeUI.Controllers
                 AboutIndex = new AboutIndexViewModel
                 {
                    Teachers = await _context.Teachers.ToListAsync(),
-                   Notices = await _context.Notices.ToListAsync()
+                    Notices = await _context.Notices.ToListAsync()
                 },
                 SubscriberCreate = new SubscriberCreateViewModel()
             };

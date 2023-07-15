@@ -126,31 +126,38 @@
                             int index = 0;
                             int noticeCount = Model.AboutIndex.Notices.Count();
                         }
-
-                        @foreach (var notice in Model.AboutIndex.Notices.OrderByDescending(n=>n.DateCreated).Take(6))
+                        @if (Model.AboutIndex.Notices == null || !Model.AboutIndex.Notices.Any())
                         {
-                            string divClass = "single-notice-left";
-
-                            if (index == noticeCount - 1 && index % 2 == 0)
-                            {
-                                divClass += " pb-70";
-                            }
-                            else if (index % 2 == 0)
-                            {
-                                divClass += " mb-23 pb-20";
-                            }
-                            else
-                            {
-                                divClass += " hidden-sm mb-23 pb-20";
-                            }
-
-                            <div class="@divClass">
-                                <h4>@notice.DateCreated.ToString("dd,MMMM,yyyy")</h4>
-                                <p>@notice.Description</p>
-                            </div>
-
-                            index++;
+                            <p>There are no notices.</p>
                         }
+                        else
+                        {
+                            @foreach (var notice in Model.AboutIndex.Notices.OrderByDescending(n => n.DateCreated).Take(6))
+                            {
+                                string divClass = "single-notice-left";
+
+                                if (index == noticeCount - 1 && index % 2 == 0)
+                                {
+                                    divClass += " pb-70";
+                                }
+                                else if (index % 2 == 0)
+                                {
+                                    divClass += " mb-23 pb-20";
+                                }
+                                else
+                                {
+                                    divClass += " hidden-sm mb-23 pb-20";
+                                }
+
+                                <div class="@divClass">
+                                    <h4>@notice.DateCreated.ToString("dd,MMMM,yyyy")</h4>
+                                    <p>@notice.Description</p>
+                                </div>
+
+                                index++;
+                            }
+                        }
+
                     </div>
 
                 </div>
