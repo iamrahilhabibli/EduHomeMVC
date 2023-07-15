@@ -32,6 +32,10 @@ namespace EduHomeUI.Controllers
 
             return View(model);
         }
+        public IActionResult TestException()
+        {
+            throw new Exception("This is a test exception.");
+        }
 
     }
 }

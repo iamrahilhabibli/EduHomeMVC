@@ -243,7 +243,7 @@ namespace EduHomeUI.Controllers
 			var signInResult = await _signInManager.ExternalLoginSignInAsync(info.LoginProvider, info.ProviderKey, isPersistent: false, bypassTwoFactor: true);
 			if (signInResult.Succeeded)
 			{
-				return Redirect(returnUrl); // Use Redirect() instead of RedirectToAction()
+				return Redirect(returnUrl); 
 			}
 			if (signInResult.IsLockedOut)
 			{

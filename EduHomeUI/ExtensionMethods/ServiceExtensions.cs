@@ -23,7 +23,7 @@ namespace EduHomeUI.Extensions
 
             services.AddPersistenceServices(configuration);
             services.AddEmailServices(configuration);
-
+            services.AddTransient<GlobalExceptionHandler>();
             services.AddScoped<ICourseCategoryService, CourseCategoryService>();
             services.AddScoped<ICourseService, CourseService>();
             services.AddScoped<ILanguageService, LanguageService>();
@@ -40,6 +40,9 @@ namespace EduHomeUI.Extensions
             services.AddScoped<ISliderService, SliderService>();
             services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
             services.AddScoped<ISubscriberService,SubscriberService>();
+
+    
+
 
         }
 
