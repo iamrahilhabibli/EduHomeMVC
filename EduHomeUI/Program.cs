@@ -23,7 +23,6 @@ builder.Services.Configure<ReCAPTCHASettings>(builder.Configuration.GetSection("
 builder.Services.AddHttpClient<ICaptchaValidator, GoogleReCaptchaValidator>();
 builder.Services.AddFluentValidationValidators();
 
-
 builder.Services.AddAuthentication()
     .AddGoogle("google", opt =>
     {
