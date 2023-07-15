@@ -1,7 +1,45 @@
-﻿<h1> Confirm Email</h1>
+﻿@{
+    Layout = null;
+}
+<html>
+<head>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+        }
 
-<div>
-    <p>
-        Thank you for confirmation!
-    </p>
-</div>
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #007bff;
+        }
+
+        p {
+            color: #555;
+        }
+    </style>
+    <script>
+        setTimeout(function () {
+            window.location.href = "/";
+        }, 3000);
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Confirm Email</h1>
+        <div>
+            <p>Thank you for confirmation!</p>
+        </div>
+    </div>
+</body>
+</html>

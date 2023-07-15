@@ -81,7 +81,7 @@ namespace EduHomeUI.Controllers
 
             await _userManager.AddToRoleAsync(user, "Visitor");
 
-            return RedirectToAction(nameof(SuccessRegistration));
+            return View(nameof(SuccessRegistration));
         }
 
         [HttpGet]

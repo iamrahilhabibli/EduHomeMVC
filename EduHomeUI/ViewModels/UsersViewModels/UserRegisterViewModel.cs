@@ -18,7 +18,7 @@ namespace EduHomeUI.ViewModels.UsersViewModel
         public string Password { get; set; }
         [Required,DataType(DataType.Password),Compare(nameof(Password))]
         public string ConfirmPassword { get; set; }
-        [Required]
-        public string Token { get; set; }
+        //[Required]
+        ////public string Token { get; set; }
 	}
 }
