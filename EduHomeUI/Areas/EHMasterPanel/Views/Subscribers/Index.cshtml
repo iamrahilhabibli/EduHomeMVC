@@ -1,0 +1,54 @@
+﻿@using EduHomeUI.Areas.EHMasterPanel.ViewModels.SubscriberViewModels;
+
+@model SubscriberIndexViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<partial name="_Notification" />
+@{
+    ViewData["Title"] = "Index";
+    int count = 1;
+}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Subscribers</h4>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered table-hover" id="dataTableData">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>UserId</th>
+                                    <th>DateCreated</th>
+                                    <th>Email</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var sub in Model.Subscribers)
+                                {
+                                    @if (!sub.IsDeleted)
+                                    {
+                                        <tr>
+                                            <td>@count</td>
+                                            <td>@sub.UserId</td>
+                                            <td>@sub.DateCreated</td>
+                                            <td>@sub.Email</td>
+                                            <td>
+                                                <a asp-action="Delete" asp-route-id="@sub.Id" class="btn btn-danger"><i class="bi bi-trash-fill"></i></a>
+                                            </td>
+                                        </tr>
+                                        count++;
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <script src="~/datatable_file.js"></script>
+}

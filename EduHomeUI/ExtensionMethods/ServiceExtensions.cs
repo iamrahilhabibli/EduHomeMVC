@@ -39,6 +39,7 @@ namespace EduHomeUI.Extensions
             services.AddScoped<ISettingService, SettingService>();
             services.AddScoped<ISliderService, SliderService>();
             services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
+            services.AddScoped<ISubscriberService,SubscriberService>();
 
         }
 
