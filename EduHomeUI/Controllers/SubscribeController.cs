@@ -62,14 +62,7 @@ namespace EduHomeUI.Controllers
                 return RedirectToAction("Index", "Contact");
             }
 
-            Subscribers newSub = new Subscribers
-            {
-                Email = subVm.Email,
-                UserId = Guid.Parse(user.Id)
-            };
-
-            await _context.Subscribers.AddAsync(newSub);
-            await _context.SaveChangesAsync();
+            await _subscriberService.AddSubscriberAsync(subVm.Email, user.Id);
 
             TempData["Success"] = "You have successfully subscribed!";
 

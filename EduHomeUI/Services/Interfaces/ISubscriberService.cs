@@ -6,5 +6,6 @@ namespace EduHomeUI.Services.Interfaces
     {
         Task<List<Subscribers>> GetAllSubscribersAsync();
         Task<bool> IsUserSubscribed(string email);
+        Task AddSubscriberAsync(string email, string userId);
     }
 }

@@ -20,6 +20,16 @@ namespace EduHomeUI.Services.Concretes
         {
             return await _context.Subscribers.AnyAsync(s => s.Email == email);
         }
+        public async Task AddSubscriberAsync(string email, string userId)
+        {
+            Subscribers newSub = new Subscribers
+            {
+                Email = email,
+                UserId = Guid.Parse(userId)
+            };
 
+            await _context.Subscribers.AddAsync(newSub);
+            await _context.SaveChangesAsync();
+        }
     }
 }
