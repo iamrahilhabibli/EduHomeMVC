@@ -23,7 +23,7 @@ public class GlobalExceptionHandler : IMiddleware
 
             context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
 
-            await context.Response.WriteAsync("An error occurred. Please try again later.");
+            await context.Response.WriteAsync("An error occurred. Please try again.");
         }
     }
 }

@@ -45,34 +45,41 @@
                         int index = 0;
                     }
 
-                    @foreach (var notice in Model.HomeIndex.Notices.Take(9))
+                    @if (Model.HomeIndex.Notices == null || !Model.HomeIndex.Notices.Any())
                     {
-                        if (!notice.IsDeleted)
+                        <p>There are no notices.</p>
+                    }
+                    else
+                    {
+                        @foreach (var notice in Model.HomeIndex.Notices.Take(9))
                         {
-                            string divClass = "single-notice-left";
-                            if (index == 2)
+                            if (!notice.IsDeleted)
                             {
-                                divClass += " pb-75";
-                            }
-                            else if (index == 5 || index == 7)
-                            {
-                                divClass += " pb-70";
-                            }
-                            else
-                            {
-                                divClass += " mb-25 pb-25";
-                            }
+                                string divClass = "single-notice-left";
+                                if (index == 2)
+                                {
+                                    divClass += " pb-75";
+                                }
+                                else if (index == 5 || index == 7)
+                                {
+                                    divClass += " pb-70";
+                                }
+                                else
+                                {
+                                    divClass += " mb-25 pb-25";
+                                }
 
-                            <div class="@divClass">
-                                <h4>@notice.DateCreated.ToString("dd,MMMM,yyyy")</h4>
-                                <p>@notice.Description</p>
-                            </div>
+                                <div class="@divClass">
+                                    <h4>@notice.DateCreated.ToString("dd,MMMM,yyyy")</h4>
+                                    <p>@notice.Description</p>
+                                </div>
 
-                            index++;
+                                index++;
+                            }
                         }
                     }
-
                 </div>
+
             </div>
             <div class="col-md-6">
                 <div class="notice-right">
