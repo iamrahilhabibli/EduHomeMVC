@@ -40,12 +40,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\EmailTemplates\" />
     <Folder Include="wwwroot\DataTable\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Update="Views\WelcomeTemplate.cshtml">
+    <Content Update="Views\EmailTemplates\WelcomeTemplate.cshtml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

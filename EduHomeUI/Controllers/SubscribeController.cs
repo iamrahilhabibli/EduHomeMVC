@@ -68,9 +68,7 @@ namespace EduHomeUI.Controllers
             {
                 UserName = user.UserName
             };
-
-            // Render the view to string
-            var viewPath = "~/Views/WelcomeTemplate.cshtml";
+            var viewPath = "~/Views/EmailTemplates/WelcomeTemplate.cshtml";
             var emailContent = await ViewRenderer.RenderViewToStringAsync(this, viewPath, model);
 
             var message = new Message(new string[] { user.Email }, "Welcome to EduHome", emailContent);
