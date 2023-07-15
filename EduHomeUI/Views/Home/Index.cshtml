@@ -169,61 +169,71 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-6">
-                @foreach (var newEvent in Model.HomeIndex.Events.OrderByDescending(e => e.Date).Take(5))
+            @{
+                if (Model.HomeIndex.Events == null || !Model.HomeIndex.Events.Any())
                 {
-                    if (!newEvent.IsDeleted)
-                    {
-                        <div class="single-event @(eventCount < 3 ? "mb-35" : "")">
-                            <div class="event-date">
-                                <h3><a href="event-details.html">@newEvent.Date.Day <span>@newEvent.Date.ToString("MMMM")</span></a></h3>
-                            </div>
-                            <div class="event-content text-start">
-                                <div class="event-content-left">
-                                    <h4><a href="event-details.html">@newEvent.Title</a></h4>
-                                    <ul>
-                                        <li><i class="fa fa-clock-o"></i>@newEvent.StartTime.ToString("HH:mm") - @newEvent.EndTime.ToString("HH:mm")</li>
-                                        <li><i class="fa fa-map-marker"></i>@newEvent.Venue</li>
-                                    </ul>
-                                </div>
-                                <div class="event-content-right">
-                                    <a class="default-btn" href="event-details.html">join now</a>
-                                </div>
-                            </div>
-                        </div>
-                        eventCount++;
-                    }
+                    <p>There are no events.</p>
                 }
-            </div>
-            <div class="col-lg-6 pt-5 pt-lg-0">
-                @{
-                    int eventCountEvent = 0;
-                }
-                @foreach (var newEvent in Model.HomeIndex.Events.OrderByDescending(e => e.Date).Skip(4).Take(5))
+                else
                 {
-                    if (!newEvent.IsDeleted)
-                    {
-                        <div class="single-event @(eventCountEvent < 3 ? "mb-35" : "")">
-                            <div class="event-date">
-                                <h3><a href="event-details.html">@newEvent.Date.Day <span>@newEvent.Date.ToString("MMMM")</span></a></h3>
-                            </div>
-                            <div class="event-content text-start">
-                                <div class="event-content-left">
-                                    <h4><a href="event-details.html">@newEvent.Title</a></h4>
-                                    <ul>
-                                        <li><i class="fa fa-clock-o"></i>@newEvent.StartTime.ToString("h:mm tt") - @newEvent.EndTime.ToString("h:mm tt")</li>
-                                        <li><i class="fa fa-map-marker"></i>@newEvent.Venue</li>
-                                    </ul>
+                    <div class="col-lg-6">
+                        @foreach (var newEvent in Model.HomeIndex.Events.OrderByDescending(e => e.Date).Take(5))
+                        {
+                            if (!newEvent.IsDeleted)
+                            {
+                                <div class="single-event @(eventCount < 3 ? "mb-35" : "")">
+                                    <div class="event-date">
+                                        <h3><a href="event-details.html">@newEvent.Date.Day <span>@newEvent.Date.ToString("MMMM")</span></a></h3>
+                                    </div>
+                                    <div class="event-content text-start">
+                                        <div class="event-content-left">
+                                            <h4><a href="event-details.html">@newEvent.Title</a></h4>
+                                            <ul>
+                                                <li><i class="fa fa-clock-o"></i>@newEvent.StartTime.ToString("HH:mm") - @newEvent.EndTime.ToString("HH:mm")</li>
+                                                <li><i class="fa fa-map-marker"></i>@newEvent.Venue</li>
+                                            </ul>
+                                        </div>
+                                        <div class="event-content-right">
+                                            <a class="default-btn" href="event-details.html">join now</a>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="event-content-right">
-                                    <a class="default-btn" href="event-details.html">join now</a>
+                                eventCount++;
+                            }
+                        }
+                    </div>
+                    <div class="col-lg-6 pt-5 pt-lg-0">
+                        @{
+                            int eventCountEvent = 0;
+                        }
+                        @foreach (var newEvent in Model.HomeIndex.Events.OrderByDescending(e => e.Date).Skip(4).Take(5))
+                        {
+                            if (!newEvent.IsDeleted)
+                            {
+                                <div class="single-event @(eventCountEvent < 3 ? "mb-35" : "")">
+                                    <div class="event-date">
+                                        <h3><a href="event-details.html">@newEvent.Date.Day <span>@newEvent.Date.ToString("MMMM")</span></a></h3>
+                                    </div>
+                                    <div class="event-content text-start">
+                                        <div class="event-content-left">
+                                            <h4><a href="event-details.html">@newEvent.Title</a></h4>
+                                            <ul>
+                                                <li><i class="fa fa-clock-o"></i>@newEvent.StartTime.ToString("h:mm tt") - @newEvent.EndTime.ToString("h:mm tt")</li>
+                                                <li><i class="fa fa-map-marker"></i>@newEvent.Venue</li>
+                                            </ul>
+                                        </div>
+                                        <div class="event-content-right">
+                                            <a class="default-btn" href="event-details.html">join now</a>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        eventCountEvent++;
-                    }
+                                eventCountEvent++;
+                            }
+                        }
+                    </div>
                 }
-            </div>
+            }
+
 
         </div>
     </div>
