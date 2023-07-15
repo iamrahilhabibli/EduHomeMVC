@@ -16,6 +16,10 @@ namespace EduHomeUI.Services.Concretes
         {
             return await _context.Subscribers.ToListAsync();
         }
+        public async Task<bool> IsUserSubscribed(string email)
+        {
+            return await _context.Subscribers.AnyAsync(s => s.Email == email);
+        }
 
     }
 }

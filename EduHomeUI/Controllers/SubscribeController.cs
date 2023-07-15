@@ -3,6 +3,7 @@ using System.IO;
 using System.Threading.Tasks;
 using EduHome.Core.Entities;
 using EduHome.DataAccess.Contexts;
+using EduHomeUI.Services.Interfaces;
 using EduHomeUI.ViewModels.SubscribeViewModels;
 using EduHomeUI.ViewModels.WelcomeViewModel;
 using EmailService;
@@ -22,15 +23,17 @@ namespace EduHomeUI.Controllers
         private readonly AppDbContext _context;
         private readonly UserManager<AppUser> _userManager;
         private readonly IEmailSenderService _emailSenderService;
+        private readonly ISubscriberService _subscriberService;
         
         public SubscribeController(AppDbContext context,
                                    UserManager<AppUser> userManager,
-                                   IEmailSenderService emailSenderService
-                                   )
+                                   IEmailSenderService emailSenderService,
+                                   ISubscriberService subscriberService)
         {
             _context = context;
             _userManager = userManager;
             _emailSenderService = emailSenderService;
+            _subscriberService = subscriberService;
         
         }
         public IActionResult Index()
@@ -52,6 +55,12 @@ namespace EduHomeUI.Controllers
                 TempData["Error"] = "The provided email is not registered.";
                 return RedirectToAction("Index", "Contact");
             }
+            bool isSubscribed = await _subscriberService.IsUserSubscribed(subVm.Email);
+            if (isSubscribed)
+            {
+                TempData["Error"] = "You are already subscribed!";
+                return RedirectToAction("Index", "Contact");
+            }
 
             Subscribers newSub = new Subscribers
             {
@@ -68,6 +77,7 @@ namespace EduHomeUI.Controllers
             {
                 UserName = user.UserName
             };
+
             var viewPath = "~/Views/EmailTemplates/WelcomeTemplate.cshtml";
             var emailContent = await ViewRenderer.RenderViewToStringAsync(this, viewPath, model);
 
