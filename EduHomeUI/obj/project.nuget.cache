@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "vW406877+abIlEqiISIcB6p33OHPO6FDtOuArR4kyD/l9GN7ZdJGCxVOA1fHY1WVQC9Jq/ev8v9aJizf6g6cqA==",
+  "dgSpecHash": "wBH66wgbF0uncVoeRNXkUrL5HczFHOXhQ246CThdxdLFPWAR2k1MCZIOJYnoeN1sq8zxW3NT8s2NwQKmpJ9tqg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Rhabi\\OneDrive\\Documents\\Backend\\MVCFinalEdu\\EduHomeMVC\\EduHomeUI\\EduHomeUI.csproj",
   "expectedPackageFiles": [
@@ -170,6 +170,7 @@
     "C:\\Users\\Rhabi\\.nuget\\packages\\runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\Rhabi\\.nuget\\packages\\runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\Rhabi\\.nuget\\packages\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
+    "C:\\Users\\Rhabi\\.nuget\\packages\\stripe.net\\41.24.0\\stripe.net.41.24.0.nupkg.sha512",
     "C:\\Users\\Rhabi\\.nuget\\packages\\system.appcontext\\4.3.0\\system.appcontext.4.3.0.nupkg.sha512",
     "C:\\Users\\Rhabi\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\Rhabi\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",

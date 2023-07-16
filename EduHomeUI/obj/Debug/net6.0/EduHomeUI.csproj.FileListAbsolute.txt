@@ -1041,3 +1041,4 @@ C:\Users\Rhabi\OneDrive\Documents\Backend\MVCFinalEdu\EduHomeMVC\EduHomeUI\bin\D
 C:\Users\Rhabi\OneDrive\Documents\Backend\MVCFinalEdu\EduHomeMVC\EduHomeUI\bin\Debug\net6.0\System.Web.WebPages.dll
 C:\Users\Rhabi\OneDrive\Documents\Backend\MVCFinalEdu\EduHomeMVC\EduHomeUI\bin\Debug\net6.0\Microsoft.Web.Infrastructure.dll
 C:\Users\Rhabi\OneDrive\Documents\Backend\MVCFinalEdu\EduHomeMVC\EduHomeUI\bin\Debug\net6.0\Views\EmailTemplates\WelcomeTemplate.cshtml
+C:\Users\Rhabi\OneDrive\Documents\Backend\MVCFinalEdu\EduHomeMVC\EduHomeUI\bin\Debug\net6.0\Stripe.net.dll
