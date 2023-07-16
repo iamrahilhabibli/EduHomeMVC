@@ -1,33 +1,51 @@
 ﻿using EduHome.Core.Entities;
+using EduHome.DataAccess.Contexts;
+using EduHomeUI.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Stripe.Checkout;
 
 namespace EduHomeUI.Controllers
 {
     public class CheckoutController : Controller
     {
-        public IActionResult Index()
+        private readonly AppDbContext _context;
+        private readonly ICourseService _courseService;
+        public CheckoutController(AppDbContext context, ICourseService courseService)
+        {
+            _context = context;
+            _courseService = courseService;
+        }
+        public async Task<IActionResult> Index(Guid courseId)
         {
             List<ProductEntity> productList = new List<ProductEntity>();
-            productList = new List<ProductEntity>
-            {
-                new ProductEntity
-                {
-                    Product= "CSE",
-                    Price = 5000,
-                    Quantity = 1,
-                    ImagePath = "assets/img/course/course1.jpg"
-                },
-                  new ProductEntity
-                {
-                    Product= "HTMLCSS",
-                    Price = 4650,
-                    Quantity = 1,
-                    ImagePath = "assets/img/course/course2.jpg"
-                },
-            };
+
+            ProductEntity selectedCourse = await GetCourseById(courseId);
+            productList.Add(selectedCourse);
+
             return View(productList);
         }
+
+        private async Task<ProductEntity> GetCourseById(Guid courseId)
+        {
+            Course selectedCourse = await _courseService.GetCourseByIdCourse(courseId);
+
+            CourseDetails courseDetails = await _context.CourseDetails
+                .FirstOrDefaultAsync(cd => cd.CourseId == courseId);
+
+            ProductEntity product = new ProductEntity
+            {
+                Product = selectedCourse.Name,
+                Price = courseDetails.CourseFee,
+                Quantity = 1,
+                ImagePath = selectedCourse.ImagePath
+            };
+
+            return product;
+        }
+
+
+
         public IActionResult OrderConfirmation()
         {
             var service = new SessionService();

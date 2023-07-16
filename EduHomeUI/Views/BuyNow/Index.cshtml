@@ -35,7 +35,7 @@
                                             <td>@course.Name</td>
                                             <td>@Html.Raw(course.Description)</td>
                                             <td>
-                                                <a asp-action="Update" asp-route-id="@course.Id" class="btn btn-warning"><i class="bi bi-pencil-square"></i></a>
+                                                <a asp-controller="Checkout" asp-action="Index" asp-route-courseId="@course.Id" class="btn btn-warning"><i class="bi bi-bag-fill"></i></a>
                                             </td>
                                         </tr>
                                         count++;
