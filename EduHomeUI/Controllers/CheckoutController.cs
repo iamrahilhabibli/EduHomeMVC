@@ -20,13 +20,19 @@ namespace EduHomeUI.Controllers
             _context = context;
             _courseService = courseService;
         }
-        public async Task<IActionResult> Index(Guid courseId)
+        public async Task<IActionResult> Index(Guid? courseId)
         {
-            ProductEntity selectedCourse = await GetCourseById(courseId);
+            if (courseId == null)
+            {
+                return View(null);
+            }
+
+            ProductEntity selectedCourse = await GetCourseById(courseId.Value);
             TempData["CourseId"] = courseId;
 
             return View(selectedCourse);
         }
+
 
 
         private async Task<ProductEntity> GetCourseById(Guid courseId)
