@@ -28,7 +28,25 @@ namespace EduHomeUI.Controllers
             };
             return View(productList);
         }
-
+        public IActionResult OrderConfirmation()
+        {
+            var service = new SessionService();
+            Session session = service.Get(TempData["Session"].ToString());
+            if (session.PaymentStatus == "paid")
+            {
+                var transaction = session.PaymentIntentId.ToString();
+                return View("Success");
+            }
+            return View("Login");
+        }
+        public IActionResult Success()
+        {
+            return View();
+        }
+        public IActionResult Login()
+        {
+            return RedirectToAction("Login", "Auth");
+        }
         public IActionResult Checkout()
         {
             List<ProductEntity> productList = new List<ProductEntity>();
@@ -77,7 +95,7 @@ namespace EduHomeUI.Controllers
             }
             var service = new SessionService();
             Session session = service.Create(options);
-
+            TempData["Session"] = session.Id;
             Response.Headers.Add("Location", session.Url);
             return new StatusCodeResult(303);   
         }
