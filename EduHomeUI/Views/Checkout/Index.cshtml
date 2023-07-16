@@ -1,5 +1,5 @@
-﻿@using EduHome.Core.Entities;
-@model IEnumerable<ProductEntity>
+﻿@using EduHome.Core.Entities
+@model ProductEntity
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 <table class="table table-responsive table-light table-bordered" style="width: 100%">
@@ -8,20 +8,25 @@
         <th>Product Price</th>
         <th>Product Quantity</th>
         <th>Product Image</th>
-        <th> Total</th>
+        <th>Total</th>
     </tr>
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>@item.Product</td>
-            <td>@item.Price</td>
-            <td>@item.Quantity</td>
-            <td> <img src="/@item.ImagePath" style="width:130px; height:150px;"/> </td>
-            <td>@(item.Price * item.Quantity)</td>
-        </tr>
-    }
+    <tr>
+        <td>@Model.Product</td>
+        <td>@Model.Price</td>
+        <td>@Model.Quantity</td>
+        <td><img src="/@Model.ImagePath" style="width:130px; height:150px;" /></td>
+        <td>@(Model.Price * Model.Quantity)</td>
+    </tr>
 </table>
 <br />
-<p>
-    <a asp-action="Checkout"  asp-controller="Checkout" value="Checkout"> Checkout</a>
-</p>
+
+<form method="post" asp-action="Checkout" asp-controller="Checkout">
+    <input type="hidden" name="product.Product" value="@Model.Product" />
+    <input type="hidden" name="product.Price" value="@Model.Price" />
+    <input type="hidden" name="product.Quantity" value="@Model.Quantity" />
+    <input type="hidden" name="product.ImagePath" value="@Model.ImagePath" />
+
+    <p>
+        <button type="submit" class="btn btn-primary">Checkout</button>
+    </p>
+</form>

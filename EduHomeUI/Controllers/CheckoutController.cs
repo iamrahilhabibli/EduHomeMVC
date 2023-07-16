@@ -18,13 +18,11 @@ namespace EduHomeUI.Controllers
         }
         public async Task<IActionResult> Index(Guid courseId)
         {
-            List<ProductEntity> productList = new List<ProductEntity>();
-
             ProductEntity selectedCourse = await GetCourseById(courseId);
-            productList.Add(selectedCourse);
 
-            return View(productList);
+            return View(selectedCourse);
         }
+
 
         private async Task<ProductEntity> GetCourseById(Guid courseId)
         {
@@ -65,57 +63,42 @@ namespace EduHomeUI.Controllers
         {
             return RedirectToAction("Login", "Auth");
         }
-        public IActionResult Checkout()
+        public IActionResult Checkout(ProductEntity product)
         {
-            List<ProductEntity> productList = new List<ProductEntity>();
-            productList = new List<ProductEntity>
-            {
-                new ProductEntity
-                {
-                    Product= "CSE",
-                    Price = 5000,
-                    Quantity = 1,
-                    ImagePath = "assets/img/course/course1.jpg"
-                },
-                  new ProductEntity
-                {
-                    Product= "HTMLCSS",
-                    Price = 4650,
-                    Quantity = 1,
-                    ImagePath = "assets/img/course/course2.jpg"
-                },
-            };
             var domain = "https://localhost:7224/";
 
             var options = new SessionCreateOptions
             {
-                SuccessUrl = domain +  $"Checkout/OrderConfirmation",
+                SuccessUrl = domain + "Checkout/OrderConfirmation",
                 CancelUrl = domain + "Checkout/Login",
                 LineItems = new List<SessionLineItemOptions>(),
                 Mode = "payment"
             };
-            foreach (var item in productList)
+
+            var sessionListItem = new SessionLineItemOptions
             {
-                var sessionListItem = new SessionLineItemOptions
+                PriceData = new SessionLineItemPriceDataOptions
                 {
-                    PriceData = new SessionLineItemPriceDataOptions
+                    UnitAmount = (long)(product.Price * product.Quantity),
+                    Currency = "usd",
+                    ProductData = new SessionLineItemPriceDataProductDataOptions
                     {
-                        UnitAmount = (long)(item.Price * item.Quantity),
-                        Currency = "usd",
-                        ProductData= new SessionLineItemPriceDataProductDataOptions
-                        {
-                            Name = item.Product.ToString(),
-                        }
-                    },
-                    Quantity = item.Quantity
-                };
-                options.LineItems.Add(sessionListItem); 
-            }
+                        Name = product.Product,
+                    }
+                },
+                Quantity = product.Quantity
+            };
+
+            options.LineItems.Add(sessionListItem);
+
             var service = new SessionService();
             Session session = service.Create(options);
             TempData["Session"] = session.Id;
             Response.Headers.Add("Location", session.Url);
-            return new StatusCodeResult(303);   
+
+            return new StatusCodeResult(303);
         }
+
+
     }
 }
