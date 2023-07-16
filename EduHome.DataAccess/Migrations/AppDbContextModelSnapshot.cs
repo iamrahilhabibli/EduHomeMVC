@@ -190,6 +190,39 @@ namespace EduHome.DataAccess.Migrations
                     b.ToTable("BlogDetails");
                 });
 
+            modelBuilder.Entity("EduHome.Core.Entities.ConfirmedStudents", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("CourseId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateModified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("UserId1")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CourseId");
+
+                    b.HasIndex("UserId1");
+
+                    b.ToTable("ConfirmedStudents");
+                });
+
             modelBuilder.Entity("EduHome.Core.Entities.Course", b =>
                 {
                     b.Property<Guid>("Id")
@@ -935,6 +968,23 @@ namespace EduHome.DataAccess.Migrations
                         .IsRequired();
 
                     b.Navigation("BlogDetails");
+                });
+
+            modelBuilder.Entity("EduHome.Core.Entities.ConfirmedStudents", b =>
+                {
+                    b.HasOne("EduHome.Core.Entities.Course", "Course")
+                        .WithMany()
+                        .HasForeignKey("CourseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("EduHome.Core.Entities.AppUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId1");
+
+                    b.Navigation("Course");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("EduHome.Core.Entities.Course", b =>

@@ -13,5 +13,6 @@ namespace EduHome.Core.Entities
         public CourseDetails? Details { get; set; }
         public Guid CourseCategoryId { get; set; }
         public CourseCategory? CourseCategory { get; set; }
+
     }
 }

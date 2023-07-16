@@ -34,7 +34,7 @@
                                             <td>@count</td>
                                             <td><img src="/@course.ImagePath" style="width:100px" /></td>
                                             <td>@course.Name</td>
-                                            <td>@course.Description</td>
+                                            <td>@Html.Raw(course.Description)</td>
                                             <td>
                                                 <a asp-action="Update" asp-route-id="@course.Id" class="btn btn-warning"><i class="bi bi-pencil-square"></i></a>
                                                 <a asp-action="Delete" asp-route-id="@course.Id" class="btn btn-danger"><i class="bi bi-trash-fill"></i></a>
