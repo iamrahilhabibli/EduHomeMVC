@@ -23,7 +23,7 @@ namespace EduHomeUI.Extensions
 
             services.AddPersistenceServices(configuration);
             services.AddEmailServices(configuration);
-            services.AddTransient<GlobalExceptionHandler>();
+            //services.AddTransient<GlobalExceptionHandler>();
             services.AddScoped<ICourseCategoryService, CourseCategoryService>();
             services.AddScoped<ICourseService, CourseService>();
             services.AddScoped<ILanguageService, LanguageService>();

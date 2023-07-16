@@ -24,7 +24,7 @@ builder.Services.AddHttpClient<ICaptchaValidator, GoogleReCaptchaValidator>();
 builder.Services.AddFluentValidationValidators();
 
 builder.Services.AddAuthentication()
-    .AddGoogle("google", opt =>
+    .AddGoogle(opt =>
     {
         var serviceProvider = builder.Services.BuildServiceProvider();
         var configuration = serviceProvider.GetService<IConfiguration>();
@@ -36,15 +36,15 @@ builder.Services.AddAuthentication()
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseDeveloperExceptionPage();
-}
-else
-{
-    app.UseExceptionHandler("/Home/Error");
-    app.UseHsts();
-}
+//if (app.Environment.IsDevelopment())
+//{
+//    app.UseDeveloperExceptionPage();
+//}
+//else
+//{
+//    app.UseExceptionHandler("/Home/Error");
+//    app.UseHsts();
+//}
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
@@ -54,7 +54,7 @@ app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.UseMiddleware<GlobalExceptionHandler>(); 
+//app.UseMiddleware<GlobalExceptionHandler>(); 
 
 app.UseEndpoints(endpoints =>
 {
