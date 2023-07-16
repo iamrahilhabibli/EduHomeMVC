@@ -1,101 +1,106 @@
 ﻿@model Dictionary<string,string>
 <!-- Mirrored from htmldemo.net/tm/eduhome/eduhome/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 24 Jun 2023 06:56:44 GMT -->
 
-	<header class="top">
-		<div class="header-top">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8 col-sm-8">
-						<div class="header-top-left">
-							<p>HAVE ANY QUESTION ?  @Model["headerphonenumber"]</p>
-						</div>
-					</div>
-					<div class="col-md-4 col-sm-4">
-						<div class="header-top-right text-md-end text-center">
-							<ul>
-								@if (User.Identity.IsAuthenticated)
-								{
-									@if (User.IsInRole("Master") || User.IsInRole("Admin"))
-									{
-										<li><a asp-area="EHMasterPanel" asp-controller="Dashboard" asp-action="Index">Admin Dashboard</a></li>
-									}
-									<li><a asp-controller="MyProfile" asp-action="Index">My account</a></li>
-									<li><a asp-controller="Auth" asp-action="Logout">Logout</a></li>
-								}
-								else
-								{
-									<li><a asp-controller="Auth" asp-action="Login">login</a></li>
-									<li><a asp-controller="Auth" asp-action="Register">signup</a></li>
-								}
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="header-area two header-sticky">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-3 col-sm-5 col-6">
-						<div class="logo">
-							<a asp-controller="Home" asp-action="Index"><img src="@Model["logo"]" alt="eduhome" /></a>
-						</div>
-					</div>
-					<div class="col-md-9 col-sm-7 col-6">
-						<div class="content-wrapper text-end">
-							<!-- Main Menu Start -->
-							<div class="main-menu">
-								<nav>
-									<ul>
-										<li>
-											<a asp-controller="Home" asp-action="Index">Home</a>
-										</li>
-										<li><a asp-controller="About" asp-action="Index" >About</a></li>
-										<li>
-											<a asp-controller="Course" asp-action="Index">courses</a>
-										</li>
-										<li>
-											<a asp-controller="Event" asp-action="Index">event</a>
-										</li>
-										<li class="hidden-sm">
-											<a asp-controller="Teacher" asp-action="Index">teacher</a>
+<header class="top">
+    <div class="header-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-8">
+                    <div class="header-top-left">
+                        <p>HAVE ANY QUESTION ?  @Model["headerphonenumber"]</p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <div class="header-top-right text-md-end text-center">
+                        <ul>
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                @if (User.IsInRole("Master") || User.IsInRole("Admin"))
+                                {
+                                    <li><a asp-area="EHMasterPanel" asp-controller="Dashboard" asp-action="Index">Admin Dashboard</a></li>
+                                }
+                                <li><a asp-controller="MyProfile" asp-action="Index">My account</a></li>
+                                <li><a asp-controller="Auth" asp-action="Logout">Logout</a></li>
+                            }
+                            else
+                            {
+                                <li><a asp-controller="Auth" asp-action="Login">login</a></li>
+                                <li><a asp-controller="Auth" asp-action="Register">signup</a></li>
+                            }
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header-area two header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-5 col-6">
+                    <div class="logo">
+                        <a asp-controller="Home" asp-action="Index"><img src="@Model["logo"]" alt="eduhome" /></a>
+                    </div>
+                </div>
+                <div class="col-md-9 col-sm-7 col-6">
+                    <div class="content-wrapper text-end">
+                        <!-- Main Menu Start -->
+                        <div class="main-menu">
+                            <nav>
+                                <ul>
+                                    <li>
+                                        <a asp-controller="Home" asp-action="Index">Home</a>
+                                    </li>
+                                    <li><a asp-controller="About" asp-action="Index">About</a></li>
+                                    <li>
+                                        <a asp-controller="Course" asp-action="Index">courses</a>
+                                    </li>
+                                    <li>
+                                        <a asp-controller="Event" asp-action="Index">event</a>
+                                    </li>
+                                    <li class="hidden-sm">
+                                        <a asp-controller="Teacher" asp-action="Index">teacher</a>
 
-										</li>
-										<li>
-											<a asp-controller="Blog" asp-action="Index">blog</a>
-										</li>
-										<li><a asp-controller="Contact" asp-action="Index">Contact</a></li>
-										<li><a asp-controller="BuyNow" asp-action="Index">Buy Now</a>
-										<li><a asp-controller="Checkout" asp-action="Index">Checkout</a>
-									</ul>
-								</nav>
-							</div>
-							<!--Search Form Start-->
-							<div class="search-btn">
-								<ul class="header-search search-toggle">
-									<li class="search-menu">
-										<i class="fa fa-search"></i>
-									</li>
-								</ul>
-								<div class="search">
-									<div class="search-form">
-										<form id="search-form" action="#">
-											<input type="search" placeholder="Search here..." name="search" />
-											<button type="submit">
-												<span><i class="@Model["searchicon"]"></i></span>
-											</button>
-										</form>
-									</div>
-								</div>
-							</div>
-							<!--End of Search Form-->
-							<!-- Main Menu End -->
-						</div>
-					</div>
-					<div class="col-12">
-						<div class="mobile-menu hidden-sm"></div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</header>
+                                    </li>
+                                    <li>
+                                        <a asp-controller="Blog" asp-action="Index">blog</a>
+                                    </li>
+                                    <li><a asp-controller="Contact" asp-action="Index">Contact</a></li>
+                                    <li>
+                                        <a asp-controller="BuyNow" asp-action="Index">Buy Now</a>
+                                        @if (User.Identity.IsAuthenticated)
+                                        {
+                                        <li><a asp-controller="Checkout" asp-action="Index">Checkout</a></li>
+                                        }
+
+                                </ul>
+                            </nav>
+                        </div>
+                        <!--Search Form Start-->
+                        <div class="search-btn">
+                            <ul class="header-search search-toggle">
+                                <li class="search-menu">
+                                    <i class="fa fa-search"></i>
+                                </li>
+                            </ul>
+                            <div class="search">
+                                <div class="search-form">
+                                    <form id="search-form" action="#">
+                                        <input type="search" placeholder="Search here..." name="search" />
+                                        <button type="submit">
+                                            <span><i class="@Model["searchicon"]"></i></span>
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End of Search Form-->
+                        <!-- Main Menu End -->
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="mobile-menu hidden-sm"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
