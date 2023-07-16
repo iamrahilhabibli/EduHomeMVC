@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Stripe.Checkout;
+using System.Security.Claims;
 
 namespace EduHomeUI.Controllers
 {
@@ -66,13 +67,14 @@ namespace EduHomeUI.Controllers
                 if (session.PaymentStatus == "paid")
                 {
                     var transaction = session.PaymentIntentId.ToString();
-                    var user = await _userManager.GetUserAsync(User);
+                    var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
 
                     Guid courseId = (Guid)TempData["CourseId"];
 
                     ConfirmedStudents confirmedStudents = new ConfirmedStudents
                     {
-                        UserId = Guid.Parse(user.Id),
+                        UserId = Guid.Parse(userId),
                         CourseId = courseId
                     };
 
