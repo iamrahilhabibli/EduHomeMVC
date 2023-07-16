@@ -1,6 +1,7 @@
 ﻿using EduHome.Core.Entities;
 using EduHome.DataAccess.Contexts;
 using EduHomeUI.Services.Interfaces;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Stripe.Checkout;
@@ -11,6 +12,8 @@ namespace EduHomeUI.Controllers
     {
         private readonly AppDbContext _context;
         private readonly ICourseService _courseService;
+        private readonly UserManager<AppUser> _userManager;
+
         public CheckoutController(AppDbContext context, ICourseService courseService)
         {
             _context = context;
@@ -19,6 +22,7 @@ namespace EduHomeUI.Controllers
         public async Task<IActionResult> Index(Guid courseId)
         {
             ProductEntity selectedCourse = await GetCourseById(courseId);
+            TempData["CourseId"] = courseId;
 
             return View(selectedCourse);
         }
@@ -41,20 +45,49 @@ namespace EduHomeUI.Controllers
 
             return product;
         }
-
-
-
-        public IActionResult OrderConfirmation()
+        //public IActionResult OrderConfirmation()
+        //{
+        //    var service = new SessionService();
+        //    Session session = service.Get(TempData["Session"].ToString());
+        //    if (session.PaymentStatus == "paid")
+        //    {
+        //        var transaction = session.PaymentIntentId.ToString();
+        //        return View("Success");
+        //    }
+        //    return View("Login");
+        //}
+        public async Task<IActionResult> OrderConfirmation()
         {
-            var service = new SessionService();
-            Session session = service.Get(TempData["Session"].ToString());
-            if (session.PaymentStatus == "paid")
+            if (User.Identity.IsAuthenticated)
             {
-                var transaction = session.PaymentIntentId.ToString();
-                return View("Success");
+                var service = new SessionService();
+                Session session = service.Get(TempData["Session"].ToString());
+
+                if (session.PaymentStatus == "paid")
+                {
+                    var transaction = session.PaymentIntentId.ToString();
+                    var user = await _userManager.GetUserAsync(User);
+
+                    Guid courseId = (Guid)TempData["CourseId"];
+
+                    ConfirmedStudents confirmedStudents = new ConfirmedStudents
+                    {
+                        UserId = Guid.Parse(user.Id),
+                        CourseId = courseId
+                    };
+
+                    await _context.ConfirmedStudents.AddAsync(confirmedStudents);
+                    await _context.SaveChangesAsync();
+
+                    return View("Success");
+                }
             }
+
             return View("Login");
         }
+
+
+
         public IActionResult Success()
         {
             return View();
@@ -98,7 +131,6 @@ namespace EduHomeUI.Controllers
 
             return new StatusCodeResult(303);
         }
-
 
     }
 }
